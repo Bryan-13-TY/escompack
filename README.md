@@ -5,6 +5,6 @@ de Computadoras en ESCOM, usando la arquitectura MVC.
 ## Arquitectura del proyecto
 Para la aplicación web se usa la arquitetcura MVC:
 
-* Vista: Se usa el framework React.
+* Vista: Se usa la bibllioteca de JS, React.
 * Controlador: Se usa el framework FastAPI.
 * Modelo: Se usa la biblioteca Scapy y el sistema de base de datos NoSQL, MongoDB.
