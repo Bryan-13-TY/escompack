@@ -8,6 +8,12 @@ de Computadoras en ESCOM, usando la arquitectura MVC.
 - Meléndez Macedonio Rodrigo
 - Castillo Bonilla Angel Eduardo
 
+## Guías
+
+- [Guía de Git](docs/git_guide.md)
+- [Guía de Python](docs/python_guide.md)
+- [Guía de React + Vite](docs/react_guide.md)
+
 ## Arquitectura del proyecto
 Para la aplicación web se usa la arquitetcura MVC:
 
