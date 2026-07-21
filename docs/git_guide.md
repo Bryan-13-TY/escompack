@@ -48,7 +48,25 @@ git push origin branch-name
 > terminal de VS Code para dejar una línea en blanco y escribe los
 > párrafos detallados abajo antes de hacer el commit.
 
-## 4. Continuar en la web de GitHub
+## 🔄 3.1. Actualiza la rama antes del Push (Evitar conflictos)
+Descargar los cambios en `main` antes de subir la rama.
+
+```bash
+# Cambia a main y descargamos los cambios
+git checkout main
+git pull origin main
+
+# Regresa a la rama de trabajo
+git checkout branch-name
+
+# Fusiona lo nuevo de main dentro de la rama
+git merge main
+```
+
+*Si hay conflictos de código, VS Code avisará para que elijas*
+*qué líneas conservar antes de hacer el push final.*
+
+## 4. Continua en la web de GitHub
 Dirigete a la página del repositorio [TT-APP-WEB-RC](https://github.com/Bryan-13-TY/TT-APP-WEB-RC).
 
 ### 1. Crea un *Pull Request* en la web
@@ -56,24 +74,27 @@ Después de subir tu rama a GitHub verás un botón verde que dice *Compare & pu
 
 - Un *Pull Request* es básicamente una solicitud para indicarle al resto del equipo que ya termine mis cambios en la rama que subí y que pueden resvisarla entes de funcionarlor con la rama `main`.
 
-- Elminamos la rama del servidor de GitHub.
-- 
+Aparecerá un botón verde que dice *Create pull request*.
 
+### 2. Fusiona la rama subida con la rama `main`
+Aparecerá un botón verde que dice *Merge pull request* y luego otro que dice *Confirm merge*.
 
-## 🔄 5. Actualizar la rama antes del Push (Evitar conflictos)
-Descargar los cambios en `main` antes de subir la rama.
+### 3. Elimina la rema subida del servidor de GitHub
+Una vez de confirmar la fusión borra la rama que subiste con el botón que dice *Delete branch*.
+
+## 5. Elimina la rama creada localmente
+Si ya no vas a trabajar sobre esa rama, no tiene sentido seguir manteniendola.
 
 ```bash
-# Cambiamos a main y descargamos los cambios
+# Cambia a la rama main
 git checkout main
-git pull origin main
 
-# Regresar a la rama de trabajo
-git checkout branch-name
-
-# Fusionar lo nuevo de main dentro de la rama
-git merge main
+# Borra la rama creada
+git branch -d branch-name 
 ```
 
-*Si hay conflictos de código, VS Code avisará para que elijas*
-*qué líneas conservar antes de hacer el push final.*
+## 6. Descarga los últimas actualizaciones
+
+```bash
+git pull origin main
+```
