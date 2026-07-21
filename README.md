@@ -2,6 +2,10 @@
 Aplicación web para la manipulación de paquetes de red aplicado a la unidad de aprendizaje de Redes
 de Computadoras en ESCOM, usando la arquitectura MVC.
 
+## Alumnos
+
+- García Escamilla Bryan Alexis
+
 ## Arquitectura del proyecto
 Para la aplicación web se usa la arquitetcura MVC:
 
