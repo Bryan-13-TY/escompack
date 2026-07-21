@@ -6,6 +6,7 @@ de Computadoras en ESCOM, usando la arquitectura MVC.
 
 - García Escamilla Bryan Alexis
 - Meléndez Macedonio Rodrigo
+- Castillo Bonilla Angel Eduardo
 
 ## Arquitectura del proyecto
 Para la aplicación web se usa la arquitetcura MVC:
