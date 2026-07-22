@@ -1,0 +1,24 @@
+{
+  "name": "tt-app-web-rc",
+  "version": "1.0.0",
+  "description": "Aplicación web para la manipulación de paquetes de red aplicado a la unidad de aprendizaje de Redes\r de Computadoras en ESCOM, usando la arquitectura MVC.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bryan-13-TY/TT-APP-WEB-RC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Bryan-13-TY/TT-APP-WEB-RC/issues"
+  },
+  "homepage": "https://github.com/Bryan-13-TY/TT-APP-WEB-RC#readme"
+}
