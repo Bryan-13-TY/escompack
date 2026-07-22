@@ -1,23 +1,38 @@
-SRC_API = app.main
-SRC_INSTALL = backend/requirements.txt
+# ===== Definición de rutas ======
+
+SRC_P_API = app.main
+SRC_P_INSTALL = backend/requirements.txt
+
+# =====================
+# COMANDOS PARA PYTHON
+# =====================
+
+p-environment:
+	py -m venv venv
+
+p-upgrade-pip:
+	python.exe -m pip install --upgrade pip
+
+p-install:
+	pip install -r $(SRC_P_INSTALL)
+
+p-run-api:
+	cd backend && uvicorn $(SRC_P_API):tt_web_app_rc --reload
+
+p-tests:
+	py -m pytest backend/tests
+
+# ===========================
+# COMANDOS PARA REACT + VITE
+# ===========================
+
+rv-install:
+	cd frontend && npm install
+
+rv-run:
+	cd frontend && npm run dev
+
+# ====== Comandos extra ======
 
 tree:
 	tree /F > tree.txt
-
-environment:
-	py -m venv venv
-
-upgrade-pip:
-	python.exe -m pip install --upgrade pip
-
-install:
-	pip install -r $(SRC_INSTALL)
-
-run-cli:
-	cd backend && py -m $(SRC_CLI)
-
-run-api:
-	cd backend && uvicorn $(SRC_API):password_manager --reload
-
-tests:
-	py -m pytest backend/tests
