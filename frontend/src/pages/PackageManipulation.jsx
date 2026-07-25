@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-export function PackageHandling() {
+export function PackageManipulation() {
     const navigate = useNavigate(); // Hook para navegar desde código
 
     return (
