@@ -1,0 +1,76 @@
+:root {
+    /* variables para la sección de bienvenida */
+    --contributor-text-color: #88b1ec;
+    --description-text-color: #dedede;
+
+    /* variables genericas */
+    --text-color: #ffffff;
+}
+
+.welcome-section {
+    padding: 30px;
+}
+
+.welcome-section h1 {
+    white-space: pre-line; /* respetar el formato del texto */
+    text-align: center;
+    color: var(--text-color);
+    font-family: 'Cascadia Code', monospace;
+    font-size: 40px;
+}
+
+.welcome-section p {
+    margin: 0;
+    text-align: center;
+    color: var(--text-color);
+    font-family: 'Cascadia Code', monospace;
+}
+
+.welcome-section .contributors {
+    white-space: pre-line; /* respeta el formato del texto */
+    margin: 0;
+    text-align: center;
+    color: var(--contributor-text-color);
+    font-family: 'Cascadia Code', monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.welcome-section .description {
+    text-align: center;
+    white-space: pre-line; /* respeta el formato del texto */
+    margin: 20px 0px 20px 0px;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column; /* una tarjeta abajo de la otra */
+    gap: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center; /* centra las tarjetas horizontalmente */
+}
+
+/* las tarjetas ocupan todo el ancho disponible */
+/* del contenedor */
+.cards-container > * {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* si el tamaño de la pantalla es más de 760px */
+/* las tarjetas pasan de columnas a filas */
+@media (min-width: 760px) {
+    .cards-container {
+        flex-direction: row; /* una tarjeta al lado de la otra */
+        gap: 30px;
+        justify-content: center; /* centra las tarjetas horizontalmente */
+        align-items: stretch; /* las tarjetas ocupan el mismo alto */
+    }
+
+    .cards-container > * {
+        width: auto; /* las tarjetas ocupan el ancho que necesiten */
+        max-width: 370px; /* limita el tamaño máximo */
+        min-width: 200px; /* limita el tamaño mínimo */
+    }
+}

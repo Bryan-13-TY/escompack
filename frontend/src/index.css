@@ -1,0 +1,14 @@
+:root {
+    --page-background: #1e1e2f;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    background-color: var(--page-background);
+}
+
+* {
+    box-sizing:border-box;
+}

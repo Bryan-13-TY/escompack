@@ -1,0 +1,68 @@
+:root {
+    /* variables para la tarjeta */
+    --card-background-color: #2f2f46;
+    --card-shadow: 0 4px 8px #00000046;
+    --card-border: 2px solid #ffffff;
+    --card-border-radius: 15px;
+    --card-border-color: #3d5b84;
+    --card-border-hover-color: #4288ea;
+
+    /* variables para el ícono */
+    --icon-background-color: #5379ae;
+    --icon-background-hover-color: #4288ea;
+
+    /* variables para el botón */
+    --button-background: #4288ea;
+}
+
+.card {
+    background-color: var(--card-background-color);
+    opacity: 0.9;
+    border-radius: var(--card-border-radius);
+    border: var(--card-border);
+    border-color: var(--card-border-color);
+    padding: 30px;
+}
+
+.card:hover {
+    border-color: var(--card-border-hover-color);
+    box-shadow: var(--card-shadow);
+}
+
+.card .icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    background-color: var(--icon-background-color);
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.card:hover .icon {
+    background-color: var(--icon-background-hover-color);
+}
+
+.card h3 {
+    margin: 0px;
+    margin-top: 30px;
+    font-size: 1.2em;
+    color: #ffffff;
+    font-family: 'Cascadia Code', monospace;
+}
+
+.card p {
+    color: #ffffff;
+    margin: 10px 0px 20px 0px;
+    font-family: 'Cascadia Code', monospace;
+}
+
+.card button {
+    background-color: var(--button-background);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Cascadia Code', monospace;
+}
