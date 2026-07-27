@@ -1,0 +1,44 @@
+:root {
+    --navbar-background-color: #0b0b0d;
+    --navbar-text-color: #f2efe8;
+    --navar-border-bottom-color: #1e1f22;
+    --navbar-list-element-background-hover-color: #1e1f22;
+}
+
+nav {
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-text-color);
+    border-bottom: 2px solid var(--navar-border-bottom-color);
+    padding: 10px;
+    font-family: 'Cascadia Code';
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.list-element {
+    padding: 10px;
+}
+
+.list-element:hover {
+    border-radius: 10px;
+    background-color: var(--navbar-list-element-background-hover-color);
+    color: var(--navbar-list-element-hover-text-color);
+}

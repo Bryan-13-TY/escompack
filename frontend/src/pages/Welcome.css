@@ -1,54 +1,70 @@
 :root {
     /* variables para la sección de bienvenida */
-    --contributor-text-color: #88b1ec;
-    --description-text-color: #dedede;
+    --general-desc-text-color: #ffd34d;
+    --especify-desc-text-color: #dedede;
+}
 
-    /* variables genericas */
-    --text-color: #ffffff;
+main {
+    margin: 0;
 }
 
 .welcome-section {
-    padding: 30px;
+    display: flex;
+    flex-direction: column; /* logo arriba de la descripción */
+    gap: 30px;
+    align-items: center; /* logo y descripcion alineados horizontalmente */
+    /*border: 3px solid brown;*/
+    padding: 50px 30px;
+    background: url('../assets/cover-v2.JPG');
+    margin-left: 30px;
+    margin-right: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-.welcome-section h1 {
-    white-space: pre-line; /* respetar el formato del texto */
+.welcome-section-image {
     text-align: center;
-    color: var(--text-color);
-    font-family: 'Cascadia Code', monospace;
+}
+
+.welcome-section-descrp .descrp-general {
+    margin: 0;
+    color: var(--general-desc-text-color);
+    font-family: 'Cascadia Code';
     font-size: 40px;
+    text-align: center;
 }
 
-.welcome-section p {
+.welcome-section-descrp .descrp-specify {
     margin: 0;
-    text-align: center;
-    color: var(--text-color);
-    font-family: 'Cascadia Code', monospace;
+    color: var(--especify-desc-text-color);
+    font-family: 'Cascadia Code';
+    padding: 20px;
 }
 
-.welcome-section .contributors {
-    white-space: pre-line; /* respeta el formato del texto */
-    margin: 0;
-    text-align: center;
-    color: var(--contributor-text-color);
-    font-family: 'Cascadia Code', monospace;
-    font-size: 12px;
-    font-weight: bold;
-}
+@media (min-width: 900px) {
+    .welcome-section {
+        flex-direction: row; /* logo y descripción al lado */
+        gap: 50px;
+        justify-content: center; /* logo y descripción alineados horizontalmente */
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 
-.welcome-section .description {
-    text-align: center;
-    white-space: pre-line; /* respeta el formato del texto */
-    margin: 20px 0px 20px 0px;
+    .welcome-section > * {
+        width: auto; /* logo y descripcion ocupan todo el espacio disponible */
+    }
+
+    .welcome-section-descrp {
+        white-space: pre-line;
+    }
 }
 
 .cards-container {
     display: flex;
     flex-direction: column; /* una tarjeta abajo de la otra */
     gap: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
     align-items: center; /* centra las tarjetas horizontalmente */
+    padding: 40px 30px;
 }
 
 /* las tarjetas ocupan todo el ancho disponible */
