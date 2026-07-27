@@ -1,18 +1,23 @@
 :root {
     /* variables para la tarjeta */
-    --card-background-color: #2f2f46;
-    --card-shadow: 0 4px 8px #00000046;
-    --card-border: 2px solid #ffffff;
+    --card-background-color: #1e1f22;
+    --card-border: 2px solid;
     --card-border-radius: 15px;
-    --card-border-color: #3d5b84;
-    --card-border-hover-color: #4288ea;
+    --card-border-color: #ffd34d;
+    --card-border-hover-color: #caa400;
 
     /* variables para el ícono */
-    --icon-background-color: #5379ae;
-    --icon-background-hover-color: #4288ea;
+    --icon-background-color: #ffd34d;
+    --icon-background-hover-color: #caa400;
+    --icon-color: #1e1f22;
 
     /* variables para el botón */
-    --button-background: #4288ea;
+    --button-background-color: #ffd34d;
+    --button-background-hover-color: #caa400;
+    --button-text-color: #0b0b0d;
+
+    /* variables para el resto de la tarjeta */
+    --card-text-color: #f2efe8;
 }
 
 .card {
@@ -30,12 +35,10 @@
 }
 
 .card .icon {
-    font-size: 2em;
-    margin-bottom: 10px;
     background-color: var(--icon-background-color);
+    color: var(--icon-color); /* aplica el color al icono */
+    padding: 10px;
     border-radius: 10px;
-    width: 50px;
-    height: 50px;
     text-align: center;
 }
 
@@ -47,22 +50,30 @@
     margin: 0px;
     margin-top: 30px;
     font-size: 1.2em;
-    color: #ffffff;
+    color: var(--card-text-color);
     font-family: 'Cascadia Code', monospace;
 }
 
 .card p {
-    color: #ffffff;
+    color: var(--card-text-color);
     margin: 10px 0px 20px 0px;
     font-family: 'Cascadia Code', monospace;
 }
 
 .card button {
-    background-color: var(--button-background);
-    color: #ffffff;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'Cascadia Code', monospace;
+}
+
+.card:hover button {
+    background-color: var(--button-background-hover-color);
+}
+
+.card button .button-icon {
+    margin-left: 5px;
 }
