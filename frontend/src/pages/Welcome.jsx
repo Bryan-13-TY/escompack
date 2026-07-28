@@ -16,23 +16,23 @@ export function Welcome() {
             <NabVar />
             <main>
                 <section className='welcome-section'>
-                    <div className='welcome-section-descrp'>
-                        <h1 className='descrp-general'>
+                    <div className='section-desc'>
+                        <h1 className='desc-title'>
                             {`Aplicación web para la captura
                             y manipulación de paquetes de red`}
                         </h1>
-                        <h3 className='descrp-specify'>
+                        <h3 className='desc-desc'>
                             {`Captura y manipula paquetes de red, tales como:
                             ARP, ICMP, IGMP, DVMRP, PIM, MSDP, TCP Y UDP
                             y exportalos para su posterior análisis.`}
                         </h3>
                     </div>
-                    <div className='welcome-section-image'>
+                    <div className='section-image'>
                         <img src={escomPackLogo} alt="ESCOMPack logo" width={300}/>
                     </div>
                 </section>
 
-                <section className='cards-container'>
+                <section className='welcome-cards'>
                     {/* Tarjetas para la captura y manipulación de paquetes */}
                     <OperationCard 
                         icon={faMagnifyingGlass}
@@ -49,7 +49,7 @@ export function Welcome() {
                         pageLink='/manipulation'
                     />
                 </section>
-                <section className='about'>
+                <section className='welcom-about'>
 
                 </section>
             </main>
