@@ -1,28 +1,38 @@
 :root {
-    --footer-background-color: #1e1f22;
-    --footer-background-color: #0b0b0d;
-    --footer-text-color: #f2efe8;
-    --footer-border-top-color: #1e1f22;
+    /* ====== variables para el modo oscuro ====== */
+
+    --dk-footer-bg-clr: #0b0b0d;
+    --dk-footer-txt-clr: #f2efe8;
+    --dk-footer-bdr-top-clr: #1e1f22;
+
+    /* ====== variables para el modo claro ====== */
+
+    /* variables genericas para el footer */
+    --fnt-family: 'Cascadia Code', monospace;
 }
 
 footer {
-    background-color: var(--footer-background-color);
-    color: var(--footer-text-color);
     padding: 15px 20px;
-    border-top: 2px solid var(--footer-border-top-color);
-    font-family: 'Cascadia Code';
+    border-top: 2px solid var(--dk-footer-bdr-top-clr);
+
+    color: var(--dk-footer-txt-clr);
+    font-family: var(--fnt-family);
+
+    background-color: var(--dk-footer-bg-clr);
 }
 
 .footer-image {
-    text-align: center;
     padding: 10px;
+
+    text-align: center;
 }
 
 .footer-info {
     display: flex;
-    font-size: 14px;
     flex-direction: column; /* en dos filas */
     gap: 10px;
+
+    font-size: 14px;
 }
 
 .info-general, .info-contact {

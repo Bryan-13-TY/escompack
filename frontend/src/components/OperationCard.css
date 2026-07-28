@@ -1,79 +1,90 @@
 :root {
+    /* ====== variables para el modo oscuro ====== */
+
     /* variables para la tarjeta */
-    --card-background-color: #1e1f22;
-    --card-border: 2px solid;
-    --card-border-radius: 15px;
-    --card-border-color: #ffd34d;
-    --card-border-hover-color: #caa400;
+    --dk-card-bg-clr: #1e1f22;
+    --dk-card-bdr: 2px solid;
+    --dk-card-bdr-radius: 15px;
+    --dk-card-bdr-clr: #ffd34d;
+    --dk-card-bdr-hvr-clr: #caa400;
+    --dk-card-txt-clr: #f2efe8;
 
-    /* variables para el ícono */
-    --icon-background-color: #ffd34d;
-    --icon-background-hover-color: #caa400;
-    --icon-color: #1e1f22;
+    /* variables para el icono de la tarjeta */
+    --dk-icon-bg-clr: #ffd34d;
+    --dk-icon-bg-hvr-clr: #caa400;
+    --dk-icon-txt-clr: #1e1f22;
 
-    /* variables para el botón */
-    --button-background-color: #ffd34d;
-    --button-background-hover-color: #caa400;
-    --button-text-color: #0b0b0d;
+    /* variables para el botón de la tarjeta */
+    --dk-btn-bg-clr: #ffd34d;
+    --dk-btn-bg-hvr-clr: #caa400;
+    --dk-btn-txt-clr: #0b0b0d;
 
-    /* variables para el resto de la tarjeta */
-    --card-text-color: #f2efe8;
+    /* ====== variables para el modo claro ====== */
+
+    /* variables genericas para la tarjeta */
+    --fnt-family: 'Cascadia Code', monospace;
 }
 
 .card {
-    background-color: var(--card-background-color);
-    opacity: 0.9;
-    border-radius: var(--card-border-radius);
-    border: var(--card-border);
-    border-color: var(--card-border-color);
+    border: var(--dk-card-bdr);
+    border-radius: var(--dk-card-bdr-radius);
+    border-color: var(--dk-card-bdr-clr);
     padding: 30px;
+
+    opacity: 0.9;
+    background-color: var(--dk-card-bg-clr);
 }
 
 .card:hover {
-    border-color: var(--card-border-hover-color);
-    box-shadow: var(--card-shadow);
+    border-color: var(--dk-card-bdr-hvr-clr);
 }
 
-.card .icon {
-    background-color: var(--icon-background-color);
-    color: var(--icon-color); /* aplica el color al icono */
-    padding: 10px;
+.card .card-icon {
     border-radius: 10px;
+    padding: 10px;
+
     text-align: center;
+    color: var(--dk-icon-txt-clr); /* aplica el color al icono */
+
+    background-color: var(--dk-icon-bg-clr);
 }
 
-.card:hover .icon {
-    background-color: var(--icon-background-hover-color);
+.card:hover .card-icon {
+    background-color: var(--dk-icon-bg-hvr-clr);
 }
 
 .card h3 {
-    margin: 0px;
+    margin: 0;
     margin-top: 30px;
-    font-size: 1.2em;
-    color: var(--card-text-color);
-    font-family: 'Cascadia Code', monospace;
+
+    font-style: 1.2em;
+    color: var(--dk-card-txt-clr);
+    font-family: var(--fnt-family);
 }
 
 .card p {
-    color: var(--card-text-color);
-    margin: 10px 0px 20px 0px;
-    font-family: 'Cascadia Code', monospace;
+    margin: 10px 0 20px 0;
+
+    color: var(--dk-card-txt-clr);
+    font-family: var(--fnt-family);
 }
 
 .card button {
-    background-color: var(--button-background-color);
-    color: var(--button-text-color);
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
+
+    color: var(--dk-btn-txt-clr);
+    font-family: var(--fnt-family);
+
+    background-color: var(--dk-btn-bg-clr);
     cursor: pointer;
-    font-family: 'Cascadia Code', monospace;
 }
 
 .card:hover button {
-    background-color: var(--button-background-hover-color);
+    background-color: var(--dk-btn-bg-hvr-clr);
 }
 
-.card button .button-icon {
+.card button .card-btn-icon {
     margin-left: 5px;
 }

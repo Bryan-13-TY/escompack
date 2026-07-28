@@ -1,7 +1,11 @@
 :root {
     /* variables para la sección de bienvenida */
-    --general-desc-text-color: #ffd34d;
-    --especify-desc-text-color: #dedede;
+    --title-txt-clr: #ffd34d;
+    --desc-txt-clr: #dedede;
+
+    /* variables genericas para sección de bienvenida */
+    --wlcm-bg: url('../assets/cover-v2.JPG');
+    --fnt-family: 'Cascadia Code', monospace;
 }
 
 main {
@@ -10,34 +14,33 @@ main {
 
 .welcome-section {
     display: flex;
-    flex-direction: column; /* logo arriba de la descripción */
+    flex-direction: column; /* logo arriba de la desc */
     gap: 30px;
-    align-items: center; /* logo y descripcion alineados horizontalmente */
-    /*border: 3px solid brown;*/
+    align-items: center; /* logo y desc alineados horizontalmente */
     padding: 50px 30px;
-    background: url('../assets/cover-v2.JPG');
-    margin-left: 30px;
-    margin-right: 30px;
+    margin: 0 30px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+
+    background: var(--wlcm-bg);
 }
 
-.welcome-section-image {
+.section-image {
     text-align: center;
 }
 
-.welcome-section-descrp .descrp-general {
+.section-desc .desc-title {
     margin: 0;
-    color: var(--general-desc-text-color);
-    font-family: 'Cascadia Code';
+    color: var(--title-txt-clr);
+    font-family: var(--fnt-family);
     font-size: 40px;
     text-align: center;
 }
 
-.welcome-section-descrp .descrp-specify {
+.section-desc .desc-desc {
     margin: 0;
-    color: var(--especify-desc-text-color);
-    font-family: 'Cascadia Code';
+    color: var(--desc-txt-clr);
+    font-family: var(--fnt-family);
     padding: 20px;
 }
 
@@ -54,12 +57,12 @@ main {
         width: auto; /* logo y descripcion ocupan todo el espacio disponible */
     }
 
-    .welcome-section-descrp {
+    .section-desc {
         white-space: pre-line;
     }
 }
 
-.cards-container {
+.welcome-cards {
     display: flex;
     flex-direction: column; /* una tarjeta abajo de la otra */
     gap: 30px;
@@ -69,7 +72,7 @@ main {
 
 /* las tarjetas ocupan todo el ancho disponible */
 /* del contenedor */
-.cards-container > * {
+.welcome-cards > * {
     width: 100%;
     max-width: 100%;
 }
@@ -77,14 +80,14 @@ main {
 /* si el tamaño de la pantalla es más de 760px */
 /* las tarjetas pasan de columnas a filas */
 @media (min-width: 760px) {
-    .cards-container {
+    .welcome-cards {
         flex-direction: row; /* una tarjeta al lado de la otra */
         gap: 30px;
         justify-content: center; /* centra las tarjetas horizontalmente */
         align-items: stretch; /* las tarjetas ocupan el mismo alto */
     }
 
-    .cards-container > * {
+    .welcome-cards > * {
         width: auto; /* las tarjetas ocupan el ancho que necesiten */
         max-width: 370px; /* limita el tamaño máximo */
         min-width: 200px; /* limita el tamaño mínimo */
