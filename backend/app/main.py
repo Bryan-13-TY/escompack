@@ -1,14 +1,14 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 
-tt_web_app_rc = FastAPI(
-    title=
-        "Aplicación web para la manipulación de paquetes de red aplicado a la unidad de"
-        "aprendizaje de Redes de Computadoras en ESCOM"
-    )
+from app.api.v1.routers import router_capture
 
-@tt_web_app_rc.get("/", tags=["Root"])
+app_web = FastAPI(title="Backend para la captura y manipulación de paquetes de red")
+
+@app_web.get("/", tags=["Root"])
 async def root():
     return HTMLResponse(
         content="<h1 style='text-align: center'>Backend del TT</h1>"
     )
+
+app_web.include_router(router=router_capture)
