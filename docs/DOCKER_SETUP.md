@@ -19,8 +19,8 @@ docker-compose up --build
 
 **Salida esperada:**
 ```
-tt-app-backend | Application startup complete [uvicorn]
-tt-app-frontend | VITE v8.x.x build ready in Xxx ms
+app-web-backend | Application startup complete [uvicorn]
+app-web-frontend | VITE v8.x.x build ready in Xxx ms
 ```
 
 ### 2. Acceder a los servicios
@@ -56,7 +56,7 @@ docker-compose down -v
 
 ```
 ┌─────────────────────────────────┐
-│    tt-app-network (bridge)      │
+│    app-web-network (bridge)     │
 ├─────────────────────────────────┤
 │                                 │
 │  Backend (FastAPI)              │
