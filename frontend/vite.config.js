@@ -8,4 +8,14 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  server: {
+    host: '0.0.0.0', // Permite que Docker exponga el puerto 5173
+    port: 5173,
+    proxy: {
+      '/api': {
+        target: 'http://backend:8000', // Docker redirige internamente
+        changeOrigin: true,
+      }
+    }
+  }
 })
