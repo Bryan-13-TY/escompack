@@ -2,38 +2,49 @@ version: '3.8'
 
 services:
   backend:
+    # busca las instrucciones en la carpeta ./backend
+    # usando su Dockerfile
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: tt-app-backend
+    container_name: app-web-backend
+    # mapea el puerto 8000 local al 8000 del contenedor
     ports:
       - "8000:8000"
+    # mapea el código local al contenedor
+    # esto permite edición en tiempo real
     volumes:
       - ./backend:/app
+    # evita que Python guarde en búfer las salidas de texto
+    # haciendo que los print() y logs aparezcan de inmediato
+    # en la terminal
     environment:
       - PYTHONUNBUFFERED=1
-    command: uvicorn app.main:tt_web_app_rc --host 0.0.0.0 --port 8000 --reload
+    command: uvicorn app.main:app_web --host 0.0.0.0 --port 8000 --reload
     networks:
-      - tt-app-network
+      - app-web-network
 
   frontend:
+    # busca las instrucciones en la carpeta ./frontend
+    # usando su Dockerfile
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: tt-app-frontend
+    container_name: app-web-frontend
+    # mapea el puerto 5173 local al 5173 del contenedor
     ports:
       - "5173:5173"
     volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    environment:
-      - VITE_API_URL=http://backend:8000
+      - ./frontend:/app # soporte de recarga en vivo
+      - /app/node_modules # evita que se sobreescriba
     command: npm run dev
     networks:
-      - tt-app-network
+      - app-web-network
+    # asegura que Docker inicie primero el contenedor del
+    # backend entes de levantar el frontend
     depends_on:
       - backend
 
 networks:
-  tt-app-network:
+  app-web-network:
     driver: bridge
