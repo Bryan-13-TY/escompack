@@ -5,11 +5,14 @@ from fastapi import (
     status
 )
 
+from app.schemas import CaptureRequest
+
 router_capture = APIRouter(prefix="/api/capture", tags=["Captura"])
 
-@router_capture.get("/")
-async def _root():
-    return {"status": "ok", "message": "Conexión éxitosa desde el Backend en Docker"}
+@router_capture.post("/")
+async def _capture(data: CaptureRequest):
+    print("Datod recibidos:", data)
+    return {"status": "ok", "received": data}
 
 
 @router_capture.post("/start")
