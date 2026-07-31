@@ -1,95 +1,143 @@
 :root {
     /* variables para la sección de bienvenida */
-    --title-txt-clr: #ffd34d;
+    --desc-title-txt-clr: #ffd34d;
     --desc-txt-clr: #dedede;
 
+    /* variables para la sección de las tarjetas de operación */
+    --opertn-section-cards-title-txt-clr: #dedede;
+
     /* variables genericas para sección de bienvenida */
-    --wlcm-bg: url('../assets/cover-v2.JPG');
-    --fnt-family: 'Cascadia Code', monospace;
+    --welcome-prtn-section-bg: url('../assets/cover-v2.JPG');
+    --welcome-fnt-family: 'Cascadia Code', monospace;
 }
 
 main {
     margin: 0;
 }
 
-.welcome-section {
+/* ====== sección de la presentación ====== */
+
+.welcome-prtn-section {
     display: flex;
-    flex-direction: column; /* logo arriba de la desc */
-    gap: 30px;
-    align-items: center; /* logo y desc alineados horizontalmente */
     padding: 50px 30px;
     margin: 0 30px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 
-    background: var(--wlcm-bg);
+    background: var(--welcome-prtn-section-bg);
 }
 
-.section-image {
+.welcome-prtn-section .prtn-section-image {
     text-align: center;
 }
 
-.section-desc .desc-title {
+.welcome-prtn-section .prtn-section-desc .desc-title {
     margin: 0;
-    color: var(--title-txt-clr);
-    font-family: var(--fnt-family);
+    
+    color: var(--desc-title-txt-clr);
+    font-family: var(--welcome-fnt-family);
     font-size: 40px;
     text-align: center;
 }
 
-.section-desc .desc-desc {
+.welcome-prtn-section .prtn-section-desc .desc-summary {
     margin: 0;
-    color: var(--desc-txt-clr);
-    font-family: var(--fnt-family);
     padding: 20px;
+
+    color: var(--desc-txt-clr);
+    font-family: var(--welcome-fnt-family);
 }
 
+/* pantalla con menos de 890 px de ancho */
+@media (max-width: 899px) {
+    .welcome-prtn-section {
+        /* desc arriba del logo */
+        flex-direction: column;
+        /* logo y desc alineados horizontalmente */
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+/* pantalla con más de 890 px de ancho */
 @media (min-width: 900px) {
-    .welcome-section {
-        flex-direction: row; /* logo y descripción al lado */
-        gap: 50px;
-        justify-content: center; /* logo y descripción alineados horizontalmente */
+    .welcome-prtn-section {
+        /* logo y desc al lado */
+        flex-direction: row;
+        /* logo y desc alineados horizontalmente */
+        justify-content: center;
         padding-left: 50px;
         padding-right: 50px;
+        gap: 50px;
     }
 
-    .welcome-section > * {
-        width: auto; /* logo y descripcion ocupan todo el espacio disponible */
+    .welcome-prtn-section > * {
+        /* logo y desc ocupan todo el 
+        espacio disponible */
+        width: auto;
     }
 
-    .section-desc {
+    .welcome-prtn-section .prtn-section-desc {
+        /* respeta el formato del texto */
         white-space: pre-line;
     }
 }
 
-.welcome-cards {
+/* ====== sección de las tarjetas de operación ====== */
+
+.welcome-opertn-cards-section .opertn-cards-section-title {
     display: flex;
-    flex-direction: column; /* una tarjeta abajo de la otra */
+    /* centrado horizontal */
+    justify-content: center;
+    /* centrado vertical */
+    align-items: center;
+    margin: 0;
+    padding: 40px 30px 20px 30px;
+
+    color: var(--opertn-section-cards-title-txt-clr);
+    font-family: var(--welcome-fnt-family);
+    text-align: center;
+    font-size: 30px;
+}
+
+.welcome-opertn-cards-section .opertn-cards-section-container {
+    display: flex;
     gap: 30px;
-    align-items: center; /* centra las tarjetas horizontalmente */
-    padding: 40px 30px;
+    padding: 30px 30px 40px 30px;
 }
 
-/* las tarjetas ocupan todo el ancho disponible */
-/* del contenedor */
-.welcome-cards > * {
-    width: 100%;
-    max-width: 100%;
-}
-
-/* si el tamaño de la pantalla es más de 760px */
-/* las tarjetas pasan de columnas a filas */
-@media (min-width: 760px) {
-    .welcome-cards {
-        flex-direction: row; /* una tarjeta al lado de la otra */
-        gap: 30px;
-        justify-content: center; /* centra las tarjetas horizontalmente */
-        align-items: stretch; /* las tarjetas ocupan el mismo alto */
+/* pantalla con menos de 760 px de ancho */
+@media (max-width: 759px) {
+    .welcome-opertn-cards-section .opertn-cards-section-container {
+        /* una tarjeta abajo de la otra */
+        flex-direction: column-reverse;
+        /* centra las tarjetas horizontalmente */
+        align-items: center;
     }
 
-    .welcome-cards > * {
-        width: auto; /* las tarjetas ocupan el ancho que necesiten */
-        max-width: 370px; /* limita el tamaño máximo */
-        min-width: 200px; /* limita el tamaño mínimo */
+    /* las tarjetas ocupan todo el ancho
+    del contenedor */
+    .welcome-opertn-cards-section .opertn-cards-section--container > * {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* pantalla con más de 760 px de ancho */
+@media (min-width: 760px) {
+    .welcome-opertn-cards-section .opertn-cards-section-container {
+        /* una tarjeta al lado de la otra */
+        flex-direction: row;
+        /* centra las tarjetas horizontalmente */
+        justify-content: center;
+        /* las tarjetas ocupan el mismo ancho */
+        align-items: stretch;
+    }
+
+    .welcome-opertn-cards-section .opertn-cards-section-container > * {
+        /* las tarjetas ocupan el ancho que necesiten */
+        width: auto;
+        max-width: 370px;
+        min-width: 200px;
     }
 }
