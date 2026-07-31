@@ -11,6 +11,10 @@ export default defineConfig({
   server: {
     host: '0.0.0.0', // Permite que Docker exponga el puerto 5173
     port: 5173,
+    watch: {
+      usePolling: true, // Forzar a Vite a revisar cambios periódicamente
+      interval: 100, // Revisa cada 100 ms
+    },
     proxy: {
       '/api': {
         target: 'http://backend:8000', // Docker redirige internamente
