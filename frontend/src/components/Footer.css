@@ -4,6 +4,7 @@
     --dk-footer-bg-clr: #0b0b0d;
     --dk-footer-txt-clr: #f2efe8;
     --dk-footer-bdr-top-clr: #1e1f22;
+    --dk-footer-a-txt-clr: #f2efe8;
 
     /* ====== variables para el modo claro ====== */
 
@@ -29,29 +30,36 @@ footer {
 
 .footer-info {
     display: flex;
-    flex-direction: column; /* en dos filas */
     gap: 10px;
 
     font-size: 14px;
 }
 
-.info-general, .info-contact {
+.footer-info .info-general, .footer-info .info-contact {
     margin: 0;
 }
 
-.info-contact a {
+.footer-info .info-contact a {
     text-decoration: none;
-    color: #f2efe8;
+    color: var(--dk-footer-a-txt-clr);
 }
 
 .info-contact .contact-github {
-    margin: 0px 5px;
+    margin: 0 5px;
 }
 
+/* pantalla con menos de 900 px de ancho */
+@media (max-width: 899px) {
+    .footer-info {
+        flex-direction: column; /* dos filas */
+    }
+}
+
+/* pantalla con más de 900 px de ancho */
 @media (min-width: 900px) {
     .footer-info {
+        flex-direction: row; /* dos columnas */
         align-items: center; /* alineados horizontalmente */
-        flex-direction: row; /* empuja a los extremos */
         justify-content: space-between;
     }
 }

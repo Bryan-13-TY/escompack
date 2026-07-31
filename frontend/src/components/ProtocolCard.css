@@ -1,0 +1,33 @@
+:root {
+    /* ====== variables para el modo oscuro */
+    --dk-protocol-card-bg-clr: #1e1f22;
+    --dk-protocol-card-bdr: 2px solid;
+    --dk-protocol-card-bdr-radius: 15px;
+    --dk-protocol-card-bdr-clr: #ffd34d;
+
+    /* ====== variables para el modo claro ====== */
+
+    /* variables genericas para la tarjeta */
+    --protocol-card-fnt-family: 'Cascadia Code', monospace;
+}
+
+.protocol-card {
+    border: var(--dk-protocol-card-bdr);
+    border-radius: var(--dk-protocol-card-bdr-radius);
+    border-color: var(--dk-protocol-card-bdr-clr);
+    padding: 30px;
+
+    opacity: 0.9;
+    background-color: var(--dk-protocol-card-bg-clr);
+}
+
+.protocol-card .protocol-card-icon,
+.protocol-card .protocol-card-acronym {
+    text-align: center;
+}
+
+.protocol-card .protocol-card-acronym {
+    margin: 0;
+
+    font-family: var(--protocol-card-fnt-family);
+}

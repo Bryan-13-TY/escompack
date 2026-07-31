@@ -1,0 +1,107 @@
+:root {
+    /* ====== variables para el modo oscuro ====== */
+
+    /* variables para el formulaio */
+    --dk-form-bg-clr: #1e1f22;
+    --dk-form-bdr: 2px solid;
+    --dk-form-bdr-radius: 15px;
+    --dk-form-bdr-clr: #ffd34d;
+    --dk-form-bdr-hvr-clr: #caa400;
+    --dk-form-txt-clr: #f2efe8;
+
+    /* variables para los input y select */
+    --dk-in-bg-clr: #f2efe8;
+    --dk-in-bdr: 2px solid;
+    --dk-in-bdr-radius: 5px;
+    --dk-in-bdr-clr: #ffd34d;
+    --dk-in-txt-clr: #1e1f22;
+
+    /* variables para el botón del formulario */
+    --dk-btn-bg-clr: #ffd34d;
+    --dk-btn-bg-hvr-clr: #caa400;
+    --dk-btn-txt-clr: #0b0b0d;
+
+    /* ====== variables para el modo claro ====== */
+
+    --fnt-family: 'Cascadia Code', monospace;
+}
+
+main {
+    margin: 0;
+}
+
+.capture-form-section {
+    border: 2px solid green;
+    padding: 50px 30px;
+}
+
+.capture {
+    display: flex;
+    border: var(--dk-form-bdr);
+    border-radius: var(--dk-form-bdr-radius);
+    border-color: var(--dk-form-bdr-clr);
+    padding: 30px;
+    gap: 30px;
+
+    opacity: 0.9;
+    background-color: var(--dk-form-bg-clr);
+}
+
+.capture .capture-input {
+    border: 2px solid green;
+}
+
+.capture label {
+    color: var(--dk-form-txt-clr);
+    font-family: var(--fnt-family);
+    padding: 10px;
+}
+
+.capture input, .capture select {
+    border: var(--dk-in-bdr);
+    border-radius: var(--dk-in-bdr-radius);
+    border-color: var(--dk-in-bdr-clr);
+    padding: 5px;
+
+    color: var(--dk-in-txt-clr);
+
+    background-color: var(--dk-in-bg-clr);
+    font-family: var(--fnt-family);
+}
+
+.capture button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    color: var(--dk-btn-txt-clr);
+    font-family: var(--fnt-family);
+
+    background-color: var(--dk-btn-bg-clr);
+    cursor: pointer;
+}
+
+.capture button:hover {
+    background-color: var(--dk-btn-bg-hvr-clr);
+}
+
+.capture button .capture-btn-icon {
+    margin-left: 5px;
+}
+
+@media (max-width: 1370px) {
+    .capture {
+        flex-direction: column;
+        align-items: center;
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 1370px) {
+    .capture {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}

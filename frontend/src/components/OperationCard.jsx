@@ -6,16 +6,16 @@ import './OperationCard.css';
 
 export function OperationCard({ icon, title, description, buttonText, pageLink }) {
     return (
-        <div className="card">
-            <FontAwesomeIcon className='card-icon' icon={icon} size='2x' flip/>
-            <h3>{title}</h3>
-            <p>{description}</p>
+        <div className="operation-card">
+            <FontAwesomeIcon className='operation-card-icon' icon={icon} size='2x' flip/>
+            <h3 className='operation-card-title'>{title}</h3>
+            <p className='operation-card-desc'>{description}</p>
             <Link to={pageLink}>
                 <button>
                     <span>
                         {buttonText}
                         <FontAwesomeIcon
-                            className='card-btn-icon'
+                            className='operation-card-btn-icon'
                             icon={faArrowRight}
                         />
                     </span>
