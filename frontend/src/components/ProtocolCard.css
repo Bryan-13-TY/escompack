@@ -1,9 +1,25 @@
 :root {
-    /* ====== variables para el modo oscuro */
-    --dk-protocol-card-bg-clr: #1e1f22;
+    /* ====== variables para el modo oscuro ====== */
+
+    --dk-protocol-card-bg-clr: #22214D;
     --dk-protocol-card-bdr: 2px solid;
     --dk-protocol-card-bdr-radius: 15px;
-    --dk-protocol-card-bdr-clr: #ffd34d;
+    --dk-protocol-card-bdr-clr: #2D285E;
+    --dk-protocol-card-txt-clr: #f2efe8;
+    --dk-protocol-card-protocol-txt-clr: #dfddd8;
+    --dk-protocol-card-layer-bdr-radius: 5px;
+    --dk-protocol-card-layer-txt-clr: #f2efe8;
+
+    /* variables para las capas del modelo tcp/ip */
+
+    /* capa de aplicación*/
+    --dk-al-bg-clr: green;
+    /* capa de transporte */
+    --dk-tl-bg-clr: red;
+    /* capa de internet */
+    --dk-il-bg-clr: orange;
+    /* capa de acceso a la red */
+    --dk-nal-bg-clr: blue;
 
     /* ====== variables para el modo claro ====== */
 
@@ -17,17 +33,72 @@
     border-color: var(--dk-protocol-card-bdr-clr);
     padding: 30px;
 
-    opacity: 0.9;
+    color: var(--dk-protocol-card-txt-clr);
+
     background-color: var(--dk-protocol-card-bg-clr);
 }
 
 .protocol-card .protocol-card-icon,
-.protocol-card .protocol-card-acronym {
+.protocol-card .protocol-card-features .protocol-card-acronym,
+.protocol-card .protocol-card-features .protocol-rep,
+.protocol-card .protocol-card-features .protocol-layer {
     text-align: center;
 }
 
-.protocol-card .protocol-card-acronym {
+.protocol-card .protocol-card-features .protocol-card-acronym,
+.protocol-card .protocol-card-features .protocol-rep,
+.protocol-card .protocol-card-features .protocol-functions {
     margin: 0;
+    
+    font-family: var(--protocol-card-fnt-family);
+}
+
+.protocol-card .protocol-card-features .protocol-rep {
+    font-size: 13px;
+    color: var(--dk-protocol-card-protocol-txt-clr);
+}
+
+.protocol-card .protocol-card-features .protocol-layer {
+    margin: 10px 0;
+}
+
+.protocol-card .protocol-card-features .protocol-al-layer,
+.protocol-card .protocol-card-features .protocol-tl-layer,
+.protocol-card .protocol-card-features .protocol-il-layer,
+.protocol-card .protocol-card-features .protocol-nal-layer {
+    display: inline-block;
+    padding: 8px;
 
     font-family: var(--protocol-card-fnt-family);
+    color: var(--dk-protocol-card-layer-txt-clr);
+}
+
+.protocol-card .protocol-card-features .protocol-al-layer {
+    border-radius: var(--dk-protocol-card-layer-bdr-radius);
+
+    background-color: var(--dk-al-bg-clr);
+}
+
+.protocol-card .protocol-card-features .protocol-tl-layer {
+    border-radius: var(--dk-protocol-card-layer-bdr-radius);
+
+    background-color: var(--dk-tl-bg-clr);
+}
+
+.protocol-card .protocol-card-features .protocol-il-layer {
+    border-radius: var(--dk-protocol-card-layer-bdr-radius);
+
+    background-color: var(--dk-il-bg-clr);
+}
+
+.protocol-card .protocol-card-features .protocol-nal-layer {
+    border-radius: var(--dk-protocol-card-layer-bdr-radius);
+
+    background-color: var(--dk-nal-bg-clr);
+}
+
+.protocol-card .protocol-card-features .protocol-functions {
+    padding: 10px 0 0 0;
+    
+    font-size: 14px;
 }

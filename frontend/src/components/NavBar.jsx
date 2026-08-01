@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import escomPackNabvarIcon from '../assets/navbar-icon.PNG'
 
 import './NavBar.css';
@@ -11,9 +12,8 @@ export function NabVar() {
                 </section>
                 <section className='content-list'>
                     <ul>
-                       <li className='list-element'>Acerca de</li>
-                       <li className='list-element'>Acerca de</li>
-                       <li className='list-element'>Acerca de</li> 
+                        <Link to={'/'}><li className='list-element'>Inicio</li></Link>
+                        <Link to={'/about'}><li className='list-element'>Protocolos</li></Link>
                     </ul>
                 </section>
             </div>
