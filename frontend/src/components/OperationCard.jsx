@@ -7,7 +7,7 @@ import './OperationCard.css';
 export function OperationCard({ icon, title, description, buttonText, pageLink }) {
     return (
         <div className="operation-card">
-            <FontAwesomeIcon className='operation-card-icon' icon={icon} size='2x' flip/>
+            <FontAwesomeIcon className='operation-card-icon' icon={icon} size='2x'/>
             <h3 className='operation-card-title'>{title}</h3>
             <p className='operation-card-desc'>{description}</p>
             <Link to={pageLink}>

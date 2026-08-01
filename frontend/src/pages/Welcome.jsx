@@ -5,8 +5,6 @@ import { OperationCard } from '../components/OperationCard';
 import { NabVar } from '../components/NavBar';
 import { Footer } from '../components/Footer';
 import escomPackLogo from '../assets/escompack.PNG'
-import { ProtocolCard } from '../components/ProtocolCard';
-import { INFO_PROTOCOL_CARDS } from '../constants';
 
 import './Welcome.css';
 
@@ -52,26 +50,6 @@ export function Welcome() {
                             buttonText='Ir a Manipulación'
                             pageLink='/manipulation'
                         />
-                    </div>
-                </section>
-
-                <section className='welcome-protocol-cards-section'>
-                    <div className='protocol-card-section-container'>
-                        {
-                            INFO_PROTOCOL_CARDS.map((protocol) => {
-                                return (
-                                    <ProtocolCard
-                                        key={protocol.acronym}
-                                        icon={protocol.icon}
-                                        acronym={protocol.acronym}
-                                        rep_es={protocol.rep_es}
-                                        rep_en={protocol.rep_en}
-                                        tcpip_layer={protocol.tcpip_layer}
-                                        functions={protocol.functions}
-                                    />
-                                );
-                            })
-                        }
                     </div>
                 </section>
             </main>

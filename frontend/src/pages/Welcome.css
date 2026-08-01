@@ -1,10 +1,14 @@
 :root {
+    /* ====== variables para el modo oscuro ====== */
+
     /* variables para la sección de bienvenida */
-    --desc-title-txt-clr: #ffd34d;
-    --desc-txt-clr: #dedede;
+    --dk-desc-title-txt-clr: #ffd34d;
+    --dk-desc-txt-clr: #dedede;
 
     /* variables para la sección de las tarjetas de operación */
-    --opertn-section-cards-title-txt-clr: #dedede;
+    --dk-opertn-section-cards-title-txt-clr: #dedede;
+
+    /* ====== variables para el modo claro ====== */
 
     /* variables genericas para sección de bienvenida */
     --welcome-prtn-section-bg: url('../assets/cover-v2.JPG');
@@ -34,7 +38,7 @@ main {
 .welcome-prtn-section .prtn-section-desc .desc-title {
     margin: 0;
     
-    color: var(--desc-title-txt-clr);
+    color: var(--dk-desc-title-txt-clr);
     font-family: var(--welcome-fnt-family);
     font-size: 40px;
     text-align: center;
@@ -44,7 +48,7 @@ main {
     margin: 0;
     padding: 20px;
 
-    color: var(--desc-txt-clr);
+    color: var(--dk-desc-txt-clr);
     font-family: var(--welcome-fnt-family);
 }
 
@@ -94,7 +98,7 @@ main {
     margin: 0;
     padding: 40px 30px 20px 30px;
 
-    color: var(--opertn-section-cards-title-txt-clr);
+    color: var(--dk-opertn-section-cards-title-txt-clr);
     font-family: var(--welcome-fnt-family);
     text-align: center;
     font-size: 30px;
@@ -117,7 +121,7 @@ main {
 
     /* las tarjetas ocupan todo el ancho
     del contenedor */
-    .welcome-opertn-cards-section .opertn-cards-section--container > * {
+    .welcome-opertn-cards-section .opertn-cards-section-container > * {
         width: 100%;
         max-width: 100%;
     }

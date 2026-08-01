@@ -1,0 +1,37 @@
+:root {
+    /* ====== variables para el modo oscuro ===== */
+
+    /* variables para la sección de las tarjetas de protocolos */
+    --dk-protocol-cards-section-bg-clr: #1e1f22;
+
+    /* ====== variables pera el modo claro ====== */
+}
+
+main {
+    margin: 0;
+}
+
+.protocol-card-section-container {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+    padding: 100px;
+}
+
+@media (max-width: 719px) {
+    .protocol-card-section-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 720px) and (max-width: 1200px) {
+    .protocol-card-section-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1201px) {
+    .protocol-card-section-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

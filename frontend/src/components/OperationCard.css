@@ -2,22 +2,23 @@
     /* ====== variables para el modo oscuro ====== */
 
     /* variables para la tarjeta */
-    --dk-operation-card-bg-clr: #1e1f22;
+    --dk-operation-card-bg-clr: #22214D;
     --dk-operation-card-bdr: 2px solid;
     --dk-operation-card-bdr-radius: 15px;
-    --dk-operation-card-bdr-clr: #ffd34d;
-    --dk-operation-card-bdr-hvr-clr: #caa400;
+    --dk-operation-card-bdr-clr: #2D285E;
+    --dk-operation-card-bdr-hvr-clr: #3A448E;
     --dk-operation-card-txt-clr: #f2efe8;
+    --dk-operation-card-shados-hover: 2px 2px;
 
     /* variables para el icono de la tarjeta */
     --dk-operation-card-icon-bg-clr: #ffd34d;
-    --dk-operation-card-icon-bg-hvr-clr: #caa400;
-    --dk-operation-card-icon-txt-clr: #1e1f22;
+    --dk-operation-card-icon-bdr: 2px solid #0b0b0d;
+    --dk-operation-card-icon-txt-clr: #0b0b0d;
 
     /* variables para el botón de la tarjeta */
     --dk-operation-card-btn-bg-clr: #ffd34d;
     --dk-operation-card-btn-bg-hvr-clr: #caa400;
-    --dk-operation-card-btn-txt-clr: #0b0b0d;
+    --dk-operation-card-btn-txt-clr: #12152D;
 
     /* ====== variables para el modo claro ====== */
 
@@ -31,7 +32,6 @@
     border-color: var(--dk-operation-card-bdr-clr);
     padding: 30px;
 
-    opacity: 0.9;
     background-color: var(--dk-operation-card-bg-clr);
 }
 
@@ -40,17 +40,14 @@
 }
 
 .operation-card .operation-card-icon {
+    border: var(--dk-operation-card-icon-bdr);
     border-radius: 10px;
-    padding: 10px;
+    padding: 13px;
 
     text-align: center;
     color: var(--dk-operation-card-icon-txt-clr); /* aplica el color al icono */
 
     background-color: var(--dk-operation-card-icon-bg-clr);
-}
-
-.operation-card:hover .operation-card-icon {
-    background-color: var(--dk-operation-card-icon-bg-hvr-clr);
 }
 
 .operation-card .operation-card-title {
@@ -66,7 +63,7 @@
     margin: 10px 0 20px 0;
 
     color: var(--dk-operation-card-txt-clr);
-    font-family: var(--fnt-family);
+    font-family: var(--operation-card-fnt-family);
 }
 
 .operation-card button {
@@ -75,7 +72,7 @@
     border-radius: 5px;
 
     color: var(--dk-operation-card-btn-txt-clr);
-    font-family: var(--fnt-family);
+    font-family: var(--operation-card-fnt-family);
 
     background-color: var(--dk-operation-card-btn-bg-clr);
     cursor: pointer;
