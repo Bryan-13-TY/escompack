@@ -1,107 +1,147 @@
 :root {
     /* ====== variables para el modo oscuro ====== */
 
-    /* variables para el formulaio */
-    --dk-form-bg-clr: #1e1f22;
-    --dk-form-bdr: 2px solid;
-    --dk-form-bdr-radius: 15px;
-    --dk-form-bdr-clr: #ffd34d;
-    --dk-form-bdr-hvr-clr: #caa400;
-    --dk-form-txt-clr: #f2efe8;
+    /* variables para la sección del formulario */
+    --dk-form-section-bg-clr: #22214D;
+    --dk-form-section-bdr: 2px solid;
+    --dk-form-section-bdr-radius: 15px;
+    --dk-form-section-bdr-clr: #2D285E;
+    --dk-form-section-txt-clr: #f2efe8;
 
-    /* variables para los input y select */
-    --dk-in-bg-clr: #f2efe8;
-    --dk-in-bdr: 2px solid;
-    --dk-in-bdr-radius: 5px;
-    --dk-in-bdr-clr: #ffd34d;
-    --dk-in-txt-clr: #1e1f22;
+    --dk-form-section-input-bg-clr: #f2efe8;
 
-    /* variables para el botón del formulario */
-    --dk-btn-bg-clr: #ffd34d;
-    --dk-btn-bg-hvr-clr: #caa400;
-    --dk-btn-txt-clr: #0b0b0d;
+    --dk-protocol-card-select-bg-clr: #2D285E;
+    --dk-protocol-card-select-bg-hvr-clr: #35315c;
+    --dk-protocol-card-select-bg-selected-clr: #35315c;
+
+    /* variables para la sección de paquetes capturados */
+    --dk-capture-section-bg-clr: #22214D;
 
     /* ====== variables para el modo claro ====== */
 
-    --fnt-family: 'Cascadia Code', monospace;
+    /* variables genericas */
+    --form-section-fnt-family: 'Cascadia Code', monospace;
 }
 
 main {
     margin: 0;
 }
 
-.capture-form-section {
-    border: 2px solid green;
-    padding: 50px 30px;
+/* ====== estilos para el formulario de captura ====== */
+
+.capture-form-section .capture {
+    border: var(--dk-form-section-bdr);
+    border-radius: var(--dk-form-section-bdr-radius);
+    border-color: var(--dk-form-section-bdr-clr);
+    padding: 20px;
+
+    color: var(--dk-form-section-txt-clr);
+    font-family: var(--form-section-fnt-family);
+
+    background-color: var(--dk-form-section-bg-clr);
 }
 
-.capture {
-    display: flex;
-    border: var(--dk-form-bdr);
-    border-radius: var(--dk-form-bdr-radius);
-    border-color: var(--dk-form-bdr-clr);
-    padding: 30px;
-    gap: 30px;
-
-    opacity: 0.9;
-    background-color: var(--dk-form-bg-clr);
-}
-
-.capture .capture-input {
-    border: 2px solid green;
-}
-
-.capture label {
-    color: var(--dk-form-txt-clr);
-    font-family: var(--fnt-family);
+.capture-form-section .capture .capture-packets-info,
+.capture-form-section .capture .capture-protocol-selection {
     padding: 10px;
 }
 
-.capture input, .capture select {
-    border: var(--dk-in-bdr);
-    border-radius: var(--dk-in-bdr-radius);
-    border-color: var(--dk-in-bdr-clr);
-    padding: 5px;
-
-    color: var(--dk-in-txt-clr);
-
-    background-color: var(--dk-in-bg-clr);
-    font-family: var(--fnt-family);
+/* input txt del formulario */
+.capture-form-section .capture .capture-packets-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
-.capture button {
-    border: none;
-    padding: 10px 20px;
+.capture-form-section .capture .capture-packets-info input {
+    border: 2px solid #2D285E;
     border-radius: 5px;
+    min-width: 50px;
+    max-width: 100px;
 
-    color: var(--dk-btn-txt-clr);
-    font-family: var(--fnt-family);
+    font-family: var(--form-section-fnt-family);
 
-    background-color: var(--dk-btn-bg-clr);
+    background-color: var(--dk-form-section-input-bg-clr);
+}
+
+/* grilla de los protocolos del formulario */
+.protocol-grid {
+    display: grid;
+}
+
+.protocol-grid .protocol-card-select {
+    border-radius: 15px;
+    padding: 10px;
+    
     cursor: pointer;
+
+    background-color: var(--dk-protocol-card-select-bg-clr);
 }
 
-.capture button:hover {
-    background-color: var(--dk-btn-bg-hvr-clr);
+.protocol-grid .selected {
+    background-color: var(--dk-protocol-card-select-bg-selected-clr);
 }
 
-.capture button .capture-btn-icon {
-    margin-left: 5px;
+.protocol-grid .protocol-card-select:hover {
+    background-color: var(--dk-protocol-card-select-bg-hvr-clr);
 }
 
-@media (max-width: 1370px) {
-    .capture {
-        flex-direction: column;
-        align-items: center;
-        max-width: 600px;
+.protocol-grid .protocol-card-select input {
+    display: none;
+}
+
+.protocol-grid .protocol-card-select .protocol-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* botón del formulario */
+.capture-button {
+    padding: 10px;
+
+    text-align: center;
+}
+
+/* ====== estilos para los paquetes capturados  ====== */
+
+/* ====== media queries ====== */
+
+@media (max-width: 650px) {
+    .protocol-grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 15px;
+        row-gap: 15px;
+    }
+
+    .capture-form-section {
+        padding: 30px 70px;
     }
 }
 
-@media (min-width: 1370px) {
-    .capture {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
+@media (min-width: 651px) and (max-width: 1150px) {
+    .protocol-grid {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 15px;
+        row-gap: 15px;
+    }
+
+    .capture-form-section {
+        padding: 30px 90px;
+    }
+}
+
+@media (min-width: 1151px) {
+    .protocol-grid {
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 15px;
+        row-gap: 15px;
+    }
+
+    .capture-form-section {
+        padding: 30px 100px;
     }
 }

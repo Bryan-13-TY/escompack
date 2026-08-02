@@ -1,24 +1,47 @@
+import { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import { NabVar } from '../components/NavBar';
 import { Footer } from '../components/Footer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { PROTOCOLS } from '../constants';
+import { Button } from '../components/Button';
 
 import './PackageCapture.css';
 
+const ProtocolCard = ({ id, icon, label, isSelected, onSelect }) => {
+    const className = isSelected ? 'protocol-card-select selected' : 'protocol-card-select';
+
+    return (
+        <label className={className}>
+            <input
+                type='radio'
+                name='capture-protocol'
+                value={id}
+                onChange={() => onSelect(id)} // Actualizamos el protocolo
+                checked = {isSelected} // Marcamos el input seleccionado
+            />
+            <div className='protocol-content'>
+                <img src={icon} alt={label} width={70}/>
+                <span>{label}</span>
+            </div>
+        </label>
+    );
+};
+
 export function PackageCapture() {
     const navigate = useNavigate(); // Hook para navegar desde código
+    // Estado para cambiar el protocolo seleccionado
+    const [protocolSelected, setProtocolSelected] = useState('tcp');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.target);
         const data = {
-            filename: formData.get('capture-filename'),
             packets: formData.get('capture-packets'),
-            protocol: formData.get('capture-protocol'),
+            protocol: protocolSelected, // Pasamos el valor del estado direectamente
         };
 
         try {
@@ -35,42 +58,35 @@ export function PackageCapture() {
             <main>
                 <section className='capture-form-section'>
                     <form className='capture' onSubmit={handleSubmit}>
-                        <div className='capture-input'>
-                            <label htmlFor='capture-filename'>Nombre del archivo .pcap</label>
-                            <input type='text' id='capture-filename' name='capture-filename' />
-                        </div>
-                        <div className='capture-input'>
+                        <div className='capture-packets-info'>
                             <label htmlFor='capture-packets'>Número de paquetes</label>
                             <input type='number' name='capture-packets' id='capture-packets' />
                         </div>
-                        <div className='capture-input'>
-                            <label htmlFor='capture-protocol'>Protocolo</label>
-                            <select name='capture-protocol' id='capture-protocol' defaultValue={'tcp'}>
-                                <option value='arp'>ARP</option>
-                                <option value='icmp'>ICMP</option>
-                                <option value='igmp'>IGMP</option>
-                                <option value='dvmrp'>DVMRP</option>
-                                <option value='pim'>PIM</option>
-                                <option value='msdp'>MSDP</option>
-                                <option value='tcp'>TCP</option>
-                                <option value='udp'>UDP</option>
-                            </select>
-                        </div>
 
-                        <button type='submit'>
-                            <span>
-                                Capturar
-                                <FontAwesomeIcon
-                                    className='capture-btn-icon'
-                                    icon={faArrowRight}
-                                />
-                            </span>
-                        </button>
+                        <div className='capture-protocol-selection'>
+                            <div className='protocol-grid'>
+                                {
+                                    PROTOCOLS.map((protocol) => (
+                                        <ProtocolCard
+                                            key={protocol.id}
+                                            id={protocol.id}
+                                            icon={protocol.icon}
+                                            label={protocol.label}
+                                            isSelected={protocolSelected === protocol.id}
+                                            onSelect={setProtocolSelected}
+                                        />
+                                    ))
+                                }
+                            </div>
+                        </div>
+                        <div className='capture-button'>
+                            <Button buttonText="Capturar" type="submit" />
+                        </div>
                     </form>
                 </section>
                 
                 <section className='capture-packets-section'>
-
+                    <div className='packets'>hola</div>
                 </section>
             </main>
             <Footer />
