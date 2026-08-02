@@ -14,19 +14,17 @@ export function PackageAbout() {
                     <section className='about-protocol-cards-section'>
                         <div className='protocol-card-section-container'>
                             {
-                                INFO_PROTOCOL_CARDS.map((protocol) => {
-                                    return (
-                                        <ProtocolCard
-                                            key={protocol.acronym}
-                                            icon={protocol.icon}
-                                            acronym={protocol.acronym}
-                                            rep={protocol.rep}
-                                            tcpipLayer={protocol.tcpip_layer}
-                                            layerClass={protocol.layer}
-                                            functions={protocol.functions}
-                                        />
-                                    );
-                                })
+                                INFO_PROTOCOL_CARDS.map((protocol) => (
+                                    <ProtocolCard
+                                        key={protocol.acronym}
+                                        icon={protocol.icon}
+                                        acronym={protocol.acronym}
+                                        rep={protocol.rep}
+                                        tcpipLayer={protocol.tcpip_layer}
+                                        layerClass={protocol.layer}
+                                        functions={protocol.functions}
+                                    />
+                                ))
                             }
                         </div>
                     </section>

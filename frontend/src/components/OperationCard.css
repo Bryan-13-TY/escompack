@@ -15,11 +15,6 @@
     --dk-operation-card-icon-bdr: 2px solid #0b0b0d;
     --dk-operation-card-icon-txt-clr: #0b0b0d;
 
-    /* variables para el botón de la tarjeta */
-    --dk-operation-card-btn-bg-clr: #ffd34d;
-    --dk-operation-card-btn-bg-hvr-clr: #caa400;
-    --dk-operation-card-btn-txt-clr: #12152D;
-
     /* ====== variables para el modo claro ====== */
 
     /* variables genericas para la tarjeta */
@@ -64,24 +59,4 @@
 
     color: var(--dk-operation-card-txt-clr);
     font-family: var(--operation-card-fnt-family);
-}
-
-.operation-card button {
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-
-    color: var(--dk-operation-card-btn-txt-clr);
-    font-family: var(--operation-card-fnt-family);
-
-    background-color: var(--dk-operation-card-btn-bg-clr);
-    cursor: pointer;
-}
-
-.operation-card:hover button {
-    background-color: var(--dk-operation-card-btn-bg-hvr-clr);
-}
-
-.operation-card button .operation-card-btn-icon {
-    margin-left: 5px;
 }

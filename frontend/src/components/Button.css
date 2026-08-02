@@ -1,0 +1,37 @@
+:root {
+    /* ====== variables para el modo oscuro ====== */
+
+    /* variables para el botón */
+    --dk-btn-bg-clr: #ffd34d;
+    --dk-btn-bg-hvr-clr: #caa400;
+    --dk-btn-txt-clr: #12152D;
+    --dk-btn-bdr: none;
+    --dk-btn-pddng: 10px 20px;
+    --dk-btn-bdr-radius: 5px;
+
+    /* variables para el icono del botón */
+    --dk-btn-icon-margin-left: 5px;
+
+    /* ====== variables para el modo claro ====== */
+    --btn-fnt-family: 'Cascadia Code', monospace;
+}
+
+.cstm-btn {
+    border: var(--dk-btn-bdr);
+    padding: var(--dk-btn-pddng);
+    border-radius: var(--dk-btn-bdr-radius);
+
+    color: var(--dk-btn-txt-clr);
+    font-family: var(--btn-fnt-family);
+    cursor: pointer;
+
+    background-color: var(--dk-btn-bg-clr);
+}
+
+.cstm-btn:hover {
+    background-color: var(--dk-btn-bg-hvr-clr);
+}
+
+.cstm-btn .cstm-btn-icon {
+    margin-left: 5px;
+}
