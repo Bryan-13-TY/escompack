@@ -2,14 +2,22 @@
     --page-background: #12152D;
 }
 
-body {
-    padding: 0;
-    margin: 0;
-    user-select: none;
-    background-color: var(--page-background);
-}
-
 * {
     box-sizing:border-box;
     /*border: 1px solid red;*/
+}
+
+html body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    user-select: none;
+}
+
+body {
+    background: url('./assets/background-v5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

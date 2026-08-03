@@ -1,4 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { Button } from './Button';
+
 import './ProtocolCard.css';
 
 export function ProtocolCard({ icon, acronym, rep, tcpipLayer, layerClass, functions }) {
@@ -14,6 +17,9 @@ export function ProtocolCard({ icon, acronym, rep, tcpipLayer, layerClass, funct
                     <p className={`protocol-${layerClass}`}>{tcpipLayer}</p>
                 </div>
                 <p className='protocol-functions'>{functions}</p>
+            </div>
+            <div className='protocol-card-button'>
+                <Button buttonText='Saber más' type='button'/>
             </div>
         </div>
     );

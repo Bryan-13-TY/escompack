@@ -86,7 +86,9 @@ export function PackageCapture() {
                 </section>
                 
                 <section className='capture-packets-section'>
-                    <div className='packets'>hola</div>
+                    <div className='packets'>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quibusdam dolor maxime quae, doloremque, labore ipsa hic, fuga quaerat amet enim! Eum tempora inventore a totam dicta minima reprehenderit. Mollitia?
+                    </div>
                 </section>
             </main>
             <Footer />

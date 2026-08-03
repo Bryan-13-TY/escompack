@@ -1,9 +1,8 @@
 :root {
     /* ====== variables para el modo oscuro ====== */
 
-    --dk-footer-bg-clr: #0b0b0d;
+    --dk-footer-bg-clr: #00000077;
     --dk-footer-txt-clr: #f2efe8;
-    --dk-footer-bdr-top-clr: #1e1f22;
     --dk-footer-a-txt-clr: #f2efe8;
 
     /* ====== variables para el modo claro ====== */
@@ -14,12 +13,12 @@
 
 footer {
     padding: 15px 20px;
-    border-top: 2px solid var(--dk-footer-bdr-top-clr);
 
     color: var(--dk-footer-txt-clr);
     font-family: var(--fnt-family);
 
     background-color: var(--dk-footer-bg-clr);
+    backdrop-filter: blur(8px);
 }
 
 .footer-image {
