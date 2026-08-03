@@ -1,10 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faGear} from '@fortawesome/free-solid-svg-icons'
 import { OperationCard } from '../components/OperationCard';
 import { NabVar } from '../components/NavBar';
 import { Footer } from '../components/Footer';
-import escomPackLogo from '../assets/escompack.PNG'
 
 import './Welcome.css';
 
@@ -16,24 +14,25 @@ export function Welcome() {
             <NabVar />
             <main>
                 <section className='welcome-prtn-section'>
-                    <div className='prtn-section-desc'>
-                        <h1 className='desc-title'>
-                            {`Aplicación web para la captura
-                            y manipulación de paquetes de red`}
-                        </h1>
-                        <h3 className='desc-summary'>
+                    <h1>
+                        <span className='prtn-escom'>ESCOM</span>
+                        <span className='prtn-pack'>Pack</span>
+                    </h1>
+                    <h2>
+                        {`UNA APLICACIÓN WEB PARA LA
+                        CAPTURA Y MANIPULACIÓN DE
+                        PAQUETES DE RED`}
+                    </h2>
+                    <div className='welcome-prtn-info'>
+                        <p>
                             {`Captura y manipula paquetes de red, tales como:
-                            ARP, ICMP, IGMP, DVMRP, PIM, MSDP, TCP Y UDP
+                            ARP, ICMP, IGMP, DVMRP, PIM, MSDP, TCP y UDP,
                             y exportalos para su posterior análisis.`}
-                        </h3>
-                    </div>
-                    <div className='prtn-section-image'>
-                        <img src={escomPackLogo} alt="ESCOMPack logo" width={300}/>
+                        </p>
                     </div>
                 </section>
 
                 <section className='welcome-opertn-cards-section'>
-                    <h2 className='opertn-cards-section-title'>¿Empezamos? Elije alguna de las opciones</h2>
                     <div className='opertn-cards-section-container'>
                         {/* Tarjetas para la captura y manipulación de paquetes */}
                         <OperationCard 

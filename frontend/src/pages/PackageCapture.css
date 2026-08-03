@@ -2,20 +2,22 @@
     /* ====== variables para el modo oscuro ====== */
 
     /* variables para la sección del formulario */
-    --dk-form-section-bg-clr: #22214D;
-    --dk-form-section-bdr: 2px solid;
+    --dk-form-section-bg-clr: #f2efe81b;
+    --dk-form-section-bdr: 2px solid #f2efe81b;
     --dk-form-section-bdr-radius: 15px;
-    --dk-form-section-bdr-clr: #2D285E;
     --dk-form-section-txt-clr: #f2efe8;
 
     --dk-form-section-input-bg-clr: #f2efe8;
 
-    --dk-protocol-card-select-bg-clr: #2D285E;
-    --dk-protocol-card-select-bg-hvr-clr: #35315c;
-    --dk-protocol-card-select-bg-selected-clr: #35315c;
+    --dk-protocol-card-select-bg-clr: #f2efe81b;
+    --dk-protocol-card-select-bg-hvr-clr: #f2efe847;
+    --dk-protocol-card-select-bg-selected-clr: #f2efe847;
 
     /* variables para la sección de paquetes capturados */
-    --dk-capture-section-bg-clr: #22214D;
+    --dk-capture-section-bg-clr: #f2efe81b;
+    --dk-capture-section-bdr: 2px solid #f2efe81b;
+    --dk-capture-section-bdr-radius: 15px;
+    --dk-capture-section-txt-clr: #f2efe8;
 
     /* ====== variables para el modo claro ====== */
 
@@ -32,13 +34,14 @@ main {
 .capture-form-section .capture {
     border: var(--dk-form-section-bdr);
     border-radius: var(--dk-form-section-bdr-radius);
-    border-color: var(--dk-form-section-bdr-clr);
     padding: 20px;
 
     color: var(--dk-form-section-txt-clr);
     font-family: var(--form-section-fnt-family);
 
     background-color: var(--dk-form-section-bg-clr);
+    backdrop-filter: blur(8px);
+    
 }
 
 .capture-form-section .capture .capture-packets-info,
@@ -56,12 +59,14 @@ main {
 }
 
 .capture-form-section .capture .capture-packets-info input {
-    border: 2px solid #2D285E;
+    border: none;
     border-radius: 5px;
     min-width: 50px;
     max-width: 100px;
+    height: 20px;
 
     font-family: var(--form-section-fnt-family);
+    text-align: center;
 
     background-color: var(--dk-form-section-input-bg-clr);
 }
@@ -108,9 +113,25 @@ main {
 
 /* ====== estilos para los paquetes capturados  ====== */
 
+.capture-packets-section {
+    padding: 60px 30px 60px 30px;
+    border: 2px solid red;
+}
+
+.capture-packets-section .packets {
+    border: var(--dk-capture-section-bdr);
+    border-radius: var(--dk-capture-section-bdr-radius);
+    padding: 20px;
+
+    color: var(--dk-capture-section-txt-clr);
+
+    background-color: var(--dk-capture-section-bg-clr);
+    backdrop-filter: blur(8px);
+}
+
 /* ====== media queries ====== */
 
-@media (max-width: 650px) {
+@media (max-width: 654px) {
     .protocol-grid {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 15px;
@@ -118,11 +139,11 @@ main {
     }
 
     .capture-form-section {
-        padding: 30px 70px;
+        padding: 60px 70px;
     }
 }
 
-@media (min-width: 651px) and (max-width: 1150px) {
+@media (min-width: 655px) and (max-width: 1150px) {
     .protocol-grid {
         grid-template-columns: repeat(4, 1fr);
         column-gap: 15px;
@@ -130,7 +151,7 @@ main {
     }
 
     .capture-form-section {
-        padding: 30px 90px;
+        padding: 60px 80px;
     }
 }
 
@@ -142,6 +163,6 @@ main {
     }
 
     .capture-form-section {
-        padding: 30px 100px;
+        padding: 60px 100px;
     }
 }

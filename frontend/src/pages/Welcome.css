@@ -2,11 +2,13 @@
     /* ====== variables para el modo oscuro ====== */
 
     /* variables para la sección de bienvenida */
-    --dk-desc-title-txt-clr: #ffd34d;
+    --dk-title-txt-clr: #dedede;
+    --dk-title-escom-txt-clr: #3592D7;
+    --dk-title-pack-txt-clr: #ffd34d;
     --dk-desc-txt-clr: #dedede;
 
-    /* variables para la sección de las tarjetas de operación */
-    --dk-opertn-section-cards-title-txt-clr: #dedede;
+    --dk-desc-title-txt-clr: #ffd34d;
+    --dk-desc-txt-clr: #dedede;
 
     /* ====== variables para el modo claro ====== */
 
@@ -22,92 +24,51 @@ main {
 /* ====== sección de la presentación ====== */
 
 .welcome-prtn-section {
-    display: flex;
-    padding: 50px 30px;
-    margin: 0 30px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-
-    background: var(--welcome-prtn-section-bg);
+    padding: 60px 30px 60px 30px;
 }
 
-.welcome-prtn-section .prtn-section-image {
-    text-align: center;
-}
-
-.welcome-prtn-section .prtn-section-desc .desc-title {
+.welcome-prtn-section h1 {
     margin: 0;
-    
-    color: var(--dk-desc-title-txt-clr);
+
+    color: var(--dk-title-txt-clr);
+    text-align: center;
     font-family: var(--welcome-fnt-family);
-    font-size: 40px;
-    text-align: center;
 }
 
-.welcome-prtn-section .prtn-section-desc .desc-summary {
+.welcome-prtn-section h1 .prtn-escom {
+    color: var(--dk-title-escom-txt-clr);
+}
+
+.welcome-prtn-section h1 .prtn-pack {
+    color: var(--dk-title-pack-txt-clr);
+}
+
+.welcome-prtn-section h2 {
     margin: 0;
+
+    color: var(--dk-title-txt-clr);
+    text-align: center;
+    font-family: var(--welcome-fnt-family);
+}
+
+.welcome-prtn-section div {
     padding: 20px;
+}
+
+.welcome-prtn-section div p {
+    margin: 0;
 
     color: var(--dk-desc-txt-clr);
+    text-align: center;
     font-family: var(--welcome-fnt-family);
-}
-
-/* pantalla con menos de 890 px de ancho */
-@media (max-width: 899px) {
-    .welcome-prtn-section {
-        /* desc arriba del logo */
-        flex-direction: column;
-        /* logo y desc alineados horizontalmente */
-        align-items: center;
-        gap: 30px;
-    }
-}
-
-/* pantalla con más de 890 px de ancho */
-@media (min-width: 900px) {
-    .welcome-prtn-section {
-        /* logo y desc al lado */
-        flex-direction: row;
-        /* logo y desc alineados horizontalmente */
-        justify-content: center;
-        padding-left: 50px;
-        padding-right: 50px;
-        gap: 50px;
-    }
-
-    .welcome-prtn-section > * {
-        /* logo y desc ocupan todo el 
-        espacio disponible */
-        width: auto;
-    }
-
-    .welcome-prtn-section .prtn-section-desc {
-        /* respeta el formato del texto */
-        white-space: pre-line;
-    }
 }
 
 /* ====== sección de las tarjetas de operación ====== */
 
-.welcome-opertn-cards-section .opertn-cards-section-title {
-    display: flex;
-    /* centrado horizontal */
-    justify-content: center;
-    /* centrado vertical */
-    align-items: center;
-    margin: 0;
-    padding: 40px 30px 20px 30px;
-
-    color: var(--dk-opertn-section-cards-title-txt-clr);
-    font-family: var(--welcome-fnt-family);
-    text-align: center;
-    font-size: 30px;
-}
-
 .welcome-opertn-cards-section .opertn-cards-section-container {
     display: flex;
     gap: 30px;
-    padding: 30px 30px 40px 30px;
+    padding: 30px 30px 60px 30px;
 }
 
 /* pantalla con menos de 760 px de ancho */
@@ -143,5 +104,50 @@ main {
         width: auto;
         max-width: 370px;
         min-width: 200px;
+    }
+}
+
+@media (max-width: 840px) {
+    .welcome-prtn-section h1 {
+        font-size: 40px;
+    }
+
+    .welcome-prtn-section h2 {
+        font-size: 30px;
+        white-space: none;
+    }
+
+    .welcome-prtn-section div p {
+        white-space: none;
+    }
+}
+
+@media (min-width: 841px) and (max-width: 999px) {
+    .welcome-prtn-section h1 {
+        font-size: 50px;
+    }
+
+    .welcome-prtn-section h2 {
+        font-size: 40px;
+        white-space: pre-line;
+    }
+
+    .welcome-prtn-section div p {
+        white-space: pre-line;
+    }
+}
+
+@media (min-width: 1000px) {
+    .welcome-prtn-section h1 {
+        font-size: 60px;
+    }
+
+    .welcome-prtn-section h2 {
+        font-size: 50px;
+        white-space: pre-line;
+    }
+
+    .welcome-prtn-section div p {
+        white-space: pre-line;
     }
 }

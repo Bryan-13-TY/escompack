@@ -1,10 +1,9 @@
 :root {
     /* ====== variables para el modo oscuro ====== */
 
-    --dk-protocol-card-bg-clr: #22214D;
-    --dk-protocol-card-bdr: 2px solid;
+    --dk-protocol-card-bg-clr: #f2efe81b;
+    --dk-protocol-card-bdr: 2px solid #f2efe81b;
     --dk-protocol-card-bdr-radius: 15px;
-    --dk-protocol-card-bdr-clr: #2D285E;
     --dk-protocol-card-txt-clr: #f2efe8;
     --dk-protocol-card-protocol-txt-clr: #dfddd8;
     --dk-protocol-card-layer-bdr-radius: 5px;
@@ -13,13 +12,13 @@
     /* variables para las capas del modelo tcp/ip */
 
     /* capa de aplicación*/
-    --dk-al-bg-clr: green;
+    --dk-al-bg-clr: rgba(0, 128, 0, 0.451);
     /* capa de transporte */
-    --dk-tl-bg-clr: red;
+    --dk-tl-bg-clr: rgba(255, 0, 0, 0.451);
     /* capa de internet */
-    --dk-il-bg-clr: orange;
+    --dk-il-bg-clr: rgba(255, 166, 0, 0.451);
     /* capa de acceso a la red */
-    --dk-nal-bg-clr: blue;
+    --dk-nal-bg-clr: rgba(0, 0, 255, 0.451);
 
     /* ====== variables para el modo claro ====== */
 
@@ -30,12 +29,12 @@
 .protocol-card {
     border: var(--dk-protocol-card-bdr);
     border-radius: var(--dk-protocol-card-bdr-radius);
-    border-color: var(--dk-protocol-card-bdr-clr);
-    padding: 30px;
+    padding: 20px;
 
     color: var(--dk-protocol-card-txt-clr);
 
     background-color: var(--dk-protocol-card-bg-clr);
+    backdrop-filter: blur(8px);
 }
 
 .protocol-card .protocol-card-icon,
@@ -59,7 +58,7 @@
 }
 
 .protocol-card .protocol-card-features .protocol-layer {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .protocol-card .protocol-card-features .protocol-al-layer,
@@ -71,6 +70,8 @@
 
     font-family: var(--protocol-card-fnt-family);
     color: var(--dk-protocol-card-layer-txt-clr);
+
+    backdrop-filter: blur(8px);
 }
 
 .protocol-card .protocol-card-features .protocol-al-layer {
@@ -98,7 +99,13 @@
 }
 
 .protocol-card .protocol-card-features .protocol-functions {
-    padding: 10px 0 0 0;
+    padding: 5px 0 5px 0;
     
-    font-size: 14px;
+    font-size: 15px;
+}
+
+.protocol-card .protocol-card-button {
+    padding: 10px 0 10px 0;
+
+    text-align: center;
 }

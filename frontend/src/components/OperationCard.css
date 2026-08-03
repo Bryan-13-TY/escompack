@@ -2,13 +2,10 @@
     /* ====== variables para el modo oscuro ====== */
 
     /* variables para la tarjeta */
-    --dk-operation-card-bg-clr: #22214D;
-    --dk-operation-card-bdr: 2px solid;
+    --dk-operation-card-bg-clr: #f2efe81b;
+    --dk-operation-card-bdr: 2px solid #f2efe81b;
     --dk-operation-card-bdr-radius: 15px;
-    --dk-operation-card-bdr-clr: #2D285E;
-    --dk-operation-card-bdr-hvr-clr: #3A448E;
     --dk-operation-card-txt-clr: #f2efe8;
-    --dk-operation-card-shados-hover: 2px 2px;
 
     /* variables para el icono de la tarjeta */
     --dk-operation-card-icon-bg-clr: #ffd34d;
@@ -24,14 +21,11 @@
 .operation-card {
     border: var(--dk-operation-card-bdr);
     border-radius: var(--dk-operation-card-bdr-radius);
-    border-color: var(--dk-operation-card-bdr-clr);
+    margin: var(--dk-navbar-mrgn);
     padding: 30px;
 
     background-color: var(--dk-operation-card-bg-clr);
-}
-
-.operation-card:hover {
-    border-color: var(--dk-operation-card-bdr-hvr-clr);
+    backdrop-filter: blur(8px);
 }
 
 .operation-card .operation-card-icon {
