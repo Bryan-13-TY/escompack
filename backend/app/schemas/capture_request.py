@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
 class CaptureRequest(BaseModel):
-    packets: str
+    packets: int
     protocol: str
 
