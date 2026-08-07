@@ -17,11 +17,11 @@ export default defineConfig({
     },
     proxy: {
       '/api': {
-        target: 'http://backend:8000', // Docker redirige internamente
+        target: 'http://127.17.0.1:8000', // Docker redirige internamente
         changeOrigin: true,
       },
       '/ws': {
-        target: 'http://backend:8000',
+        target: 'http://127.17.0.1:8000',
         ws: true, // Vite debe manejar el upgrade de HTTP a WebSocket
         changeOrigin: true,
       },

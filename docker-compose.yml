@@ -7,10 +7,13 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: app-web-backend
-    # mapea el puerto 8000 local al 8000 del contenedor
-    ports:
-      - "8000:8000"
+    container_name: ESCOMPack-backend
+    # el contenedor tiene acceso directo a todas las
+    # interfaces de red de la VM
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     # mapea el código local al contenedor
     # esto permite edición en tiempo real
     volumes:
@@ -21,8 +24,6 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
     command: uvicorn app.main:app_web --host 0.0.0.0 --port 8000 --reload
-    networks:
-      - app-web-network
 
   frontend:
     # busca las instrucciones en la carpeta ./frontend
@@ -30,7 +31,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: app-web-frontend
+    container_name: ESCOMPack-frontend
     # mapea el puerto 5173 local al 5173 del contenedor
     ports:
       - "5173:5173"
@@ -39,12 +40,12 @@ services:
       - /app/node_modules # evita que se sobreescriba
     command: npm run dev
     networks:
-      - app-web-network
+      - ESCOMPack-network
     # asegura que Docker inicie primero el contenedor del
     # backend entes de levantar el frontend
     depends_on:
       - backend
 
 networks:
-  app-web-network:
+  ESCOMPack-network:
     driver: bridge
