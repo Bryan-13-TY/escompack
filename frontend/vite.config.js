@@ -19,7 +19,12 @@ export default defineConfig({
       '/api': {
         target: 'http://backend:8000', // Docker redirige internamente
         changeOrigin: true,
-      }
+      },
+      '/ws': {
+        target: 'http://backend:8000',
+        ws: true, // Vite debe manejar el upgrade de HTTP a WebSocket
+        changeOrigin: true,
+      },
     }
   }
 })
