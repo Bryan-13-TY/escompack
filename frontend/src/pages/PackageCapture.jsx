@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -34,6 +34,13 @@ export function PackageCapture() {
     const navigate = useNavigate(); // Hook para navegar desde código
     // Estado para cambiar el protocolo seleccionado
     const [protocolSelected, setProtocolSelected] = useState('tcp');
+    // Estado en donde se guardan los paquetes capturados
+    const [packets, setPackets] = useState([]);
+    const wsRef = useRef(null);
+
+    useEffect(() => {
+        return () => wsRef.current?.close(); // cerrar conexión al salir de la vista
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -43,13 +50,16 @@ export function PackageCapture() {
             packets: formData.get('capture-packets'),
             protocol: protocolSelected, // Pasamos el valor del estado direectamente
         };
-
-        try {
-            const response = await axios.post('/api/capture/', data);
-            console.log('Respuesta de la API:', response.data);
-        } catch (error) {
-            console.error('Error al enviar:', error.response?.data || error.message);
-        }
+        
+        // 1. Avisamos a la API que inicie la captura
+        await axios.post("/api/capture/", data);
+        
+        // 2. Abrimos el Websocket para recibir los paquetes en vivo
+        wsRef.current = new WebSocket("ws://localhost:8000/ws/capture/");
+        wsRef.current.onmessage = (event) => {
+            const packet = JSON.parse(event.data);
+            setPackets((prev) => [...prev, packet]); // agrega el nuevo paquete a la tabla
+        };
     };
 
     return (
@@ -87,7 +97,30 @@ export function PackageCapture() {
                 
                 <section className='capture-packets-section'>
                     <div className='packets'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi quibusdam dolor maxime quae, doloremque, labore ipsa hic, fuga quaerat amet enim! Eum tempora inventore a totam dicta minima reprehenderit. Mollitia?
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Origen</th>
+                                    <th>Destino</th>
+                                    <th>Protocolo</th>
+                                    <th>longitud</th>
+                                    <th>Resumen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {packets.map((p) => (
+                                    <tr key={p.number}>
+                                        <td>{p.number}</td>
+                                        <td>{p.origin}</td>
+                                        <td>{p.destination}</td>
+                                        <td>{p.protocol}</td>
+                                        <td>{p.length}</td>
+                                        <td>{p.summary}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
                 </section>
             </main>
