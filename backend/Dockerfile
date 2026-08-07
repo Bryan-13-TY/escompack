@@ -11,6 +11,14 @@ FROM python:3.14.4-slim
 # dentro de esta carpeta
 WORKDIR /app
 
+# ====== Intalación de libpcap ======
+# Instalamos libpcap para capturar y filtrar
+# paquetes dentro del contenedor del backend.
+# Scapy la necesita para compilar filtros BPF.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libpcap-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # ====== Copia de manifiestos ======
 # Copia el archivo de depencias con la lista
 # de librerías de Python desde la computadora

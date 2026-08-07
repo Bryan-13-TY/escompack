@@ -2,9 +2,9 @@
 
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.v1.routers import router_capture
+from app.api.v1.routers import router_ws
 
 app_web = FastAPI(title="Backend para la captura y manipulación de paquetes de red")
 
@@ -17,3 +17,4 @@ async def _root():
 
 # Incluimos los endpoints para la captura de paquetes
 app_web.include_router(router=router_capture)
+app_web.include_router(router=router_ws)

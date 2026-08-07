@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+
 import { faMagnifyingGlass, faGear} from '@fortawesome/free-solid-svg-icons'
+
 import { OperationCard } from '../components/OperationCard';
 import { NabVar } from '../components/NavBar';
 import { Footer } from '../components/Footer';
