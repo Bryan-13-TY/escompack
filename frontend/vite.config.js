@@ -16,12 +16,14 @@ export default defineConfig({
       interval: 100, // Revisa cada 100 ms
     },
     proxy: {
+      // cambiamos el nombre del servicio 'backend'
+      // por la IP del bridge de Docker
       '/api': {
-        target: 'http://127.17.0.1:8000', // Docker redirige internamente
+        target: 'http://172.17.0.1:8000', // Docker redirige internamente
         changeOrigin: true,
       },
       '/ws': {
-        target: 'http://127.17.0.1:8000',
+        target: 'http://172.17.0.1:8000',
         ws: true, // Vite debe manejar el upgrade de HTTP a WebSocket
         changeOrigin: true,
       },
