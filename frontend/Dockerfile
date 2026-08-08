@@ -2,8 +2,8 @@
 
 # ====== Punto de partida ======
 # Utiliza como base la imagen de Linux (Alphine Linux)
-# con la versión 22 de Node.js
-FROM node:25.9.0-alpine
+# con la versión 24.19 de Node.js
+FROM node:24.19-alpine
 
 # ====== Ubicación de trabajo ======
 # Crea la carpeta /app dentro del contenedor
