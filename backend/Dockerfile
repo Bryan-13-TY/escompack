@@ -44,4 +44,4 @@ EXPOSE 8000
 
 # ====== Comando de inicio ======
 
-CMD ["uvicorn", "app.main:app_web", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "app.main:escom_pack", "--host", "0.0.0.0", "--port", "8000"]
