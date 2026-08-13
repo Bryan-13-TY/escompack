@@ -48,7 +48,7 @@ export function Header() {
                         <div className='header-icon'>
                             <Link to={'/home'}>
                                 <div className='header-image'>
-                                    <img src={escomPackIcon} alt="ESCOMPack icon" width={50} />
+                                    <img src={escomPackIcon} alt='ESCOMPack icon' width={50} />
                                 </div>
                                 <div className='header-image-desc'>
                                     <span className='desc-escom'>ESCOM</span>

@@ -1,64 +1,127 @@
 :root {
-    /* ====== variables para el modo oscuro ====== */
+    --footer-fnt-family: 'Cascadia Code', monospace;
+}
 
-    --dk-footer-bg-clr: #00000077;
-    --dk-footer-txt-clr: #f2efe8;
-    --dk-footer-a-txt-clr: #f2efe8;
+:root.dark {
+    --footer-bg-clr: #212121;
+    --footer-txt-clr: #dedede;
+    --footer-hvr-txt-clr: #0080d0;
+}
 
-    /* ====== variables para el modo claro ====== */
-
-    /* variables genericas para el footer */
-    --fnt-family: 'Cascadia Code', monospace;
+:root.light {
+    --footer-bg-clr: #d3d3d3;
+    --footer-txt-clr: #1a1a1a;
+    --footer-hvr-txt-clr: #021981;
 }
 
 footer {
-    padding: 15px 20px;
-
-    color: var(--dk-footer-txt-clr);
-    font-family: var(--fnt-family);
-
-    background-color: var(--dk-footer-bg-clr);
-    backdrop-filter: blur(8px);
+    margin: 0;
 }
 
-.footer-image {
-    padding: 10px;
+.footer-wrapper {
+    padding: 10px 20px;
+
+    font-family: var(--footer-fnt-family);
+
+    background-color: var(--footer-bg-clr);
+}
+
+.footer-wrapper .footer-content-wrapper {
+    display: flex;
+    flex-direction: column;
 
     text-align: center;
 }
 
-.footer-info {
+.footer-content-wrapper .footer-content {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
 
-    font-size: 14px;
+    text-align: center;
+    color: var(--footer-txt-clr);
 }
 
-.footer-info .info-general, .footer-info .info-contact {
+.footer-content .footer-version {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* alinea horizontalmente */
+    align-items: center; /* alinea verticalmente */
+    gap: 10px
+}
+
+.footer-version p {
     margin: 0;
 }
 
-.footer-info .info-contact a {
-    text-decoration: none;
-    color: var(--dk-footer-a-txt-clr);
+.footer-content .footer-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: 5px;
 }
 
-.info-contact .contact-github {
-    margin: 0 5px;
+.footer-contact p {
+    margin: 0;
 }
+
+.footer-contact .contact-social-media {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* alinea horizontalmente */
+    align-items: center; /* alinea verticalmente */
+    gap: 10px;
+}
+
+.contact-social-media a {
+    text-decoration: none;
+    color: var(--footer-txt-clr);
+}
+
+.contact-social-media a:hover {
+    color: var(--footer-hvr-txt-clr);
+}
+
+/* ====== media queries ====== */
 
 /* pantalla con menos de 900 px de ancho */
 @media (max-width: 899px) {
-    .footer-info {
-        flex-direction: column; /* dos filas */
+    /* ====== estilos para el icono del footer ====== */
+
+    .footer-content-wrapper .footer-secondary-icon {
+        display: block;
+    }
+
+    .footer-content-wrapper .footer-content .footer-main-icon {
+        display: none;
+    }
+
+    .footer-wrapper .footer-content-wrapper {
+        justify-content: center; /* alinea verticalmente */
+        align-items: center; /* alinea horizontalmente */
+        gap: 10px;
+    }
+
+    .footer-content-wrapper .footer-content {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
 /* pantalla con más de 900 px de ancho */
 @media (min-width: 900px) {
-    .footer-info {
-        flex-direction: row; /* dos columnas */
-        align-items: center; /* alineados horizontalmente */
-        justify-content: space-between;
+    /* ====== estilos para el icono del footer ====== */
+
+    .footer-content-wrapper .footer-secondary-icon {
+        display: none;
+    }
+
+    .footer-content-wrapper .footer-content .footer-main-icon {
+        display: block;
+    }
+
+    .footer-content-wrapper .footer-content {
+        flex-direction: row;
     }
 }
