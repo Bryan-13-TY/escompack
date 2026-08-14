@@ -1,56 +1,64 @@
 :root {
-    /* ====== variables para el modo oscuro ====== */
-
-    /* variables para la tarjeta */
-    --dk-operation-card-bg-clr: #f2efe81b;
-    --dk-operation-card-bdr: 2px solid #f2efe81b;
-    --dk-operation-card-bdr-radius: 15px;
-    --dk-operation-card-txt-clr: #f2efe8;
-
-    /* variables para el icono de la tarjeta */
-    --dk-operation-card-icon-bg-clr: #ffd34d;
-    --dk-operation-card-icon-bdr: 2px solid #0b0b0d;
-    --dk-operation-card-icon-txt-clr: #0b0b0d;
-
-    /* ====== variables para el modo claro ====== */
-
-    /* variables genericas para la tarjeta */
+    --operation-card-bdr-radius: 5px;
+    --operation-card-icon-txt-clr: #dedede;
     --operation-card-fnt-family: 'Cascadia Code', monospace;
 }
 
-.operation-card {
-    border: var(--dk-operation-card-bdr);
-    border-radius: var(--dk-operation-card-bdr-radius);
-    margin: var(--dk-navbar-mrgn);
-    padding: 30px;
-
-    background-color: var(--dk-operation-card-bg-clr);
-    backdrop-filter: blur(8px);
+:root.dark {
+    --operation-card-bg-clr: #212121;
+    --operation-card-bdr: 2px solid #2d2d2d;
+    --operation-card-icon-bg-clr: #0080d0;
+    --operation-card-title-txt-clr: #dedede;
+    --operation-card-desc-txt-clr: #d3d3d3;
 }
 
-.operation-card .operation-card-icon {
-    border: var(--dk-operation-card-icon-bdr);
-    border-radius: 10px;
-    padding: 13px;
-
-    text-align: center;
-    color: var(--dk-operation-card-icon-txt-clr); /* aplica el color al icono */
-
-    background-color: var(--dk-operation-card-icon-bg-clr);
+:root.light {
+    --operation-card-bg-clr: #e7e7e7;
+    --operation-card-bdr: 2px solid #c1c1c1;
+    --operation-card-icon-bg-clr: #021981;
+    --operation-card-title-txt-clr: #1a1a1a;
+    --operation-card-desc-txt-clr: #212121;
 }
 
-.operation-card .operation-card-title {
+.operation-card-wrapper {
+    border: var(--operation-card-bdr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 20px;
+    padding: 20px;
+    border-radius: 5px;
+
+    font-family: var(--operation-card-fnt-family);
+
+    background-color: var(--operation-card-bg-clr);
+}
+
+.operation-card-wrapper .operation-card-icon {
+    border-radius: 5px;
+    padding: 10px;
+
+    color: var(--operation-card-icon-txt-clr);
+
+    background-color: var(--operation-card-icon-bg-clr);
+}
+
+.operation-card-wrapper .operation-card-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.operation-card-desc p {
     margin: 0;
-    margin-top: 30px;
-
-    font-style: 1.2em;
-    color: var(--dk-operation-card-txt-clr);
-    font-family: var(--operation-card-fnt-family);
 }
 
-.operation-card .operation-card-desc {
-    margin: 10px 0 20px 0;
+.operation-card-desc .card-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: var(--operation-card-title-txt-clr);
+}
 
-    color: var(--dk-operation-card-txt-clr);
-    font-family: var(--operation-card-fnt-family);
+.operation-card-desc .card-desc {
+    color: var(--operation-card-desc-txt-clr);
 }
