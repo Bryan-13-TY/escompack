@@ -6,7 +6,7 @@ import { PackageCapture } from './pages/PackageCapture';
 import { PackageManipulation } from './pages/PackageManipulation';
 import { NotFound } from './pages/NotFound';
 
-// aquí se definen que componente se muestra en cada URL
+// aquí se define que componente se muestra en cada URL
 function App() {
     return (
         // todas las vistas tienen acceso al tema
