@@ -1,111 +1,68 @@
 :root {
-    /* ====== variables para el modo oscuro ====== */
-
-    --dk-protocol-card-bg-clr: #f2efe81b;
-    --dk-protocol-card-bdr: 2px solid #f2efe81b;
-    --dk-protocol-card-bdr-radius: 15px;
-    --dk-protocol-card-txt-clr: #f2efe8;
-    --dk-protocol-card-protocol-txt-clr: #dfddd8;
-    --dk-protocol-card-layer-bdr-radius: 5px;
-    --dk-protocol-card-layer-txt-clr: #f2efe8;
-
-    /* variables para las capas del modelo tcp/ip */
-
-    /* capa de aplicación*/
-    --dk-al-bg-clr: rgba(0, 128, 0, 0.451);
-    /* capa de transporte */
-    --dk-tl-bg-clr: rgba(255, 0, 0, 0.451);
-    /* capa de internet */
-    --dk-il-bg-clr: rgba(255, 166, 0, 0.451);
-    /* capa de acceso a la red */
-    --dk-nal-bg-clr: rgba(0, 0, 255, 0.451);
-
-    /* ====== variables para el modo claro ====== */
-
-    /* variables genericas para la tarjeta */
     --protocol-card-fnt-family: 'Cascadia Code', monospace;
 }
 
-.protocol-card {
-    border: var(--dk-protocol-card-bdr);
-    border-radius: var(--dk-protocol-card-bdr-radius);
+:root.dark {
+    --protocol-card-bg-clr: #212121;
+    --protocol-card-bdr: 2px solid #2d2d2d;
+    --protocol-card-acronym-txt-clr: #dedede;
+    --protocol-card-rep-txt-clr: #dedede;
+    --protocol-card-desc-txt-clr: #d3d3d3;
+}
+
+:root.light {
+    --protocol-card-bg-clr: #e7e7e7;
+    --protocol-card-bdr: 2px solid #c1c1c1;
+    --protocol-card-acronym-txt-clr: #1a1a1a;
+    --protocol-card-rep-txt-clr: #1a1a1a;
+    --protocol-card-desc-txt-clr: #212121;
+}
+
+.protocol-card-wrapper {
+    border: var(--protocol-card-bdr);
+    display: flex;
+    flex-direction: column;
     padding: 20px;
+    border-radius: 5px;
+    gap: 20px;
+    height: 100%;
 
-    color: var(--dk-protocol-card-txt-clr);
+    font-family: var(--protocol-card-fnt-family);
 
-    background-color: var(--dk-protocol-card-bg-clr);
-    backdrop-filter: blur(8px);
+    background-color: var(--protocol-card-bg-clr);
 }
 
-.protocol-card .protocol-card-icon,
-.protocol-card .protocol-card-features .protocol-card-acronym,
-.protocol-card .protocol-card-features .protocol-rep,
-.protocol-card .protocol-card-features .protocol-layer {
-    text-align: center;
+.protocol-card-wrapper .protocol-card-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: left; /* alinea a la izquierda */
+    align-items: center; /* alinea verticalmente */
+    gap: 10px;
 }
 
-.protocol-card .protocol-card-features .protocol-card-acronym,
-.protocol-card .protocol-card-features .protocol-rep,
-.protocol-card .protocol-card-features .protocol-functions {
+.protocol-card-label .protocol-card-acronym {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: left; /* alinea a la izquierda */
+    gap: 2px;
+}
+
+.protocol-card-acronym .acronym {
+    font-weight: bold;
+    color: var(--protocol-card-acronym-txt-clr);
+    font-size: 1.4rem;
+}
+
+.protocol-card-acronym .rep {
     margin: 0;
-    
-    font-family: var(--protocol-card-fnt-family);
+
+    color: var(--protocol-card-rep-txt-clr);
+    font-size: 0.8rem;
 }
 
-.protocol-card .protocol-card-features .protocol-rep {
-    font-size: 13px;
-    color: var(--dk-protocol-card-protocol-txt-clr);
-}
+.protocol-card-wrapper .protocol-card-desc {
+    margin: 0;
 
-.protocol-card .protocol-card-features .protocol-layer {
-    margin: 5px 0;
-}
-
-.protocol-card .protocol-card-features .protocol-al-layer,
-.protocol-card .protocol-card-features .protocol-tl-layer,
-.protocol-card .protocol-card-features .protocol-il-layer,
-.protocol-card .protocol-card-features .protocol-nal-layer {
-    display: inline-block;
-    padding: 8px;
-
-    font-family: var(--protocol-card-fnt-family);
-    color: var(--dk-protocol-card-layer-txt-clr);
-
-    backdrop-filter: blur(8px);
-}
-
-.protocol-card .protocol-card-features .protocol-al-layer {
-    border-radius: var(--dk-protocol-card-layer-bdr-radius);
-
-    background-color: var(--dk-al-bg-clr);
-}
-
-.protocol-card .protocol-card-features .protocol-tl-layer {
-    border-radius: var(--dk-protocol-card-layer-bdr-radius);
-
-    background-color: var(--dk-tl-bg-clr);
-}
-
-.protocol-card .protocol-card-features .protocol-il-layer {
-    border-radius: var(--dk-protocol-card-layer-bdr-radius);
-
-    background-color: var(--dk-il-bg-clr);
-}
-
-.protocol-card .protocol-card-features .protocol-nal-layer {
-    border-radius: var(--dk-protocol-card-layer-bdr-radius);
-
-    background-color: var(--dk-nal-bg-clr);
-}
-
-.protocol-card .protocol-card-features .protocol-functions {
-    padding: 5px 0 5px 0;
-    
-    font-size: 15px;
-}
-
-.protocol-card .protocol-card-button {
-    padding: 10px 0 10px 0;
-
-    text-align: center;
+    color: var(--protocol-card-desc-txt-clr);
 }

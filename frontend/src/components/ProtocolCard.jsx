@@ -4,22 +4,18 @@ import { Button } from './Button';
 
 import './ProtocolCard.css';
 
-export function ProtocolCard({ icon, acronym, rep, tcpipLayer, layerClass, functions }) {
+export function ProtocolCard({ icon, acronym, rep, description }) {
     return (
         <div className='protocol-card'>
-            <div className='protocol-card-icon'>
-                <img src={icon} alt="" width={70}/>
-            </div>
-            <div className='protocol-card-features'>
-                <h3 className='protocol-card-acronym'>{acronym}</h3>
-                <p className='protocol-rep'>{rep}</p>
-                <div className='protocol-layer'>
-                    <p className={`protocol-${layerClass}`}>{tcpipLayer}</p>
+            <div className='protocol-card-wrapper'>
+                <div className='protocol-card-label'>
+                    <img src={icon} alt="" width={60}/>
+                    <div className='protocol-card-acronym'>
+                        <span className='acronym'>{acronym}</span>
+                        <p className='rep'>{rep}</p>
+                    </div>
                 </div>
-                <p className='protocol-functions'>{functions}</p>
-            </div>
-            <div className='protocol-card-button'>
-                <Button buttonText='Saber más' type='button'/>
+                <p className='protocol-card-desc'>{description}</p>
             </div>
         </div>
     );
