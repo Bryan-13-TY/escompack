@@ -26,13 +26,13 @@ export function Footer() {
                             <p>Contáctanos</p>
                             <div className='contact-social-media'>
                                 <a href='mailto:bgarciae1900@alumno.ipn-mx' target='_blank'>
-                                    <FontAwesomeIcon icon={faEnvelope} size='2x'/>
+                                    <FontAwesomeIcon icon={faEnvelope} size='2x' />
                                 </a>
                                 <a href='https://www.linkedin.com/in/bryan-alexis-garc%C3%ADa-escamilla-798512411/' target='_blank'>
-                                    <FontAwesomeIcon icon={faLinkedin} size='2x'/>
+                                    <FontAwesomeIcon icon={faLinkedin} size='2x' />
                                 </a>
                                 <a href='https://github.com/Bryan-13-TY' target='_blank'>
-                                    <FontAwesomeIcon icon={faGithub} size='2x'/>
+                                    <FontAwesomeIcon icon={faGithub} size='2x' />
                                 </a>
                             </div>
                         </div>

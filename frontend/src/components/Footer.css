@@ -9,7 +9,7 @@
 }
 
 :root.light {
-    --footer-bg-clr: #d3d3d3;
+    --footer-bg-clr: #e7e7e7;
     --footer-txt-clr: #1a1a1a;
     --footer-hvr-txt-clr: #021981;
 }
@@ -85,7 +85,6 @@ footer {
 
 /* ====== media queries ====== */
 
-/* pantalla con menos de 900 px de ancho */
 @media (max-width: 899px) {
     /* ====== estilos para el icono del footer ====== */
 
@@ -96,6 +95,8 @@ footer {
     .footer-content-wrapper .footer-content .footer-main-icon {
         display: none;
     }
+
+    /* ====== estilos para el contenido del footer ====== */
 
     .footer-wrapper .footer-content-wrapper {
         justify-content: center; /* alinea verticalmente */
@@ -109,7 +110,6 @@ footer {
     }
 }
 
-/* pantalla con más de 900 px de ancho */
 @media (min-width: 900px) {
     /* ====== estilos para el icono del footer ====== */
 
@@ -120,6 +120,8 @@ footer {
     .footer-content-wrapper .footer-content .footer-main-icon {
         display: block;
     }
+
+    /* ====== estilos para el contenido del footer ====== */
 
     .footer-content-wrapper .footer-content {
         flex-direction: row;
