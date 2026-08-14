@@ -1,37 +1,51 @@
 :root {
-    /* ====== variables para el modo oscuro ====== */
+    --btn-bdr: none;
+    --btn-pdng: 10px;
+    --btn-bdr-radius: 5px;
 
-    /* variables para el botón */
-    --dk-btn-bg-clr: #ffd34d;
-    --dk-btn-bg-hvr-clr: #caa400;
-    --dk-btn-txt-clr: #12152D;
-    --dk-btn-bdr: none;
-    --dk-btn-pddng: 10px 20px;
-    --dk-btn-bdr-radius: 5px;
-
-    /* variables para el icono del botón */
-    --dk-btn-icon-margin-left: 5px;
-
-    /* ====== variables para el modo claro ====== */
     --btn-fnt-family: 'Cascadia Code', monospace;
 }
 
-.cstm-btn {
-    border: var(--dk-btn-bdr);
-    padding: var(--dk-btn-pddng);
-    border-radius: var(--dk-btn-bdr-radius);
+:root.dark {
+    --btn-bg-clr: #0080d0;
+    --btn-bg-hvr-clr: #006fb5;
+    --btn-txt-clr: #dedede;
+    --btn-hvr-txt-clr: #ffffff;
+}
 
-    color: var(--dk-btn-txt-clr);
+:root.light {
+    --btn-bg-clr: #021981;
+    --btn-bg-hvr-clr: #001ea4;
+    --btn-txt-clr: #dedede;
+    --btn-hvr-txt-clr: #ffffff;
+}
+
+.custom-btn {
+    border: var(--btn-bdr);
+    border-radius: var(--btn-bdr-radius);
+    padding: var(--btn-pdng);
+    
+    text-align: center;
+    color: var(--btn-txt-clr);
     font-family: var(--btn-fnt-family);
-    cursor: pointer;
 
-    background-color: var(--dk-btn-bg-clr);
+    background-color: var(--btn-bg-clr);
 }
 
-.cstm-btn:hover {
-    background-color: var(--dk-btn-bg-hvr-clr);
+.custom-btn:hover {
+    color: var(--btn-hvr-txt-clr);
+
+    background-color: var(--btn-bg-hvr-clr);
 }
 
-.cstm-btn .cstm-btn-icon {
-    margin-left: 5px;
+.custom-btn span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* alinea horizontalmente */
+    align-items: center; /* alinea verticalmente */
+    gap: 5px;
+}
+
+span p {
+    margin: 0;
 }

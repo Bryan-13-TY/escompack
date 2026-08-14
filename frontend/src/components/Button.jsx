@@ -5,11 +5,11 @@ import './Button.css';
 
 export function Button({ buttonText, type = 'button' }) {
     return (
-        <button type={type} className='cstm-btn'>
+        <button type={type} className='custom-btn'>
             <span>
-                {buttonText}
+                <p>{buttonText}</p>
                 <FontAwesomeIcon
-                    className='cstm-btn-icon'
+                    className='custom-btn-icon'
                     icon={faArrowRight}
                 />
             </span>

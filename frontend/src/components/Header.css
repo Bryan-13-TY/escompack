@@ -1,0 +1,219 @@
+:root {
+    --header-hamburguer-menu-btn-bdr-radius: 5px;
+    --header-hamburguer-menu-btn-pdng: 10px;
+    --header-hamburguer-menu-btn-txt-clr: #dedede;
+    --header-hamburguer-menu-btn-hvr-txt-clr: #ffffff;
+
+    --header-theme-mode-btn-bdr-radius: 5px;
+    --header-theme-mode-btn-pdng: 10px;
+    --header-theme-mode-btn-txt-clr: #dedede;
+    --header-theme-mode-btn-hvr-txt-clr: #ffffff;
+
+    --header-nav-pdng: 5px;
+    --header-fnt-family: 'Cascadia Code', monospace;
+}
+
+:root.dark {
+    --header-bg-clr: #1a1a1a;
+
+    --header-hamburguer-menu-btn-bg-clr: #0080d0;
+    --header-hamburguer-menu-btn-hvr-bg-clr: #006fb5;
+
+    --header-icon-escom-txt-clr: #0080d0;
+    --header-icon-pack-txt-clr: #dedede;
+    --header-icon-hvr-text-color: #0080d0;
+
+    --header-nav-element-txt-clr: #dedede;
+    --header-nav-element-hvr-txt-clr: #0080d0;
+
+    --header-nav-hr-hvr-bdr-bottom: 1px solid #0080d0;
+
+    --header-theme-mode-btn-bg-clr: #0080d0;
+    --header-theme-mode-btn-hvr-bg-clr: #006fb5;
+}
+
+:root.light {
+    --header-bg-clr: #ededed;
+
+    --header-hamburguer-menu-btn-bg-clr: #021981;
+    --header-hamburguer-menu-btn-hvr-bg-clr: #001ea4;
+
+    --header-icon-escom-txt-clr: #021981;
+    --header-icon-pack-txt-clr: #1a1a1a;
+    --header-icon-hvr-text-color: #021981;
+
+    --header-nav-element-txt-clr: #1a1a1a;
+    --header-nav-element-hvr-txt-clr: #021981;
+
+    --header-nav-hr-hvr-bdr-bottom: 1px solid #021981;
+
+    --header-theme-mode-btn-bg-clr: #021981;
+    --header-theme-mode-btn-hvr-bg-clr: #001ea4;
+}
+
+header {
+    margin: 0;
+}
+
+.header-wrapper {
+    padding: 10px 20px;
+
+    font-family: var(--header-fnt-family);
+
+    background-color: var(--header-bg-clr);
+}
+
+.header-wrapper .header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* alinea verticalmente */
+}
+
+.header-content .header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; /* alinea verticalmente */
+    gap: 25px;
+}
+
+/* ====== estilos para el menú de hamburguesa ====== */
+
+.header-nav  .hamburguer-menu-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:  none;
+    border-radius: var(--header-hamburguer-menu-btn-bdr-radius);
+    padding: var(--header-hamburguer-menu-btn-pdng);
+
+    text-align: center;
+    color: var(--header-hamburguer-menu-btn-txt-clr);
+    cursor: pointer;
+
+    background-color: var(--header-hamburguer-menu-btn-bg-clr);
+}
+
+.header-nav  .hamburguer-menu-button:hover {
+    color: var(--header-hamburguer-menu-btn-hvr-txt-clr);
+
+    background-color: var(--header-hamburguer-menu-btn-hvr-bg-clr);
+}
+
+/* ====== estilos para el icono ====== */
+
+.header-nav .header-icon a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; /* alinea verticalmente */
+    gap: 10px;
+
+    text-decoration: none;
+}
+
+.header-nav .header-icon a:hover .header-image-desc .desc-pack {
+    color: var(--header-icon-hvr-text-color);
+}
+
+.header-icon a .header-image-desc {
+    font-weight: bold;
+}
+
+.header-image-desc .desc-escom {
+    color: var(--header-icon-escom-txt-clr);
+}
+
+.header-image-desc .desc-pack {
+    color: var(--header-icon-pack-txt-clr);
+}
+
+/* ====== estilos para el nav ====== */
+
+.nav-wrapper nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* alinea horizontalmente */
+    align-items: center; /* alinea verticalmente */
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+
+    text-align: center;
+    list-style: none;
+}
+
+nav ul a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: 5px;
+
+    text-decoration: none;
+    text-align: center;
+    color: var(--header-nav-element-txt-clr);
+}
+
+ul a hr {
+    width: 100%;
+    margin: 0;
+    display: none;
+}
+
+nav ul a:hover {
+    color: var(--header-nav-element-hvr-txt-clr);
+}
+
+nav ul a:hover hr {
+    border: var(--header-nav-hr-hvr-bdr-bottom);
+    display: block;
+}
+
+/* ====== estilos para el botón del tema ====== */
+
+.header-content .theme-mode-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:  none;
+    border-radius: var(--header-theme-mode-btn-bdr-radius);
+    padding: var(--header-theme-mode-btn-pdng);
+
+    text-align: center;
+    color: var(--header-theme-mode-btn-txt-clr);
+    cursor: pointer;
+
+    background-color: var(--header-theme-mode-btn-bg-clr);
+}
+
+.header-content .theme-mode-button:hover {
+    color: var(--header-theme-mode-btn-hvr-txt-clr);
+
+    background-color: var(--header-theme-mode-btn-hvr-bg-clr);
+}
+
+/* ====== media queries ====== */
+
+/* pantalla con menos de 900 px de ancho */
+@media (max-width: 899px) {
+    .header-nav  .hamburguer-menu-button {
+        display: inline-block;
+    }
+
+    .header-nav  .nav-wrapper {
+        display: none;
+    }
+}
+
+/* pantalla con más de 900 px de ancho */
+@media (min-width: 900px) {
+    .header-nav  .hamburguer-menu-button {
+        display: none;
+    }
+
+    .header-nav  .nav-wrapper {
+        display: block;
+    }
+}

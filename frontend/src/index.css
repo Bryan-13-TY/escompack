@@ -1,5 +1,9 @@
-:root {
-    --page-background: #12152D;
+:root.dark {
+    --bg-clr-default: #1a1a1a;
+}
+
+:root.light {
+    --bg-clr-default: #ededed;
 }
 
 * {
@@ -16,8 +20,5 @@ html body {
 }
 
 body {
-    background: url('./assets/background-v5.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: var(--bg-clr-default);
 }

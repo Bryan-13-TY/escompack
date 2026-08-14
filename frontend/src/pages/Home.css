@@ -1,0 +1,163 @@
+:root {
+    --home-fnt-family: 'Cascadia Code', monospace;
+}
+
+:root.dark {
+    --welcome-bg: linear-gradient(to top, rgba(33, 33, 33, 0.7), rgb(26, 26, 26, 0.3)), url('../assets/backgrounds/background-v3.jpg');
+    --welcome-txt-clr: #dedede;
+    --welcome-escom-txt-clr: #0080d0;
+    --welcome-pack-txt-clr: #dedede;
+    --welcome-txt-clr-desc: #d3d3d3;
+
+    --operation-cards-bg-clr: #1a1a1a;
+
+    --protocol-cards-txt-clr: #dedede;
+}
+
+:root.light {
+    --welcome-bg: linear-gradient(to top, rgba(211, 211, 211, 0.7), rgb(237, 237, 237, 0.3)), url('../assets/backgrounds/background-v3.jpg');
+    --welcome-txt-clr: #1a1a1a;
+    --welcome-escom-txt-clr: #021981;
+    --welcome-pack-txt-clr: #1a1a1a;
+    --welcome-txt-clr-desc: #212121;
+
+    --operation-cards-bg-clr: #ededed;
+
+    --protocol-cards-txt-clr: #1a1a1a;
+}
+
+main {
+    margin: 0;
+}
+
+/* ====== sección para la bienvenida ====== */
+
+.welcome-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: 20px;
+    padding: 70px 20px;
+    border-radius: 5px;
+
+    font-family: var(--home-fnt-family);
+    text-align: center;
+
+    background: var(--welcome-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.welcome-wrapper p,
+.welcome-wrapper .summary,
+.welcome-wrapper .description {
+    margin: 0;
+    color: var(--welcome-txt-clr);
+}
+
+.welcome-wrapper .welcome {
+    white-space: pre-line;
+    font-size: 4rem;
+}
+
+.welcome .welcome-escom,
+.welcome .welcome-pack {
+    font-weight: bold;
+}
+
+.welcome .welcome-escom {
+    color: var(--welcome-escom-txt-clr);
+}
+
+.welcome .welcome-pack {
+    color: var(--welcome-pack-txt-clr);
+}
+
+.welcome-wrapper .summary {
+    white-space: pre-line;
+}
+
+.welcome-wrapper .description {
+    color: var(--welcome-txt-clr-desc);
+}
+
+/* ====== sección para las tarjetas de operación ====== */
+
+.operation-cards-wrapper {
+    display: flex;
+    gap: 30px;
+    padding: 40px 30px;
+
+    background-color: var(--operation-cards-bg-clr);
+}
+
+/* ====== sección para las tarjetas de protocolo ====== */
+
+.protocol-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 20px;
+    padding: 40px 30px;
+
+    font-family: var(--home-fnt-family);
+}
+
+.protocol-cards-wrapper h2 {
+    margin: 0;
+
+    color: var(--protocol-cards-txt-clr);
+}
+
+.cards-wrapper {
+    display: grid;
+    gap: 30px;
+}
+
+/* ====== media queries ====== */
+
+@media (max-width: 720px) {
+    .cards-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 721px) and (max-width: 1200px) {
+    .cards-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1201px) {
+    .cards-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 950px) {
+    .operation-cards-wrapper {
+        flex-direction: column;
+        justify-content: center; /* alinea verticalmente */
+    }
+
+    .operation-cards-wrapper > * {
+        width: auto;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media (min-width: 950px) {
+    .operation-cards-wrapper {
+        flex-direction: row;
+        justify-content: center; /* alinea horizontalmente */
+        align-items: stretch; /* ocupa el mismo ancho */
+    }
+
+    .operation-cards-wrapper > * {
+        max-width: 400px;
+        min-width: 200px;
+    }
+}

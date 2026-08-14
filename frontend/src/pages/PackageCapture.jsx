@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-import { NabVar } from '../components/NavBar';
+import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { PROTOCOLS } from '../constants';
 import { Button } from '../components/Button';
@@ -64,7 +64,7 @@ export function PackageCapture() {
 
     return (
         <>
-            <NabVar />
+            <Header />
             <main>
                 <section className='capture-form-section'>
                     <form className='capture' onSubmit={handleSubmit}>
