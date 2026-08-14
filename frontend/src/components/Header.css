@@ -1,10 +1,10 @@
 :root {
-    --header-hamburguer-menu-btn-bdr-radius: 10px;
+    --header-hamburguer-menu-btn-bdr-radius: 5px;
     --header-hamburguer-menu-btn-pdng: 10px;
     --header-hamburguer-menu-btn-txt-clr: #dedede;
     --header-hamburguer-menu-btn-hvr-txt-clr: #ffffff;
 
-    --header-theme-mode-btn-bdr-radius: 10px;
+    --header-theme-mode-btn-bdr-radius: 5px;
     --header-theme-mode-btn-pdng: 10px;
     --header-theme-mode-btn-txt-clr: #dedede;
     --header-theme-mode-btn-hvr-txt-clr: #ffffff;
@@ -25,8 +25,8 @@
 
     --header-nav-element-txt-clr: #dedede;
     --header-nav-element-hvr-txt-clr: #0080d0;
-    --header-nav-element-bdr: 2px solid #1a1a1a;
-    --header-nav-element-hvr-bdr-bottom: 2px solid #0080d0;
+
+    --header-nav-hr-hvr-bdr-bottom: 1px solid #0080d0;
 
     --header-theme-mode-btn-bg-clr: #0080d0;
     --header-theme-mode-btn-hvr-bg-clr: #006fb5;
@@ -44,8 +44,8 @@
 
     --header-nav-element-txt-clr: #1a1a1a;
     --header-nav-element-hvr-txt-clr: #021981;
-    --header-nav-element-bdr: 2px solid #ededed;
-    --header-nav-element-hvr-bdr-bottom: 2px solid #021981;
+
+    --header-nav-hr-hvr-bdr-bottom: 1px solid #021981;
 
     --header-theme-mode-btn-bg-clr: #021981;
     --header-theme-mode-btn-hvr-bg-clr: #001ea4;
@@ -134,7 +134,7 @@ header {
 .nav-wrapper nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center; /* alinea horizontalmente */
     align-items: center; /* alinea verticalmente */
     margin: 0;
     padding: 0;
@@ -145,18 +145,30 @@ header {
 }
 
 nav ul a {
-    border: var(--header-nav-element-bdr);
-    padding: var(--header-nav-pdng);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: 5px;
 
     text-decoration: none;
     text-align: center;
     color: var(--header-nav-element-txt-clr);
 }
 
-nav ul a:hover {
-    border-bottom: var(--header-nav-element-hvr-bdr-bottom);
+ul a hr {
+    width: 100%;
+    margin: 0;
+    display: none;
+}
 
+nav ul a:hover {
     color: var(--header-nav-element-hvr-txt-clr);
+}
+
+nav ul a:hover hr {
+    border: var(--header-nav-hr-hvr-bdr-bottom);
+    display: block;
 }
 
 /* ====== estilos para el botón del tema ====== */

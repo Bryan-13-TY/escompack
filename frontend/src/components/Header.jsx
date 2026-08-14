@@ -59,9 +59,18 @@ export function Header() {
                         <div className='nav-wrapper'>
                             <nav>
                                 <ul>
-                                    <Link to={'/'}><li className='nav-element'>Inicio</li></Link>
-                                    <Link to={'/'}><li className='nav-element'>Captura</li></Link>
-                                    <Link to={'/'}><li className='nav-element'>Manipulación</li></Link>
+                                    <Link to={'/home'}>
+                                        <li className='nav-element'>Inicio</li>
+                                        <hr />
+                                    </Link>
+                                    <Link to={'/capture'}>
+                                        <li className='nav-element'>Captura</li>
+                                        <hr />
+                                    </Link>
+                                    <Link to={'/manipulation'}>
+                                        <li className='nav-element'>Manipulación</li>
+                                        <hr />
+                                    </Link>
                                 </ul>
                             </nav>
                         </div>
