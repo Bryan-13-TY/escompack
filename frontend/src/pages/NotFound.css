@@ -1,51 +1,66 @@
 :root {
-    --not-found-icon-txt-clr: #ecf9ff;
-    --not-found-title-txt-clr: #dedede;
-    --not-found-subtitle-txt-clr: #c5c5c5;
     --not-found-fnt-family: 'Cascadia Code', monospace;
+}
+
+:root.dark {
+    --not-found-bg-clr: #1a1a1a;
+    --not-found-icon-txt-clr: #dedede;
+    --not-found-404-txt-clr: #dedede;
+    --not-found-subtitle-txt-clr: #d3d3d3;
+}
+
+:root.light {
+    --not-found-bg-clr: #ededed;
+    --not-found-icon-txt-clr: #1a1a1a;
+    --not-found-404-txt-clr: #1a1a1a;
+    --not-found-subtitle-txt-clr: #212121;
 }
 
 main {
     margin: 0;
 }
 
-.not-found-wrapper {
-    background: url('../assets/background-v7.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.not-found-icon {
-    color: var(--not-found-txt-clr);
-}
-
-.not-found-title {
+.content-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center; /* alinea verticalmente */
     align-items: center; /* alinea horizontalmente */
-    gap: 20px;
-    padding: 130px 0;
+    gap: 30px;
+    padding: 70px 20px;
+    width: 100vw;
+    height: 100vh;
 
     font-family: var(--not-found-fnt-family);
+
+    background-color: var(--not-found-bg-clr);
 }
 
-.not-found-title h1,
-.not-found-title h2 {
-    margin: 0;
-}
-
-.not-found-title svg {
+.content-wrapper .content-icon {
     color: var(--not-found-icon-txt-clr);
 }
 
-.not-found-title h1 {
-    font-size: 3.5rem;
-    color: var(--not-found-title-txt-clr);
+.content-wrapper .content-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* aliena verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: 10px;
+
+    text-align: center;
 }
 
-.not-found-title h2 {
+.content-desc h1,
+.content-desc h2 {
+    margin: 0;
+}
+
+.content-desc h1 {
+    font-weight: bold;
+    font-size: 4.5rem;
+    color: var(--not-found-404-txt-clr);
+}
+
+.content-desc h2 {
     font-size: 2.5rem;
     color: var(--not-found-subtitle-txt-clr);
 }

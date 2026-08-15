@@ -12,6 +12,7 @@
     --operation-cards-bg-clr: #1a1a1a;
 
     --protocol-cards-txt-clr: #dedede;
+    --protocol-cards-bg-clr: #1a1a1a;
 }
 
 :root.light {
@@ -24,6 +25,7 @@
     --operation-cards-bg-clr: #ededed;
 
     --protocol-cards-txt-clr: #1a1a1a;
+    --protocol-cards-bg-clr: #ededed;
 }
 
 main {
@@ -103,6 +105,8 @@ main {
     padding: 40px 30px;
 
     font-family: var(--home-fnt-family);
+
+    background-color: var(--protocol-cards-bg-clr);
 }
 
 .protocol-cards-wrapper h2 {
