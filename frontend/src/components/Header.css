@@ -15,6 +15,7 @@
 
 :root.dark {
     --header-bg-clr: #1a1a1a;
+    --header-bdr-bottom: 2px solid #2d2d2d;
 
     --header-hamburguer-menu-btn-bg-clr: #0080d0;
     --header-hamburguer-menu-btn-hvr-bg-clr: #006fb5;
@@ -34,6 +35,7 @@
 
 :root.light {
     --header-bg-clr: #ededed;
+    --header-bdr-bottom: 2px solid #c1c1c1;
 
     --header-hamburguer-menu-btn-bg-clr: #021981;
     --header-hamburguer-menu-btn-hvr-bg-clr: #001ea4;
@@ -56,6 +58,7 @@ header {
 }
 
 .header-wrapper {
+    border-bottom: var(--header-bdr-bottom);
     padding: 10px 20px;
 
     font-family: var(--header-fnt-family);
