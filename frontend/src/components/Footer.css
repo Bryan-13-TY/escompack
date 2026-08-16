@@ -6,12 +6,14 @@
     --footer-bg-clr: #212121;
     --footer-txt-clr: #dedede;
     --footer-hvr-txt-clr: #0080d0;
+    --footer-bdr-top: 2px solid #2d2d2d;
 }
 
 :root.light {
     --footer-bg-clr: #e7e7e7;
     --footer-txt-clr: #1a1a1a;
     --footer-hvr-txt-clr: #021981;
+    --footer-bdr-top: 2px solid #c1c1c1;
 }
 
 footer {
@@ -19,6 +21,7 @@ footer {
 }
 
 .footer-wrapper {
+    border-top: var(--footer-bdr-top);
     padding: 10px 20px;
 
     font-family: var(--footer-fnt-family);
