@@ -1,3 +1,9 @@
-from .capture_request import CaptureRequest
+from .capture_request import (
+    Protocols,
+    CaptureRequest,
+)
 
-__all__ = ["CaptureRequest"]
+__all__ = [
+    "Protocols",
+    "CaptureRequest",
+]

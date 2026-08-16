@@ -1,3 +1,13 @@
+"""Módulo con el router para el Websocket para la captura de paquetes
+en tiempo real.
+
+Este módulo incluye el endpoint `/ws/capture/` que abre un Websocket
+entre el navegador (frontend) y el servidor (API), es decir abre un
+canal bidireccional. Esto permite que el frontend y el backend se
+envíen datos al mismo tiempo sin necesidad de pedir información
+repetidamente logrando así una velocidad en tiempo real. 
+"""
+
 from fastapi import (
     APIRouter,
     WebSocket,
@@ -13,10 +23,47 @@ router_ws = APIRouter(prefix="/ws/capture", tags=["Captura"])
 
 @router_ws.websocket("/")
 async def _websocket_captue(websocket: WebSocket):
+    """
+    Endpoint con un Websocket para la captura de paquetes de red en
+    tiempo real.
+
+    Creamos un Websocket para abrir un canal bidireccional entre el
+    frontend y el backend, para que por medio de una sola petición
+    la API pueda transmitirle al frontend los paquetes al mismo
+    tiempo que se van capturando logrando así una velocidad en
+    tiempo real.
+
+    Para ello tomamos los atributos `packets_to_capture` y `protocol`
+    de la instancia compartida de la dataclase `CaptureState` en donde
+    se guardan los atributos de la petición del frontend
+    (`CaptureRequest`), para tomar la cantidad de paquetes a capturar
+    y el protocolo respectivamente.
+
+    Para filtrar los paquetes por protocolo usamos su filtro BPF
+    correspondiente.
+
+    Cuando se capture un paquete, el endpoint devolvera un objeto con
+    las claves: `number`, `origin`, `destination`, `protocol`, `lenght`
+    y `summary` de los cuales se tomará el valor de cada uno y se
+    colocará en una tabla para representar el paquete capturado.
+
+    Nota: El valor de la clave `protocol` contiene la última capa
+    del paquete o capas genericas en caso de que no se pueda
+    determinar.
+
+    Cuando la captura de todos los paquetes termine el canal se
+    cerrará.
+    """
     await websocket.accept()
     loop = asyncio.get_event_loop()
 
     def _packect_process(pkt):
+        """
+        Función que se encarga de procesar el paquete capturado `pkt`
+        obtendiendo de el su origen, destino, protocolo, tamaño y un
+        resumen de su contenido para estructurarlo en un diccionario
+        y enviarlo al frontend a través del canal creado.
+        """
         summary = {
             "number": _packect_process.count,
             "origin": pkt[0][1].src if pkt.haslayer("Ether") else None,
