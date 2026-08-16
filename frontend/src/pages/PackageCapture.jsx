@@ -51,7 +51,7 @@ export function PackageCapture() {
 
         const formData = new FormData(e.target);
         const data = {
-            packets: formData.get('capture-packets'),
+            packets: formData.get('packets-number'),
             protocol: protocolSelected, // Pasamos el valor del estado direectamente
         };
         
