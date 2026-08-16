@@ -1,168 +1,316 @@
 :root {
-    /* ====== variables para el modo oscuro ====== */
+    --pkt-capture-fnt-family: 'Cascadia Code', monospace;
+}
 
-    /* variables para la sección del formulario */
-    --dk-form-section-bg-clr: #f2efe81b;
-    --dk-form-section-bdr: 2px solid #f2efe81b;
-    --dk-form-section-bdr-radius: 15px;
-    --dk-form-section-txt-clr: #f2efe8;
+:root.dark {
+    --pkts-form-bg-clr: #212121;
+    --pkts-form-bdr: 2px solid #2d2d2d;
 
-    --dk-form-section-input-bg-clr: #f2efe8;
+    --pkts-input-label-txt-clr: #dedede;
+    --pkts-input-bdr: 2px solid #2d2d2d;
+    --pkts-input-bg-clr: #282828;
+    --pkts-input-txt-clr: #d3d3d3;
 
-    --dk-protocol-card-select-bg-clr: #f2efe81b;
-    --dk-protocol-card-select-bg-hvr-clr: #f2efe847;
-    --dk-protocol-card-select-bg-selected-clr: #f2efe847;
+    --pkts-target-protocol-label-txt-clr: #dedede;
+    --pkts-target-protocol-icon-txt-clr: #d3d3d3;
 
-    /* variables para la sección de paquetes capturados */
-    --dk-capture-section-bg-clr: #f2efe81b;
-    --dk-capture-section-bdr: 2px solid #f2efe81b;
-    --dk-capture-section-bdr-radius: 15px;
-    --dk-capture-section-txt-clr: #f2efe8;
+    --pkts-target-protocol-bdr: 2px solid #2d2d2d;
+    --pkts-target-protocol-bg-clr: #282828;
+    --pkts-target-protocol-selected-bg-clr: #343333;
+    --pkts-target-protocol-hvr-bg-clr: #343333;
 
-    /* ====== variables para el modo claro ====== */
+    --pkts-capture-progress-bg-clr: #212121;
+    --pkts-capture-progress-bdr: 2px solid #2d2d2d;
+    --pkts-capture-progress-label-txt-clr: #dedede;
+    --pkts-capture-progress-porcent-txt-clr: #0080d0;
+    --pkts-capture-progress-total-txt-clr: #d3d3d3; 
 
-    /* variables genericas */
-    --form-section-fnt-family: 'Cascadia Code', monospace;
+    --pkts-progress-bar-bg-clr: #282828;
+    --pkts-progress-bar-porcent-bg-clr: #0080d0;
+
+    --pkts-table-capture-bdr: 2px solid #2d2d2d;
+    --pkts-table-capture-thead-bg-clr: #212121;
+    --pkts-table-capture-tbody-bg-clr: #282828;
+    --pkts-table-capture-thead-txt-clr: #dedede;
+    --pkts-table-capture-tbody-txt-clr: #d3d3d3;
+}
+
+:root.light {
+    --pkts-form-bg-clr: #e7e7e7;
+    --pkts-form-bdr: 2px solid #c1c1c1;
+
+    --pkts-input-label-txt-clr: #1a1a1a;
+    --pkts-input-bdr: 2px solid #c1c1c1;
+    --pkts-input-bg-clr: #f6f3f3;
+    --pkts-input-txt-clr: #212121;
+
+    --pkts-target-protocol-label-txt-clr: #1a1a1a;
+    --pkts-target-protocol-icon-txt-clr: #212121;
+
+    --pkts-target-protocol-bdr: 2px solid #c1c1c1;
+    --pkts-target-protocol-bg-clr: #f6f3f3;
+    --pkts-target-protocol-selected-bg-clr: #d9d9d9;
+    --pkts-target-protocol-hvr-bg-clr: #d9d9d9;
+
+    --pkts-capture-progress-bg-clr: #e7e7e7;
+    --pkts-capture-progress-bdr: 2px solid #c1c1c1;
+    --pkts-capture-progress-label-txt-clr: #1a1a1a;
+    --pkts-capture-progress-porcent-txt-clr: #021981;
+    --pkts-capture-progress-total-txt-clr: #212121; 
+
+    --pkts-progress-bar-bg-clr: #f6f3f3;
+    --pkts-progress-bar-porcent-bg-clr: #021981;
+
+    --pkts-table-capture-bdr: 2px solid #c1c1c1;
+    --pkts-table-capture-thead-bg-clr: #e7e7e7;
+    --pkts-table-capture-tbody-bg-clr: #f6f3f3;
+    --pkts-table-capture-thead-txt-clr: #1a1a1a;
+    --pkts-table-capture-tbody-txt-clr: #212121;
 }
 
 main {
     margin: 0;
 }
 
-/* ====== estilos para el formulario de captura ====== */
+/* ===== sección para el formulario de captura ====== */
 
-.capture-form-section .capture {
-    border: var(--dk-form-section-bdr);
-    border-radius: var(--dk-form-section-bdr-radius);
-    padding: 20px;
-
-    color: var(--dk-form-section-txt-clr);
-    font-family: var(--form-section-fnt-family);
-
-    background-color: var(--dk-form-section-bg-clr);
-    backdrop-filter: blur(8px);
-    
-}
-
-.capture-form-section .capture .capture-packets-info,
-.capture-form-section .capture .capture-protocol-selection {
-    padding: 10px;
-}
-
-/* input txt del formulario */
-.capture-form-section .capture .capture-packets-info {
+.form-wrapper {
+    /*border: 2px solid yellow;*/
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-}
-
-.capture-form-section .capture .capture-packets-info input {
-    border: none;
-    border-radius: 5px;
-    min-width: 50px;
-    max-width: 100px;
-    height: 20px;
-
-    font-family: var(--form-section-fnt-family);
-    text-align: center;
-
-    background-color: var(--dk-form-section-input-bg-clr);
-}
-
-/* grilla de los protocolos del formulario */
-.protocol-grid {
-    display: grid;
-}
-
-.protocol-grid .protocol-card-select {
-    border-radius: 15px;
-    padding: 10px;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 30px;
     
-    cursor: pointer;
-
-    background-color: var(--dk-protocol-card-select-bg-clr);
+    font-family: var(--pkt-capture-fnt-family);
 }
 
-.protocol-grid .selected {
-    background-color: var(--dk-protocol-card-select-bg-selected-clr);
+.form-wrapper form {
+    border: var(--pkts-form-bdr);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+
+    background-color: var(--pkts-form-bg-clr);
 }
 
-.protocol-grid .protocol-card-select:hover {
-    background-color: var(--dk-protocol-card-select-bg-hvr-clr);
+/* estilos para el input del número de paquetes */
+form .packets-capture {
+    display: flex;
+    gap: 10px;
+
 }
 
-.protocol-grid .protocol-card-select input {
+.packets-capture .packets-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.packets-input label {
+    color: var(--pkts-input-label-txt-clr);
+}
+
+.packets-input input {
+    border: var(--pkts-input-bdr);
+    border-radius: 5px;
+    padding: 10px;
+
+    color: var(--pkts-input-txt-clr);
+    font-family: var(--pkt-capture-fnt-family);
+
+    background-color: var(--pkts-input-bg-clr);
+}
+
+/* estilos para la grilla con los protocolos */
+.packets-protocol-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 8px;
+}
+
+.packets-protocol-wrapper p {
+    margin: 0;
+
+    color: var(--pkts-target-protocol-label-txt-clr);
+}
+
+.target-protocol-wrapper {
+    display: grid;
+    gap: 15px;
+}
+
+.target-protocol-wrapper .target-protocol input {
     display: none;
 }
 
-.protocol-grid .protocol-card-select .protocol-content {
+.target-protocol .protocol-content {
+    border: var(--pkts-target-protocol-bdr);
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* alinea verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: 8px;
+    padding: 8px;
+
+    color: var(--pkts-target-protocol-icon-txt-clr);
+    background-color: var(--pkts-target-protocol-bg-clr);
+
 }
 
-/* botón del formulario */
-.capture-button {
+.selected .protocol-content {
+    background-color: var(--pkts-target-protocol-selected-bg-clr);
+}
+
+.target-protocol:hover .protocol-content {
+    background-color: var(--pkts-target-protocol-hvr-bg-clr);
+}
+
+/* estilos para la barra de progreso */
+.capture-progress {
+    border: var(--pkts-capture-progress-bdr);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 8px;
+    padding: 30px;
+
+    background-color: var(--pkts-capture-progress-bg-clr);
+}
+
+.capture-progress p {
+    margin: 0;
+}
+
+.capture-progress .progress-total {
+    color: var(--pkts-capture-progress-total-txt-clr);
+}
+
+.progress-porcent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* alinea verticalmente */
+}
+
+.progress-porcent .progress-label {
+    color: var(--pkts-capture-progress-label-txt-clr);
+}
+
+.progress-porcent .porcent {
+    font-weight: bold;
+    color: var(--pkts-capture-progress-porcent-txt-clr);
+}
+
+.progress-bar {
+    /* revisar después */
+    border-radius: 5px;
+    height: 5px;
+    width: 100%;
+    overflow: hidden;
+
+    background-color: var(--pkts-progress-bar-bg-clr);
+}
+
+.progress-bar .bar-porcent {
+    /* revisar después */
+    background-color: var(--pkts-progress-bar-porcent-bg-clr);
+    width: 45%;
+    height: 100%;
+}
+
+/* ====== sección para la tabla de captura ====== */
+
+.table-wrapper {
+    /*border: 2px solid yellow;*/
+    padding: 40px 30px;
+    width: 100%;
+    overflow-x: auto;
+
+    font-family: var(--pkt-capture-fnt-family);
+}
+
+.table-wrapper table {
+    border: var(--pkts-table-capture-bdr);
+    border-collapse: collapse; /* une los bordes de la tabla */
+    width: 100%;
+    min-width: 1200px; /* si es menor aparece el scroll */
+}
+
+.table-wrapper table thead tr {
+    color: var(--pkts-table-capture-thead-txt-clr);
+
+    background-color: var(--pkts-table-capture-thead-bg-clr);
+}
+
+.table-wrapper table thead tr th,
+.table-wrapper table tbody tr td {
     padding: 10px;
-
-    text-align: center;
+    
+    text-align: left;
 }
 
-/* ====== estilos para los paquetes capturados  ====== */
+.table-wrapper table tbody tr {
+    color: var(--pkts-table-capture-tbody-txt-clr);
 
-.capture-packets-section {
-    padding: 60px 30px 60px 30px;
-    border: 2px solid red;
+    background-color: var(--pkts-table-capture-tbody-bg-clr);
 }
 
-.capture-packets-section .packets {
-    border: var(--dk-capture-section-bdr);
-    border-radius: var(--dk-capture-section-bdr-radius);
-    padding: 20px;
-
-    color: var(--dk-capture-section-txt-clr);
-
-    background-color: var(--dk-capture-section-bg-clr);
-    backdrop-filter: blur(8px);
-}
 
 /* ====== media queries ====== */
 
-@media (max-width: 654px) {
-    .protocol-grid {
+@media (max-width: 900px) {
+    form .packets-capture {
+        flex-direction: column;
+        justify-content: center; /* alinea verticalmente */
+    }
+
+}
+
+@media (min-width: 901px) {
+    form .packets-capture {
+        flex-direction: row;
+    }
+
+    .packets-capture .packets-input {
+        flex: 3;
+    }
+
+    .packets-capture button {
+        width: 120px;
+    }
+}
+
+@media (max-width: 650px) {
+    .form-wrapper {
+        padding: 40px 40px;
+    }
+
+    .target-protocol-wrapper {
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 15px;
-        row-gap: 15px;
-    }
-
-    .capture-form-section {
-        padding: 60px 70px;
     }
 }
 
-@media (min-width: 655px) and (max-width: 1150px) {
-    .protocol-grid {
+@media (min-width: 650px) and (max-width: 1150px) {
+    .form-wrapper {
+        padding: 40px 80px;
+    }
+
+    .target-protocol-wrapper {
         grid-template-columns: repeat(4, 1fr);
-        column-gap: 15px;
-        row-gap: 15px;
-    }
-
-    .capture-form-section {
-        padding: 60px 80px;
     }
 }
 
-@media (min-width: 1151px) {
-    .protocol-grid {
-        grid-template-columns: repeat(8, 1fr);
-        column-gap: 15px;
-        row-gap: 15px;
+@media (min-width: 1150px) {
+    .form-wrapper {
+        padding: 40px 130px;
     }
 
-    .capture-form-section {
-        padding: 60px 100px;
+    .target-protocol-wrapper {
+        grid-template-columns: repeat(8, 1fr);
     }
 }

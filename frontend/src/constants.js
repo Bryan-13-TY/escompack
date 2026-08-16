@@ -25,14 +25,14 @@ export const THEME_MODE_ICON = {
 }
 
 export const PROTOCOLS = [
-    { id: "arp", label: "ARP", darkicon: darkArpIcon, lighticon: lightArpIcon, },
-    { id: "icmp", label: "ICMP", darkicon: darkIcmpIcon, lighticon: lightIcmpIcon, },
-    { id: "igmp", label: "IGMP", darkicon: darkIgmpIcon, lighticon: lightIgmpIcon, },
-    { id: "dvmrp", label: "DVMRP", darkicon: darkDvmrpIcon, lighticon: lightDvmrpIcon, },
-    { id: "pim", label: "PIM", darkicon: darkPimIcon, lighticon: lightPimIcon, },
-    { id: "msdp", label: "MSDP", darkicon: darkMsdpIcon, lighticon: lightMsdpIcon, },
-    { id: "tcp", label: "TCP", darkicon: darkTcpIcon, lighticon: lightTcpIcon, },
-    { id: "udp", label: "UDP", darkicon: darkUdpIcon, lighticon: lightUdpIcon, },
+    { id: "arp", label: "ARP", icon: {dark: darkArpIcon, light: lightArpIcon}, },
+    { id: "icmp", label: "ICMP", icon: {dark: darkIcmpIcon, light: lightIcmpIcon}, },
+    { id: "igmp", label: "IGMP", icon: {dark: darkIgmpIcon, light: lightIgmpIcon}, },
+    { id: "dvmrp", label: "DVMRP", icon: {dark: darkDvmrpIcon, light: lightDvmrpIcon}, },
+    { id: "pim", label: "PIM", icon: {dark: darkPimIcon, light: lightPimIcon}, },
+    { id: "msdp", label: "MSDP", icon: {dark: darkMsdpIcon, light: lightMsdpIcon}, },
+    { id: "tcp", label: "TCP", icon: {dark: darkTcpIcon, light: lightTcpIcon}, },
+    { id: "udp", label: "UDP", icon: {dark: darkUdpIcon, light: lightUdpIcon}, },
 ]
 
 export const PROTOCOL_CARDS = [
