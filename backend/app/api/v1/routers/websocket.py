@@ -66,7 +66,7 @@ async def _websocket_captue(websocket: WebSocket):
         """
         summary = {
             "number": _packect_process.count,
-            "origin": pkt[0][1].src if pkt.haslayer("Ether") else None,
+            "source": pkt[0][1].src if pkt.haslayer("Ether") else None,
             "destination": pkt[0][1].dst if pkt.haslayer("Ether") else None,
             "protocol": pkt.lastlayer().name,
             "length": len(pkt),

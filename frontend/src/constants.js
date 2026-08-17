@@ -1,4 +1,4 @@
-import { faMoon, faS, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 
 import darkPimIcon from './assets/icons/icon-pim-dark.png'
 import darkArpIcon from './assets/icons/icon-arp-dark.png';
