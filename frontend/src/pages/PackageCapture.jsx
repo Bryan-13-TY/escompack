@@ -40,6 +40,8 @@ export function PackageCapture() {
     const [protocolSelected, setProtocolSelected] = useState('tcp');
     // estado en donde se guardan los paquetes capturados
     const [packets, setPackets] = useState([]);
+    // estado en donde se guarda el total de paquetes capturados
+    const [totalPackets, setTotalPackets] = useState(0); 
     const wsRef = useRef(null);
 
     useEffect(() => {
@@ -50,11 +52,19 @@ export function PackageCapture() {
         e.preventDefault();
 
         const formData = new FormData(e.target);
+        // recuperamos el número de paquetes solicitados desde el formulario
+        const packetsRequested = Number(formData.get('packets-number'));
+
         const data = {
             packets: formData.get('packets-number'),
             protocol: protocolSelected, // pasamos el valor del estado direectamente
         };
-        
+
+        // guardamos el total de paquetes solicitados en el estado
+        setTotalPackets(packetsRequested);
+        // limpiamos la captura anterior
+        setPackets([]);
+
         // 1. avisamos a la API que inicie la captura
         await axios.post('/api/capture/', data);
         
@@ -109,12 +119,18 @@ export function PackageCapture() {
                             <div className='capture-progress'>
                                 <div className='progress-porcent'>
                                     <p className='progress-label'>Proceso de captura</p>
-                                    <span className='porcent'>45%</span>
+                                    <span className='porcent'>
+                                        {/* calculamos el porcentaje de paquetes capturados en tiempo real */}
+                                        {totalPackets > 0 ? Math.round((packets.length / totalPackets) * 100) : 0}%
+                                    </span>
                                 </div>
                                 <div className='progress-bar'>
-                                    <div className='bar-porcent'></div>
+                                    <div
+                                        className='bar-porcent'
+                                        style={{ width: `${totalPackets > 0 ? (packets.length / totalPackets) * 100 : 0}%` }}
+                                    ></div>
                                 </div>
-                                <p className='progress-total'>450 / 1000 paquetes</p>
+                                <p className='progress-total'>{packets.length} / {totalPackets} paquetes</p>
                             </div>
                         </div>
                     </section>
