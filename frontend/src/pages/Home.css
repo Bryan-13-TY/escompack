@@ -41,7 +41,6 @@ main {
     align-items: center; /* alinea horizontalmente */
     gap: 20px;
     padding: 70px 20px;
-    border-radius: 5px;
 
     font-family: var(--home-fnt-family);
     text-align: center;
