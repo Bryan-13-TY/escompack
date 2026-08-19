@@ -18,16 +18,23 @@ from app.models import capture_state
 
 router_capture = APIRouter(prefix="/api/capture", tags=["Captura"])
 
-@router_capture.post("/")
-async def _star_capture(data: CaptureRequest):
+@router_capture.post("/start")
+async def _start_capture(data: CaptureRequest) -> dict[str, str | CaptureRequest]:
     """
-    Endpoint para monitorear la captura de paquetes.
+    Endpoint para iniciar/modificar la captura de paquetes.
 
-    Tomamos los valores de los atributos `packets` y `protocol` de
-    la clase `CaptureRequest` (petición proveniente del formulario)
-    y los guardamos en los atributos correspondientes del modelo
-    `CaptureState`, sin embargo para el atributo `is_active` de este
-    último se le coloca el valor `True`.
+    Toma los valores de `packets` y `protocol` de la petición recibida.
+    Los guarda en el estado de la captura y devuelve el siguiente
+    estado para iniciar con la captura::
+
+        {"status": "ok", "received": data}
+
+    Siendo `data` el esquema (clase) `CaptureRequest` que corresponde
+    a la petición recibida desde el formulario de captura::
+
+        class CaptureRequest(BaseModel):
+            packets: int = Field(ge=5, le=100)
+            protocol: Protocols
     """
     # Guardamos los datos que llegaron del formulario
     capture_state.packets_to_capture = data.packets
@@ -35,10 +42,40 @@ async def _star_capture(data: CaptureRequest):
     capture_state.is_active = True
 
     print("Captura modificada:", asdict(capture_state))
-
     return {"status": "ok", "received": data}
+
+@router_capture.post("/stop")
+async def _stop_capture() -> dict[str, str]:
+    """
+    Endpoint para parar la captura de paquetes.
+
+    Modifica el estado de la captura de la siguiente manera::
+
+        capture_state = {
+            "stop_requested": True
+        }
+
+    Y devuelve el siguiente estado, indicando que la captura se esta
+    deteniendo::
+
+        {"status": "ok", "message": "Deteniendo captura..."}
+    """
+    capture_state.stop_requested = True
+    return {"status": "ok", "message": "Deteniendo captura..."}
 
 
 @router_capture.get("/status")
-async def _capture_status():
+async def _capture_status() -> dict[str, int | str | bool]:
+    """
+    Endpoint para monitorear el estado de la captura de paquetes.
+
+    Devuelve el estado con la siguiente estructura::
+
+        capture_state = {
+            "packets_to_capture": 5
+            "protocol" = "tcp"
+            "is_active" = True
+            "stop_requested" = False | True
+        }
+    """
     return asdict(capture_state)

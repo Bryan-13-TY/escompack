@@ -10,6 +10,7 @@ import { PROTOCOLS } from '../constants';
 import { Button } from '../components/Button';
 
 import './PackageCapture.css';
+import { faL } from '@fortawesome/free-solid-svg-icons';
 
 const ProtocolInput = ({ id, icon, label, isSelected, onSelect }) => {
     const className = isSelected ? 'target-protocol selected' : 'target-protocol';
@@ -43,11 +44,14 @@ export function PackageCapture() {
     // estado en donde se guarda el total de paquetes capturados
     const [totalPackets, setTotalPackets] = useState(0); 
     const wsRef = useRef(null);
+    // estado para guardar el estado de la captura
+    const [isCapturing, setIsCapturing] = useState(false);
 
     useEffect(() => {
         return () => wsRef.current?.close(); // cerrar conexión al salir de la vista
     }, []);
 
+    // función para manejar la captura de paquetes
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -66,17 +70,33 @@ export function PackageCapture() {
         setPackets([]);
 
         // 1. avisamos a la API que inicie la captura
-        await axios.post('/api/capture/', data);
+        await axios.post('/api/capture/start', data);
         
         /* 2. abrimos el Websocket para recibir los paquetes en vivo,
         automáticamente tomamos el host y el puerto desde donde se
         abrio la App de React */
+
+        setIsCapturing(true); // marcamos que empezó la captura
+
         wsRef.current = new WebSocket(`ws://${window.location.host}/ws/capture/`);
         wsRef.current.onmessage = (event) => {
-            const packet = JSON.parse(event.data);
-            setPackets((prev) => [...prev, packet]); // agrega el nuevo paquete a la tabla
+            const message = JSON.parse(event.data);
+
+            if (message.event === 'capture_finished') {
+                // esto se puede usar para algo más
+                setIsCapturing(false); // deshabilitamos 'detener'
+                console.log('Captura finalizada');
+                return;
+            }
+
+            setPackets((prev) => [...prev, message]); // agrega el nuevo paquete a la tabla
         };
     };
+
+    // función para manejar el botón de detener captura
+    const handleStop = async () => {
+        await axios.post('/api/capture/stop');
+    }
 
     return (
         <div className='package-capture'>
@@ -92,8 +112,18 @@ export function PackageCapture() {
                                         <input type='number' name='packets-number' id='packets-number' />
                                     </div>
                                     <Button
-                                        buttonText='Capturar'
+                                        buttonText='Empezar captura'
                                         type='submit'
+                                        rol='start_capture'
+                                        position='before'
+                                    />
+                                    <Button
+                                        buttonText='Detener captura'
+                                        type='button'
+                                        rol='stop_capture'
+                                        position='before'
+                                        onClick={handleStop}
+                                        disable={!isCapturing}
                                     />
                                 </section>
                                 <section className='packets-protocol'>

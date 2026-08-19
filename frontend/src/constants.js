@@ -1,4 +1,4 @@
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun, faCircleArrowRight, faCircleStop, faCirclePlay} from '@fortawesome/free-solid-svg-icons';
 
 import darkPimIcon from './assets/icons/icon-pim-dark.png'
 import darkArpIcon from './assets/icons/icon-arp-dark.png';
@@ -17,12 +17,13 @@ import lightIgmpIcon from './assets/icons/icon-igmp-light.png';
 import lightMsdpIcon from './assets/icons/icon-msdp-light.png';
 import lightTcpIcon from './assets/icons/icon-tcp-light.png';
 import lightUdpIcon from './assets/icons/icon-udp-light.png';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 
 export const THEME_MODE_ICON = {
     dark: faMoon,
     light: faSun,
-}
+};
 
 export const PROTOCOLS = [
     { id: "arp", label: "ARP", icon: {dark: darkArpIcon, light: lightArpIcon}, },
@@ -33,7 +34,7 @@ export const PROTOCOLS = [
     { id: "msdp", label: "MSDP", icon: {dark: darkMsdpIcon, light: lightMsdpIcon}, },
     { id: "tcp", label: "TCP", icon: {dark: darkTcpIcon, light: lightTcpIcon}, },
     { id: "udp", label: "UDP", icon: {dark: darkUdpIcon, light: lightUdpIcon}, },
-]
+];
 
 export const PROTOCOL_CARDS = [
     {
@@ -84,4 +85,19 @@ export const PROTOCOL_CARDS = [
         rep: "(User Datagram Protocol)",
         description: "Modelo de transmisión sin conexión.",
     },
-]
+];
+
+export const ROLE_CONFIGS = {
+    link: {
+        className: 'custom-btn',
+        icon: faCircleArrowRight,
+    },
+    stop_capture: {
+        className: 'custom-btn stop-capture',
+        icon: faCircleStop,
+    },
+    start_capture: {
+        className: 'custom-btn start-capture',
+        icon: faCirclePlay,
+    },
+};

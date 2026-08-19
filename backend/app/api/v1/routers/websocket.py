@@ -22,7 +22,7 @@ from app.protocol_filters import PROTOCOLS_FILTER
 router_ws = APIRouter(prefix="/ws/capture", tags=["Captura"])
 
 @router_ws.websocket("/")
-async def _websocket_captue(websocket: WebSocket):
+async def _websocket_captue(websocket: WebSocket) -> None:
     """
     Endpoint con un Websocket para la captura de paquetes de red en
     tiempo real.
@@ -57,6 +57,9 @@ async def _websocket_captue(websocket: WebSocket):
     await websocket.accept()
     loop = asyncio.get_event_loop()
 
+    # Reiniciamos la bandera al empezar una captura nueva
+    capture_state.stop_requested = False
+
     def _packect_process(pkt):
         """
         Función que se encarga de procesar el paquete capturado `pkt`
@@ -79,18 +82,22 @@ async def _websocket_captue(websocket: WebSocket):
 
     _packect_process.count = 1
 
+    def _stop_filter(pk):
+        return capture_state.stop_requested
+
     # Traducimos el protocolo elegido a su filtro BPF
     bpf_filter = PROTOCOLS_FILTER.get(capture_state.protocol, "")
 
     try:
-        # count=0 = captura indefinida hasta que el usuario detenga
         await loop.run_in_executor(
             None,
             lambda: sniff(
                 prn=_packect_process,
                 count=capture_state.packets_to_capture,
                 filter=bpf_filter,
+                stop_filter=_stop_filter,
             ),
         )
+        await websocket.send_json({"event": "capture_finished"})
     except WebSocketDisconnect:
         print("Cliente desconectado")
