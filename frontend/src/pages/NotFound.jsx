@@ -25,6 +25,8 @@ export function NotFound() {
                                 <Button
                                     buttonText='Volver al inicio'
                                     type='button'
+                                    rol='back_home'
+                                    position='before'
                                 />
                             </Link>
                         </div>
