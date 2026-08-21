@@ -109,7 +109,7 @@ export function PackageCapture() {
                                 <section className='packets-capture'>
                                     <div className='packets-input'>
                                         <label htmlFor='packets-number'>Número de paquetes a capturar</label>
-                                        <input type='number' name='packets-number' id='packets-number' />
+                                        <input type='number' name='packets-number' id='packets-number' min={5} max={100} required/>
                                     </div>
                                     <Button
                                         buttonText='Empezar captura'
