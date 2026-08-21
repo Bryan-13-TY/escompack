@@ -9,7 +9,10 @@ export function Button({
     buttonText,
     type = 'button',
     rol = 'link',
-    position = 'after'
+    position = 'after',
+    onClick = () => {},
+    disable = false,
+
 }) {
     // si no se encuentra el 'rol' se usa el rol por defecto
     const config = ROLE_CONFIGS[rol] || ROLE_CONFIGS.link;
@@ -23,7 +26,11 @@ export function Button({
     );
 
     return (
-        <button type={type} className={config.className}>
+        <button
+            onClick={onClick}
+            type={type}
+            className={config.className}
+            disabled={disable}>
             <span>
                 {position === 'before' && buttonIcon}
                 <p>{buttonText}</p>
@@ -45,4 +52,10 @@ Button.propTypes = {
 
     /** Posición del icono respecto al texto */
     position: PropTypes.oneOf(['before', 'after']),
+
+    /** Función a ejecutar al hacer clic */
+    onClick: PropTypes.func,
+
+    /** Condición para deshabilitar el botón */
+    disable: PropTypes.bool,
 };

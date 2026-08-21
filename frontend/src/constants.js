@@ -1,4 +1,11 @@
-import { faMoon, faSun, faCircleArrowRight, faCircleStop, faCirclePlay} from '@fortawesome/free-solid-svg-icons';
+import {
+    faMoon,
+    faSun,
+    faCircleArrowRight,
+    faCircleStop,
+    faCirclePlay,
+    faCircleArrowLeft,
+} from '@fortawesome/free-solid-svg-icons';
 
 import darkPimIcon from './assets/icons/icon-pim-dark.png'
 import darkArpIcon from './assets/icons/icon-arp-dark.png';
@@ -18,7 +25,6 @@ import lightMsdpIcon from './assets/icons/icon-msdp-light.png';
 import lightTcpIcon from './assets/icons/icon-tcp-light.png';
 import lightUdpIcon from './assets/icons/icon-udp-light.png';
 import { icon } from '@fortawesome/fontawesome-svg-core';
-
 
 export const THEME_MODE_ICON = {
     dark: faMoon,
@@ -91,6 +97,10 @@ export const ROLE_CONFIGS = {
     link: {
         className: 'custom-btn',
         icon: faCircleArrowRight,
+    },
+    back_home: {
+        className: 'custom-btn',
+        icon: faCircleArrowLeft,
     },
     stop_capture: {
         className: 'custom-btn stop-capture',
