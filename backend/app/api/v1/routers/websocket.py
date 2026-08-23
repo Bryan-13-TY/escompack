@@ -96,6 +96,7 @@ async def _websocket_captue(websocket: WebSocket) -> None:
                 count=capture_state.packets_to_capture,
                 filter=bpf_filter,
                 stop_filter=_stop_filter,
+                iface=capture_state.iface,
             ),
         )
         await websocket.send_json({"event": "capture_finished"})
