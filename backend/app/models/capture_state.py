@@ -24,6 +24,7 @@ class CaptureState:
     protocol: str = ""
     is_active: bool = False
     stop_requested: bool = False
+    iface: str = "enp0s8"
 
 # Instancia compartida para toda la app (temporal)
 capture_state = CaptureState()
