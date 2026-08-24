@@ -5,7 +5,29 @@ import { ROLE_CONFIGS } from '../constants';
 
 import './Button.css';
 
-export function Button({
+/**
+ * Componente que muestra un botón personalizado.
+ * 
+ * Se le puede especificar el texto del botón `buttonText`, el rol
+ * `rol` que muestra visualmente su funcionamiento, el tipo del
+ * botón `type`, la posición del icono del botón `position`, la
+ * función callback `onClick` que se ejecuta al hacer clic en el
+ * botón y el estado para habilitar o deshabilitar el botón `disable`.
+ * 
+ * @component
+ * @example
+ * return (
+ *  <Button
+ *      buttonText='Detener captura'
+ *      type='button'
+ *      rol='stop_capture'
+ *      position='before'
+ *      onClick={handleStop}
+ *      disable={!isCapturing}
+ *  />
+ * );
+ */
+function Button({
     buttonText,
     type = 'button',
     rol = 'link',
@@ -14,7 +36,7 @@ export function Button({
     disable = false,
 
 }) {
-    // si no se encuentra el 'rol' se usa el rol por defecto
+    // Si no se encuentra el 'rol' se usa el rol por defecto
     const config = ROLE_CONFIGS[rol] || ROLE_CONFIGS.link;
 
     const buttonIcon = (
@@ -40,22 +62,33 @@ export function Button({
     );
 }
 
+Button.defaultProps = {
+    type: 'button',
+    rol: 'link',
+    position: 'after',
+    onClick: () => {},
+    disable: false,   
+}
+
 Button.propTypes = {
-    /** Texto que se muestra dentro del botón (Obligatorio) */
+    /** Texto que se muestra en el botón */
     buttonText: PropTypes.string.isRequired,
 
     /** Atributo 'type' nativo del botón HTML */
     type: PropTypes.oneOf(['button', 'submit']),
 
-    /** El rol del botón que define color e icono */
+    /** El rol del botón que define el color e icono del mismo */
     rol: PropTypes.oneOf(['link', 'stop_capture', 'start_capture']),
 
     /** Posición del icono respecto al texto */
     position: PropTypes.oneOf(['before', 'after']),
 
-    /** Función a ejecutar al hacer clic */
+    /** Función callback que se ejecuta al hacer clic en el botón */
     onClick: PropTypes.func,
 
-    /** Condición para deshabilitar el botón */
+    /** Define si el botón se habilita o deshabilita */
     disable: PropTypes.bool,
 };
+
+/** @type {React.FC<any>} */
+export default Button;

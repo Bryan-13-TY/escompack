@@ -1,41 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { useTheme } from '../ThemeContext';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { PROTOCOLS } from '../constants';
-import { Button } from '../components/Button';
+import Button from '../components/Button';
+import ProtocolInput from '../components/ProtocolInput';
 
 import './PackageCapture.css';
-import { faL } from '@fortawesome/free-solid-svg-icons';
 
-const ProtocolInput = ({ id, icon, label, isSelected, onSelect }) => {
-    const className = isSelected ? 'target-protocol selected' : 'target-protocol';
-
-    return (
-        <label className={className}>
-            <input
-                type='radio'
-                name='capture-protocol'
-                value={id}
-                /* establecemos el nuevo protocolo seleccionado
-                cada que se selecciona el input */
-                onChange={() => onSelect(id)}
-                checked = {isSelected} // marcamos el input seleccionado
-            />
-            <div className='protocol-content'>
-                <img src={icon} alt={label} width={70}/>
-                <span>{label}</span>
-            </div>
-        </label>
-    );
-};
-
-export function PackageCapture() {
-    const navigate = useNavigate(); // hook para navegar desde código
+/** Página correspondiente a la captura de paquetes. */
+function PackageCapture() {
     const { theme } = useTheme();
     // estado para cambiar el protocolo seleccionado
     const [protocolSelected, setProtocolSelected] = useState('tcp');
@@ -200,3 +177,5 @@ export function PackageCapture() {
         </div>
     );
 }
+
+export default PackageCapture;

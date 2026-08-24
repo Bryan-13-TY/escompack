@@ -1,18 +1,16 @@
-import { useNavigate } from 'react-router-dom';
-
 import { faMagnifyingGlass, faGear } from '@fortawesome/free-solid-svg-icons';
 
 import { useTheme } from '../ThemeContext';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { OperationCard } from '../components/OperationCard';
-import { ProtocolCard } from '../components/ProtocolCard';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import OperationCard from '../components/OperationCard';
+import ProtocolCard from '../components/ProtocolCard';
 import { PROTOCOL_CARDS } from '../constants';
 
 import './Home.css';
 
-export function Home() {
-    const navigate = useNavigate();
+/** Vista principal de la aplicación. */
+function Home() {
     const { theme } = useTheme();
 
     return (
@@ -80,3 +78,5 @@ export function Home() {
         </div>
     );
 }
+
+export default Home;

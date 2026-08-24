@@ -6,7 +6,12 @@ import escomPackIcon from '../assets/others/icon-v2.png'
 
 import './Footer.css';
 
-export function Footer() {
+/**
+ * Componente que muestra el **footer** de la aplicación.
+ * 
+ * @component
+ */
+function Footer() {
     return (
         <footer>
             <div className='footer-wrapper'>
@@ -42,3 +47,5 @@ export function Footer() {
         </footer>
     );
 }
+
+export default Footer;

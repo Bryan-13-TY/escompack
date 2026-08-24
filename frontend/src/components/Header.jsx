@@ -37,8 +37,12 @@ const ThemeModeButton = () => {
     );
 };
 
-export function Header() {
-
+/**
+ * Componente que muestra el **header** de la aplicación.
+ * 
+ * @component 
+ */
+function Header() {
     return (
         <header>
             <div className='header-wrapper'>
@@ -81,3 +85,5 @@ export function Header() {
         </header>
     );
 }
+
+export default Header;
