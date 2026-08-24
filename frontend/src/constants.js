@@ -24,7 +24,6 @@ import lightIgmpIcon from './assets/icons/icon-igmp-light.png';
 import lightMsdpIcon from './assets/icons/icon-msdp-light.png';
 import lightTcpIcon from './assets/icons/icon-tcp-light.png';
 import lightUdpIcon from './assets/icons/icon-udp-light.png';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 
 export const THEME_MODE_ICON = {
     dark: faMoon,

@@ -1,9 +1,15 @@
-import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
-export function PackageManipulation() {
-    const navigate = useNavigate(); // Hook para navegar desde código
-
+function PackageManipulation() {
     return (
-        {/* Contenido de la sección de manipulación de paquetes */}
+        <div className='package-manipulation'>
+            <div className='package-manipulation-wrapper'>
+                <Header />
+                <Footer />
+            </div>
+        </div>
     );
 }
+
+export default PackageManipulation;

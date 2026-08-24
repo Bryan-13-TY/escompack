@@ -1,18 +1,16 @@
-import './NotFound.css';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceDizzy } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { Button } from '../components/Button';
+import Button from '../components/Button';
 
-export function NotFound() {
+import './NotFound.css';
+
+/** Vista 404 de la aplicación. */
+function NotFound() {
     return (
         <div className='not-found'>
             <div className='not-found-wrapper'>
-                {/*<Header />*/}
                 <main>
                     <section className='not-found-content'>
                         <div className='content-wrapper'>
@@ -32,8 +30,9 @@ export function NotFound() {
                         </div>
                     </section>
                 </main>
-                {/*<Footer />*/}
             </div>
         </div>
     );
 }
+
+export default NotFound;
