@@ -19,6 +19,7 @@
 
     --header-hamburguer-menu-btn-bg-clr: #0080d0;
     --header-hamburguer-menu-btn-hvr-bg-clr: #006fb5;
+    --header-hamburguer-menu-bdr: 2px solid #2d2d2d; 
 
     --header-icon-escom-txt-clr: #0080d0;
     --header-icon-pack-txt-clr: #dedede;
@@ -39,6 +40,7 @@
 
     --header-hamburguer-menu-btn-bg-clr: #021981;
     --header-hamburguer-menu-btn-hvr-bg-clr: #001ea4;
+    --header-hamburguer-menu-bdr: 2px solid #c1c1c1; 
 
     --header-icon-escom-txt-clr: #021981;
     --header-icon-pack-txt-clr: #1a1a1a;
@@ -104,6 +106,38 @@ header {
     background-color: var(--header-hamburguer-menu-btn-hvr-bg-clr);
 }
 
+.hamburguer-menu-wrapper .nav-menu-wrapper {
+    border: var(--header-hamburguer-menu-bdr);
+    border-radius: 5px;
+    position: absolute;
+    z-index: 10;
+    padding: 15px 10px;
+    margin-top: 10px;
+
+    background-color: var(--header-bg-clr);
+}
+
+.nav-menu-wrapper nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: left;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+
+    list-style: none;
+}
+
+.nav-menu-wrapper nav ul a {
+    text-decoration: none;
+    color: var(--header-nav-element-txt-clr);
+}
+
+.nav-menu-wrapper nav ul a:hover {
+    color: var(--header-nav-element-hvr-txt-clr);
+} 
+
 /* ====== estilos para el icono ====== */
 
 .header-nav .header-icon a {
@@ -147,7 +181,7 @@ header {
     list-style: none;
 }
 
-nav ul a {
+.nav-wrapper nav ul a {
     display: flex;
     flex-direction: column;
     justify-content: center; /* alinea verticalmente */
@@ -159,19 +193,28 @@ nav ul a {
     color: var(--header-nav-element-txt-clr);
 }
 
-ul a hr {
-    width: 100%;
+.nav-wrapper nav ul a hr {
     margin: 0;
     display: none;
 }
 
-nav ul a:hover {
+.nav-wrapper nav ul a:hover {
     color: var(--header-nav-element-hvr-txt-clr);
 }
 
-nav ul a:hover hr {
+.nav-wrapper nav ul a:hover hr {
     border: var(--header-nav-hr-hvr-bdr-bottom);
     display: block;
+    animation: widthGrow 0.4s forwards;
+}
+
+@keyframes widthGrow {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 /* ====== estilos para el botón del tema ====== */
@@ -199,9 +242,8 @@ nav ul a:hover hr {
 
 /* ====== media queries ====== */
 
-/* pantalla con menos de 900 px de ancho */
-@media (max-width: 899px) {
-    .header-nav  .hamburguer-menu-button {
+@media (max-width: 700px) {
+    .header-nav  .hamburguer-menu-wrapper {
         display: inline-block;
     }
 
@@ -210,9 +252,8 @@ nav ul a:hover hr {
     }
 }
 
-/* pantalla con más de 900 px de ancho */
-@media (min-width: 900px) {
-    .header-nav  .hamburguer-menu-button {
+@media (min-width: 700px) {
+    .header-nav  .hamburguer-menu-wrapper {
         display: none;
     }
 
