@@ -22,7 +22,7 @@ function Footer() {
                     <div className='footer-content'>
                         <div className='footer-version'>
                             <p>© 2026 ESCOMPack</p>
-                            <span>v2.4.1-stable</span>
+                            <span>v2.4.2-stable</span>
                         </div>
                         <div className='footer-main-icon'>
                             <img src={escomPackIcon} alt="ESCOMPack icon" width={50} />
