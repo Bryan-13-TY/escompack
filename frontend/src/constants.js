@@ -5,6 +5,7 @@ import {
     faCircleStop,
     faCirclePlay,
     faCircleArrowLeft,
+    faS,
 } from '@fortawesome/free-solid-svg-icons';
 
 import darkPimIcon from './assets/icons/icon-pim-dark.png'
@@ -26,8 +27,8 @@ import lightTcpIcon from './assets/icons/icon-tcp-light.png';
 import lightUdpIcon from './assets/icons/icon-udp-light.png';
 
 export const THEME_MODE_ICON = {
-    dark: faMoon,
-    light: faSun,
+    dark: faSun,
+    light: faMoon,
 };
 
 export const PROTOCOLS = [
