@@ -6,7 +6,7 @@ arquitectura MVC.
 ## Tokens
 
 - Lalito: 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
-- Bryan: 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
+- Bryan: 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, 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
 
 ## Guías
 
