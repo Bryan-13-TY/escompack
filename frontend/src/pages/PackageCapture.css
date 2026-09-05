@@ -5,6 +5,7 @@
 :root.dark {
     --pkts-form-bg-clr: #212121;
     --pkts-form-bdr: 2px solid #2d2d2d;
+    --pkts-form-shadow: -8px 8px 18px 0 #222222;
 
     --pkts-input-label-txt-clr: #dedede;
     --pkts-input-bdr: 2px solid #2d2d2d;
@@ -20,6 +21,7 @@
     --pkts-target-protocol-hvr-bg-clr: #343333;
 
     --pkts-capture-progress-bg-clr: #212121;
+    --pkts-capture-progress-shadow: -8px 8px 18px 0 #222222;
     --pkts-capture-progress-bdr: 2px solid #2d2d2d;
     --pkts-capture-progress-label-txt-clr: #dedede;
     --pkts-capture-progress-porcent-txt-clr: #0080d0;
@@ -38,6 +40,7 @@
 :root.light {
     --pkts-form-bg-clr: #e7e7e7;
     --pkts-form-bdr: 2px solid #c1c1c1;
+    --pkts-form-shadow: -8px 8px 18px 0 #e2e2e2;
 
     --pkts-input-label-txt-clr: #1a1a1a;
     --pkts-input-bdr: 2px solid #c1c1c1;
@@ -53,6 +56,7 @@
     --pkts-target-protocol-hvr-bg-clr: #d9d9d9;
 
     --pkts-capture-progress-bg-clr: #e7e7e7;
+    --pkts-capture-progress-shadow: -8px 8px 18px 0 #e2e2e2;
     --pkts-capture-progress-bdr: 2px solid #c1c1c1;
     --pkts-capture-progress-label-txt-clr: #1a1a1a;
     --pkts-capture-progress-porcent-txt-clr: #021981;
@@ -93,6 +97,7 @@ main {
     padding: 30px;
 
     background-color: var(--pkts-form-bg-clr);
+    box-shadow: var(--pkts-form-shadow);
 }
 
 /* estilos para el input del número de paquetes */
@@ -180,6 +185,7 @@ form .packets-capture {
     padding: 30px;
 
     background-color: var(--pkts-capture-progress-bg-clr);
+    box-shadow: var(--pkts-capture-progress-shadow);
 }
 
 .capture-progress p {
@@ -259,7 +265,6 @@ form .packets-capture {
 
     background-color: var(--pkts-table-capture-tbody-bg-clr);
 }
-
 
 /* ====== media queries ====== */
 

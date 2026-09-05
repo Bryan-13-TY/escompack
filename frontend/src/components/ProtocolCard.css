@@ -8,6 +8,7 @@
     --protocol-card-acronym-txt-clr: #dedede;
     --protocol-card-rep-txt-clr: #dedede;
     --protocol-card-desc-txt-clr: #d3d3d3;
+    --protocol-card-shadow: -8px 8px 18px 0 #222222;
 }
 
 :root.light {
@@ -16,6 +17,7 @@
     --protocol-card-acronym-txt-clr: #1a1a1a;
     --protocol-card-rep-txt-clr: #1a1a1a;
     --protocol-card-desc-txt-clr: #212121;
+    --protocol-card-shadow: -8px 8px 18px 0 #e2e2e2;
 }
 
 .protocol-card-wrapper {
@@ -30,6 +32,7 @@
     font-family: var(--protocol-card-fnt-family);
 
     background-color: var(--protocol-card-bg-clr);
+    box-shadow: var(--protocol-card-shadow);
 }
 
 .protocol-card-wrapper .protocol-card-label {
