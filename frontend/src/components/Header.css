@@ -14,12 +14,11 @@
 }
 
 :root.dark {
-    --header-bg-clr: #1a1a1a;
-    --header-bdr-bottom: 2px solid #2d2d2d;
+    --header-bg-clr: #070b10;
 
     --header-hamburguer-menu-btn-bg-clr: #0080d0;
     --header-hamburguer-menu-btn-hvr-bg-clr: #006fb5;
-    --header-hamburguer-menu-bdr: 2px solid #2d2d2d; 
+    --header-hamburguer-menu-bdr: 2px solid #141f30; 
 
     --header-icon-escom-txt-clr: #0080d0;
     --header-icon-pack-txt-clr: #dedede;
@@ -35,12 +34,11 @@
 }
 
 :root.light {
-    --header-bg-clr: #ededed;
-    --header-bdr-bottom: 2px solid #c1c1c1;
+    --header-bg-clr: #e0dfdf;
 
     --header-hamburguer-menu-btn-bg-clr: #021981;
     --header-hamburguer-menu-btn-hvr-bg-clr: #001ea4;
-    --header-hamburguer-menu-bdr: 2px solid #c1c1c1; 
+    --header-hamburguer-menu-bdr: 2px solid #d5d5d5; 
 
     --header-icon-escom-txt-clr: #021981;
     --header-icon-pack-txt-clr: #1a1a1a;
@@ -60,7 +58,6 @@ header {
 }
 
 .header-wrapper {
-    border-bottom: var(--header-bdr-bottom);
     padding: 10px 20px;
 
     font-family: var(--header-fnt-family);

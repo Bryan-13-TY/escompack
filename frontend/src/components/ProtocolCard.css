@@ -3,21 +3,21 @@
 }
 
 :root.dark {
-    --protocol-card-bg-clr: #212121;
-    --protocol-card-bdr: 2px solid #2d2d2d;
+    --protocol-card-bg-clr: #111926;
+    --protocol-card-bdr: 2px solid #141f30;
+    --protocol-card-hvr-bdr: 2px solid #003b60;
     --protocol-card-acronym-txt-clr: #dedede;
     --protocol-card-rep-txt-clr: #dedede;
     --protocol-card-desc-txt-clr: #d3d3d3;
-    --protocol-card-shadow: -8px 8px 18px 0 #222222;
 }
 
 :root.light {
-    --protocol-card-bg-clr: #e7e7e7;
-    --protocol-card-bdr: 2px solid #c1c1c1;
+    --protocol-card-bg-clr: #efeded;
+    --protocol-card-bdr: 2px solid #d5d5d5;
+    --protocol-card-hvr-bdr: 2px solid #021981;
     --protocol-card-acronym-txt-clr: #1a1a1a;
     --protocol-card-rep-txt-clr: #1a1a1a;
     --protocol-card-desc-txt-clr: #212121;
-    --protocol-card-shadow: -8px 8px 18px 0 #e2e2e2;
 }
 
 .protocol-card-wrapper {
@@ -32,7 +32,12 @@
     font-family: var(--protocol-card-fnt-family);
 
     background-color: var(--protocol-card-bg-clr);
-    box-shadow: var(--protocol-card-shadow);
+
+    /*transition: border 0.5s ease-in-out;*/
+}
+
+.protocol-card-wrapper:hover {
+    border: var(--protocol-card-hvr-bdr);
 }
 
 .protocol-card-wrapper .protocol-card-label {

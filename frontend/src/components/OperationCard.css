@@ -5,21 +5,21 @@
 }
 
 :root.dark {
-    --operation-card-bg-clr: #212121;
-    --operation-card-bdr: 2px solid #2d2d2d;
+    --operation-card-bg-clr: #111926;
+    --operation-card-bdr: 2px solid #141f30;
+    --operation-card-hvr-bdr: 2px solid #003b60;
     --operation-card-icon-bg-clr: #0080d0;
     --operation-card-title-txt-clr: #dedede;
     --operation-card-desc-txt-clr: #d3d3d3;
-    --operation-card-shadow: -8px 8px 18px 0 #222222;
 }
 
 :root.light {
-    --operation-card-bg-clr: #e7e7e7;
-    --operation-card-bdr: 2px solid #c1c1c1;
+    --operation-card-bg-clr: #efeded;
+    --operation-card-bdr: 2px solid #d5d5d5;
+    --operation-card-hvr-bdr: 2px solid #021981;
     --operation-card-icon-bg-clr: #021981;
     --operation-card-title-txt-clr: #1a1a1a;
     --operation-card-desc-txt-clr: #212121;
-    --operation-card-shadow: -8px 8px 18px 0 #e2e2e2;
 }
 
 .operation-card-wrapper {
@@ -34,7 +34,12 @@
     font-family: var(--operation-card-fnt-family);
 
     background-color: var(--operation-card-bg-clr);
-    box-shadow: var(--operation-card-shadow);
+
+    /*transition: border 0.5s ease-in-out;*/
+}
+
+.operation-card-wrapper:hover {
+    border: var(--operation-card-hvr-bdr);
 }
 
 .operation-card-wrapper .operation-card-icon {

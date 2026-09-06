@@ -1,9 +1,9 @@
 :root.dark {
-    --bg-clr-default: #1a1a1a;
+    --bg-clr-default: #0C131D;
 }
 
 :root.light {
-    --bg-clr-default: #ededed;
+    --bg-clr-default: #FAFAFA;
 }
 
 * {
