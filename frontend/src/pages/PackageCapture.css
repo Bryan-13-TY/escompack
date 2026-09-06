@@ -3,71 +3,71 @@
 }
 
 :root.dark {
-    --pkts-form-bg-clr: #212121;
-    --pkts-form-bdr: 2px solid #2d2d2d;
-    --pkts-form-shadow: -8px 8px 18px 0 #222222;
+    --pkts-capture-bg-clr: #0C131D;
+
+    --pkts-form-bg-clr: #111926;
+    --pkts-form-bdr: 2px solid #141f30;
 
     --pkts-input-label-txt-clr: #dedede;
-    --pkts-input-bdr: 2px solid #2d2d2d;
-    --pkts-input-bg-clr: #282828;
+    --pkts-input-bdr: 2px solid #141f30;
+    --pkts-input-bg-clr: #172234;
     --pkts-input-txt-clr: #d3d3d3;
 
     --pkts-target-protocol-label-txt-clr: #dedede;
     --pkts-target-protocol-icon-txt-clr: #d3d3d3;
 
-    --pkts-target-protocol-bdr: 2px solid #2d2d2d;
-    --pkts-target-protocol-bg-clr: #282828;
-    --pkts-target-protocol-selected-bg-clr: #343333;
-    --pkts-target-protocol-hvr-bg-clr: #343333;
+    --pkts-target-protocol-bdr: 2px solid #141f30;
+    --pkts-target-protocol-bg-clr: #172234;
+    --pkts-target-protocol-selected-bg-clr: #1e2c44;
+    --pkts-target-protocol-hvr-bg-clr: #1e2c44;
 
-    --pkts-capture-progress-bg-clr: #212121;
-    --pkts-capture-progress-shadow: -8px 8px 18px 0 #222222;
-    --pkts-capture-progress-bdr: 2px solid #2d2d2d;
+    --pkts-capture-progress-bg-clr: #111926;
+    --pkts-capture-progress-bdr: 2px solid #141f30;
     --pkts-capture-progress-label-txt-clr: #dedede;
     --pkts-capture-progress-porcent-txt-clr: #0080d0;
     --pkts-capture-progress-total-txt-clr: #d3d3d3; 
 
-    --pkts-progress-bar-bg-clr: #282828;
+    --pkts-progress-bar-bg-clr: #172234;
     --pkts-progress-bar-porcent-bg-clr: #0080d0;
 
-    --pkts-table-capture-bdr: 2px solid #2d2d2d;
-    --pkts-table-capture-thead-bg-clr: #212121;
-    --pkts-table-capture-tbody-bg-clr: #282828;
+    --pkts-table-capture-bdr: 2px solid #141f30;
+    --pkts-table-capture-thead-bg-clr: #111926;
+    --pkts-table-capture-tbody-bg-clr: #172234;
     --pkts-table-capture-thead-txt-clr: #dedede;
     --pkts-table-capture-tbody-txt-clr: #d3d3d3;
 }
 
 :root.light {
-    --pkts-form-bg-clr: #e7e7e7;
-    --pkts-form-bdr: 2px solid #c1c1c1;
-    --pkts-form-shadow: -8px 8px 18px 0 #e2e2e2;
+    --pkts-capture-bg-clr: #FAFAFA;
+
+    --pkts-form-bg-clr: #efeded;
+    --pkts-form-bdr: 2px solid #d5d5d5;
 
     --pkts-input-label-txt-clr: #1a1a1a;
-    --pkts-input-bdr: 2px solid #c1c1c1;
-    --pkts-input-bg-clr: #f6f3f3;
+    --pkts-input-bdr: 2px solid #d5d5d5;
+    --pkts-input-bg-clr: #f9f8f8;
     --pkts-input-txt-clr: #212121;
 
     --pkts-target-protocol-label-txt-clr: #1a1a1a;
     --pkts-target-protocol-icon-txt-clr: #212121;
 
-    --pkts-target-protocol-bdr: 2px solid #c1c1c1;
-    --pkts-target-protocol-bg-clr: #f6f3f3;
+    --pkts-target-protocol-bdr: 2px solid #d5d5d5;
+    --pkts-target-protocol-bg-clr: #f9f8f8;
     --pkts-target-protocol-selected-bg-clr: #d9d9d9;
     --pkts-target-protocol-hvr-bg-clr: #d9d9d9;
 
-    --pkts-capture-progress-bg-clr: #e7e7e7;
-    --pkts-capture-progress-shadow: -8px 8px 18px 0 #e2e2e2;
-    --pkts-capture-progress-bdr: 2px solid #c1c1c1;
+    --pkts-capture-progress-bg-clr: #efeded;
+    --pkts-capture-progress-bdr: 2px solid #d5d5d5;
     --pkts-capture-progress-label-txt-clr: #1a1a1a;
     --pkts-capture-progress-porcent-txt-clr: #021981;
     --pkts-capture-progress-total-txt-clr: #212121; 
 
-    --pkts-progress-bar-bg-clr: #f6f3f3;
+    --pkts-progress-bar-bg-clr: #f9f8f8;
     --pkts-progress-bar-porcent-bg-clr: #021981;
 
-    --pkts-table-capture-bdr: 2px solid #c1c1c1;
-    --pkts-table-capture-thead-bg-clr: #e7e7e7;
-    --pkts-table-capture-tbody-bg-clr: #f6f3f3;
+    --pkts-table-capture-bdr: 2px solid #d5d5d5;
+    --pkts-table-capture-thead-bg-clr: #efeded;
+    --pkts-table-capture-tbody-bg-clr: #f9f8f8;
     --pkts-table-capture-thead-txt-clr: #1a1a1a;
     --pkts-table-capture-tbody-txt-clr: #212121;
 }
@@ -86,6 +86,7 @@ main {
     gap: 30px;
     
     font-family: var(--pkt-capture-fnt-family);
+    background-color: var(--pkts-capture-bg-clr);
 }
 
 .form-wrapper form {
@@ -97,7 +98,6 @@ main {
     padding: 30px;
 
     background-color: var(--pkts-form-bg-clr);
-    box-shadow: var(--pkts-form-shadow);
 }
 
 /* estilos para el input del número de paquetes */
@@ -185,7 +185,6 @@ form .packets-capture {
     padding: 30px;
 
     background-color: var(--pkts-capture-progress-bg-clr);
-    box-shadow: var(--pkts-capture-progress-shadow);
 }
 
 .capture-progress p {

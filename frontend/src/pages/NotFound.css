@@ -3,7 +3,7 @@
 }
 
 :root.dark {
-    --not-found-bg-clr: #1a1a1a;
+    --not-found-bg-clr: #0C131D;
     --not-found-icon-txt-clr: #dedede;
     --not-found-404-txt-clr: #dedede;
     --not-found-subtitle-txt-clr: #d3d3d3;
