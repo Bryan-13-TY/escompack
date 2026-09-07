@@ -9,7 +9,7 @@
     --operation-card-bdr: 2px solid #141f30;
     --operation-card-hvr-bdr: 2px solid #003b60;
     --operation-card-icon-bg-clr: #0080d0;
-    --operation-card-title-txt-clr: #dedede;
+    --operation-card-title-txt-clr: #0080d0;
     --operation-card-desc-txt-clr: #d3d3d3;
 }
 
@@ -18,7 +18,7 @@
     --operation-card-bdr: 2px solid #d5d5d5;
     --operation-card-hvr-bdr: 2px solid #021981;
     --operation-card-icon-bg-clr: #021981;
-    --operation-card-title-txt-clr: #1a1a1a;
+    --operation-card-title-txt-clr: #021981;
     --operation-card-desc-txt-clr: #212121;
 }
 

@@ -6,7 +6,7 @@
     --protocol-card-bg-clr: #111926;
     --protocol-card-bdr: 2px solid #141f30;
     --protocol-card-hvr-bdr: 2px solid #003b60;
-    --protocol-card-acronym-txt-clr: #dedede;
+    --protocol-card-acronym-txt-clr: #0080d0; 
     --protocol-card-rep-txt-clr: #dedede;
     --protocol-card-desc-txt-clr: #d3d3d3;
 }
@@ -15,7 +15,7 @@
     --protocol-card-bg-clr: #efeded;
     --protocol-card-bdr: 2px solid #d5d5d5;
     --protocol-card-hvr-bdr: 2px solid #021981;
-    --protocol-card-acronym-txt-clr: #1a1a1a;
+    --protocol-card-acronym-txt-clr: #021981;
     --protocol-card-rep-txt-clr: #1a1a1a;
     --protocol-card-desc-txt-clr: #212121;
 }

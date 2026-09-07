@@ -63,7 +63,7 @@ const HamburguerMenu = () => {
                                 <li className='nav-menu-element'>Captura</li>
                             </Link>
                             <Link to={'/manipulation'}>
-                                <li>Manipulación</li>
+                                <li className='nav-menu-element'>Manipulación</li>
                             </Link>
                         </ul>
                     </nav>
@@ -119,15 +119,15 @@ function Header() {
                                 <ul>
                                     <Link to={'/home'}>
                                         <li className='nav-element'>Inicio</li>
-                                        <hr />
+                                        {/*<hr />*/}
                                     </Link>
                                     <Link to={'/capture'}>
                                         <li className='nav-element'>Captura</li>
-                                        <hr />
+                                        {/*<hr />*/}
                                     </Link>
                                     <Link to={'/manipulation'}>
                                         <li className='nav-element'>Manipulación</li>
-                                        <hr />
+                                        {/*<hr />*/}
                                     </Link>
                                 </ul>
                             </nav>
