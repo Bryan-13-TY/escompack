@@ -5,7 +5,7 @@ from fastapi.responses import HTMLResponse
 
 from app.api.v1.routers import router_capture
 from app.api.v1.routers import router_ws
-from app.database import router_database
+from app.api.v1.routers import router_database
 
 escom_pack = FastAPI(title="Backend para ESCOMPack")
 
