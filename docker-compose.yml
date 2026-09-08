@@ -9,7 +9,7 @@ services:
     # mapea el volumen local mongodb_data al contenedor
     # para persistir los datos de la base de datos
     volumes:
-      - mongodb_data:/data/db
+      - mongo_data:/data/db
     networks:
       - ESCOMPack-network
     
@@ -64,3 +64,6 @@ services:
 networks:
   ESCOMPack-network:
     driver: bridge
+
+volumes:
+  mongo_data:
