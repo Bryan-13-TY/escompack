@@ -5,6 +5,7 @@ from fastapi.responses import HTMLResponse
 
 from app.api.v1.routers import router_capture
 from app.api.v1.routers import router_ws
+from app.database import router_database
 
 escom_pack = FastAPI(title="Backend para ESCOMPack")
 
@@ -18,3 +19,4 @@ async def _root():
 # Incluimos los endpoints para la captura de paquetes
 escom_pack.include_router(router=router_capture)
 escom_pack.include_router(router=router_ws)
+escom_pack.include_router(router=router_database)
