@@ -11,9 +11,9 @@ capture_collection = database["captures"]
 
 # endpoint temporal para probar la conexión a la BD
 
-router_database = APIRouter(prefix="/health/")
+router_database = APIRouter(prefix="/health", tags=["Database"])
 
-@router_database.get("db")
+@router_database.get("/db")
 async def _check_database():
     try:
         await client.admin.command("ping")
