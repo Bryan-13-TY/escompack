@@ -1,7 +1,7 @@
 services:
   mongodb:
     # usamos la imagen oficial de MongoDB en vez de crear una propia 
-    image: mongo:7
+    image: mongo:4.4
     container_name: ESCOMPack-mogodb
     # mapea el puerto 27017 local al 27017 del contenedor
     ports:
