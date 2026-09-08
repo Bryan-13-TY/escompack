@@ -1,4 +1,18 @@
 services:
+  mongodb:
+    # usamos la imagen oficial de MongoDB en vez de crear una propia 
+    image: mongo:7
+    container_name: ESCOMPack-mogodb
+    # mapea el puerto 27017 local al 27017 del contenedor
+    ports:
+      - "27017:27017"
+    # mapea el volumen local mongodb_data al contenedor
+    # para persistir los datos de la base de datos
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - ESCOMPack-network
+    
   backend:
     # busca las instrucciones en la carpeta ./backend
     # usando su Dockerfile
@@ -22,6 +36,9 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
     command: uvicorn app.main:escom_pack --host 0.0.0.0 --port 8000 --reload
+    # asegura que Docker intente iniciar MongoDB antes que el backend
+    depends_on:
+      - mongodb
 
   frontend:
     # busca las instrucciones en la carpeta ./frontend

@@ -19,6 +19,8 @@
     --header-hamburguer-menu-btn-bg-clr: #0080d0;
     --header-hamburguer-menu-btn-hvr-bg-clr: #006fb5;
     --header-hamburguer-menu-bdr: 2px solid #141f30; 
+    --header-hamburguer-menu-bar-bg-clr: #0080d0;
+    --header-hamburguer-menu-elmt-hvr-bg-clr: #111926;
 
     --header-icon-escom-txt-clr: #0080d0;
     --header-icon-pack-txt-clr: #dedede;
@@ -26,8 +28,7 @@
 
     --header-nav-element-txt-clr: #dedede;
     --header-nav-element-hvr-txt-clr: #0080d0;
-
-    --header-nav-hr-hvr-bdr-bottom: 1px solid #0080d0;
+    --header-nav-element-bar-bg-clr: #0080d0;
 
     --header-theme-mode-btn-bg-clr: #0080d0;
     --header-theme-mode-btn-hvr-bg-clr: #006fb5;
@@ -39,6 +40,8 @@
     --header-hamburguer-menu-btn-bg-clr: #021981;
     --header-hamburguer-menu-btn-hvr-bg-clr: #001ea4;
     --header-hamburguer-menu-bdr: 2px solid #d5d5d5; 
+    --header-hamburguer-menu-bar-bg-clr: #021981;
+    --header-hamburguer-menu-elmt-hvr-bg-clr: #efeded;
 
     --header-icon-escom-txt-clr: #021981;
     --header-icon-pack-txt-clr: #1a1a1a;
@@ -46,8 +49,7 @@
 
     --header-nav-element-txt-clr: #1a1a1a;
     --header-nav-element-hvr-txt-clr: #021981;
-
-    --header-nav-hr-hvr-bdr-bottom: 1px solid #021981;
+    --header-nav-element-bar-bg-clr: #021981;
 
     --header-theme-mode-btn-bg-clr: #021981;
     --header-theme-mode-btn-hvr-bg-clr: #001ea4;
@@ -121,19 +123,50 @@ header {
     align-items: left;
     margin: 0;
     padding: 0;
-    gap: 20px;
+    gap: 10px;
 
     list-style: none;
 }
 
 .nav-menu-wrapper nav ul a {
+    position: relative; /* referencia para la barra animada */
+    display: inline-block;
+    padding: 6px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
     text-decoration: none;
     color: var(--header-nav-element-txt-clr);
 }
 
+/* barra animada */
+.nav-menu-wrapper nav ul a::before {
+    content: '';
+    position: absolute;
+    left: 0; /* barra a la izquierda */
+    top: 0; /* barra desde arriba */
+    width: 2px; /* grosor de la barra */
+    height: 100%; /* ocupa todo el alto */
+    border-radius: 5px;
+
+    transform: scaleY(0); /* estado inicial */
+    transform-origin: bottom center;
+    transition: 0.4s ease;
+
+    background-color: var(--header-hamburguer-menu-bar-bg-clr);
+}
+
 .nav-menu-wrapper nav ul a:hover {
     color: var(--header-nav-element-hvr-txt-clr);
-} 
+
+    background-color: var(--header-hamburguer-menu-elmt-hvr-bg-clr);
+}
+
+.nav-menu-wrapper nav ul a:hover::before {
+    transform: scaleY(1);
+
+    transform-origin: top center;
+}
 
 /* ====== estilos para el icono ====== */
 
@@ -179,39 +212,39 @@ header {
 }
 
 .nav-wrapper nav ul a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* alinea verticalmente */
-    align-items: center; /* alinea horizontalmente */
-    gap: 5px;
+    position: relative; /* referencia para la barra animada */
+    display: inline-block;
+    padding: 6px;
 
     text-decoration: none;
     text-align: center;
     color: var(--header-nav-element-txt-clr);
 }
 
-.nav-wrapper nav ul a hr {
-    margin: 0;
-    display: none;
+.nav-wrapper nav ul a::after {
+    content: '';
+    position: absolute;
+    left: 0; /* barra a la izquierda */
+    bottom: 0; /* barra desde abajo */
+    height: 2px; /* grosor de la barra */
+    width: 100%; /* ocupa todo el ancho */
+    border-radius: 5px;
+
+    transform: scaleX(0); /* estado inicial */
+    transform-origin: bottom center;
+    transition: 0.4s ease;
+
+    background-color: var(--header-nav-element-bar-bg-clr);
 }
 
 .nav-wrapper nav ul a:hover {
     color: var(--header-nav-element-hvr-txt-clr);
 }
 
-.nav-wrapper nav ul a:hover hr {
-    border: var(--header-nav-hr-hvr-bdr-bottom);
-    display: block;
-    animation: widthGrow 0.4s forwards;
-}
+.nav-wrapper nav ul a:hover::after {
+    transform: scaleX(1);
 
-@keyframes widthGrow {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 100%;
-    }
+    transform-origin: top center;
 }
 
 /* ====== estilos para el botón del tema ====== */
