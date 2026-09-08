@@ -24,6 +24,9 @@ docker restart <name_or_id>
 # Borra un contenedor detenido
 docker rm <name_or_id>
 
+# Borra una imagen
+docker rmi <name_or_id>
+
 # Revisa los registros de actividad de un contenedor
 docker logs <name_or_id>
 
