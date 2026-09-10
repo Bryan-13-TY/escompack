@@ -10,7 +10,6 @@ Clases:
     los parametros con la captura.
 """
 
-from typing import Literal
 from enum import Enum
 
 from pydantic import (
@@ -41,7 +40,6 @@ class CaptureRequest(BaseModel):
     `IGMP`, `DVMRP`, `PIM`, `MSDP`, `TCP` y `UDP`.
     """
     packets: int = Field(ge=5, le=100)
-    #protocol: Literal["arp", "icmp", "igmp", "dvmrp", "pim", "msdp", "tcp", "udp"]
     protocol: Protocols
 
     model_config = {

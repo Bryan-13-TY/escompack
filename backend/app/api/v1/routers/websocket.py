@@ -1,28 +1,41 @@
-"""Módulo con el router para el Websocket para la captura de paquetes
+"""Módulo con el router para el WebSocket para la captura de paquetes
 en tiempo real.
 
-Este módulo incluye el endpoint `/ws/capture/` que abre un Websocket
-entre el navegador (frontend) y el servidor (API), es decir abre un
-canal bidireccional. Esto permite que el frontend y el backend se
-envíen datos al mismo tiempo sin necesidad de pedir información
-repetidamente logrando así una velocidad en tiempo real. 
+Este módulo inclute el router con el prefijo `/ws/capture` para el
+envío de paquetes en tiempo real desde el backend al frontend.
+
+Endpoints:
+    - `/`: Abre un WebSocket entre el navegador (frontend) y el
+    servidor (API), es decir; abre un canal bidireccional. Esto
+    permite que el frontend y el backend se envíen datos al mismo
+    tiempo sin necesidad de pedir información repetidamente logrando
+    así una velocidad en tiempo real.
 """
+
+from datetime import datetime, timezone
+import os
 
 from fastapi import (
     APIRouter,
     WebSocket,
     WebSocketDisconnect,
 )
-from scapy.all import sniff
+from scapy.all import (
+    sniff,
+    wrpcap  # para guardar en formato .pcap
+)
 import asyncio
 
-from app.models import capture_state
-from app.protocol_filters import PROTOCOLS_FILTER
+from app.models.capture_state import capture_state
+from app.core.protocol_filters import PROTOCOLS_FILTER
+from app.core.database import capture_collection
 
 router_ws = APIRouter(prefix="/ws/capture", tags=["Captura"])
 
+CAPTURES_DIR = "/app/captures"
+
 @router_ws.websocket("/")
-async def _websocket_captue(websocket: WebSocket) -> None:
+async def _websocket_capture(websocket: WebSocket) -> None:
     """
     Endpoint con un Websocket para la captura de paquetes de red en
     tiempo real.
@@ -59,14 +72,21 @@ async def _websocket_captue(websocket: WebSocket) -> None:
 
     # Reiniciamos la bandera al empezar una captura nueva
     capture_state.stop_requested = False
+    # aquí se aguardan los paquetes crudos de Scapy
+    capture_packets = []
 
     def _packect_process(pkt):
         """
-        Función que se encarga de procesar el paquete capturado `pkt`
-        obtendiendo de el su origen, destino, protocolo, tamaño y un
+        Se encarga de procesar el paquete capturado `pkt`
+        obteniendo de el su origen, destino, protocolo, tamaño y un
         resumen de su contenido para estructurarlo en un diccionario
         y enviarlo al frontend a través del canal creado.
+
+        También guarda el paquete crudo `pkt` en la lista.  
         """
+        # guardammos el paquete completo en la lista
+        capture_packets.append(pkt)
+
         summary = {
             "number": _packect_process.count,
             "source": pkt[0][1].src if pkt.haslayer("Ether") else None,
@@ -77,12 +97,15 @@ async def _websocket_captue(websocket: WebSocket) -> None:
         }
 
         _packect_process.count += 1
-
         asyncio.run_coroutine_threadsafe(websocket.send_json(summary), loop)
 
     _packect_process.count = 1
 
     def _stop_filter(pk):
+        """
+        Se encarga de detener la captura de paquetes devolviendo el
+        valor del atributo `stop_requested` del estado de la captura.
+        """
         return capture_state.stop_requested
 
     # Traducimos el protocolo elegido a su filtro BPF
@@ -99,6 +122,26 @@ async def _websocket_captue(websocket: WebSocket) -> None:
                 iface=capture_state.iface,
             ),
         )
+
+        # parte para el guardado del paquete en disco + el indexado en
+        # MongoDB
+        os.makedirs(CAPTURES_DIR, exist_ok=True)
+
+        timestamp = datetime.now(timezone.utc)
+        filename = f"Capture_{capture_state.protocol}_{timestamp.strftime('%Y%m%d_%H%M%S')}.pcap"
+        filepath = os.path.join(CAPTURES_DIR, filename)
+
+        if capture_packets:
+            wrpcap(filepath, capture_packets)
+
+            await capture_collection.insert_one({
+                "filename": filename,
+                "filepath": filepath,
+                "protocol": capture_state.protocol,
+                "packet_count": len(capture_packets),
+                "captured_at": timestamp,
+            })
+
         await websocket.send_json({"event": "capture_finished"})
     except WebSocketDisconnect:
         print("Cliente desconectado")

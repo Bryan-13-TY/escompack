@@ -1,20 +1,20 @@
 """Módulo con el router para las peticiones de la captura de paquetes.
 
-Este módulo incluye el endpoint `/api/capture/` que indica el estado
-de la captura actual.
+Este módulo incluye el router con el prefijo `/api/capture` para la
+captura de paquetes.
 
 Endpoints:
-    - _star_capture: Muestra el número de paquetes a capturar, el
-    protocolo de esos paquetes y el estado activo (`True`) que
-    indica que la captura esta activa.
+    - `/start`: Inicia la captura de paquetes.
+    - `/stop`: Detiene la captura de paquetes.
+    - `/status`: Muestra el estado de la captura.
 """
 
 from dataclasses import asdict
 
 from fastapi import APIRouter
 
-from app.schemas import CaptureRequest
-from app.models import capture_state
+from app.schemas.capture_request import CaptureRequest
+from app.models.capture_state import capture_state
 
 router_capture = APIRouter(prefix="/api/capture", tags=["Captura"])
 

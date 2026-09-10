@@ -1,3 +1,5 @@
+"""Módulo para la conexión con MongoDB."""
+
 from motor.motor_asyncio import AsyncIOMotorClient
 
 # Accedemos a la BD desde el backend usando el pueto mapeado
