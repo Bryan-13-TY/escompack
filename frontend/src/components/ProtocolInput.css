@@ -1,0 +1,37 @@
+:root.dark {
+    --pkts-target-protocol-icon-txt-clr: #d3d3d3;
+    --pkts-target-protocol-bdr: 2px solid #141f30;
+    --pkts-target-protocol-bg-clr: #172234;
+    --pkts-target-protocol-selected-bg-clr: #1e2c44;
+    --pkts-target-protocol-hvr-bg-clr: #1e2c44;
+}
+
+:root.light {
+    --pkts-target-protocol-icon-txt-clr: #212121;
+    --pkts-target-protocol-bdr: 2px solid #d5d5d5;
+    --pkts-target-protocol-bg-clr: #f9f8f8;
+    --pkts-target-protocol-selected-bg-clr: #d9d9d9;
+    --pkts-target-protocol-hvr-bg-clr: #d9d9d9;
+}
+
+.target-protocol .protocol-content {
+    border: var(--pkts-target-protocol-bdr);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: 8px;
+    padding: 8px;
+
+    color: var(--pkts-target-protocol-icon-txt-clr);
+    background-color: var(--pkts-target-protocol-bg-clr);
+}
+
+.selected .protocol-content {
+    background-color: var(--pkts-target-protocol-selected-bg-clr);
+}
+
+.target-protocol:hover .protocol-content {
+    background-color: var(--pkts-target-protocol-hvr-bg-clr);
+}
