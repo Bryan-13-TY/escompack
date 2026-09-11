@@ -89,7 +89,7 @@ async def _websocket_capture(websocket: WebSocket) -> None:
         capture_packets.append(pkt)
 
         summary = {
-            "number": _packect_process.count,
+            "number": _packect_process.count,  # type: ignore
             "source": pkt[0][1].src if pkt.haslayer("Ether") else None,
             "destination": pkt[0][1].dst if pkt.haslayer("Ether") else None,
             "protocol": pkt.lastlayer().name,
@@ -97,10 +97,10 @@ async def _websocket_capture(websocket: WebSocket) -> None:
             "summary": pkt.summary(),
         }
 
-        _packect_process.count += 1
+        _packect_process.count += 1  # type: ignore
         asyncio.run_coroutine_threadsafe(websocket.send_json(summary), loop)
 
-    _packect_process.count = 1
+    _packect_process.count = 1  # type: ignore
 
     def _stop_filter(pk):
         """
@@ -138,7 +138,7 @@ async def _websocket_capture(websocket: WebSocket) -> None:
             new_capture = CaptureIndex(
                 filename=filename,
                 filepath=filepath,
-                protocol=capture_state.protocol,
+                protocol=capture_state.protocol,  # type: ignore
                 packet_count=len(capture_packets),
                 captured_at=timestamp,
             )

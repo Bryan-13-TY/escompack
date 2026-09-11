@@ -36,7 +36,7 @@ function ProtocolInput({ id, icon, label, isSelected, onSelect }) {
                 checked = {isSelected} // marcamos el input seleccionado
             />
             <div className='protocol-content'>
-                <img src={icon} alt={label} width={60}/>
+                <img src={icon} alt={label} width={70}/>
                 <span>{label}</span>
             </div>
         </label>
