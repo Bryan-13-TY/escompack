@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import './ProtocolInput.css';
+
 /**
  * Componente que muestra un input de un protocolo a capturar.
  * 
@@ -34,7 +36,7 @@ function ProtocolInput({ id, icon, label, isSelected, onSelect }) {
                 checked = {isSelected} // marcamos el input seleccionado
             />
             <div className='protocol-content'>
-                <img src={icon} alt={label} width={70}/>
+                <img src={icon} alt={label} width={60}/>
                 <span>{label}</span>
             </div>
         </label>

@@ -137,7 +137,11 @@ function PackageCapture() {
                                         style={{ width: `${totalPackets > 0 ? (packets.length / totalPackets) * 100 : 0}%` }}
                                     ></div>
                                 </div>
-                                <p className='progress-total'>{packets.length} / {totalPackets} paquetes</p>
+                                <div className='progress-footer'>
+                                    <p className='progress-total'>{packets.length} / {totalPackets} paquetes</p>
+                                    <span className='interface'>Interfaz: enp0s8</span>
+                                </div>
+                                
                             </div>
                         </div>
                     </section>
