@@ -29,6 +29,7 @@ import asyncio
 from app.models.capture_state import capture_state
 from app.core.protocol_filters import PROTOCOLS_FILTER
 from app.core.database import capture_collection
+from app.schemas.capture_index import CaptureIndex
 
 router_ws = APIRouter(prefix="/ws/capture", tags=["Captura"])
 
@@ -134,13 +135,15 @@ async def _websocket_capture(websocket: WebSocket) -> None:
         if capture_packets:
             wrpcap(filepath, capture_packets)
 
-            await capture_collection.insert_one({
-                "filename": filename,
-                "filepath": filepath,
-                "protocol": capture_state.protocol,
-                "packet_count": len(capture_packets),
-                "captured_at": timestamp,
-            })
+            new_capture = CaptureIndex(
+                filename=filename,
+                filepath=filepath,
+                protocol=capture_state.protocol,
+                packet_count=len(capture_packets),
+                captured_at=timestamp,
+            )
+
+            await capture_collection.insert_one(new_capture.model_dump())
 
         await websocket.send_json({"event": "capture_finished"})
     except WebSocketDisconnect:
