@@ -34,14 +34,15 @@ function Button({
     position = 'after',
     onClick = () => {},
     disable = false,
-
+    animation = true,
 }) {
     // Si no se encuentra el 'rol' se usa el rol por defecto
     const config = ROLE_CONFIGS[rol] || ROLE_CONFIGS.link;
+    const animateIcon = animation ? 'animate-icon' : '';
 
     const buttonIcon = (
         <FontAwesomeIcon
-            className='custom-btn-icon'
+            className={`custom-btn-icon ${animateIcon}`}
             icon={config.icon}
             size='2x'
         />

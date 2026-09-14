@@ -1,65 +1,40 @@
+@import url('../theme-palette.css');
+
 :root {
-    --pkt-capture-fnt-family: 'Cascadia Code', monospace;
-}
+    --pkts-table-capture-pkt-protocol-txt-clr: #dedede;
 
-:root.dark {
-    --pkts-capture-bg-clr: #0C131D;
+    --pkt-capture-fnt-family: var(--font-family-code);
 
-    --pkts-form-bg-clr: #111926;
-    --pkts-form-bdr: 2px solid #141f30;
+    --pkts-capture-bg-clr: var(--theme-bg-base);
 
-    --pkts-input-label-txt-clr: #dedede;
-    --pkts-input-bdr: 2px solid #141f30;
-    --pkts-input-bg-clr: #172234;
-    --pkts-input-txt-clr: #d3d3d3;
+    --pkts-form-bg-clr: var(--theme-bg-surface);
+    --pkts-form-bdr: var(--theme-border);
 
-    --pkts-target-protocol-label-txt-clr: #dedede;
+    --pkts-input-label-txt-clr: var(--theme-txt-main);
+    --pkts-input-bdr: var(--theme-border);
+    --pkts-input-bg-clr: var(--theme-bg-elevated);
+    --pkts-input-txt-clr: var(--theme-txt-muted);
 
-    --pkts-capture-progress-bg-clr: #111926;
-    --pkts-capture-progress-bdr: 2px solid #141f30;
-    --pkts-capture-progress-label-txt-clr: #dedede;
-    --pkts-capture-progress-porcent-txt-clr: #0080d0;
-    --pkts-capture-progress-total-txt-clr: #d3d3d3;
-    --pkts-capture-progress-interface-txt-clr: #d3d3d3;
+    --pkts-target-protocol-label-txt-clr: var(--theme-txt-main);
 
-    --pkts-progress-bar-bg-clr: #172234;
-    --pkts-progress-bar-porcent-bg-clr: #0080d0;
+    --pkts-capture-progress-bg-clr: var(--theme-bg-surface);
+    --pkts-capture-progress-bdr: var(--theme-border);
+    --pkts-capture-progress-label-txt-clr: var(--theme-txt-main);
+    --pkts-capture-progress-porcent-txt-clr: var(--theme-accent);
+    --pkts-capture-progress-total-txt-clr: var(--theme-txt-muted);
+    --pkts-capture-progress-interface-txt-clr: var(--theme-txt-muted);
 
-    --pkts-table-capture-bdr: 2px solid #141f30;
-    --pkts-table-capture-thead-bg-clr: #111926;
-    --pkts-table-capture-tbody-bg-clr: #172234;
-    --pkts-table-capture-thead-txt-clr: #dedede;
-    --pkts-table-capture-tbody-txt-clr: #d3d3d3;
-}
+    --pkts-progress-bar-bg-clr: var(--theme-bg-elevated);
+    --pkts-progress-bar-porcent-bg-clr: var(--theme-accent);
 
-:root.light {
-    --pkts-capture-bg-clr: #FAFAFA;
-
-    --pkts-form-bg-clr: #efeded;
-    --pkts-form-bdr: 2px solid #d5d5d5;
-
-    --pkts-input-label-txt-clr: #1a1a1a;
-    --pkts-input-bdr: 2px solid #d5d5d5;
-    --pkts-input-bg-clr: #f9f8f8;
-    --pkts-input-txt-clr: #212121;
-
-    --pkts-target-protocol-label-txt-clr: #1a1a1a;
-
-    --pkts-capture-progress-bg-clr: #efeded;
-    --pkts-capture-progress-bdr: 2px solid #d5d5d5;
-    --pkts-capture-progress-label-txt-clr: #1a1a1a;
-    --pkts-capture-progress-porcent-txt-clr: #021981;
-    --pkts-capture-progress-total-txt-clr: #212121; 
-    --pkts-capture-progress-interface-txt-clr: #212121;
-
-    --pkts-progress-bar-bg-clr: #f9f8f8;
-    --pkts-progress-bar-porcent-bg-clr: #021981;
-
-    --pkts-table-capture-bdr: 2px solid #d5d5d5;
-    --pkts-table-capture-thead-bg-clr: #efeded;
-    --pkts-table-capture-tbody-bg-clr: #f9f8f8;
-    --pkts-table-capture-thead-txt-clr: #1a1a1a;
-    --pkts-table-capture-tbody-txt-clr: #212121;
+    --pkts-table-capture-bdr: var(--theme-border);
+    --pkts-table-capture-thead-bg-clr: var(--theme-bg-surface);
+    --pkts-table-capture-tbody-bg-clr: var(--theme-bg-elevated);
+    --pkts-table-capture-thead-txt-clr: var(--theme-txt-main);
+    --pkts-table-capture-tbody-txt-clr: var(--theme-txt-muted);
+    --pkts-table-capture-tbody-hvr-bg-clr: var(--theme-bg-hover);
+    --pkts-table-capture-pkt-protocol-bg-clr: var(--theme-accent);
+    --pkts-table-capture-bar-bg-clr: var(--theme-accent);
 }
 
 main {
@@ -232,7 +207,7 @@ form .packets-capture {
 
 .table-wrapper table thead tr th,
 .table-wrapper table tbody tr td {
-    padding: 10px;
+    padding: 12px;
     
     text-align: left;
 }
@@ -242,6 +217,47 @@ form .packets-capture {
 
     background-color: var(--pkts-table-capture-tbody-bg-clr);
 }
+
+.table-wrapper table tbody tr .table-bar {
+    position: relative; /* referencia para la barra animada */
+}
+
+.table-wrapper table tbody tr .table-bar::before {
+    content: '';
+    position: absolute;
+    left: 0; /* barra a la izquierda */
+    top: 0; /* barra desde arriba */
+    width: 4px; /* grosor de la barra */
+    height: 100%; /* ocupa todo el alto */
+    border-radius: 5px;
+
+    transform: scaleY(0); /* estado inicial */
+    transform-origin: bottom center;
+    transition: 0.4s ease;
+    
+    background-color: var(--pkts-table-capture-bar-bg-clr);
+}
+
+.table-wrapper table tbody tr:hover .table-bar::before {
+    transform: scaleY(1);
+
+    transform-origin: top center;
+}
+
+.table-wrapper table tbody tr td .table-protocol {
+    border-radius: 5px;
+    padding: 5px 7px;
+
+    color: var(--pkts-table-capture-pkt-protocol-txt-clr);
+    font-weight: bold;
+
+    background-color: var(--pkts-table-capture-pkt-protocol-bg-clr);
+}
+
+.table-wrapper table tbody tr:hover {
+    background-color: var(--pkts-table-capture-tbody-hvr-bg-clr);
+}
+
 
 /* ====== media queries ====== */
 

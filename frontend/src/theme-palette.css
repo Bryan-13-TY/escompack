@@ -1,0 +1,54 @@
+:root {
+    --font-family-code: 'Cascadia Code', monospace;
+}
+
+/* ====== valores por defecto (dark) ===== */
+:root,
+:root.dark {
+    /* header y footer */
+    --theme-hf-base: #070b10;
+
+    /* capas de fondo */
+    --theme-bg-base: #0c131d;
+    --theme-bg-surface: #111926;
+    --theme-bg-elevated: #172234;
+    --theme-bg-hover: #1e2c44;
+    --theme-bg-opaque: rgb(12, 19, 29, 0.2);
+
+    /* bordes */
+    --theme-border: 2px solid #141f30;
+    --theme-border-hover: 2px solid #003b60;
+
+    /* textos */
+    --theme-txt-muted: #d3d3d3;
+    --theme-txt-main: #dedede;
+
+    /* fondos de resaltado o de texto */
+    --theme-accent: #0080d0;
+    --theme-accent-hover: #006fb5;
+}
+
+/* ====== reevaluación de valores (light) ====== */
+:root.light {
+    /* header y footer */
+    --theme-hf-base: #b8bdf9;
+
+    /* capas de fondo */
+    --theme-bg-base: #f0f1fd;
+    --theme-bg-surface: #dee0ff;
+    --theme-bg-elevated: #f8f9fe;
+    --theme-bg-hover: #e4e8ff;
+    --theme-bg-opaque: rgb(240, 241, 253, 0.2);
+
+    /* bordes */
+    --theme-border: 2px solid #babffe;
+    --theme-border-hover: 2px solid #021981;
+
+    /* textos */
+    --theme-txt-muted: #212121;
+    --theme-txt-main: #1a1a1a;
+
+    /* fondos de resaltado */
+    --theme-accent: #021981;
+    --theme-accent-hover: #001ea4;
+}

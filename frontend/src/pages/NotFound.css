@@ -1,19 +1,12 @@
+@import url('../theme-palette.css');
+
 :root {
-    --not-found-fnt-family: 'Cascadia Code', monospace;
-}
-
-:root.dark {
-    --not-found-bg-clr: #0C131D;
-    --not-found-icon-txt-clr: #dedede;
-    --not-found-404-txt-clr: #dedede;
-    --not-found-subtitle-txt-clr: #d3d3d3;
-}
-
-:root.light {
-    --not-found-bg-clr: #ededed;
-    --not-found-icon-txt-clr: #1a1a1a;
-    --not-found-404-txt-clr: #1a1a1a;
-    --not-found-subtitle-txt-clr: #212121;
+    --not-found-fnt-family: var(--font-family-code);
+    
+    --not-found-bg-clr: var(--theme-bg-base);
+    --not-found-icon-txt-clr: var(--theme-txt-main);
+    --not-found-404-txt-clr: var(--theme-txt-main);
+    --not-found-subtitle-txt-clr: var(--theme-txt-muted);
 }
 
 main {

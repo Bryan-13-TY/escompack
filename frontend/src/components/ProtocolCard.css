@@ -1,23 +1,14 @@
+@import url('../theme-palette.css');
+
 :root {
-    --protocol-card-fnt-family: 'Cascadia Code', monospace;
-}
+    --protocol-card-fnt-family: var(--font-family-code);
 
-:root.dark {
-    --protocol-card-bg-clr: #111926;
-    --protocol-card-bdr: 2px solid #141f30;
-    --protocol-card-hvr-bdr: 2px solid #003b60;
-    --protocol-card-acronym-txt-clr: #0080d0; 
-    --protocol-card-rep-txt-clr: #dedede;
-    --protocol-card-desc-txt-clr: #d3d3d3;
-}
-
-:root.light {
-    --protocol-card-bg-clr: #efeded;
-    --protocol-card-bdr: 2px solid #d5d5d5;
-    --protocol-card-hvr-bdr: 2px solid #021981;
-    --protocol-card-acronym-txt-clr: #021981;
-    --protocol-card-rep-txt-clr: #1a1a1a;
-    --protocol-card-desc-txt-clr: #212121;
+    --protocol-card-bg-clr: var(--theme-bg-surface);
+    --protocol-card-bdr: var(--theme-border);
+    --protocol-card-hvr-bdr: var(--theme-border-hover);
+    --protocol-card-acronym-txt-clr: var(--theme-accent); 
+    --protocol-card-rep-txt-clr: var(--theme-txt-main);
+    --protocol-card-desc-txt-clr: var(--theme-txt-muted);
 }
 
 .protocol-card-wrapper {

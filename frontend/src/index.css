@@ -1,9 +1,7 @@
-:root.dark {
-    --bg-clr-default: #0C131D;
-}
+@import url('theme-palette.css');
 
-:root.light {
-    --bg-clr-default: #FAFAFA;
+:root {
+    --default-bg-clr: var(--theme-bg-base);
 }
 
 * {
@@ -20,5 +18,5 @@ html body {
 }
 
 body {
-    background-color: var(--bg-clr-default);
+    background-color: var(--default-bg-clr);
 }

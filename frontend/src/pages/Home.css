@@ -1,31 +1,18 @@
+@import url('../theme-palette.css');
+
 :root {
-    --home-fnt-family: 'Cascadia Code', monospace;
-}
+    --home-fnt-family: var(--font-family-code);
 
-:root.dark {
-    --welcome-bg: linear-gradient(to top, rgb(12, 19, 29), rgb(17, 25, 38, 0.3)), url('../assets/backgrounds/background-v3.jpg');
-    --welcome-txt-clr: #dedede;
-    --welcome-escom-txt-clr: #0080d0;
-    --welcome-pack-txt-clr: #dedede;
-    --welcome-txt-clr-desc: #d3d3d3;
+    --welcome-bg: linear-gradient(to top, var(--theme-bg-base), var(--theme-bg-opaque)), url('../assets/backgrounds/background-v3.jpg');
+    --welcome-txt-clr: var(--theme-txt-main);
+    --welcome-escom-txt-clr: var(--theme-accent);
+    --welcome-pack-txt-clr: var(--theme-txt-main);
+    --welcome-txt-clr-desc: var(--theme-txt-muted);
 
-    --operation-cards-bg-clr: #0C131D;
+    --operation-cards-bg-clr: var(--theme-bg-base);
 
-    --protocol-cards-txt-clr: #dedede;
-    --protocol-cards-bg-clr: #0C131D;
-}
-
-:root.light {
-    --welcome-bg: linear-gradient(to top, rgb(250, 250, 250), rgb(237, 237, 237, 0.3)), url('../assets/backgrounds/background-v3.jpg');
-    --welcome-txt-clr: #1a1a1a;
-    --welcome-escom-txt-clr: #021981;
-    --welcome-pack-txt-clr: #1a1a1a;
-    --welcome-txt-clr-desc: #212121;
-
-    --operation-cards-bg-clr: #FAFAFA;
-
-    --protocol-cards-txt-clr: #1a1a1a;
-    --protocol-cards-bg-clr: #FAFAFA;
+    --protocol-cards-txt-clr: var(--theme-txt-main);
+    --protocol-cards-bg-clr: var(--theme-bg-base);
 }
 
 main {

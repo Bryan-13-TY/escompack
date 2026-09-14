@@ -162,9 +162,9 @@ function PackageCapture() {
                                     {
                                         packets.map((pkt) => (
                                             <tr key={pkt.number}>
-                                                <td>{pkt.number}</td>
+                                                <td className='table-bar'>{pkt.number}</td>
                                                 <td>{pkt.length}</td>
-                                                <td>{pkt.protocol}</td>
+                                                <td><span className='table-protocol'>{pkt.protocol}</span></td>
                                                 <td>{pkt.source}</td>
                                                 <td>{pkt.destination}</td>
                                                 <td>{pkt.summary}</td>

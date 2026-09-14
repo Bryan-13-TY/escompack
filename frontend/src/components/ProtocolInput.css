@@ -1,17 +1,9 @@
-:root.dark {
-    --pkts-target-protocol-icon-txt-clr: #d3d3d3;
-    --pkts-target-protocol-bdr: 2px solid #141f30;
-    --pkts-target-protocol-bg-clr: #172234;
-    --pkts-target-protocol-selected-bg-clr: #1e2c44;
-    --pkts-target-protocol-hvr-bg-clr: #1e2c44;
-}
-
-:root.light {
-    --pkts-target-protocol-icon-txt-clr: #212121;
-    --pkts-target-protocol-bdr: 2px solid #d5d5d5;
-    --pkts-target-protocol-bg-clr: #f9f8f8;
-    --pkts-target-protocol-selected-bg-clr: #d9d9d9;
-    --pkts-target-protocol-hvr-bg-clr: #d9d9d9;
+:root {
+    --pkts-target-protocol-icon-txt-clr: var(--theme-txt-muted);
+    --pkts-target-protocol-bdr: var(--theme-border);
+    --pkts-target-protocol-bg-clr: var(--theme-bg-elevated);
+    --pkts-target-protocol-selected-bg-clr: var(--theme-bg-hover);
+    --pkts-target-protocol-hvr-bg-clr: var(--theme-bg-hover);
 }
 
 .target-protocol .protocol-content {
