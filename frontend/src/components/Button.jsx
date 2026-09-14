@@ -1,18 +1,21 @@
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { ROLE_CONFIGS } from '../constants';
+import { ROLE_CONFIGS, ANIMATION_CONFIGS } from '../constants';
 
 import './Button.css';
 
 /**
  * Componente que muestra un botón personalizado.
  * 
- * Se le puede especificar el texto del botón `buttonText`, el rol
- * `rol` que muestra visualmente su funcionamiento, el tipo del
- * botón `type`, la posición del icono del botón `position`, la
- * función callback `onClick` que se ejecuta al hacer clic en el
- * botón y el estado para habilitar o deshabilitar el botón `disable`.
+ * - `buttonText` el texto qye se muestra en el botón.
+ * - `type` el tipo del botón.
+ * - `rol` estilo del botón que indica su uso.
+ * - `position` posición del icono del botón.
+ * - `onClick` función callback que se ejecuta al hacer clic en el
+ * botón.
+ * - `disable` habilita o deshabilita el botón.
+ * - `animation` comportamiento del icono del botón. 
  * 
  * @component
  * @example
@@ -24,6 +27,7 @@ import './Button.css';
  *      position='before'
  *      onClick={handleStop}
  *      disable={!isCapturing}
+ *      animation='left'
  *  />
  * );
  */
@@ -34,15 +38,15 @@ function Button({
     position = 'after',
     onClick = () => {},
     disable = false,
-    animation = true,
+    animation = 'none',
 }) {
     // Si no se encuentra el 'rol' se usa el rol por defecto
     const config = ROLE_CONFIGS[rol] || ROLE_CONFIGS.link;
-    const animateIcon = animation ? 'animate-icon' : '';
+    const animateIcon = ANIMATION_CONFIGS[animation] || ANIMATION_CONFIGS.none;
 
     const buttonIcon = (
         <FontAwesomeIcon
-            className={`custom-btn-icon ${animateIcon}`}
+            className={`${animateIcon.className} ${animateIcon.direction}`}
             icon={config.icon}
             size='2x'
         />
@@ -68,7 +72,8 @@ Button.defaultProps = {
     rol: 'link',
     position: 'after',
     onClick: () => {},
-    disable: false,   
+    disable: false,
+    animation: 'none',
 }
 
 Button.propTypes = {
@@ -89,6 +94,9 @@ Button.propTypes = {
 
     /** Define si el botón se habilita o deshabilita */
     disable: PropTypes.bool,
+
+    /* Define el comportamiento de la animación del icono */
+    animation: PropTypes.oneOf(['none', 'left', 'right']),
 };
 
 /** @type {React.FC<any>} */

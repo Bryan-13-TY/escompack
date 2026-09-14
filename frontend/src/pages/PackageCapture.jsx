@@ -96,7 +96,6 @@ function PackageCapture() {
                                     />
                                     <Button
                                         buttonText='Detener captura'
-                                        type='button'
                                         rol='stop_capture'
                                         position='before'
                                         onClick={handleStop}

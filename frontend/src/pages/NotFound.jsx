@@ -22,9 +22,9 @@ function NotFound() {
                             <Link to={'/home'}>
                                 <Button
                                     buttonText='Volver al inicio'
-                                    type='button'
                                     rol='back_home'
                                     position='before'
+                                    animation='left'
                                 />
                             </Link>
                         </div>

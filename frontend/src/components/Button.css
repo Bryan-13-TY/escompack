@@ -1,3 +1,5 @@
+@import url('../theme-palette.css');
+
 :root {
     --btn-bdr: none;
     --btn-pdng: 10px;
@@ -79,6 +81,10 @@ span p {
     transition: transform 0.4s ease;
 }
 
-.custom-btn:hover .animate-icon {
+.custom-btn:hover .move-to-right {
     transform: translateX(5px);
+}
+
+.custom-btn:hover .move-to-left {
+    transform: translateX(-5px);
 }
