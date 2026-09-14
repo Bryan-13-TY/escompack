@@ -5,7 +5,6 @@ import {
     faCircleStop,
     faCirclePlay,
     faCircleArrowLeft,
-    faS,
 } from '@fortawesome/free-solid-svg-icons';
 
 import darkPimIcon from './assets/icons/icon-pim-dark.png'

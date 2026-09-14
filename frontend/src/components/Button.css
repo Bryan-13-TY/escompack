@@ -74,3 +74,11 @@
 span p {
     margin: 0;
 }
+
+.custom-btn .animate-icon {
+    transition: transform 0.4s ease;
+}
+
+.custom-btn:hover .animate-icon {
+    transform: translateX(5px);
+}

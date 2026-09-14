@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
 import Button from './Button';
 
@@ -39,7 +40,10 @@ function OperationCard({
     return (
         <div className="operation-card">
             <div className='operation-card-wrapper'>
-                <FontAwesomeIcon className='operation-card-icon' icon={icon} size='2x' />
+                <div className='operation-card-header'>
+                    <FontAwesomeIcon className='operation-card-icon' icon={icon} size='2x' />
+                    <FontAwesomeIcon className='operation-card-link-icon' icon={faArrowUpRightFromSquare} />
+                </div>
                 <div className='operation-card-desc'>
                     <p className='card-title'>{title}</p>
                     <p className='card-desc'>{description}</p>

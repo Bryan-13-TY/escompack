@@ -1,3 +1,5 @@
+@import url('../theme-palette.css');
+
 :root {
     --header-hamburguer-menu-btn-bdr-radius: 5px;
     --header-hamburguer-menu-btn-pdng: 10px;
@@ -10,49 +12,26 @@
     --header-theme-mode-btn-hvr-txt-clr: #ffffff;
 
     --header-nav-pdng: 5px;
-    --header-fnt-family: 'Cascadia Code', monospace;
-}
+    --header-fnt-family: var(--font-family-code);
 
-:root.dark {
-    --header-bg-clr: #070b10;
+    --header-bg-clr: var(--theme-hf-base);
 
-    --header-hamburguer-menu-btn-bg-clr: #0080d0;
-    --header-hamburguer-menu-btn-hvr-bg-clr: #006fb5;
-    --header-hamburguer-menu-bdr: 2px solid #141f30; 
-    --header-hamburguer-menu-bar-bg-clr: #0080d0;
-    --header-hamburguer-menu-elmt-hvr-bg-clr: #111926;
+    --header-hamburguer-menu-btn-bg-clr: var(--theme-accent);
+    --header-hamburguer-menu-btn-hvr-bg-clr: var(--theme-accent-hover);
+    --header-hamburguer-menu-bdr: var(--theme-border); 
+    --header-hamburguer-menu-bar-bg-clr: var(--theme-accent);
+    --header-hamburguer-menu-elmt-hvr-bg-clr: var(--theme-bg-surface);
 
-    --header-icon-escom-txt-clr: #0080d0;
-    --header-icon-pack-txt-clr: #dedede;
-    --header-icon-hvr-text-color: #0080d0;
+    --header-icon-escom-txt-clr: var(--theme-accent);
+    --header-icon-pack-txt-clr: var(--theme-txt-main);
+    --header-icon-hvr-text-color: var(--theme-accent);
 
-    --header-nav-element-txt-clr: #dedede;
-    --header-nav-element-hvr-txt-clr: #0080d0;
-    --header-nav-element-bar-bg-clr: #0080d0;
+    --header-nav-element-txt-clr: var(--theme-txt-main);
+    --header-nav-element-hvr-txt-clr: var(--theme-accent);
+    --header-nav-element-bar-bg-clr: var(--theme-accent);
 
-    --header-theme-mode-btn-bg-clr: #0080d0;
-    --header-theme-mode-btn-hvr-bg-clr: #006fb5;
-}
-
-:root.light {
-    --header-bg-clr: #e0dfdf;
-
-    --header-hamburguer-menu-btn-bg-clr: #021981;
-    --header-hamburguer-menu-btn-hvr-bg-clr: #001ea4;
-    --header-hamburguer-menu-bdr: 2px solid #d5d5d5; 
-    --header-hamburguer-menu-bar-bg-clr: #021981;
-    --header-hamburguer-menu-elmt-hvr-bg-clr: #efeded;
-
-    --header-icon-escom-txt-clr: #021981;
-    --header-icon-pack-txt-clr: #1a1a1a;
-    --header-icon-hvr-text-color: #021981;
-
-    --header-nav-element-txt-clr: #1a1a1a;
-    --header-nav-element-hvr-txt-clr: #021981;
-    --header-nav-element-bar-bg-clr: #021981;
-
-    --header-theme-mode-btn-bg-clr: #021981;
-    --header-theme-mode-btn-hvr-bg-clr: #001ea4;
+    --header-theme-mode-btn-bg-clr: var(--theme-accent);
+    --header-theme-mode-btn-hvr-bg-clr: var(--theme-accent-hover);
 }
 
 header {
@@ -253,7 +232,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border:  none;
+    border: none;
     border-radius: var(--header-theme-mode-btn-bdr-radius);
     padding: var(--header-theme-mode-btn-pdng);
 

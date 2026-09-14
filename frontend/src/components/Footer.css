@@ -1,17 +1,11 @@
+@import url('../theme-palette.css');
+
 :root {
-    --footer-fnt-family: 'Cascadia Code', monospace;
-}
+    --footer-fnt-family: var(--font-family-code);
 
-:root.dark {
-    --footer-bg-clr: #070b10;
-    --footer-txt-clr: #dedede;
-    --footer-hvr-txt-clr: #0080d0;
-}
-
-:root.light {
-    --footer-bg-clr: #e0dfdf;
-    --footer-txt-clr: #1a1a1a;
-    --footer-hvr-txt-clr: #021981;
+    --footer-bg-clr: var(--theme-hf-base);
+    --footer-txt-clr: var(--theme-txt-main);
+    --footer-hvr-txt-clr: var(--theme-accent);
 }
 
 footer {
