@@ -110,3 +110,18 @@ export const ROLE_CONFIGS = {
         icon: faCirclePlay,
     },
 };
+
+export const ANIMATION_CONFIGS = {
+    none: {
+        className: 'custom-btn-icon',
+        direction: '',
+    },
+    right: {
+        className: 'custom-btn-icon animate-icon',
+        direction: 'move-to-right',
+    },
+    left: {
+        className: 'custom-btn-icon animate-icon',
+        direction: 'move-to-left',
+    }
+};

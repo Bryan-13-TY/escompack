@@ -51,7 +51,7 @@ function OperationCard({
                 <Link to={pageLink}>
                     <Button
                         buttonText={buttonText}
-                        type='button'
+                        animation='right'
                     />
                 </Link>
             </div>

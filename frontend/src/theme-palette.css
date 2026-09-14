@@ -31,7 +31,7 @@
 /* ====== reevaluación de valores (light) ====== */
 :root.light {
     /* header y footer */
-    --theme-hf-base: #b8bdf9;
+    --theme-hf-base: #c3c8f7;
 
     /* capas de fondo */
     --theme-bg-base: #f0f1fd;
