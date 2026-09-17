@@ -1,0 +1,74 @@
+.table-wrapper {
+    /*border: 2px solid yellow;*/
+    padding: var(--padding-section-default);
+    width: 100%;
+    overflow-x: auto;
+
+    font-family: var(--font-family-default);
+}
+
+.table-wrapper table {
+    border: var(--border-default);
+    border-collapse: collapse; /* une los bordes de la tabla */
+    width: 100%;
+    min-width: 1200px; /* si es menor aparece el scroll */
+}
+
+.table-wrapper table thead tr {
+    color: var(--color-text-primary);
+
+    background-color: var(--color-bg-surface);
+}
+
+.table-wrapper table thead tr th,
+.table-wrapper table tbody tr td {
+    padding: 12px;
+    
+    text-align: left;
+}
+
+.table-wrapper table tbody tr {
+    color: var(--color-text-secondary);
+
+    background-color: var(--color-bg-elevated);
+}
+
+.table-wrapper table tbody tr .table-bar {
+    position: relative; /* referencia para la barra animada */
+}
+
+.table-wrapper table tbody tr .table-bar::before {
+    content: '';
+    position: absolute;
+    left: 0; /* barra a la izquierda */
+    top: 0; /* barra desde arriba */
+    width: 4px; /* grosor de la barra */
+    height: 100%; /* ocupa todo el alto */
+    border-radius: var(--border-radius-default);
+
+    transform: scaleY(0); /* estado inicial */
+    transform-origin: bottom center;
+    transition: 0.4s ease;
+    
+    background-color: var(--color-bg-accent);
+}
+
+.table-wrapper table tbody tr:hover .table-bar::before {
+    transform: scaleY(1);
+
+    transform-origin: top center;
+}
+
+.table-wrapper table tbody tr td .table-protocol {
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-label-focus);
+
+    color: var(--color-text-label-accent);
+    font-weight: bold;
+
+    background-color: var(--color-bg-accent);
+}
+
+.table-wrapper table tbody tr:hover {
+    background-color: var(--color-bg-elevated-hover);
+}
