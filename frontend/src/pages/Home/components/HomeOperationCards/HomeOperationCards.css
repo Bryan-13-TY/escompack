@@ -1,7 +1,33 @@
-.operation-cards-wrapper {
+.home-operation-cards {
     display: flex;
     gap: 30px;
     padding: var(--padding-section-default);
 
     background-color: var(--color-bg-base);
+}
+
+@media (max-width: 950px) {
+    .home-operation-cards {
+        flex-direction: column;
+        justify-content: center; /* alinea verticalmente */
+    }
+
+    .home-operation-cards .home-operation-card {
+        width: auto;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+@media (min-width: 950px) {
+    .home-operation-cards {
+        flex-direction: row;
+        justify-content: center; /* alinea horizontalmente */
+        align-items: center; /* alinea verticalmente */
+    }
+
+    .home-operation-cards .home-operation-card {
+        max-width: 400px;
+        min-width: 200px;
+    }
 }

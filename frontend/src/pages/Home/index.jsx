@@ -9,15 +9,13 @@ import './index.css';
 function Home() {
     return (
         <div className='home'>
-            <div className='home-wrapper'>
-                <Header />
-                <main>
-                    <HomeHeader />
-                    <HomeOperationCards />
-                    <HomeProtocolCards />
-                </main>
-                <Footer />
-            </div>
+            <Header />
+            <main>
+                <HomeHeader />
+                <HomeOperationCards />
+                <HomeProtocolCards />
+            </main>
+            <Footer />
         </div>
     );
 }
