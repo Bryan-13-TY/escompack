@@ -1,54 +1,54 @@
-.protocol-card-wrapper {
+.home-protocol-card {
     border: var(--border-default);
+    border-radius: var(--border-radius-default);
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: var(--padding-default);
-    border-radius: var(--border-radius-default);
     gap: 20px;
     height: 100%;
 
     font-family: var(--font-family-default);
 
     background-color: var(--color-bg-surface);
-
-    /*transition: border 0.5s ease-in-out;*/
 }
 
-.protocol-card-wrapper:hover {
+.home-protocol-card p {
+    margin: 0;
+}
+
+.home-protocol-card:hover {
     border: var(--border-focus);
 }
 
-.protocol-card-wrapper .protocol-card-label {
+.home-protocol-card .home-protocol-card-header {
     display: flex;
     flex-direction: row;
-    justify-content: left; /* alinea a la izquierda */
+    justify-content: left;
     align-items: center; /* alinea verticalmente */
     gap: 10px;
 }
 
-.protocol-card-label .protocol-card-acronym {
+.home-protocol-card-header .header-label {
     display: flex;
     flex-direction: column;
+    justify-content: left;
     justify-content: center; /* alinea verticalmente */
-    align-items: left; /* alinea a la izquierda */
     gap: 2px;
 }
 
-.protocol-card-acronym .acronym {
+.header-label .label-acronym {
     font-weight: bold;
     color: var(--color-text-accent);
     font-size: var(--font-size-title);
 }
 
-.protocol-card-acronym .rep {
-    margin: 0;
-
-    color: var(--color-text-secondary);
+.header-label .label-acronym-rep {
     font-size: var(--font-size-label);
+    color: var(--color-text-secondary);
 }
 
-.protocol-card-wrapper .protocol-card-desc {
-    margin: 0;
-
-    color: var(--color-text-secondary);
+.home-protocol-card .home-protocol-card-description {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-description);
 }

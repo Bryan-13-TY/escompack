@@ -27,17 +27,15 @@ import './ProtocolCard.css';
  */
 function ProtocolCard({ icon, acronym, rep, description }) {
     return (
-        <div className='protocol-card'>
-            <div className='protocol-card-wrapper'>
-                <div className='protocol-card-label'>
-                    <img src={icon} alt="" width={60}/>
-                    <div className='protocol-card-acronym'>
-                        <span className='acronym'>{acronym}</span>
-                        <p className='rep'>{rep}</p>
-                    </div>
+        <div className='home-protocol-card'>
+            <header className='home-protocol-card-header'>
+                <img src={icon} alt="" width={60} className='header-icon'/>
+                <div className='header-label'>
+                    <p className='label-acronym'>{acronym}</p>
+                    <span className='label-acronym-rep'>{rep}</span>
                 </div>
-                <p className='protocol-card-desc'>{description}</p>
-            </div>
+            </header>
+            <p className='home-protocol-card-description'>{description}</p>
         </div>
     );
 }
