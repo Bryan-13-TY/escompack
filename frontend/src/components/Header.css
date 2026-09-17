@@ -1,49 +1,13 @@
-@import url('../theme-palette.css');
-
-:root {
-    --header-hamburguer-menu-btn-bdr-radius: 5px;
-    --header-hamburguer-menu-btn-pdng: 10px;
-    --header-hamburguer-menu-btn-txt-clr: #dedede;
-    --header-hamburguer-menu-btn-hvr-txt-clr: #ffffff;
-
-    --header-theme-mode-btn-bdr-radius: 5px;
-    --header-theme-mode-btn-pdng: 10px;
-    --header-theme-mode-btn-txt-clr: #dedede;
-    --header-theme-mode-btn-hvr-txt-clr: #ffffff;
-
-    --header-nav-pdng: 5px;
-    --header-fnt-family: var(--font-family-code);
-
-    --header-bg-clr: var(--theme-hf-base);
-
-    --header-hamburguer-menu-btn-bg-clr: var(--theme-accent);
-    --header-hamburguer-menu-btn-hvr-bg-clr: var(--theme-accent-hover);
-    --header-hamburguer-menu-bdr: var(--theme-border); 
-    --header-hamburguer-menu-bar-bg-clr: var(--theme-accent);
-    --header-hamburguer-menu-elmt-hvr-bg-clr: var(--theme-bg-surface);
-
-    --header-icon-escom-txt-clr: var(--theme-accent);
-    --header-icon-pack-txt-clr: var(--theme-txt-main);
-    --header-icon-hvr-text-color: var(--theme-accent);
-
-    --header-nav-element-txt-clr: var(--theme-txt-main);
-    --header-nav-element-hvr-txt-clr: var(--theme-accent);
-    --header-nav-element-bar-bg-clr: var(--theme-accent);
-
-    --header-theme-mode-btn-bg-clr: var(--theme-accent);
-    --header-theme-mode-btn-hvr-bg-clr: var(--theme-accent-hover);
-}
-
 header {
     margin: 0;
 }
 
 .header-wrapper {
-    padding: 10px 20px;
+    padding: var(--padding-header);
 
-    font-family: var(--header-fnt-family);
+    font-family: var(--font-family-default);
 
-    background-color: var(--header-bg-clr);
+    background-color: var(--color-bg-header);
 }
 
 .header-wrapper .header-content {
@@ -67,32 +31,36 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    border:  none;
-    border-radius: var(--header-hamburguer-menu-btn-bdr-radius);
-    padding: var(--header-hamburguer-menu-btn-pdng);
+    border: none;
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-buttom-icon);
 
     text-align: center;
-    color: var(--header-hamburguer-menu-btn-txt-clr);
+    color: var(--color-text-button-default);
     cursor: pointer;
 
-    background-color: var(--header-hamburguer-menu-btn-bg-clr);
+    background-color: var(--color-bg-accent);
 }
 
-.header-nav  .hamburguer-menu-button:hover {
-    color: var(--header-hamburguer-menu-btn-hvr-txt-clr);
+.header-nav .hamburguer-menu-button:hover {
+    color: var(--color-text-buttom-hover);
 
-    background-color: var(--header-hamburguer-menu-btn-hvr-bg-clr);
+    background-color: var(--color-bg-accent-hover);
+}
+
+.header-nav .hamburguer-menu-button:active {
+    transform: scale(0.95);
 }
 
 .hamburguer-menu-wrapper .nav-menu-wrapper {
-    border: var(--header-hamburguer-menu-bdr);
-    border-radius: 5px;
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
     position: absolute;
-    z-index: 10;
+    z-index: 20;
     padding: 15px 10px;
     margin-top: 10px;
 
-    background-color: var(--header-bg-clr);
+    background-color: var(--color-bg-header);
 }
 
 .nav-menu-wrapper nav ul {
@@ -115,7 +83,7 @@ header {
     border-bottom-right-radius: 5px;
 
     text-decoration: none;
-    color: var(--header-nav-element-txt-clr);
+    color: var(--color-text-primary);
 }
 
 /* barra animada */
@@ -132,13 +100,13 @@ header {
     transform-origin: bottom center;
     transition: 0.4s ease;
 
-    background-color: var(--header-hamburguer-menu-bar-bg-clr);
+    background-color: var(--color-bg-accent);
 }
 
 .nav-menu-wrapper nav ul a:hover {
-    color: var(--header-nav-element-hvr-txt-clr);
+    color: var(--color-text-accent);
 
-    background-color: var(--header-hamburguer-menu-elmt-hvr-bg-clr);
+    background-color: var(--color-bg-surface);
 }
 
 .nav-menu-wrapper nav ul a:hover::before {
@@ -160,7 +128,7 @@ header {
 }
 
 .header-nav .header-icon a:hover .header-image-desc .desc-pack {
-    color: var(--header-icon-hvr-text-color);
+    color: var(--color-text-accent);
 }
 
 .header-icon a .header-image-desc {
@@ -168,11 +136,11 @@ header {
 }
 
 .header-image-desc .desc-escom {
-    color: var(--header-icon-escom-txt-clr);
+    color: var(--color-text-accent);
 }
 
 .header-image-desc .desc-pack {
-    color: var(--header-icon-pack-txt-clr);
+    color: var(--color-text-primary);
 }
 
 /* ====== estilos para el nav ====== */
@@ -197,7 +165,7 @@ header {
 
     text-decoration: none;
     text-align: center;
-    color: var(--header-nav-element-txt-clr);
+    color: var(--color-text-primary);
 }
 
 .nav-wrapper nav ul a::after {
@@ -213,11 +181,11 @@ header {
     transform-origin: bottom center;
     transition: 0.4s ease;
 
-    background-color: var(--header-nav-element-bar-bg-clr);
+    background-color: var(--color-bg-accent);
 }
 
 .nav-wrapper nav ul a:hover {
-    color: var(--header-nav-element-hvr-txt-clr);
+    color: var(--color-text-accent);
 }
 
 .nav-wrapper nav ul a:hover::after {
@@ -233,20 +201,24 @@ header {
     justify-content: center;
     align-items: center;
     border: none;
-    border-radius: var(--header-theme-mode-btn-bdr-radius);
-    padding: var(--header-theme-mode-btn-pdng);
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-buttom-icon);
 
     text-align: center;
-    color: var(--header-theme-mode-btn-txt-clr);
+    color: var(--color-text-button-default);
     cursor: pointer;
 
-    background-color: var(--header-theme-mode-btn-bg-clr);
+    background-color: var(--color-bg-accent);
 }
 
 .header-content .theme-mode-button:hover {
-    color: var(--header-theme-mode-btn-hvr-txt-clr);
+    color: var(--color-text-buttom-hover);
 
-    background-color: var(--header-theme-mode-btn-hvr-bg-clr);
+    background-color: var(--color-bg-accent-hover);
+}
+
+.header-content .theme-mode-button:active {
+    transform: scale(0.95);
 }
 
 /* ====== media queries ====== */

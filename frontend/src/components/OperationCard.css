@@ -1,37 +1,21 @@
-@import url('../theme-palette.css');
-
-:root {
-    --operation-card-bdr-radius: 5px;
-    --operation-card-icon-txt-clr: #dedede;
-    --operation-card-fnt-family: var(--font-family-code);
-
-    --operation-card-bg-clr: var(--theme-bg-surface);
-    --operation-card-bdr: var(--theme-border);
-    --operation-card-hvr-bdr: var(--theme-border-hover);
-    --operation-card-icon-bg-clr: var(--theme-accent);
-    --operation-card-title-txt-clr: var(--theme-accent);
-    --operation-card-desc-txt-clr: var(--theme-txt-muted);
-    --operation-card-link-icon-txt-clr: var(--theme-accent);
-}
-
 .operation-card-wrapper {
-    border: var(--operation-card-bdr);
+    border: var(--border-default);
     display: flex;
     flex-direction: column;
     justify-content: center; /* alinea verticalmente */
     gap: 20px;
-    padding: 20px;
-    border-radius: 5px;
+    padding: var(--padding-default);
+    border-radius: var(--border-radius-default);
 
-    font-family: var(--operation-card-fnt-family);
+    font-family: var(--font-family-default);
 
-    background-color: var(--operation-card-bg-clr);
+    background-color: var(--color-bg-surface);
 
     /*transition: border 0.5s ease-in-out;*/
 }
 
 .operation-card-wrapper:hover {
-    border: var(--operation-card-hvr-bdr);
+    border: var(--border-focus);
 }
 
 .operation-card-wrapper .operation-card-header {
@@ -44,13 +28,13 @@
     border-radius: 5px;
     padding: 12px 10px;
 
-    color: var(--operation-card-icon-txt-clr);
+    color: var(--color-text-button-default);
 
-    background-color: var(--operation-card-icon-bg-clr);
+    background-color: var(--color-bg-accent);
 }
 
 .operation-card-wrapper .operation-card-link-icon {
-    color: var(--operation-card-link-icon-txt-clr);
+    color: var(--color-text-accent);
     font-size: 20px;
 
     transition: transform 0.4s ease;
@@ -72,10 +56,11 @@
 
 .operation-card-desc .card-title {
     font-weight: bold;
-    font-size: 1.4rem;
-    color: var(--operation-card-title-txt-clr);
+    font-size: var(--font-size-title);
+    color: var(--color-text-accent);
 }
 
 .operation-card-desc .card-desc {
-    color: var(--operation-card-desc-txt-clr);
+    font-size: var(--font-size-description);
+    color: var(--color-text-secondary);
 }

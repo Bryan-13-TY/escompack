@@ -1,34 +1,21 @@
-@import url('../theme-palette.css');
-
-:root {
-    --protocol-card-fnt-family: var(--font-family-code);
-
-    --protocol-card-bg-clr: var(--theme-bg-surface);
-    --protocol-card-bdr: var(--theme-border);
-    --protocol-card-hvr-bdr: var(--theme-border-hover);
-    --protocol-card-acronym-txt-clr: var(--theme-accent); 
-    --protocol-card-rep-txt-clr: var(--theme-txt-main);
-    --protocol-card-desc-txt-clr: var(--theme-txt-muted);
-}
-
 .protocol-card-wrapper {
-    border: var(--protocol-card-bdr);
+    border: var(--border-default);
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    border-radius: 5px;
+    padding: var(--padding-default);
+    border-radius: var(--border-radius-default);
     gap: 20px;
     height: 100%;
 
-    font-family: var(--protocol-card-fnt-family);
+    font-family: var(--font-family-default);
 
-    background-color: var(--protocol-card-bg-clr);
+    background-color: var(--color-bg-surface);
 
     /*transition: border 0.5s ease-in-out;*/
 }
 
 .protocol-card-wrapper:hover {
-    border: var(--protocol-card-hvr-bdr);
+    border: var(--border-focus);
 }
 
 .protocol-card-wrapper .protocol-card-label {
@@ -49,19 +36,19 @@
 
 .protocol-card-acronym .acronym {
     font-weight: bold;
-    color: var(--protocol-card-acronym-txt-clr);
-    font-size: 1.4rem;
+    color: var(--color-text-accent);
+    font-size: var(--font-size-title);
 }
 
 .protocol-card-acronym .rep {
     margin: 0;
 
-    color: var(--protocol-card-rep-txt-clr);
-    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-label);
 }
 
 .protocol-card-wrapper .protocol-card-desc {
     margin: 0;
 
-    color: var(--protocol-card-desc-txt-clr);
+    color: var(--color-text-secondary);
 }

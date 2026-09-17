@@ -1,13 +1,3 @@
-@import url('../theme-palette.css');
-
-:root {
-    --footer-fnt-family: var(--font-family-code);
-
-    --footer-bg-clr: var(--theme-hf-base);
-    --footer-txt-clr: var(--theme-txt-main);
-    --footer-hvr-txt-clr: var(--theme-accent);
-}
-
 footer {
     margin: 0;
 }
@@ -15,9 +5,9 @@ footer {
 .footer-wrapper {
     padding: 10px 20px;
 
-    font-family: var(--footer-fnt-family);
+    font-family: var(--font-family-default);
 
-    background-color: var(--footer-bg-clr);
+    background-color: var(--color-bg-header);
 }
 
 .footer-wrapper .footer-content-wrapper {
@@ -33,7 +23,7 @@ footer {
     align-items: center;
 
     text-align: center;
-    color: var(--footer-txt-clr);
+    color: var(--color-text-primary);
 }
 
 .footer-content .footer-version {
@@ -70,11 +60,11 @@ footer {
 
 .contact-social-media a {
     text-decoration: none;
-    color: var(--footer-txt-clr);
+    color: var(--color-text-primary);
 }
 
 .contact-social-media a:hover {
-    color: var(--footer-hvr-txt-clr);
+    color: var(--color-text-accent);
 }
 
 /* ====== media queries ====== */

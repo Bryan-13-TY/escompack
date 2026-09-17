@@ -49,6 +49,10 @@
     background-color: var(--btn-bg-hvr-clr);
 }
 
+.custom-btn:active {
+    transform: scale(0.95);
+}
+
 .start-capture {
     background-color: var(--btn-start-capture-bg-clr);
 }
