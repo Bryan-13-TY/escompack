@@ -1,0 +1,15 @@
+@import url('colors.css');
+
+:root {
+    --border-default: 2px solid var(--color-border-default); /* borde para tarjetas o elementos */
+    --border-focus: 2px solid var(--color-border-default-hover); /* borde para tarjetas o elementos la hacer hover */
+    --border-radius-default: 5px; /* borde radius por defecto */
+    
+    --padding-default: 20px; /* padding para tarjetas */
+    --padding-header: 10px 20px; /* padding para headers y footers */
+    --padding-buttom-icon: 10px; /* padding para botones con icono */
+    --padding-input: 10px;
+    --padding-title-view-default: 70px 20px; /* padding para título de secciones */
+    --padding-section-default: 40px 30px; /* padding para secciones */
+    --padding-label-focus: 5px 7px;
+}

@@ -1,0 +1,7 @@
+.operation-cards-wrapper {
+    display: flex;
+    gap: 30px;
+    padding: var(--padding-section-default);
+
+    background-color: var(--color-bg-base);
+}

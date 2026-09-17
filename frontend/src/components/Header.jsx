@@ -1,13 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState} from 'react';
 
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
-import { useTheme } from '../ThemeContext';
+import { useTheme } from '../hooks/ThemeContext';
 import escomPackIcon from '../assets/others/icon-v2.png'
 import { THEME_MODE_ICON } from '../constants';
-
 
 import './Header.css';
 
@@ -19,7 +18,7 @@ const HamburguerMenu = () => {
 
     const toogleMenu = () => {
         setIsOpen(!isOpen);
-    }
+    };
 
     // se ejecuta cada que cambiar el valor de 'isOpen'
     useEffect(() => {
@@ -52,23 +51,23 @@ const HamburguerMenu = () => {
                     />
                 </span>
             </button>
-            {isOpen && (
-                <div className='nav-menu-wrapper'>
-                    <nav>
-                        <ul>
-                            <Link to={'/home'}>
-                                <li className='nav-menu-element'>Inicio</li>
-                            </Link>
-                            <Link to={'/capture'}>
-                                <li className='nav-menu-element'>Captura</li>
-                            </Link>
-                            <Link to={'/manipulation'}>
-                                <li className='nav-menu-element'>Manipulación</li>
-                            </Link>
-                        </ul>
-                    </nav>
-                </div>
-            )}
+                {isOpen && (
+                    <div className='nav-menu-wrapper'>
+                        <nav>
+                            <ul>
+                                <Link to={'/home'}>
+                                    <li className='nav-menu-element'>Inicio</li>
+                                </Link>
+                                <Link to={'/capture'}>
+                                    <li className='nav-menu-element'>Captura</li>
+                                </Link>
+                                <Link to={'/manipulation'}>
+                                    <li className='nav-menu-element'>Manipulación</li>
+                                </Link>
+                            </ul>
+                        </nav>
+                    </div>
+                )}
         </div>
     );
 };

@@ -1,13 +1,5 @@
-:root {
-    --pkts-target-protocol-icon-txt-clr: var(--theme-txt-muted);
-    --pkts-target-protocol-bdr: var(--theme-border);
-    --pkts-target-protocol-bg-clr: var(--theme-bg-elevated);
-    --pkts-target-protocol-selected-bg-clr: var(--theme-bg-hover);
-    --pkts-target-protocol-hvr-bg-clr: var(--theme-bg-hover);
-}
-
 .target-protocol .protocol-content {
-    border: var(--pkts-target-protocol-bdr);
+    border: var(--border-default);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -16,14 +8,24 @@
     gap: 8px;
     padding: 8px;
 
-    color: var(--pkts-target-protocol-icon-txt-clr);
-    background-color: var(--pkts-target-protocol-bg-clr);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-elevated);
+}
+
+.target-protocol .protocol-content:hover {
+    border: var(--border-focus);
+}
+
+.target-protocol:active {
+    transform: scale(0.95);
 }
 
 .selected .protocol-content {
-    background-color: var(--pkts-target-protocol-selected-bg-clr);
+    border: var(--border-focus);
+
+    background-color: var(--color-bg-elevated-hover);
 }
 
 .target-protocol:hover .protocol-content {
-    background-color: var(--pkts-target-protocol-hvr-bg-clr);
+    background-color: var(--color-bg-elevated-hover);
 }

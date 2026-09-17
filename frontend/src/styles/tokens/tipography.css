@@ -1,0 +1,6 @@
+:root {
+    --font-size-title-welcome: 4rem; /* tamaño del título de vista */
+    --font-size-title: 1.5rem; /* tamaño para titulos de tarjetas */
+    --font-size-description: 1rem; /* tamaño para descripción de las tarjetas */
+    --font-size-label: 0.8rem; /* tamaño para el label de una tarjeta */
+}

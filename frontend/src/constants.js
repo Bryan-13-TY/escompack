@@ -5,6 +5,8 @@ import {
     faCircleStop,
     faCirclePlay,
     faCircleArrowLeft,
+    faFilter,
+    faRotateLeft,
 } from '@fortawesome/free-solid-svg-icons';
 
 import darkPimIcon from './assets/icons/icon-pim-dark.png'
@@ -24,6 +26,7 @@ import lightIgmpIcon from './assets/icons/icon-igmp-light.png';
 import lightMsdpIcon from './assets/icons/icon-msdp-light.png';
 import lightTcpIcon from './assets/icons/icon-tcp-light.png';
 import lightUdpIcon from './assets/icons/icon-udp-light.png';
+import { icon } from '@fortawesome/fontawesome-svg-core';
 
 export const THEME_MODE_ICON = {
     dark: faSun,
@@ -108,6 +111,14 @@ export const ROLE_CONFIGS = {
     start_capture: {
         className: 'custom-btn start-capture',
         icon: faCirclePlay,
+    },
+    apply_filter: {
+        className: 'custom-btn apply_filter',
+        icon: faFilter,
+    },
+    reset_filter: {
+        className: 'custom-btn reset_filter',
+        icon: faRotateLeft,
     },
 };
 

@@ -1,14 +1,3 @@
-@import url('../theme-palette.css');
-
-:root {
-    --not-found-fnt-family: var(--font-family-code);
-    
-    --not-found-bg-clr: var(--theme-bg-base);
-    --not-found-icon-txt-clr: var(--theme-txt-main);
-    --not-found-404-txt-clr: var(--theme-txt-main);
-    --not-found-subtitle-txt-clr: var(--theme-txt-muted);
-}
-
 main {
     margin: 0;
 }
@@ -19,17 +8,17 @@ main {
     justify-content: center; /* alinea verticalmente */
     align-items: center; /* alinea horizontalmente */
     gap: 30px;
-    padding: 70px 20px;
+    padding: var(--padding-title-view-default);
     width: 100vw;
     height: 100vh;
 
-    font-family: var(--not-found-fnt-family);
+    font-family: var(--font-family-default);
 
-    background-color: var(--not-found-bg-clr);
+    background-color: var(--color-bg-base);
 }
 
 .content-wrapper .content-icon {
-    color: var(--not-found-icon-txt-clr);
+    color: var(--color-text-primary);
 }
 
 .content-wrapper .content-desc {
@@ -50,10 +39,10 @@ main {
 .content-desc h1 {
     font-weight: bold;
     font-size: 4.5rem;
-    color: var(--not-found-404-txt-clr);
+    color: var(--color-text-primary);
 }
 
 .content-desc h2 {
     font-size: 2.5rem;
-    color: var(--not-found-subtitle-txt-clr);
+    color: var(--color-text-primary);
 }

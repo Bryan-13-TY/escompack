@@ -1,0 +1,74 @@
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 30px;
+    
+    font-family: var(--font-family-default);
+    background-color: var(--color-bg-base);
+}
+
+.form-wrapper form {
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+
+    background-color: var(--color-bg-surface);
+}
+
+/* estilos para el input del número de paquetes */
+form .packets-capture {
+    display: flex;
+    gap: 10px;
+}
+
+.packets-capture .packets-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.packets-input label {
+    color: var(--color-text-primary);
+}
+
+.packets-input input {
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-input);
+
+    color: var(--color-text-primary);
+    font-family: var(--font-family-default);
+
+    background-color: var(--color-bg-elevated);
+}
+
+.packets-input input:hover  {
+    border: var(--border-focus);
+}
+
+/* estilos para la grilla con los protocolos */
+.packets-protocol-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 8px;
+}
+
+.packets-protocol-wrapper p {
+    margin: 0;
+
+    color: var(--color-text-primary);
+}
+
+.target-protocol-wrapper {
+    display: grid;
+    gap: 15px;
+}
+
+.target-protocol-wrapper .target-protocol input {
+    display: none;
+}

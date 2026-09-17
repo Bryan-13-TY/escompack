@@ -1,75 +1,76 @@
-@import url('../theme-palette.css');
-
-:root {
-    --pkts-table-capture-pkt-protocol-txt-clr: #dedede;
-
-    --pkt-capture-fnt-family: var(--font-family-code);
-
-    --pkts-capture-bg-clr: var(--theme-bg-base);
-
-    --pkts-form-bg-clr: var(--theme-bg-surface);
-    --pkts-form-bdr: var(--theme-border);
-
-    --pkts-input-label-txt-clr: var(--theme-txt-main);
-    --pkts-input-bdr: var(--theme-border);
-    --pkts-input-bg-clr: var(--theme-bg-elevated);
-    --pkts-input-txt-clr: var(--theme-txt-muted);
-
-    --pkts-target-protocol-label-txt-clr: var(--theme-txt-main);
-
-    --pkts-capture-progress-bg-clr: var(--theme-bg-surface);
-    --pkts-capture-progress-bdr: var(--theme-border);
-    --pkts-capture-progress-label-txt-clr: var(--theme-txt-main);
-    --pkts-capture-progress-porcent-txt-clr: var(--theme-accent);
-    --pkts-capture-progress-total-txt-clr: var(--theme-txt-muted);
-    --pkts-capture-progress-interface-txt-clr: var(--theme-txt-muted);
-
-    --pkts-progress-bar-bg-clr: var(--theme-bg-elevated);
-    --pkts-progress-bar-porcent-bg-clr: var(--theme-accent);
-
-    --pkts-table-capture-bdr: var(--theme-border);
-    --pkts-table-capture-thead-bg-clr: var(--theme-bg-surface);
-    --pkts-table-capture-tbody-bg-clr: var(--theme-bg-elevated);
-    --pkts-table-capture-thead-txt-clr: var(--theme-txt-main);
-    --pkts-table-capture-tbody-txt-clr: var(--theme-txt-muted);
-    --pkts-table-capture-tbody-hvr-bg-clr: var(--theme-bg-hover);
-    --pkts-table-capture-pkt-protocol-bg-clr: var(--theme-accent);
-    --pkts-table-capture-bar-bg-clr: var(--theme-accent);
-}
-
 main {
     margin: 0;
+}
+
+/* ===== sección para la bienvenida */
+
+.package-capture-welcome-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: 20px;
+    padding: var(--padding-title-view-default);
+
+    font-family: var(--font-family-default);
+    text-align: center;
+
+    background: var(--color-bg-image-view2);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.package-capture-welcome-wrapper p,
+.package-capture-welcome-wrapper .summary {
+    margin: 0;
+    color: var(--color-text-primary);
+}
+
+.package-capture-welcome-wrapper .welcome {
+    white-space: pre-line;
+    font-size: var(--font-size-title-welcome);
+}
+
+.welcome .welcome-capture {
+    font-weight: bold;
+}
+
+.welcome .welcome-capture {
+    color: var(--color-text-accent);
+}
+
+.package-capture-welcome-wrapper .summary {
+    white-space: pre-line;
 }
 
 /* ===== sección para el formulario de captura ====== */
 
 .form-wrapper {
-    /*border: 2px solid yellow;*/
     display: flex;
     flex-direction: column;
     justify-content: center; /* alinea verticalmente */
     gap: 30px;
     
-    font-family: var(--pkt-capture-fnt-family);
-    background-color: var(--pkts-capture-bg-clr);
+    font-family: var(--font-family-default);
+    background-color: var(--color-bg-base);
 }
 
 .form-wrapper form {
-    border: var(--pkts-form-bdr);
-    border-radius: 5px;
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 30px;
 
-    background-color: var(--pkts-form-bg-clr);
+    background-color: var(--color-bg-surface);
 }
 
 /* estilos para el input del número de paquetes */
 form .packets-capture {
     display: flex;
     gap: 10px;
-
 }
 
 .packets-capture .packets-input {
@@ -79,18 +80,22 @@ form .packets-capture {
 }
 
 .packets-input label {
-    color: var(--pkts-input-label-txt-clr);
+    color: var(--color-text-primary);
 }
 
 .packets-input input {
-    border: var(--pkts-input-bdr);
-    border-radius: 5px;
-    padding: 10px;
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-input);
 
-    color: var(--pkts-input-txt-clr);
-    font-family: var(--pkt-capture-fnt-family);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-default);
 
-    background-color: var(--pkts-input-bg-clr);
+    background-color: var(--color-bg-elevated);
+}
+
+.packets-input input:hover  {
+    border: var(--border-focus);
 }
 
 /* estilos para la grilla con los protocolos */
@@ -104,7 +109,7 @@ form .packets-capture {
 .packets-protocol-wrapper p {
     margin: 0;
 
-    color: var(--pkts-target-protocol-label-txt-clr);
+    color: var(--color-text-primary);
 }
 
 .target-protocol-wrapper {
@@ -118,15 +123,15 @@ form .packets-capture {
 
 /* estilos para la barra de progreso */
 .capture-progress {
-    border: var(--pkts-capture-progress-bdr);
-    border-radius: 5px;
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
     display: flex;
     flex-direction: column;
     justify-content: center; /* alinea verticalmente */
     gap: 8px;
     padding: 30px;
 
-    background-color: var(--pkts-capture-progress-bg-clr);
+    background-color: var(--color-bg-surface);
 }
 
 .capture-progress p {
@@ -134,7 +139,7 @@ form .packets-capture {
 }
 
 .capture-progress .progress-total {
-    color: var(--pkts-capture-progress-total-txt-clr);
+    color: var(--color-text-secondary);
 }
 
 .progress-porcent {
@@ -145,27 +150,27 @@ form .packets-capture {
 }
 
 .progress-porcent .progress-label {
-    color: var(--pkts-capture-progress-label-txt-clr);
+    color: var(--color-text-primary);
 }
 
 .progress-porcent .porcent {
     font-weight: bold;
-    color: var(--pkts-capture-progress-porcent-txt-clr);
+    color: var(--color-text-accent);
 }
 
 .progress-bar {
     /* revisar después */
-    border-radius: 5px;
+    border-radius: var(--border-radius-default);
     height: 5px;
     width: 100%;
     overflow: hidden;
 
-    background-color: var(--pkts-progress-bar-bg-clr);
+    background-color: var(--color-bg-elevated);
 }
 
 .progress-bar .bar-porcent {
     /* revisar después */
-    background-color: var(--pkts-progress-bar-porcent-bg-clr);
+    background-color: var(--color-bg-accent);
     height: 100%;
     transition: width 0.3s ease
 }
@@ -178,31 +183,31 @@ form .packets-capture {
 }
 
 .progress-footer .interface {
-    color: var(--pkts-capture-progress-interface-txt-clr);
+    color: var(--color-text-secondary);
 }
 
 /* ====== sección para la tabla de captura ====== */
 
 .table-wrapper {
     /*border: 2px solid yellow;*/
-    padding: 40px 30px;
+    padding: var(--padding-section-default);
     width: 100%;
     overflow-x: auto;
 
-    font-family: var(--pkt-capture-fnt-family);
+    font-family: var(--font-family-default);
 }
 
 .table-wrapper table {
-    border: var(--pkts-table-capture-bdr);
+    border: var(--border-default);
     border-collapse: collapse; /* une los bordes de la tabla */
     width: 100%;
     min-width: 1200px; /* si es menor aparece el scroll */
 }
 
 .table-wrapper table thead tr {
-    color: var(--pkts-table-capture-thead-txt-clr);
+    color: var(--color-text-primary);
 
-    background-color: var(--pkts-table-capture-thead-bg-clr);
+    background-color: var(--color-bg-surface);
 }
 
 .table-wrapper table thead tr th,
@@ -213,9 +218,9 @@ form .packets-capture {
 }
 
 .table-wrapper table tbody tr {
-    color: var(--pkts-table-capture-tbody-txt-clr);
+    color: var(--color-text-secondary);
 
-    background-color: var(--pkts-table-capture-tbody-bg-clr);
+    background-color: var(--color-bg-elevated);
 }
 
 .table-wrapper table tbody tr .table-bar {
@@ -229,13 +234,13 @@ form .packets-capture {
     top: 0; /* barra desde arriba */
     width: 4px; /* grosor de la barra */
     height: 100%; /* ocupa todo el alto */
-    border-radius: 5px;
+    border-radius: var(--border-radius-default);
 
     transform: scaleY(0); /* estado inicial */
     transform-origin: bottom center;
     transition: 0.4s ease;
     
-    background-color: var(--pkts-table-capture-bar-bg-clr);
+    background-color: var(--color-bg-accent);
 }
 
 .table-wrapper table tbody tr:hover .table-bar::before {
@@ -245,17 +250,17 @@ form .packets-capture {
 }
 
 .table-wrapper table tbody tr td .table-protocol {
-    border-radius: 5px;
-    padding: 5px 7px;
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-label-focus);
 
-    color: var(--pkts-table-capture-pkt-protocol-txt-clr);
+    color: var(--color-text-label-accent);
     font-weight: bold;
 
-    background-color: var(--pkts-table-capture-pkt-protocol-bg-clr);
+    background-color: var(--color-bg-accent);
 }
 
 .table-wrapper table tbody tr:hover {
-    background-color: var(--pkts-table-capture-tbody-hvr-bg-clr);
+    background-color: var(--color-bg-elevated-hover);
 }
 
 

@@ -1,8 +1,4 @@
-@import url('theme-palette.css');
-
-:root {
-    --default-bg-clr: var(--theme-bg-base);
-}
+@import url('styles/main.css');
 
 * {
     box-sizing:border-box;
@@ -18,5 +14,5 @@ html body {
 }
 
 body {
-    background-color: var(--default-bg-clr);
+    background-color: var(--color-bg-base);
 }

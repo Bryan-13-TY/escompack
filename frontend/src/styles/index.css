@@ -1,0 +1,7 @@
+@import url('./tokens/colors.css');
+@import url('./tokens/geometry.css');
+@import url('./tokens/tipography.css');
+
+:root {
+    --font-family-default: 'Cascadia Code', monospace;
+}
