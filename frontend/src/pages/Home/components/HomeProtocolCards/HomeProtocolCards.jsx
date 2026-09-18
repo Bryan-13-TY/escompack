@@ -1,5 +1,5 @@
 import { PROTOCOL_CARDS } from '../../../../constants';
-import ProtocolCard from '../../../../components/ProtocolCard';
+import ProtocolCard from '../../../../components/ProtocolCard/ProtocolCard';
 import { useTheme } from '../../../../hooks/ThemeContext';
 
 import './HomeProtocolCards.css';

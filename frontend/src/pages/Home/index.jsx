@@ -1,5 +1,5 @@
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../components/Header/index';
+import Footer from '../../components/Footer/Footer';
 import HomeHeader from './components/HomeHeader/HomeHeader';
 import HomeOperationCards from './components/HomeOperationCards/HomeOperationCards';
 import HomeProtocolCards from './components/HomeProtocolCards/HomeProtocolCards';

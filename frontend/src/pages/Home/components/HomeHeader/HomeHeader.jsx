@@ -4,8 +4,7 @@ function HomeHeader() {
     return (
         <header className='home-header'>
             <h1 className='header-title'>
-                Bienvenido a <span className='title-escom'>ESCOM</span>
-                <span className='title-pack'>Pack</span>
+                Bienvenido a <span className='title-escom'>ESCOM</span>Pack
             </h1>
             <p className='header-summary'>
                 Una aplicación web para la captura y manipulación de paquetes de red
