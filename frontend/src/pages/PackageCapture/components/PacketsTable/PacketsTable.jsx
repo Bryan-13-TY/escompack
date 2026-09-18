@@ -2,8 +2,9 @@ import './PacketsTable.css';
 
 function PacketsTable({ packets }) {
     return (
-        <section className='package-capture-table'>
-            <div className='table-wrapper'>
+        <section className='capture-table'>
+            <h2>Paquetes capturados</h2>
+            <div className='table'>
                 <table>
                     <thead>
                         <tr>

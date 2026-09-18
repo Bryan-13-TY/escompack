@@ -1,7 +1,7 @@
 import { useTheme } from "../../../../hooks/ThemeContext";
 import { PROTOCOLS } from "../../../../constants";
-import Button from "../../../../components/Button";
-import ProtocolInput from "../../../../components/ProtocolInput";
+import Button from '../../../../components/Button/Button';
+import ProtocolInput from '../../../../components/ProtocolInput/ProtocolInput';
 
 import './CaptureForm.css';
 
@@ -16,15 +16,11 @@ function CaptureForm({
 
     return (
         <form onSubmit={onSubmit}>
-            {/* input para el número de paquetes y botones */}
-            <div className='packets-capture'>
-                {/* input del form */}
-                <div className='packets-input'>
-                    <label htmlFor='packets-number'>Número de paquetes a capturar</label>
-                    <input type='number' name='packets-number' id='packets-number' min={5} max={100} required/>
+            <div className="form-packets">
+                <div className="packets-input">
+                    <label htmlFor='input-packets-number'>Número de paquetes a capturar</label>
+                    <input type='number' name='input-packets-number' id='input-packets-number' min={5} max={100} required/>
                 </div>
-
-                {/* botones del form */}
                 <Button
                     buttonText='Empezar captura'
                     type='submit'
@@ -39,28 +35,23 @@ function CaptureForm({
                     disable={!isCapturing}
                 />
             </div>
-
-            {/* grilla con los inputs del form */}
-            <div className='packets-protocol'>
-                <div className='packets-protocol-wrapper'>
-                    <p>Protocolo objetivo</p>
-                    <div className='target-protocol-wrapper'>
-                        {
-                            // iteramos sobre los protocolos
-                            PROTOCOLS.map((protocol_input) => (
-                                <ProtocolInput
-                                    key={protocol_input.id}
-                                    id={protocol_input.id}
-                                    icon={protocol_input.icon[theme]}
-                                    label={protocol_input.label}
-                                    isSelected={protocolSelected === protocol_input.id}
-                                    onSelect={setProtocolSelected}
-                                />
-                            ))
-                        }
-                    </div>
+            <fieldset className="form-protocol">
+                <legend>Protocolo objetivo</legend>
+                <div className="protocol-grid">
+                    {
+                        PROTOCOLS.map((protocol_input) => (
+                            <ProtocolInput
+                                key={protocol_input.id}
+                                id={protocol_input.id}
+                                icon={protocol_input.icon[theme]}
+                                label={protocol_input.label}
+                                isSelected={protocolSelected === protocol_input.id}
+                                onSelect={setProtocolSelected}
+                            />
+                        ))
+                    }
                 </div>
-            </div>
+            </fieldset>
         </form>
     );
 }

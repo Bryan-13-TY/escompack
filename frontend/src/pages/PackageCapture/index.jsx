@@ -1,5 +1,5 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../components/Header/index";
+import Footer from "../../components/Footer/Footer";
 import { usePacketCapture } from "./hooks/usePackageCapture";
 import CaptureHeader from "./components/CaptureHeader/CaptureHeader";
 import CaptureForm from "./components/CaptureForm/CaptureForm";
@@ -20,6 +20,32 @@ function PackageCapture() {
         stopCapture,
     } = usePacketCapture();
 
+    return (
+        <div className="package-capture">
+            <Header />
+            <main>
+                <CaptureHeader />
+                <section className="capture-form">
+                    <CaptureForm
+                        onSubmit={startCapture}
+                        onStop={stopCapture}
+                        isCapturing={isCapturing}
+                        protocolSelected={protocolSelected}
+                        setProtocolSelected={setProtocolSelected}
+                    />
+                    <CaptureProgress
+                        capturedCount={packets.length}
+                        totalPackets={totalPackets}
+                        percentaje={progressPercentaje}
+                    />
+                </section>
+                <PacketsTable packets={packets}/>
+            </main>
+            <Footer />
+        </div>
+    );
+
+    /*
     return (
         <div className='package-capture'>
             <div className='package-capture-wrapper'>
@@ -48,6 +74,7 @@ function PackageCapture() {
             </div>
         </div>
     );
+    */
 }
 
 export default PackageCapture;

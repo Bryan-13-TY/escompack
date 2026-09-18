@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { ROLE_CONFIGS, ANIMATION_CONFIGS } from '../constants';
+import { ROLE_CONFIGS, ANIMATION_CONFIGS } from '../../constants';
 
 import './Button.css';
 

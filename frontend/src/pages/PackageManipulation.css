@@ -76,7 +76,7 @@ main {
 }
 
 .modal-button-wrapper .modal-button:active {
-    transform: scale(0.95);
+    transform: var(--transform-scale-default);
 }
 
 /* ===== estilos para la ventana modal ===== */

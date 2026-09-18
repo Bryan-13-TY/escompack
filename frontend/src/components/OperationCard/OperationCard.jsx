@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 
-import Button from './Button';
-
 import './OperationCard.css';
 
 /**
@@ -25,7 +23,6 @@ import './OperationCard.css';
  *      icon={faMagnifyingGlass}
  *      title='Captura de paquetes'
  *      description='Captura de paquetes en tiempo real.'
- *      buttonText='Ir a Captura'
  *      pageLink='/capture'
  *  /> 
  * );
@@ -34,28 +31,19 @@ function OperationCard({
     icon,
     title,
     description,
-    buttonText,
     pageLink
 }) {
     return (
-        <div className="operation-card">
-            <div className='operation-card-wrapper'>
-                <div className='operation-card-header'>
-                    <FontAwesomeIcon className='operation-card-icon' icon={icon} size='2x' />
-                    <FontAwesomeIcon className='operation-card-link-icon' icon={faArrowUpRightFromSquare} />
-                </div>
-                <div className='operation-card-desc'>
-                    <p className='card-title'>{title}</p>
-                    <p className='card-desc'>{description}</p>
-                </div>
-                <Link to={pageLink}>
-                    <Button
-                        buttonText={buttonText}
-                        animation='right'
-                    />
-                </Link>
+        <Link className='home-operation-card' to={pageLink}>
+            <header className='home-operation-card-header'>
+                <FontAwesomeIcon className='header-icon' icon={icon} size='2x' />
+                <FontAwesomeIcon className='header-expand-icon' icon={faArrowUpRightFromSquare} />
+            </header>
+            <div className='home-operation-card-content'>
+                <p className='content-title'>{title}</p>
+                <p className='content-description'>{description}</p>
             </div>
-        </div>
+        </Link>
     );
 }
 

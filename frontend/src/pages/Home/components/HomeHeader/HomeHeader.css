@@ -1,9 +1,9 @@
-.home-welcome-wrapper {
+.home-header {
     display: flex;
     flex-direction: column;
     justify-content: center; /* alinea verticalmente */
     align-items: center; /* alinea horizontalmente */
-    gap: 20px;
+    gap: var(--gap-text-header);
     padding: var(--padding-title-view-default);
 
     font-family: var(--font-family-default);
@@ -15,35 +15,29 @@
     background-repeat: no-repeat;
 }
 
-.home-welcome-wrapper p,
-.home-welcome-wrapper .summary,
-.home-welcome-wrapper .description {
+.home-header h1, p {
     margin: 0;
+}
+
+.home-header .header-title,
+.home-header .header-summary,
+.home-header .header-description {
     color: var(--color-text-primary);
 }
 
-.home-welcome-wrapper .welcome {
-    white-space: pre-line;
+.home-header .header-title {
     font-size: var(--font-size-title-welcome);
 }
 
-.welcome .welcome-escom,
-.welcome .welcome-pack {
-    font-weight: bold;
-}
-
-.welcome .welcome-escom {
+.home-header .header-title .title-escom {
     color: var(--color-text-accent);
 }
 
-.welcome .welcome-pack {
-    color: var(--color-text-primary);
+.home-header .header-summary {
+    font-size: var(--font-size-subtitle-welcome);
 }
 
-.home-welcome-wrapper .summary {
-    white-space: pre-line;
-}
-
-.home-welcome-wrapper .description {
+.home-header .header-description {
+    font-size: var(--font-size-desc-welcome);
     color: var(--color-text-secondary);
 }

@@ -1,43 +1,56 @@
-.table-wrapper {
-    /*border: 2px solid yellow;*/
+.capture-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: 30px;
     padding: var(--padding-section-default);
-    width: 100%;
-    overflow-x: auto;
 
     font-family: var(--font-family-default);
 }
 
-.table-wrapper table {
+.capture-table h2 {
+    margin: 0;
+
+    color: var(--color-text-primary);
+}
+
+.table {
+    overflow-x: auto;
+     width: 100%;
+}
+
+.table table {
     border: var(--border-default);
     border-collapse: collapse; /* une los bordes de la tabla */
     width: 100%;
-    min-width: 1200px; /* si es menor aparece el scroll */
+    min-width: 1200px;  /* si es menor aparece el scroll */
 }
 
-.table-wrapper table thead tr {
+.table table thead tr {
     color: var(--color-text-primary);
 
     background-color: var(--color-bg-surface);
 }
 
-.table-wrapper table thead tr th,
-.table-wrapper table tbody tr td {
+.table table thead tr th,
+.table table thead tr td {
     padding: 12px;
-    
+
     text-align: left;
 }
 
-.table-wrapper table tbody tr {
+.table table tbody tr {
     color: var(--color-text-secondary);
 
     background-color: var(--color-bg-elevated);
 }
 
-.table-wrapper table tbody tr .table-bar {
+.table table tbody tr .table-bar {
     position: relative; /* referencia para la barra animada */
 }
 
-.table-wrapper table tbody tr .table-bar::before {
+.table table tbody tr .table-bar::before {
     content: '';
     position: absolute;
     left: 0; /* barra a la izquierda */
@@ -53,13 +66,13 @@
     background-color: var(--color-bg-accent);
 }
 
-.table-wrapper table tbody tr:hover .table-bar::before {
+.table table tbody tr:hover .table-bar::before {
     transform: scaleY(1);
 
     transform-origin: top center;
 }
 
-.table-wrapper table tbody tr td .table-protocol {
+.table table tbody tr td .table-protocol {
     border-radius: var(--border-radius-default);
     padding: var(--padding-label-focus);
 
@@ -69,6 +82,6 @@
     background-color: var(--color-bg-accent);
 }
 
-.table-wrapper table tbody tr:hover {
+.table table tbody tr:hover {
     background-color: var(--color-bg-elevated-hover);
 }

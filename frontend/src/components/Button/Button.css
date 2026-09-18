@@ -1,0 +1,64 @@
+.custom-btn {
+    border: none;
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-buttom-icon);
+    
+    text-align: center;
+    color: var(--color-text-button-default);
+    font-family: var(--font-family-default);
+    cursor: pointer;
+
+    background-color: var(--color-bg-accent);
+}
+
+.custom-btn:hover {
+    color: var(--color-text-buttom-hover);
+
+    background-color: var(--color-bg-accent-hover);
+
+    transition: transform 0.4s ease;
+}
+
+.custom-btn:active {
+    transform: var(--transform-scale-default);
+}
+
+.start-capture {
+    background-color: var(--color-bg-start-capture);
+}
+
+.start-capture:hover {
+    background-color: var(--color-bg-start-capture-hover);
+}
+
+.stop-capture {
+    background-color: var(--color-bg-stop-capture);
+}
+
+.stop-capture:hover {
+    background-color: var(--color-bg-stop-capture-hover);
+}
+
+.custom-btn span {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* alinea horizontalmente */
+    align-items: center; /* alinea verticalmente */
+    gap: 5px;
+}
+
+span p {
+    margin: 0;
+}
+
+.custom-btn .animate-icon {
+    transition: transform 0.4s ease;
+}
+
+.custom-btn:hover .move-to-right {
+    transform: translateX(5px);
+}
+
+.custom-btn:hover .move-to-left {
+    transform: translateX(-5px);
+}
