@@ -37,7 +37,7 @@
     --color-bg-base: #f0f1fd; /* fondo de todas las vistas */
     --color-bg-surface: #dee0ff; /* fondo para tarjetas u otros elementos */
     --color-bg-elevated: #f8f9fe; /* fondo para elementos sobre el anterior */
-    --color-bg-elevated-hover: #e4e8ff; /* fondos hover para el anterior */
+    --color-bg-elevated-hover: #f4f5f8; /* fondos hover para el anterior */
     --color-bg-opaque: rgb(240, 241, 253, 0.2); /* fondo transparente para bienvenidas */
     --color-bg-accent: #021981; /* fondo para botones con icono */
     --color-bg-accent-hover: #001ea4; /* fondo para botones con icono al hacer hover */
