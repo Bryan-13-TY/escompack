@@ -44,37 +44,6 @@ function PackageCapture() {
             <Footer />
         </div>
     );
-
-    /*
-    return (
-        <div className='package-capture'>
-            <div className='package-capture-wrapper'>
-                <Header />
-                <main>
-                    <CaptureHeader />
-                    <section className='package-capture-form'>
-                        <div className='form-wrapper'>
-                            <CaptureForm
-                                onSubmit={startCapture}
-                                onStop={stopCapture}
-                                isCapturing={isCapturing}
-                                protocolSelected={protocolSelected}
-                                setProtocolSelected={setProtocolSelected}
-                            />
-                            <CaptureProgress
-                                capturedCount={packets.length}
-                                totalPackets={totalPackets}
-                                percentaje={progressPercentaje}
-                            />
-                        </div>
-                    </section>
-                    <PacketsTable packets={packets}/>
-                </main>
-                <Footer />
-            </div>
-        </div>
-    );
-    */
 }
 
 export default PackageCapture;

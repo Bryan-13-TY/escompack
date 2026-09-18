@@ -20,10 +20,10 @@ export function usePacketCapture() {
 
         const formData = new FormData(e.target);
         // recuperamos el número de paquetes desde el formulario
-        const packetsRequested = Number(formData.get('packets-number'));
+        const packetsRequested = Number(formData.get('input-packets-number'));
 
         const data = {
-            packets: formData.get('packets-number'),
+            packets: formData.get('input-packets-number'),
             // pasamos el valor del estado directamente
             protocol: protocolSelected,
         }

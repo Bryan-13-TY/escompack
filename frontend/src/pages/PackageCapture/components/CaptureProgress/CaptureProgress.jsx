@@ -13,7 +13,7 @@ function CaptureProgress({
                 <span className='header-percentage'>{percentaje}%</span>
             </header>
             <div className='progress-capture'>
-                <div className='capture-bar'></div>
+                <div className='capture-bar' style={{ width: `${percentaje}%`}}></div>
             </div>
             <footer className='progress-footer'>
                 <p className='footer-total-packets'>{capturedCount} / {totalPackets} paquetes</p>
