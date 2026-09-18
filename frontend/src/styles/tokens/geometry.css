@@ -9,7 +9,11 @@
     --padding-header: 10px 20px; /* padding para headers y footers */
     --padding-buttom-icon: 10px; /* padding para botones con icono */
     --padding-input: 10px;
-    --padding-title-view-default: 70px 20px; /* padding para título de secciones */
+    --padding-title-view-default: 90px 30px; /* padding para título de secciones */
     --padding-section-default: 40px 30px; /* padding para secciones */
     --padding-label-focus: 5px 7px;
+
+    --gap-text-header: 20px; /* gap para el texto del header de las vistas */ 
+
+    --transform-scale-default: scale(0.9);
 }

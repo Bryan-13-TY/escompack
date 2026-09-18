@@ -19,6 +19,11 @@
     --color-bg-accent: #0080d0; /* fondo para botones con icono */
     --color-bg-accent-hover: #006fb5; /* fondo para botones con icono al hacer hover */
 
+    --color-bg-start-capture: #029c02;
+    --color-bg-stop-capture: #ff1f1f;
+    --color-bg-start-capture-hover: #039003;
+    --color-bg-stop-capture-hover: #fb1515;
+
     --color-border-default: #141f30; /* borde principal de las tarjetas */
     --color-border-default-hover: #003b60; /* borde al haacer hover a tarjetas */
 
@@ -36,6 +41,11 @@
     --color-bg-opaque: rgb(240, 241, 253, 0.2); /* fondo transparente para bienvenidas */
     --color-bg-accent: #021981; /* fondo para botones con icono */
     --color-bg-accent-hover: #001ea4; /* fondo para botones con icono al hacer hover */
+
+    --color-bg-start-capture: green;
+    --color-bg-stop-capture: red;
+    --color-bg-start-capture-hover: #029a02;
+    --color-bg-stop-capture-hover: #fc1111;
 
     --color-border-default: #babffe; /* borde principal de las tarjetas */
     --color-border-default-hover: #021981; /* borde al haacer hover a tarjetas */
