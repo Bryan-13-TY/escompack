@@ -1,0 +1,37 @@
+.manipulation-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: var(--gap-text-header);
+    padding: var(--padding-title-view-default);
+
+    font-family: var(--font-family-default);
+    text-align: center;
+
+    background: var(--color-bg-image-view3);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.manipulation-header h1, p {
+    margin: 0;
+}
+
+.manipulation-header .header-title,
+.manipulation-header .header-summary {
+    color: var(--color-text-primary);
+}
+
+.manipulation-header .header-title {
+    font-size: var(--font-size-title-welcome);
+}
+
+.manipulation-header .header-title .title-manipulation {
+    color: var(--color-text-accent);
+}
+
+.manipulation-header .header-summary {
+    font-size: var(--font-size-subtitle-welcome);
+}
