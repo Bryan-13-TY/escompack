@@ -1,0 +1,102 @@
+.header-hamburguer-menu .hamburguer-menu-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-buttom-icon);
+
+    text-align: center;
+    color: var(--color-text-button-default);
+    cursor: pointer;
+
+    background-color: var(--color-bg-accent);
+
+    transition: transform 0.2s ease;
+}
+
+.header-hamburguer-menu .hamburguer-menu-button:hover {
+    color: var(--color-text-buttom-hover);
+
+    background-color: var(--color-bg-accent-hover);
+}
+
+.header-hamburguer-menu .hamburguer-menu-button:active {
+    transform: var(--transform-scale-default);
+}
+
+.header-hamburguer-menu .hamburguer-menu-nav {
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+    position: absolute;
+    z-index: 20;
+    padding: 15px 10px;
+    margin-top: 10px;
+
+    background-color: var(--color-bg-header);
+}
+
+.hamburguer-menu-nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: left;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+
+    list-style: none;
+}
+
+.hamburguer-menu-nav ul a {
+    position: relative; /* referencia para la barra animada */
+    display: inline-block;
+    padding: 6px;
+    border-top-right-radius: var(--border-radius-default);
+    border-bottom-right-radius: var(--border-radius-default);
+
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+
+.hamburguer-menu-nav ul a:hover {
+    color: var(--color-text-accent);
+
+    background-color: var(--color-bg-surface);
+}
+
+.hamburguer-menu-nav ul a::before {
+    content: '';
+    position: absolute;
+    left: 0; /* barra a la izquierda */
+    top: 0; /* barra desde arriba */
+    width: 2px; /* grosor de la barra */
+    height: 100%; /* ocupa todo el alto */
+    border-radius: var(--border-radius-default);
+
+    transform: scaleY(0); /* estado inicial */
+    transform-origin: bottom center;
+    transition: 0.4s ease;
+
+    background-color: var(--color-bg-accent);
+}
+
+.hamburguer-menu-nav ul a:hover::before {
+    transform: scaleY(1);
+
+    transform-origin: top center;
+}
+
+/* ===== media queries ===== */
+
+@media (max-width: 700px) {
+    .header .header-hamburguer-menu {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 700px) {
+    .header .header-hamburguer-menu {
+        display: none;
+    }
+}
