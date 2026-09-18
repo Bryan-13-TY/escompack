@@ -1,9 +1,9 @@
-.package-capture-welcome-wrapper {
+.capture-header {
     display: flex;
     flex-direction: column;
     justify-content: center; /* alinea verticalmente */
     align-items: center; /* alinea horizontalmente */
-    gap: 20px;
+    gap: var(--gap-text-header);
     padding: var(--padding-title-view-default);
 
     font-family: var(--font-family-default);
@@ -15,25 +15,23 @@
     background-repeat: no-repeat;
 }
 
-.package-capture-welcome-wrapper p,
-.package-capture-welcome-wrapper .summary {
+.capture-header h1, p {
     margin: 0;
+}
+
+.capture-header .header-title,
+.capture-header .header-summary {
     color: var(--color-text-primary);
 }
 
-.package-capture-welcome-wrapper .welcome {
-    white-space: pre-line;
+.capture-header .header-title {
     font-size: var(--font-size-title-welcome);
 }
 
-.welcome .welcome-capture {
-    font-weight: bold;
-}
-
-.welcome .welcome-capture {
+.capture-header .header-title .title-capture {
     color: var(--color-text-accent);
 }
 
-.package-capture-welcome-wrapper .summary {
-    white-space: pre-line;
+.capture-header .header-summary {
+    font-size: var(--font-size-subtitle-welcome);
 }

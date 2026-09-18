@@ -7,21 +7,18 @@ function CaptureProgress({
     networkInterface = 'enp0s8',
 }) {
     return (
-        <div className='capture-progress'>
-            <div className='progress-porcent'>
-                <p className='progress-label'>Proceso de captura</p>
-                <span className='porcent'>
-                    {/* calculamos el porcentaje de paquetes capturados en tiempo real */}
-                    {percentaje}%
-                </span>
+        <div className='form-capture-progress'>
+            <header className='progress-header'>
+                <p className='header-label'>Proceso de captura</p>
+                <span className='header-percentage'>{percentaje}%</span>
+            </header>
+            <div className='progress-capture'>
+                <div className='capture-bar'></div>
             </div>
-            <div className='progress-bar'>
-                <div className='bar-porcent' style={{ width: `${percentaje}%` }}></div>
-            </div>
-            <div className='progress-footer'>
-                <p className='progress-total'>{capturedCount} / {totalPackets} paquetes</p>
-                <span className='interface'>Interfaz: {networkInterface}</span>
-            </div>
+            <footer className='progress-footer'>
+                <p className='footer-total-packets'>{capturedCount} / {totalPackets} paquetes</p>
+                <span className='footer-interface'>Interfaz: {networkInterface}</span>
+            </footer>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-.capture-progress {
+.form-capture-progress {
     border: var(--border-default);
     border-radius: var(--border-radius-default);
     display: flex;
@@ -10,32 +10,25 @@
     background-color: var(--color-bg-surface);
 }
 
-.capture-progress p {
-    margin: 0;
-}
-
-.capture-progress .progress-total {
-    color: var(--color-text-secondary);
-}
-
-.progress-porcent {
+.progress-header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* mueve a los extremos */
+    justify-content: space-between; /* header a los extremos */
     align-items: center; /* alinea verticalmente */
 }
 
-.progress-porcent .progress-label {
+.progress-header .header-label {
+    margin: 0;
+    
     color: var(--color-text-primary);
 }
 
-.progress-porcent .porcent {
+.progress-header .header-percentage {
     font-weight: bold;
     color: var(--color-text-accent);
 }
 
-.progress-bar {
-    /* revisar después */
+.progress-capture {
     border-radius: var(--border-radius-default);
     height: 5px;
     width: 100%;
@@ -44,20 +37,25 @@
     background-color: var(--color-bg-elevated);
 }
 
-.progress-bar .bar-porcent {
-    /* revisar después */
+.progress-capture .capture-bar {
     background-color: var(--color-bg-accent);
     height: 100%;
-    transition: width 0.3s ease
+    transition: width 0.3s ease;
 }
 
 .progress-footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* mueve a los extremos */
+    justify-content: space-between; /* footer a los extremos */
     align-items: center; /* alinea verticalmente */
 }
 
-.progress-footer .interface {
+.progress-footer .footer-total-packets {
+    margin: 0;
+
+    color: var(--color-text-secondary);
+}
+
+.progress-footer .footer-interface {
     color: var(--color-text-secondary);
 }
