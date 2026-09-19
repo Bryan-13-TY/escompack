@@ -1,0 +1,138 @@
+main {
+    margin: 0;
+    position: relative; /* limita el modal absoluto a este espacio */
+    overflow: hidden; /* evita que el modal se desborde */
+}
+
+.manipulation-modal-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-buttom-icon);
+
+    text-align: center;
+    color: var(--color-text-button-default);
+    cursor: pointer;
+
+    background-color: var(--color-bg-accent);
+
+    transition: transform 0.2s ease;
+}
+
+.manipulation-modal-button:hover {
+    color: var(--color-text-button-hover);
+
+    background-color: var(--color-bg-accent-hover);
+}
+
+.manipulation-modal-button:active {
+    transform: var(--transform-scale-default);
+}
+
+/* ventana modal */
+.manipulation-blur {
+    position: absolute; /* se posiciona respecto al <main> */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* por encima de <main> */
+
+    background-color: var(--color-bg-blur);
+    backdrop-filter: blur(6px);
+}
+
+.manipulation-blur .manipulation-modal {
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+
+    background-color: var(--color-bg-base);
+}
+
+.manipulation-modal .modal-header {
+    border-top-left-radius: var(--border-radius-default);
+    border-top-right-radius: var(--border-radius-default);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 5px;
+    padding: var(--padding-header);
+
+    font-family: var(--font-family-default);
+
+    background-color: var(--color-bg-header);
+}
+
+.modal-header .content-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* a los extremos */
+    align-items: center; /* alinea verticalmente */
+}
+
+.modal-header .content-description {
+    margin: 0;
+
+    color: var(--color-text-secondary);
+}
+
+.content-label .label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* alinea horizontalmente */
+    align-items: center; /* alinea verticalmente */
+    gap: 10px;
+
+    color: var(--color-text-accent);
+}
+
+.label p {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.label .label-format {
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-label-focus);
+
+    color: var(--color-text-label-accent);
+    font-weight: bold;
+
+    background-color: var(--color-bg-accent);
+}
+
+.content-label .label-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-buttom-icon);
+
+    text-align: center;
+    color: var(--color-text-button-default);
+    cursor: pointer;
+
+    background-color: var(--color-bg-accent);
+
+    transition: transform 0.2s ease;
+}
+
+.label-button:hover {
+    color: var(--color-text-button-hover);
+
+    background-color: var(--color-bg-accent-hover);
+}
+
+.label-button:active {
+    transform: var(--transform-scale-default);
+}
