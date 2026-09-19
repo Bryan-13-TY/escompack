@@ -1,6 +1,6 @@
 :root {
     --color-text-button-default: #dedede; /* color del texto para botones */
-    --color-text-buttom-hover: #ffffff; /* color del texto para botones al hacer hover */
+    --color-text-button-hover: #ffffff; /* color del texto para botones al hacer hover */
     --color-bg-image-view1: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v9.jpg');
     --color-bg-image-view2: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v8.jpg');
     --color-bg-image-view3: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v14.jpg');
