@@ -12,11 +12,11 @@
 }
 
 .custom-btn:hover {
-    color: var(--color-text-buttom-hover);
+    color: var(--color-text-button-hover);
 
     background-color: var(--color-bg-accent-hover);
 
-    transition: transform 0.4s ease;
+    transition: transform 0.2s ease;
 }
 
 .custom-btn:active {

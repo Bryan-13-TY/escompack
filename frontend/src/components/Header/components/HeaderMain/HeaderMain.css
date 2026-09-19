@@ -114,7 +114,7 @@
 }
 
 .header .header-theme-button:hover {
-    color: var(--color-text-buttom-hover);
+    color: var(--color-text-button-hover);
 
     background-color: var(--color-bg-accent-hover);
 }
