@@ -4,27 +4,26 @@
     justify-content: center; /* alinea verticalmente */
     align-items: center; /* alinea horizontalmente */
     gap: 30px;
-    padding: var(--padding-section-default);
 
     font-family: var(--font-family-default);
 }
 
 .capture-table h2 {
     margin: 0;
-
+    
     color: var(--color-text-primary);
 }
 
-.table {
+.capture-table .table {
+    width: 100%;
     overflow-x: auto;
-     width: 100%;
 }
 
 .table table {
     border: var(--border-default);
-    border-collapse: collapse; /* une los bordes de la tabla */
+    border-collapse: collapse;
     width: 100%;
-    min-width: 1200px;  /* si es menor aparece el scroll */
+    min-width: 1200px; /* si es menor aparece el scroll */
 }
 
 .table table thead tr {
@@ -34,7 +33,7 @@
 }
 
 .table table thead tr th,
-.table table thead tr td {
+.table table tbody tr td {
     padding: 12px;
 
     text-align: left;
