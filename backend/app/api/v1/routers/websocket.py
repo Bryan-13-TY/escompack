@@ -76,7 +76,7 @@ async def _websocket_capture(websocket: WebSocket) -> None:
     # aquí se aguardan los paquetes crudos de Scapy
     capture_packets = []
 
-    def _packect_process(pkt):
+    def _packet_process(pkt):
         """
         Se encarga de procesar el paquete capturado `pkt`
         obteniendo de el su origen, destino, protocolo, tamaño y un
@@ -97,10 +97,10 @@ async def _websocket_capture(websocket: WebSocket) -> None:
             "summary": pkt.summary(),
         }
 
-        _packect_process.count += 1  # type: ignore
+        _packet_process.count += 1  # type: ignore
         asyncio.run_coroutine_threadsafe(websocket.send_json(summary), loop)
 
-    _packect_process.count = 1  # type: ignore
+    _packet_process.count = 1  # type: ignore
 
     def _stop_filter(pk):
         """
@@ -116,7 +116,7 @@ async def _websocket_capture(websocket: WebSocket) -> None:
         await loop.run_in_executor(
             None,
             lambda: sniff(
-                prn=_packect_process,
+                prn=_packet_process,
                 count=capture_state.packets_to_capture,
                 filter=bpf_filter,
                 stop_filter=_stop_filter,
