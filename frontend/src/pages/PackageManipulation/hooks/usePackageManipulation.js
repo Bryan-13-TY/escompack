@@ -25,7 +25,6 @@ export function usePackageManipulation() {
         try {
             const response = await axios.get('/api/captures/', { params });
             setCaptures(response.data);
-            console.log(captures);
         } catch (error) {
             console.error('Error al filtrar capturas:', error.response?.data || error.message);
         }
@@ -36,5 +35,6 @@ export function usePackageManipulation() {
         setProtocolSelected,
         resetProtocol,
         getCaptures,
+        captures,
     }
 }
