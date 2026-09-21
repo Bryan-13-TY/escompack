@@ -39,7 +39,9 @@ function PackageCapture() {
                         percentaje={progressPercentaje}
                     />
                 </section>
-                <PacketsTable packets={packets}/>
+                {
+                    isCapturing && <PacketsTable packets={packets}/>
+                }
             </main>
             <Footer />
         </div>
