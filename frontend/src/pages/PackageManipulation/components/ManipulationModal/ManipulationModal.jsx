@@ -22,9 +22,9 @@ export const FilterModalButton = ({onClick}) => {
     );
 };
 
-const CloseFilterModalButton = () => {
+const CloseFilterModalButton = ({onClick}) => {
     return (
-        <button className="label-button">
+        <button onClick={onClick} className="label-button">
             <span>
                 <FontAwesomeIcon
                     icon={faXmark}
@@ -35,7 +35,7 @@ const CloseFilterModalButton = () => {
     );
 };
 
-const FilterModalHeader = () => {
+const FilterModalHeader = ({onClick}) => {
     return (
         <header className="modal-header">
             <div className="content-label">
@@ -47,7 +47,7 @@ const FilterModalHeader = () => {
                     <p>Filtrar capturas de red</p>
                     <span className="label-format">.pcap</span>
                 </div>
-                <CloseFilterModalButton />
+                <CloseFilterModalButton onClick={onClick}/>
             </div>
             <p className='content-description'>Selecciona un protocolo y rango de fecha para cargar o manipular trazas .pcap almacenadas</p>
         </header>
@@ -83,7 +83,7 @@ const FilterForm = ({
             </fieldset>
             <div className="form-modal-date">
                 <div className="date-input">
-                    <label htmlFor="input-captured-date">Fecha de capture (UTC)</label>
+                    <label htmlFor="input-captured-date">Fecha de captura (UTC)</label>
                     <input type="date" name="input-captured-date" id="input-captured-date"/>
                 </div>
                 <Button
@@ -104,18 +104,19 @@ const FilterForm = ({
     );
 }
 
-export function FilterModal() {
+export function FilterModal({onClick}) {
     const {
         protocolSelected,
         setProtocolSelected,
         resetProtocol,
         getCaptures,
+        captures,
     } = usePackageManipulation();
 
     return (
         <div className="manipulation-blur">
             <div className="manipulation-modal">
-                <FilterModalHeader />
+                <FilterModalHeader onClick={onClick}/>
                 <div className="manipulation-form">
                     <FilterForm
                         protocolSelected={protocolSelected}
@@ -123,6 +124,17 @@ export function FilterModal() {
                         resetProtocol={resetProtocol}
                         getCaptures={getCaptures}
                     />
+                    {
+                        captures.map((capture) => (
+                            <div key={capture.captured_at}>
+                                <p>{capture.filename}</p>
+                                <p>{capture.filepath}</p>
+                                <p>{capture.protocol}</p>
+                                <p>{capture.packet_count}</p>
+                                <p>{capture.captured_at}</p>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>

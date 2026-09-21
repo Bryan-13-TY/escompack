@@ -85,7 +85,6 @@ async def _search_captures(
     # diccionario de filtro que se pasa a MongoDB
     query = {}
 
-
     # se van aagregando filtros al diccionario
     if protocol is not None:
         query["protocol"] = protocol.value
