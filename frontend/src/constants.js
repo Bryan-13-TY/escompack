@@ -7,6 +7,7 @@ import {
     faCircleArrowLeft,
     faFilter,
     faRotateLeft,
+    faFilePen,
 } from '@fortawesome/free-solid-svg-icons';
 
 import darkPimIcon from './assets/icons/icon-pim-dark.png'
@@ -120,6 +121,10 @@ export const ROLE_CONFIGS = {
         className: 'custom-btn reset_filter',
         icon: faRotateLeft,
     },
+    load_capture: {
+        className: 'custom-btn load_capture',
+        icon: faFilePen,
+    }
 };
 
 export const ANIMATION_CONFIGS = {

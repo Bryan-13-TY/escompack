@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFileLines, faXmark, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { faFileLines, faXmark, faFilter, faClock } from "@fortawesome/free-solid-svg-icons";
 
 import Button from "../../../../components/Button/Button";
 import ProtocolInput from "../../../../components/ProtocolInput/ProtocolInput";
@@ -44,8 +44,10 @@ const FilterModalHeader = ({onClick}) => {
                         icon={faFilter}
                         size="2x"
                     />
-                    <p>Filtrar capturas de red</p>
-                    <span className="label-format">.pcap</span>
+                    <div>
+                        <p>Filtrar capturas de red</p>
+                        <span className="label-format">.pcap</span>
+                    </div>
                 </div>
                 <CloseFilterModalButton onClick={onClick}/>
             </div>
@@ -104,6 +106,46 @@ const FilterForm = ({
     );
 }
 
+const PackageCaptureResults = ({
+    filename,
+    filepath,
+    protocol,
+    packet_count,
+    captured_at
+}) => {
+    return (
+        <div className="results-information">
+            {/* información de la captura */}
+            <div className="information">
+                {/* icono de archivo */}
+                <FontAwesomeIcon icon={faFileLines} size="2x" className="information-file-icon"/>
+                {/* iformación de la captura */}
+                <div className="information-details">
+                    <div className="details-filename">
+                        <p className="filename">{filename}</p>
+                        <div className="filename-label">
+                            <span className="protocol">{protocol}</span>
+                            <p className="packet-count">{packet_count} paquetes</p>
+                        </div>
+                    </div>
+                    <p className="details-path">{filepath}</p>
+                    <div className="details-date">
+                        <FontAwesomeIcon icon={faClock} size="1x"/>
+                        <p>{captured_at}</p>
+                    </div>
+                </div>
+            </div>
+            {/* botones */}
+            <Button
+                buttonText='Cargar para manipular'
+                type='button'
+                rol='load_capture'
+                position='before'
+            />
+        </div>
+    );
+}
+
 export function FilterModal({onClick}) {
     const {
         protocolSelected,
@@ -124,15 +166,30 @@ export function FilterModal({onClick}) {
                         resetProtocol={resetProtocol}
                         getCaptures={getCaptures}
                     />
+                </div>
+                <div className="manipulation-results">
+                    {/*
+                    {
+                        <PackageCaptureResults
+                            filename='Capture_Protocols.ICMP_20260910_035010.pcap'
+                            filepath='/app/captures/Capture_Protocols.ICMP_20260910_035010.pcap'
+                            protocol='ICMP'
+                            packet_count='10'
+                            captured_at='2026-09-10T03:50:10.657000'
+                        />
+                    }
+                    */}
                     {
                         captures.map((capture) => (
-                            <div key={capture.captured_at}>
-                                <p>{capture.filename}</p>
-                                <p>{capture.filepath}</p>
-                                <p>{capture.protocol}</p>
-                                <p>{capture.packet_count}</p>
-                                <p>{capture.captured_at}</p>
-                            </div>
+                            <PackageCaptureResults
+                                key={capture.captured_at}
+                                filename={capture.filename}
+                                filepath={capture.filepath}
+                                protocol={capture.protocol.toUpperCase()}
+                                packet_count={capture.packet_count}
+                                captured_at={capture.captured_at}
+
+                            />
                         ))
                     }
                 </div>
