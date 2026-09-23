@@ -17,10 +17,17 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![GNS3](https://img.shields.io/badge/GNS3-183F55?style=for-the-badge&logo=gns3&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
 Aplicación web para la manipulación de paquetes de red aplicado a la unidad de aprendizaje de Redes de Computadoras en ESCOM, usando la arquitectura MVC.
 
 </div>
+
+<p align="center">
+    <picture>
+        <img src="frontend/src/assets/others/main_page.png" alt="Vista principal de ESCOMPack">
+    </picture>
+</p>
 
 ---
 
