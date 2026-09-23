@@ -24,9 +24,7 @@ Aplicación web para la manipulación de paquetes de red aplicado a la unidad de
 </div>
 
 <p align="center">
-    <picture>
-        <img src="frontend/src/assets/others/main_page.png" alt="Vista principal de ESCOMPack">
-    </picture>
+    <img src="frontend/src/assets/others/main_page.png" alt="Vista principal de ESCOMPack">
 </p>
 
 ---
