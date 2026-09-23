@@ -38,7 +38,17 @@ El sistema se distribuye en dos contenedores independientes, orquestados con Doc
 │   │  Contenedor: backend    │   network_mode: host             │
 │   │  FastAPI + Scapy        │   (acceso directo a las          │
 │   │  Puerto 8000            │    interfaces reales de la VM)   │
-│   └───────────┬─────────────┘                                  │
+│   └───────────┬───────┬─────┘                                  │
+│               │       │ localhost:27017                        │
+│               │       │ (mismo espacio de red que la VM)       │
+│               │       ▼                                        │
+│               │   ┌──────────────────────┐                     │
+│               │   │ Contenedor: mongodb  │                     │
+│               │   │ mongo:4.4            │                     │
+│               │   │ Puerto 27017         │                     │
+│               │   │ Volumen: mongo_data  │                     │
+│               │   └──────────────────────┘                     │
+│               │                                                │
 │               │ escucha en 0.0.0.0:8000                        │
 │               │                                                │
 │   ┌───────────┴─────────────────────────────┐                  │
@@ -48,7 +58,7 @@ El sistema se distribuye en dos contenedores independientes, orquestados con Doc
 │   │   ┌───────────────────────┐             │                  │
 │   │   │ Contenedor: frontend  │             │                  │
 │   │   │ Vite + React          │             │                  │
-│   │   │ Puerto 5173           │─────────────┘                  │
+│   │   │ Puerto 5173           ├─────────────┤                  │
 │   │   └───────────────────────┘             │                  │
 │   └─────────────────────────────────────────┘                  │
 │                                                                │
@@ -58,22 +68,27 @@ El sistema se distribuye en dos contenedores independientes, orquestados con Doc
 └────────────────────────────────────────────────────────────────┘
 ```
 
-**Por qué el backend y el frontend tienen configuraciones de red distintas:** el backend necesita capturar tráfico real de red mediante Scapy, lo cual exige acceso directo a las interfaces físicas/virtuales de la VM — algo que solo `network_mode: host` permite. El frontend, en cambio, no necesita ese acceso (solo sirve archivos estáticos y hace peticiones HTTP/WS), así que puede permanecer en la red bridge estándar de Docker, más simple y aislada. El detalle completo de por qué esta diferencia genera la necesidad del proxy de Vite y la IP `172.17.0.1` está documentado en la sección 8 de `documentacion_modulo_captura.md`.
+**Por qué el backend y el frontend tienen configuraciones de red distintas:** el backend necesita capturar tráfico real de red mediante Scapy, lo cual exige acceso directo a las interfaces físicas/virtuales de la VM — algo que solo `network_mode: host` permite. El frontend, en cambio, no necesita ese acceso (solo sirve archivos estáticos y hace peticiones HTTP/WS), así que puede permanecer en la red bridge estándar de Docker, más simple y aislada. El detalle completo de por qué esta diferencia genera la necesidad del proxy de Vite y la IP `172.17.0.1` está documentado en la sección 8 de [`capture_module.md`](capture_module.md).
+
+**Sobre el contenedor de `mongodb`:** aunque técnicamente está conectado a la red bridge `app-web-network` (igual que `frontend`), el backend no lo alcanza a través de esa red ni de la IP `172.17.0.1` — lo alcanza directamente en `localhost:27017`, porque el mapeo de puertos `27017:27017` expone MongoDB en el puerto de la propia VM, y el backend (en `network_mode: host`) comparte ese mismo espacio de red que la VM. Es el mismo principio que el acceso al backend desde el frontend, solo que en dirección inversa: aquí es el backend quien "ya está adentro" del host y no necesita atravesar la red bridge para llegar a un servicio expuesto ahí. El detalle completo de esta conexión, junto con la restricción de versión (`mongo:4.4` por el requisito de AVX de MongoDB 5.0+), está documentado en la sección 4 de [`database_module.md`](database_module.md).
 
 ## 4. Estructura de directorios del backend
 
 ```
 backend/
 ├── app/
-│   ├── main.py                  # Punto de entrada; registra los routers
 │   ├── api/
-│   │   └── v1/
-│   │       ├── routers/         # Endpoints agrupados por módulo (capture, websocket, ...)
-│   │       └── schemas/         # Modelos Pydantic de entrada/salida (CaptureRequest, etc.)
-│   ├── capture_state.py         # Estado compartido en memoria del módulo de captura
-│   └── protocol_filters.py      # Mapeo de protocolo → filtro BPF
-├── requirements.txt
-└── Dockerfile
+│   │   └── v1
+│   │       └── routers/            # Endpoints agrupados por módulo (capture, websocket, ...)
+│   ├── core/
+│   │   ├── database.py             # Conexión con la base de datos (MongoDB)
+│   │   └── protocol_filters.py     # Mapeo de protocolo -> filtro BPF
+│   ├── models/                     # Estado compartido para el estado de la captura
+│   ├── schemas/                    # Esquemas Pydantic de entrada/salida (CaptureRequest, etc.)
+│   └── main.py                     # Punto de entrada; registra los routers
+├── .dockerignore
+├── Dockerfile
+└── requirements.txt
 ```
 
 Esta organización agrupa el código por responsabilidad (routers, esquemas, estado) en vez de por módulo funcional completo, lo cual facilita que los dos integrantes del equipo trabajen en distintos módulos (captura, procesamiento, reenvío, exportación) sin pisarse archivos, ya que cada uno probablemente tendrá su propio router y su propio esquema, compartiendo solo la estructura base.
@@ -83,14 +98,20 @@ Esta organización agrupa el código por responsabilidad (routers, esquemas, est
 ```
 frontend/
 ├── src/
-│   ├── App.jsx                  # Enrutador principal (React Router)
-│   ├── pages/                   # Una vista completa por archivo (Bienvenida, PackageCapture, ...)
-│   ├── components/              # Piezas reutilizables entre vistas (ProtocolInput, Button, ...)
-│   ├── services/                # Llamadas centralizadas a la API (axios)
-│   └── hooks/                   # Lógica reutilizable entre componentes
+│   ├── assets/
+│   ├── components/
+│   ├── hooks/                  # Logica reutilizable (modo oscuro/claro)
+│   ├── pages/                  # Vistas de la aplicación (Home, PackageCapture, ...)
+│   ├── styles/                 # Estilos centralizados
+│   ├── App.css
+│   ├── App.jsx                 # Enrutador principal (React Router)
+│   ├── constants.js            # Configuración de componentes
+│   ├── index.css
+│   └── main.jsx
+├── Dockerfile
+├── index.html
 ├── package.json
-├── vite.config.js               # Configuración de proxy hacia el backend
-└── Dockerfile
+├── vite.config.js              # Configuración de proxy hacia el backend
 ```
 
 ## 6. Estándares de calidad adoptados
