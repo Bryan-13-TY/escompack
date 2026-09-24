@@ -45,7 +45,7 @@ function PackageCapture() {
                     }
                 </section>
                 {
-                    (isCapturing || totalPackets > 0) && <PacketsTable packets={packets}/>
+                    (isCapturing || packets.length > 0) && <PacketsTable packets={packets}/>
                 }
             </main>
             <Footer />
