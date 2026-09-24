@@ -35,7 +35,7 @@ function PackageCapture() {
                     />
                     {console.log(packets.length)}
                     {
-                        isCapturing || packets.length > 0 && (
+                        (isCapturing || packets.length > 0) && (
                             <CaptureProgress
                                 capturedCount={packets.length}
                                 totalPackets={totalPackets}
@@ -45,7 +45,7 @@ function PackageCapture() {
                     }
                 </section>
                 {
-                    isCapturing || totalPackets > 0 && <PacketsTable packets={packets}/>
+                    (isCapturing || totalPackets > 0) && <PacketsTable packets={packets}/>
                 }
             </main>
             <Footer />
