@@ -221,6 +221,9 @@ form .form-modal-date {
 /* estilos para la mostrar los resultados */
 .manipulation-results {
     border: 2px solid yellow;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding: var(--padding-default);
 
     font-family: var(--font-family-default);
