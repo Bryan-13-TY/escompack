@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import Header from '../../components/Header/index';
-import Footer from '../../components/Footer/Footer';
-import ManipulationHeader from './components/ManipulationHeader/ManipulationHeader';
-import { FilterModalButton, FilterModal } from './components/ManipulationModal/ManipulationModal';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import ManipulationHeader from './components/ManipulationHeader';
+import { FilterModalButton, FilterModal } from './components/ManipulationModal';
 
 import './index.css';
 

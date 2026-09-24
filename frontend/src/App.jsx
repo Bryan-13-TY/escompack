@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import { ThemeProvider } from './hooks/ThemeContext';
-import Home from './pages/Home/index';
-import PackageCapture from './pages/PackageCapture/index';
-import PackageManipulation from './pages/PackageManipulation/index';
-import NotFound from './pages/NotFound/NotFound';
+import Home from './pages/Home';
+import PackageCapture from './pages/PackageCapture';
+import PackageManipulation from './pages/PackageManipulation';
+import NotFound from './pages/NotFound';
 
 // aquí se define que componente se muestra en cada URL
 function App() {

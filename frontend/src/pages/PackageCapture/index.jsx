@@ -1,10 +1,10 @@
-import Header from "../../components/Header/index";
-import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { usePacketCapture } from "./hooks/usePackageCapture";
-import CaptureHeader from "./components/CaptureHeader/CaptureHeader";
-import CaptureForm from "./components/CaptureForm/CaptureForm";
-import CaptureProgress from "./components/CaptureProgress/CaptureProgress";
-import PacketsTable from "./components/PacketsTable/PacketsTable";
+import CaptureHeader from "./components/CaptureHeader";
+import CaptureForm from "./components/CaptureForm";
+import CaptureProgress from "./components/CaptureProgress";
+import PacketsTable from "./components/PacketsTable";
 
 import './index.css';
 
@@ -33,14 +33,18 @@ function PackageCapture() {
                         protocolSelected={protocolSelected}
                         setProtocolSelected={setProtocolSelected}
                     />
-                    <CaptureProgress
-                        capturedCount={packets.length}
-                        totalPackets={totalPackets}
-                        percentaje={progressPercentaje}
-                    />
+                    {
+                        isCapturing || totalPackets > 0 && (
+                            <CaptureProgress
+                                capturedCount={packets.length}
+                                totalPackets={totalPackets}
+                                percentaje={progressPercentaje}
+                            />
+                        )
+                    }
                 </section>
                 {
-                    isCapturing && <PacketsTable packets={packets}/>
+                    isCapturing || totalPackets > 0 && <PacketsTable packets={packets}/>
                 }
             </main>
             <Footer />
