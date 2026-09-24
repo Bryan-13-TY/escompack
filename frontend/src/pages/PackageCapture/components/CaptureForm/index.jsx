@@ -1,7 +1,7 @@
 import { useTheme } from "../../../../hooks/ThemeContext";
 import { PROTOCOLS } from "../../../../constants";
-import Button from '../../../../components/Button/Button';
-import ProtocolInput from '../../../../components/ProtocolInput/ProtocolInput';
+import Button from '../../../../components/Button';
+import ProtocolInput from '../../../../components/ProtocolInput';
 
 import './CaptureForm.css';
 

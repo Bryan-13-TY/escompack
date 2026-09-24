@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileLines, faXmark, faFilter, faClock } from "@fortawesome/free-solid-svg-icons";
 
-import Button from "../../../../components/Button/Button";
-import ProtocolInput from "../../../../components/ProtocolInput/ProtocolInput";
+import Button from "../../../../components/Button";
+import ProtocolInput from "../../../../components/ProtocolInput";
 import { PROTOCOLS } from "../../../../constants";
 import { useTheme } from "../../../../hooks/ThemeContext";
 import { usePackageManipulation } from "../../hooks/usePackageManipulation";
