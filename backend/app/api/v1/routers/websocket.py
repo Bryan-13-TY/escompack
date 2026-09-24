@@ -92,7 +92,8 @@ async def _websocket_capture(websocket: WebSocket) -> None:
             "number": _packet_process.count,  # type: ignore
             "source": pkt[0][1].src if pkt.haslayer("Ether") else None,
             "destination": pkt[0][1].dst if pkt.haslayer("Ether") else None,
-            "protocol": pkt.lastlayer().name,
+            "protocol": capture_state.protocol,
+            #"protocol": pkt.lastlayer().name,
             "length": len(pkt),
             "summary": pkt.summary(),
         }

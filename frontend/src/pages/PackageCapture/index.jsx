@@ -33,7 +33,6 @@ function PackageCapture() {
                         protocolSelected={protocolSelected}
                         setProtocolSelected={setProtocolSelected}
                     />
-                    {console.log(packets.length)}
                     {
                         (isCapturing || packets.length > 0) && (
                             <CaptureProgress
