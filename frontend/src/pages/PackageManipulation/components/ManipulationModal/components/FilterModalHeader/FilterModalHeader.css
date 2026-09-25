@@ -1,0 +1,103 @@
+.manipulation-modal .modal-header {
+    border-top-left-radius: var(--border-radius-default);
+    border-top-right-radius: var(--border-radius-default);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 5px;
+    padding: var(--padding-header);
+
+    font-family: var(--font-family-default);
+
+    background-color: var(--color-bg-header);
+}
+
+.modal-header .content-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* a los extremos */
+    align-items: center; /* alinea verticalmente */
+}
+
+.modal-header .content-description {
+    margin: 0;
+
+    color: var(--color-text-secondary);
+}
+
+.content-label .label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* alinea horizontalmente */
+    align-items: center; /* alinea verticalmente */
+    gap: 10px;
+
+    color: var(--color-text-accent);
+}
+
+.label p {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.label div {
+    display: flex;
+    gap: 10px;
+}
+
+.label div .label-format {
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-label-focus);
+
+    color: var(--color-text-label-accent);
+    font-weight: bold;
+
+    background-color: var(--color-bg-accent);
+}
+
+.content-label .label-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-buttom-icon);
+
+    text-align: center;
+    color: var(--color-text-button-default);
+    cursor: pointer;
+
+    background-color: var(--color-bg-accent);
+
+    transition: transform 0.2s ease;
+}
+
+.label-button:hover {
+    color: var(--color-text-button-hover);
+
+    background-color: var(--color-bg-accent-hover);
+}
+
+.label-button:active {
+    transform: var(--transform-scale-default);
+}
+
+/*==============.
+| media queries |
+`==============*/
+
+@media (max-width: 599px) {
+    .label div {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 600px) {
+    .label div {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

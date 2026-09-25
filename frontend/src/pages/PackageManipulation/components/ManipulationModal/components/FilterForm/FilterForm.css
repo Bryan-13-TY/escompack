@@ -1,0 +1,118 @@
+/* estilos para el form */
+.manipulation-form {
+    padding: var(--padding-default);
+
+    font-family: var(--font-family-default);
+    border: 2px solid yellow;
+
+    background-color: var(--color-bg-base);
+}
+
+.manipulation-form form  {
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+
+    background-color: var(--color-bg-surface);
+}
+
+/* estilos para la grilla del form */
+
+form .form-modal-protocol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 8px;
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+}
+
+.form-modal-protocol legend {
+    color: var(--color-text-primary);
+}
+
+.form-modal-protocol .modal-protocol-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.modal-protocol-grid .target-protocol input {
+    display: none;
+}
+
+/* estilos para el input del form */
+form .form-modal-date {
+    display: flex;
+    gap: 8px;
+}
+
+.form-modal-date .date-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.date-input label {
+    color: var(--color-text-primary);
+}
+
+.date-input input {
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-input);
+
+    color: var(--color-text-primary);
+    font-family: var(--font-family-default);
+
+    background-color: var(--color-bg-elevated);
+}
+
+.date-input input:hover {
+    border: var(--border-focus);
+}
+
+/*==============.
+| media queries |
+`==============*/
+
+@media (max-width: 900px) {
+    .form-modal-date {
+        flex-direction: column;
+        justify-content: center; /* alinea verticalmente */
+    }
+}
+
+@media (min-width: 901px) {
+    .form-modal-date {
+        flex-direction: row;
+    }
+
+    .form-modal-date .date-input {
+        flex: 3;
+    }
+
+    .form-modal-date button {
+        width: 120px;
+    }
+}
+
+@media (max-width: 650px) {
+    .modal-protocol-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 650px ) and (max-width: 900px) {
+    .modal-protocol-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .modal-protocol-grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}

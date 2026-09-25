@@ -1,0 +1,186 @@
+/* estilos para la mostrar los resultados */
+.manipulation-results {
+    border: 2px solid yellow;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: var(--padding-default);
+
+    font-family: var(--font-family-default);
+
+    background-color: var(--color-bg-base);
+}
+
+.manipulation-results .results-information {
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+    display: flex;
+    padding: 20px;
+
+    background-color: var(--color-bg-surface);
+}
+
+.results-information .information {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    color: var(--color-text-primary);
+}
+
+.information .information-file-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* IMPIDE que el elemento se comprima o deforme */
+    border: none;
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-buttom-icon);
+
+    text-align: center;
+    color: var(--color-text-button-default);
+
+    background-color: var(--color-bg-accent);
+}
+
+.information .information-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.information-details p {
+    margin: 0;
+}
+
+.information-details .details-filename {
+    display: flex;
+    gap: 10px;
+    min-width: 0;
+}
+
+.details-filename .filename-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.filename-label .protocol {
+    flex-shrink: 0; /* IMPIDE que el elemento se comprima o deforme */
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-label-focus);
+
+    color: var(--color-text-label-accent);
+    font-weight: bold;
+
+    background-color: var(--color-bg-accent);
+}
+
+.filename-label .packet-count {
+    flex-shrink: 0; /* IMPIDE que el elemento se comprima o deforme */
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-label-focus);
+
+    background-color: var(--color-bg-elevated);
+}
+
+.information-details .details-path {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.details-date {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+}
+
+/*==============.
+| media queries |
+`==============*/
+
+@media (max-width: 770px) {
+    .details-filename .filename,
+    .information-details .details-path {
+        display: block;
+        max-width: 100%;
+        white-space: nowrap; /* impide que baje a la siguiente línea */
+        overflow: hidden; /* oculta el sobrante */
+        text-overflow: ellipsis; /* muestra los puntos suspensivos */
+    }
+}
+
+@media (min-width: 771px) {
+    .details-filename .filename,
+    .information-details .details-path {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+        word-break: break-all;
+    }
+}
+
+@media (max-width: 1010px) {
+    .manipulation-results .results-information {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .results-information .information {
+        justify-content: left;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1010px) {
+    .manipulation-results .results-information {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .results-information .information {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1070px) {
+    .information-details .details-filename {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .details-filename .filename-label {
+        justify-content: left;
+    }
+
+    .details-date {
+        flex-direction: row;
+        align-items: left;
+    }
+}
+
+@media (min-width: 1070px) {
+    .information-details .details-filename {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .details-filename .filename-label {
+        justify-content: center;
+    }
+
+    .details-date {
+        flex-direction: row;
+        align-items: center;
+    }
+}
