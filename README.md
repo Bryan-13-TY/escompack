@@ -31,7 +31,7 @@ Aplicación web para la manipulación de paquetes de red aplicado a la unidad de
 
 ## 🔑 Tokens de un solo uso
 
-| Contribuidor | Token |
+| Colaborador | Token |
 |--------------|-------|
 | Lalito | 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 |
 | Bryan | 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 |
