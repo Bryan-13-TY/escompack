@@ -4,10 +4,15 @@ import axios from "axios";
 
 export function usePackageManipulation() {
     const [protocolSelected, setProtocolSelected] = useState('');
+    const [capturedDate, setCapturedDate] = useState('');
     const [captures, setCaptures] = useState([]);
+    const [hasSearched, setHasSearched] = useState(false);
 
     const resetProtocol = () => {
+        setHasSearched(false);
         setProtocolSelected('');
+        setCapturedDate('');
+        setCaptures([]);
     }
 
     const getCaptures = async (e) => {
@@ -25,6 +30,8 @@ export function usePackageManipulation() {
         try {
             const response = await axios.get('/api/captures/', { params });
             setCaptures(response.data);
+            setCapturedDate(capturedDate);
+            setHasSearched(true);
         } catch (error) {
             console.error('Error al filtrar capturas:', error.response?.data || error.message);
         }
@@ -36,5 +43,7 @@ export function usePackageManipulation() {
         resetProtocol,
         getCaptures,
         captures,
+        capturedDate,
+        hasSearched,
     }
 }

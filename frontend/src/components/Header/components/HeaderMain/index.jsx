@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import escomPackIcon from '../../../../assets/others/icon-v2.png';
 import { useTheme } from '../../../../hooks/ThemeContext';
-import HamburguerMenu from '../HamburguerMenu/HamburguerMenu';
+import HamburguerMenu from '../HamburguerMenu';
 import { THEME_MODE_ICON } from '../../../../constants';
 
 import './HeaderMain.css';

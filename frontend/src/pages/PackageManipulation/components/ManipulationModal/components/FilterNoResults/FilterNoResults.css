@@ -1,0 +1,38 @@
+.manipulation-no-results {
+    padding: var(--padding-default);
+
+    font-family: var(--font-family-default);
+
+    background-color: var(--color-bg-base);
+}
+
+.manipulation-no-results .no-results-content {
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    color: var(--color-text-primary);
+
+    background-color: var(--color-bg-surface);
+}
+
+.no-results-content .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    text-align: center;
+}
+
+.content p {
+    margin: 0;
+
+    font-size: 1.5rem;
+}

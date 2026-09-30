@@ -3,7 +3,6 @@
     padding: var(--padding-default);
 
     font-family: var(--font-family-default);
-    border: 2px solid yellow;
 
     background-color: var(--color-bg-base);
 }
