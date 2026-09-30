@@ -26,7 +26,7 @@ function FilterModalHeader ({onClick}) {
                         size="2x"
                     />
                     <div>
-                        <p>Filtrar capturas de red</p>
+                        <p className="modal-title">Filtrar capturas de red</p>
                         <span className="label-format">.pcap</span>
                     </div>
                 </div>

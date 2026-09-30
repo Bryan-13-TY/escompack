@@ -1,6 +1,8 @@
 import FilterModalHeader from "./components/FilterModalHeader";
 import FilterForm from "./components/FilterForm";
 import FilterResults from "./components/FilterResults";
+import FilterNoResults from "./components/FilterNoResults";
+import Filterlabel from './components/FilterLabel';
 import { usePackageManipulation } from "../../hooks/usePackageManipulation";
 
 import './ManipulationModal.css';
@@ -12,6 +14,8 @@ function FilterModal({onClick}) {
         resetProtocol,
         getCaptures,
         captures,
+        capturedDate,
+        hasSearched,
     } = usePackageManipulation();
 
     return (
@@ -26,37 +30,35 @@ function FilterModal({onClick}) {
                         getCaptures={getCaptures}
                     />
                 </div>
-                <div className="manipulation-results">
-                    <FilterResults
-                        filename='Capture_Protocols.ICMP_20260910_035010.pcap'
-                        filepath='/app/captures/Capture_Protocols.ICMP_20260910_035010.pcap'
-                        protocol='ICMP'
-                        packet_count='10'
-                        captured_at='2026-09-10T03:50:10.657000'
-                    />
-                    <FilterResults
-                        filename='Capture_Protocols.ICMP_20260910_035010.pcap'
-                        filepath='/app/captures/Capture_Protocols.ICMP_20260910_035010.pcap'
-                        protocol='ICMP'
-                        packet_count='10'
-                        captured_at='2026-09-10T03:50:10.657000'
-                    />
-                    {/*
-                    {
-                        captures.map((capture) => (
-                            <PackageCaptureResults
-                                key={capture.captured_at}
-                                filename={capture.filename}
-                                filepath={capture.filepath}
-                                protocol={capture.protocol.toUpperCase()}
-                                packet_count={capture.packet_count}
-                                captured_at={capture.captured_at}
-
+                {hasSearched && captures.length === 0 && (
+                    <>
+                        <div className="manipulation-label">
+                            <Filterlabel
+                                results={captures.length}
+                                protocol={protocolSelected.toUpperCase()}
+                                date={capturedDate}
                             />
-                        ))
-                    }
-                    */}
-                </div>
+                        </div>
+                        <div className="manipulation-results">
+                            <div className="results-scroll">
+                                {captures.map((capture) => (
+                                    <FilterResults
+                                        key={capture.captured_at}
+                                        filename={capture.filename}
+                                        filepath={capture.filepath}
+                                        protocol={capture.protocol.toUpperCase()}
+                                        packet_count={capture.packet_count}
+                                        captured_at={capture.captured_at}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </>
+                )}
+
+                {hasSearched && captures.length === 0 && (
+                    <FilterNoResults />
+                )}
             </div>
         </div>
     );

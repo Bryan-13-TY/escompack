@@ -1,0 +1,64 @@
+.manipulation-label {
+    padding: var(--padding-default);
+
+    font-family: var(--font-family-default);
+
+    background-color: var(--color-bg-base);
+}
+
+.manipulation-label .label-information {
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; /* alinea verticalmente */
+    gap: 10px;
+
+    background-color: var(--color-bg-surface);
+}
+
+.label-information .information-results-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* IMPIDE que el elemento se comprima o deforme */
+    border: none;
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-buttom-icon);
+
+    text-align: center;
+    color: var(--color-text-button-default);
+
+    background-color: var(--color-bg-accent);
+}
+
+.label-information .results {
+    display: flex;
+
+    color: var(--color-text-primary);
+}
+
+.results p {
+    margin: 0;
+}
+
+.results p span {
+    font-weight: bold;
+    color: var(--color-text-accent);
+}
+
+@media (max-width: 599px) {
+    .label-information .results {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+@media (min-width: 600px) {
+    .label-information .results {
+        flex-direction: row;
+        gap: 10px;
+    }
+}
