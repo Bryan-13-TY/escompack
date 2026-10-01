@@ -5,7 +5,7 @@ import './FilterLabel.css';
 
 function FilterLabel({ results, protocol, date }) {
     const protocolIsEmpty = !protocol || protocol.trim() === "";
-    const dateIsEmpty = !date || date.prim() === "";
+    const dateIsEmpty = !date || date.trim() === "";
 
     return (
        <div className='label-information'>
