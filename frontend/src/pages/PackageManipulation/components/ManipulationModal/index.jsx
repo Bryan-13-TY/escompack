@@ -15,6 +15,7 @@ function FilterModal({onClick}) {
         getCaptures,
         captures,
         capturedDate,
+        capturedProtocol,
         hasSearched,
     } = usePackageManipulation();
 
@@ -35,7 +36,7 @@ function FilterModal({onClick}) {
                         <div className="manipulation-label">
                             <Filterlabel
                                 results={captures.length}
-                                protocol={protocolSelected.toUpperCase()}
+                                protocol={capturedProtocol.toUpperCase()}
                                 date={capturedDate}
                             />
                         </div>
