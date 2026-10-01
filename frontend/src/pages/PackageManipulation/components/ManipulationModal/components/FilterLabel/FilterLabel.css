@@ -14,7 +14,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center; /* alinea verticalmente */
-    gap: 10px;
+    gap: 20px;
 
     background-color: var(--color-bg-surface);
 }
