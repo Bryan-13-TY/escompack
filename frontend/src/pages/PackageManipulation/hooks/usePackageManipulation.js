@@ -26,7 +26,7 @@ export function usePackageManipulation() {
         // se contruyen los parámetros solo con lo que se selecciono
         // formulario
         const params = {};
-        if (protocol) params.protocol = protocol;
+        if (capturedProtocol) params.protocol = protocol;
         if (capturedDate) params.captured_date = capturedDate;
 
         try {
