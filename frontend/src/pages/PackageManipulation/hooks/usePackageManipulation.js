@@ -13,6 +13,7 @@ export function usePackageManipulation() {
         setHasSearched(false);
         setProtocolSelected('');
         setCapturedDate('');
+        setCapturedProtocol('');
         setCaptures([]);
     }
 
