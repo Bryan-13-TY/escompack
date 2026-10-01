@@ -30,7 +30,7 @@ function FilterModal({onClick}) {
                         getCaptures={getCaptures}
                     />
                 </div>
-                {hasSearched && captures.length === 0 && (
+                {hasSearched && captures.length > 0 && (
                     <>
                         <div className="manipulation-label">
                             <Filterlabel
