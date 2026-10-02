@@ -1,3 +1,7 @@
+/*=========================================.
+| TOKENS PARA LOS COLORES DE LA APLICACIÓN |
+`=========================================*/
+
 :root {
     --color-text-button-default: #dedede; /* color del texto para botones */
     --color-text-button-hover: #ffffff; /* color del texto para botones al hacer hover */
@@ -7,6 +11,10 @@
     --color-bg-blur: #000000aa;
     --color-text-label-accent: #dedede;
 }
+
+/*========================================.
+| TOKENS PARA COLORES - MODO CLARO/OSCURO |
+`========================================*/
 
 :root,
 :root.dark {
@@ -19,6 +27,7 @@
     --color-bg-accent: #0080d0; /* fondo para botones con icono */
     --color-bg-accent-hover: #006fb5; /* fondo para botones con icono al hacer hover */
 
+    /* colores de los botones para iniciar/detener captura */
     --color-bg-start-capture: #029c02;
     --color-bg-stop-capture: #ff1f1f;
     --color-bg-start-capture-hover: #039003;
@@ -42,6 +51,7 @@
     --color-bg-accent: #021981; /* fondo para botones con icono */
     --color-bg-accent-hover: #001ea4; /* fondo para botones con icono al hacer hover */
 
+    /* colores de los botones para iniciar/detener captura */
     --color-bg-start-capture: green;
     --color-bg-stop-capture: red;
     --color-bg-start-capture-hover: #029a02;
