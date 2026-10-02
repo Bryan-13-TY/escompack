@@ -1,3 +1,7 @@
+/*==================================.
+| IMPORTAMOS LOS ICONOS FONTAWESOME |
+`==================================*/
+
 import {
     faMoon,
     faSun,
@@ -9,6 +13,10 @@ import {
     faRotateLeft,
     faFilePen,
 } from '@fortawesome/free-solid-svg-icons';
+
+/*========================================.
+| IMPORTAMOS LOS ICONOS DE LOS PROTOCOLOS |
+`========================================*/
 
 import darkPimIcon from './assets/icons/icon-pim-dark.png'
 import darkArpIcon from './assets/icons/icon-arp-dark.png';
@@ -27,13 +35,35 @@ import lightIgmpIcon from './assets/icons/icon-igmp-light.png';
 import lightMsdpIcon from './assets/icons/icon-msdp-light.png';
 import lightTcpIcon from './assets/icons/icon-tcp-light.png';
 import lightUdpIcon from './assets/icons/icon-udp-light.png';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 
+/*=====================.
+| EXPORTACIÓN DE TIPOS |
+`=====================*/
+
+/** @typedef {import('./constants.types').ThemeIcons} ThemeIcons */
+/** @typedef {import('./constants.types').ProtocolInput} ProtocolInput */
+/** @typedef {import('./constants.types').ProtocolCard} ProtocolCard */
+/** @typedef {import('./constants.types').ButtonRoleConfig} ButtonRoleConfig */
+/** @typedef {import('./constants.types').IconAnimationConfig} IconAnimationConfig */
+
+/*===========.
+| CONSTANTES |
+`===========*/
+
+/**
+ * Diccionario de iconos de FontAwesome para el botón que cambia el tema.
+ * @type {ThemeIcons}
+ */
 export const THEME_MODE_ICON = {
     dark: faSun,
     light: faMoon,
 };
 
+/**
+ * Lista de protocolos que se pueden elegir en el formulario de
+ * captura/filtro de paquetes.
+ * @type {ProtocolInput[]}
+ */
 export const PROTOCOLS = [
     { id: "arp", label: "ARP", icon: {dark: darkArpIcon, light: lightArpIcon}, },
     { id: "icmp", label: "ICMP", icon: {dark: darkIcmpIcon, light: lightIcmpIcon}, },
@@ -45,6 +75,10 @@ export const PROTOCOLS = [
     { id: "udp", label: "UDP", icon: {dark: darkUdpIcon, light: lightUdpIcon}, },
 ];
 
+/**
+ * Lista de protocolos soportados.
+ * @type {ProtocolCard[]}
+ */
 export const PROTOCOL_CARDS = [
     {
         icon: {dark: darkArpIcon, light: lightArpIcon,},
@@ -96,6 +130,10 @@ export const PROTOCOL_CARDS = [
     },
 ];
 
+/**
+ * Diccionario de estilos para los roles del botón.
+ * @type {ButtonRoleConfig}
+ */
 export const ROLE_CONFIGS = {
     link: {
         className: 'custom-btn',
@@ -127,6 +165,10 @@ export const ROLE_CONFIGS = {
     }
 };
 
+/**
+ * Diccionario de animaciones del icono del botón.
+ * @type {IconAnimationConfig}
+ */
 export const ANIMATION_CONFIGS = {
     none: {
         className: 'custom-btn-icon',
