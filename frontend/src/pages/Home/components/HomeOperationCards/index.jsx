@@ -4,6 +4,12 @@ import OperationCard from '../../../../components/OperationCard';
 
 import './HomeOperationCards.css';
 
+/**
+ * Componente que renderiza la sección de las tarjetas de operación
+ * de la vista principal.
+ * 
+ * @returns {React.JSX.Element}
+ */
 function HomeOperationCards() {
     return (
         <section className='home-operation-cards'>

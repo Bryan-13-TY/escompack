@@ -6,15 +6,19 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import './OperationCard.css';
 
 /**
- * Componente que muestra la tarjeta de operación.
- * 
- * Este componente renderiza una tarjeta para alguna de las operaciones
+ * Icono de FontAwesome
+ * @typedef {import('../../constants.types').IconDefinition} IconDefinition
+ */
+
+/**
+ * Componente que renderiza una de las tarjetas de las operaciones
  * principales de la aplicación.
  * 
- * Incluye el icono que representa la operación, el título, descripción
- * el texto del botón incluido y la ruta la que lleva la tarjeta.
- * 
- * @component
+ * @param {Object} props - Las propiedades del componente.
+ * @param {IconDefinition} props.icon - Icono FontAwesome de la tarjeta. 
+ * @param {string} props.title - Título de la tarjeta.
+ * @param {string} props.description - Descripción de la tarjeta.
+ * @param {string} props.pageLink - URL a la que lleva la tarjeta
  * @example
  * import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
  * 
@@ -26,12 +30,13 @@ import './OperationCard.css';
  *      pageLink='/capture'
  *  /> 
  * );
+ * @returns {React.JSX.Element}
  */
 function OperationCard({
     icon,
     title,
     description,
-    pageLink
+    pageLink,
 }) {
     return (
         <Link className='home-operation-card' to={pageLink}>
@@ -68,5 +73,4 @@ OperationCard.propTypes = {
     pageLink: PropTypes.string.isRequired,
 };
 
-/** @type {React.FC<any>} */
 export default OperationCard;

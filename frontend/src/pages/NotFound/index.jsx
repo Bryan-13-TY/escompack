@@ -6,7 +6,11 @@ import Button from '../../components/Button';
 
 import './NotFound.css';
 
-/** Vista 404 de la aplicación. */
+/**
+ * Componente que renderiza la vista 404 de la aplicación.
+ * 
+ * @returns {React.JSX.Element}
+ */
 function NotFound() {
     return (
         <div className='not-found'>

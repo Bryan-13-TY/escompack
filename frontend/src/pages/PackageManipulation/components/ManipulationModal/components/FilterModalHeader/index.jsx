@@ -1,9 +1,19 @@
+import PropTypes from "prop-types";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faFilter } from "@fortawesome/free-solid-svg-icons";
 
 import './FilterModalHeader.css';
 
-const CloseFilterModalButton = ({onClick}) => {
+/**
+ * Componente que renderiza el botón para cerrar la ventana modal
+ * para el filtrado de capturas.
+ * 
+ * @param {Object} props - Las propiedades del componente.
+ * @param {function} props.onClick - Función callback que se ejecuta al hacer clic en el botón.
+ * @returns {React.JSX.Element}
+ */
+const CloseFilterModalButton = ({ onClick, }) => {
     return (
         <button onClick={onClick} className="label-button">
             <span>
@@ -16,7 +26,20 @@ const CloseFilterModalButton = ({onClick}) => {
     );
 };
 
-function FilterModalHeader ({onClick}) {
+CloseFilterModalButton.propTypes = {
+    /** Función callback que se ejecuta al hacer clic en el botón */
+    onClick: PropTypes.func.isRequired,
+};
+
+/**
+ * Componente que renderiza el header de la ventana modal para el
+ * filtrado de capturas.
+ * 
+ * @param {Object} props - Las propiedades del componente.
+ * @param {function} props.onClick - Función callback que se ejecuta al hacer clic en el botón. 
+ * @returns {React.JSX.Element}
+ */
+function FilterModalHeader ({ onClick, }) {
     return (
         <header className="modal-header">
             <div className="content-label">
@@ -36,5 +59,10 @@ function FilterModalHeader ({onClick}) {
         </header>
     );
 }
+
+FilterModalHeader.propTypes = {
+    /** Función callback que se ejecuta al hacer clic en el botón */
+    onClick: PropTypes.func.isRequired,
+};
 
 export default FilterModalHeader;

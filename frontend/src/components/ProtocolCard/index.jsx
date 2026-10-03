@@ -3,19 +3,15 @@ import PropTypes from 'prop-types';
 import './ProtocolCard.css';
 
 /**
- * Componente que muestra la tarjeta de un protocolo soportado.
+ * Componente que renderiza una tarjeta de uno de los protocolos
+ * soportados por la aplicación
  * 
- * Este componente renderiza una tarjeta para un protocolo soportado.
- * Incluye el icono del protocolo, el acrónimo, el significado de este
- * y la descripción de su función.
- * 
- * El icono del protocolo cambia de acuerdo al tema de la aplicación,
- * por lo que se importa el hook `useTheme` para acceder al tema
- * actual con `const { theme } = useTheme();`.
- * 
- * @component
+ * @param {Object} props - Las propiedades del componente.
+ * @param {string} props.icon - Imagen del icono del protocolo.
+ * @param {string} props.acronym - Acrónimo oficial del protocolo.
+ * @param {string} props.rep - Significado del acrónimo.
+ * @param {string} props.description - Explicación sobre el propósito del protocolo.
  * @example
- * 
  * return (
  *  <ProtocolCard
  *      icon='./assets/icons/icon-pim-dark.png'
@@ -24,8 +20,9 @@ import './ProtocolCard.css';
  *      description='Familia de protocolos de enrutamiento multidifusión.'
  *  />
  * );
+ * @returns {React.JSX.Element}
  */
-function ProtocolCard({ icon, acronym, rep, description }) {
+function ProtocolCard({ icon, acronym, rep, description, }) {
     return (
         <div className='home-protocol-card'>
             <header className='home-protocol-card-header'>
@@ -57,5 +54,4 @@ ProtocolCard.propTypes = {
     description: PropTypes.string.isRequired,
 };
 
-/** @type {React.FC<any>} */
 export default ProtocolCard;

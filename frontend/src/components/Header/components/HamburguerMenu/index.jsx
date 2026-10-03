@@ -6,6 +6,11 @@ import { useHamburguerMenu } from '../../hooks/useHamburguerMenu';
 
 import './HamburguerMenu.css';
 
+/**
+ * Componente que renderiza el menú hamburguesa.
+ * 
+ * @returns {React.JSX.Element}
+ */
 function HamburguerMenu() {
     const {isOpen, menuRef, toogleMenu} = useHamburguerMenu();
 

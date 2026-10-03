@@ -3,14 +3,16 @@ import PropTypes from "prop-types";
 import './ProtocolInput.css';
 
 /**
- * Componente que muestra un input de un protocolo a capturar.
+ * Componente que renderiza un input correspondiente a alguno de los
+ * protocolos soportados.
  * 
- * Este componente renderiza un input para un protocolo a capturar,
- * el cual incluye el icono y el acrónimo del mismo.
- * 
- * @component
+ * @param {Object} props - Las propiedades del componente.
+ * @param {string} props.id - Identificador único del protocolo.
+ * @param {string} props.icon - Imagen del icono del protocolo por tema.
+ * @param {string} props.label - Etiqueta de input.
+ * @param {boolean} props.isSelected - Determina si el input fue seleccionado.
+ * @param {function} props.onSelect - Función callback que se ejecuta al seleccionar el input.
  * @example 
- * 
  * return(
  *  <ProtocolInput
  *      id='arp'
@@ -20,6 +22,7 @@ import './ProtocolInput.css';
  *      onSelect=setProtocolSelected
  *  />
  * );
+ * @returns {React.JSX.Element}
  */
 function ProtocolInput({ id, icon, label, isSelected, onSelect }) {
     const className = isSelected ? 'target-protocol selected' : 'target-protocol';
@@ -51,7 +54,7 @@ ProtocolInput.propTypes = {
     icon: PropTypes.oneOfType([
         PropTypes.object,
         PropTypes.string,
-    ]),
+    ]).isRequired,
 
     /** Label del ipunt asociado al protocolo */
     label: PropTypes.string.isRequired,
@@ -63,5 +66,4 @@ ProtocolInput.propTypes = {
     onSelect: PropTypes.func.isRequired,
 };
 
-/** @type {React.FC<any>} */
 export default ProtocolInput;

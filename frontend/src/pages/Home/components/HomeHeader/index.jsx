@@ -1,5 +1,10 @@
 import './HomeHeader.css';
 
+/**
+ * Componente que renderiza el header la vista principal.
+ * 
+ * @returns {React.JSX.Element}
+ */
 function HomeHeader() {
     return (
         <header className='home-header'>

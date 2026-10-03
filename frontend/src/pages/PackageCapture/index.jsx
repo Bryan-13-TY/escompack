@@ -8,6 +8,13 @@ import PacketsTable from "./components/PacketsTable";
 
 import './index.css';
 
+/**
+ * Componente que renderiza la vista del módulo de la captura de
+ * paquetes.
+ * 
+ * @component
+ * @returns React.JSX.Element
+ */
 function PackageCapture() {
     const {
         protocolSelected,
@@ -33,19 +40,15 @@ function PackageCapture() {
                         protocolSelected={protocolSelected}
                         setProtocolSelected={setProtocolSelected}
                     />
-                    {
-                        (isCapturing || packets.length > 0) && (
-                            <CaptureProgress
-                                capturedCount={packets.length}
-                                totalPackets={totalPackets}
-                                percentaje={progressPercentaje}
-                            />
-                        )
-                    }
+                    {(isCapturing || packets.length > 0) && (
+                        <CaptureProgress
+                            capturedCount={packets.length}
+                            totalPackets={totalPackets}
+                            percentaje={progressPercentaje}
+                        />
+                    )}
                 </section>
-                {
-                    (isCapturing || packets.length > 0) && <PacketsTable packets={packets}/>
-                }
+                {(isCapturing || packets.length > 0) && <PacketsTable packets={packets} />}
             </main>
             <Footer />
         </div>

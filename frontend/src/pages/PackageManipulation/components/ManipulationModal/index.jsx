@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import FilterModalHeader from "./components/FilterModalHeader";
 import FilterForm from "./components/FilterForm";
 import FilterResults from "./components/FilterResults";
@@ -7,7 +9,15 @@ import { usePackageManipulation } from "../../hooks/usePackageManipulation";
 
 import './ManipulationModal.css';
 
-function FilterModal({onClick}) {
+/**
+ * Componente que renderiza la ventana modal para el filtro de paquetes
+ * de la vista de manipulación de paquetes.
+ * 
+ * @param {Object} props - Las propiedades del componente.
+ * @param {function} props.onClick - Función callback que se ejecuta al hacer clic en el botón. 
+ * @returns {React.JSX.Element}
+ */
+function FilterModal({ onClick }) {
     const {
         protocolSelected,
         setProtocolSelected,
@@ -56,13 +66,17 @@ function FilterModal({onClick}) {
                         </div>
                     </>
                 )}
-
                 {hasSearched && captures.length === 0 && (
                     <FilterNoResults />
                 )}
             </div>
         </div>
     );
+}
+
+FilterModal.propTypes = {
+    /** Función callback que ejecuta al jacer clic en el botón */
+    onClick: PropTypes.func.isRequired,
 }
 
 export default FilterModal;

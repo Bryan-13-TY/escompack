@@ -8,6 +8,11 @@ import { THEME_MODE_ICON } from '../../../../constants';
 
 import './HeaderMain.css';
 
+/**
+ * Renderiza el botón para cambiar el tema de la aplicación.
+ * 
+ * @returns {React.JSX.Element}
+ */
 const ThemeButton = () => {
     const { theme, toggleTheme } = useTheme();
 
@@ -24,6 +29,11 @@ const ThemeButton = () => {
     );
 };
 
+/**
+ * Componente que renderiza el menú principal del header.
+ * 
+ * @returns {React.JSX.Element}
+ */
 function HeaderMain() {
     return (
         <header className='header'>

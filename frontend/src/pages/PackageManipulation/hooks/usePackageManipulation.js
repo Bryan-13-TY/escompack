@@ -2,6 +2,16 @@ import { useState } from "react";
 
 import axios from "axios";
 
+/**
+ * Hook para gestionar el filtrado de capturas (por ahora).
+ * 
+ * Maneja la petición HTTP con `/api/captures/` para obtener los
+ * capturas de acuerdo al protocolo y fecha de captura.
+ * 
+ * @example
+ * const { captures, capturedProtocol, capturedDate } =
+ * usePackageManipulation();
+ */
 export function usePackageManipulation() {
     const [protocolSelected, setProtocolSelected] = useState('');
     const [capturedDate, setCapturedDate] = useState('');
@@ -9,6 +19,7 @@ export function usePackageManipulation() {
     const [captures, setCaptures] = useState([]);
     const [hasSearched, setHasSearched] = useState(false);
 
+    // reseteamos todo el filtro
     const resetProtocol = () => {
         setHasSearched(false);
         setProtocolSelected('');

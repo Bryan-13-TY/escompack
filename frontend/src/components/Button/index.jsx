@@ -6,18 +6,16 @@ import { ROLE_CONFIGS, ANIMATION_CONFIGS } from '../../constants';
 import './Button.css';
 
 /**
- * Componente que muestra un botón personalizado.
+ * Componente que renderiza un botón personalizado.
  * 
- * - `buttonText` el texto qye se muestra en el botón.
- * - `type` el tipo del botón.
- * - `rol` estilo del botón que indica su uso.
- * - `position` posición del icono del botón.
- * - `onClick` función callback que se ejecuta al hacer clic en el
- * botón.
- * - `disable` habilita o deshabilita el botón.
- * - `animation` comportamiento del icono del botón. 
- * 
- * @component
+ * @param {Object} props - Las propiedades del componente.
+ * @param {string} props.buttonText - El texto que se muestra en el botón.
+ * @param {string} props.type - El tipo del botón.
+ * @param {string} props.rol - Estilo visual del botón que indica su uso.
+ * @param {string} props.position - Posición del icono del botón.
+ * @param {function} props.onClick - Función callback que se ejecuta al hacer clic en el botón.
+ * @param {boolean} props.disable - Habilita o deshabilita el botón.
+ * @param {string} props.animation - Comportamiento del icono del botón.
  * @example
  * return (
  *  <Button
@@ -30,6 +28,7 @@ import './Button.css';
  *      animation='left'
  *  />
  * );
+ * @returns {React.JSX.Element}
  */
 function Button({
     buttonText,
@@ -74,7 +73,7 @@ Button.defaultProps = {
     onClick: () => {},
     disable: false,
     animation: 'none',
-}
+};
 
 Button.propTypes = {
     /** Texto que se muestra en el botón */
@@ -99,5 +98,4 @@ Button.propTypes = {
     animation: PropTypes.oneOf(['none', 'left', 'right']),
 };
 
-/** @type {React.FC<any>} */
 export default Button;

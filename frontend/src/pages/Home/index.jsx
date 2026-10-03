@@ -6,6 +6,11 @@ import HomeProtocolCards from './components/HomeProtocolCards';
 
 import './index.css';
 
+/**
+ * Componente que renderiza la vista principal de la aplicación.
+ * 
+ * @returns {React.JSX.Element}
+ */
 function Home() {
     return (
         <div className='home'>

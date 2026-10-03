@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,8 +11,15 @@ import FilterModal from './components/ManipulationModal';
 
 import './index.css';
 
-
-const FilterModalButton = ({onClick}) => {
+/**
+ * Componente que renderiza el botón para mostrar la ventana modal del
+ * filtro de capturas.
+ * 
+ * @param {Object} props - Las propiedades del componente.
+ * @param {function} props.onClick - Función callback que se ejecuta al hacer clic en el botón. 
+ * @returns {React.JSX.Element}
+ */
+const FilterModalButton = ({ onClick }) => {
     return (
         <button  onClick={onClick} type="button" className="manipulation-modal-button">
             <span>
@@ -24,6 +32,17 @@ const FilterModalButton = ({onClick}) => {
     );
 };
 
+FilterModalButton.propTypes = {
+    /** Función callback que se ejecuta al hacer clic en el botón */
+    onClick: PropTypes.func.isRequired,
+};
+
+/**
+ * Componente que renderiza la vista de manipulación de paquetes
+ * de la aplicación.
+ * 
+ * @returns {React.JSX.Element}
+ */
 function PackageManipulation() {
     const [isModalShown, setIsModalShown] = useState(true);
     
@@ -37,11 +56,9 @@ function PackageManipulation() {
             <main>
                 <ManipulationHeader />
                 <FilterModalButton onClick={toogleModal}/>
-                {
-                    isModalShown && (
-                        <FilterModal onClick={toogleModal} />
-                    )
-                }
+                {isModalShown && (
+                    <FilterModal onClick={toogleModal} />
+                )}
                 <section className='temporal-section'>
                 </section>
             </main>
