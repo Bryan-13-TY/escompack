@@ -16,8 +16,8 @@ import './FilterLabel.css';
  * @returns {React.JSX.Element}
  */
 function FilterLabel({ results, protocol, date, }) {
-    const protocolIsEmpty = !protocol || protocol.trim() === "";
-    const dateIsEmpty = !date || date.trim() === "";
+    const protocolIsEmpty = !protocol || protocol.trim() === '';
+    const dateIsEmpty = !date || date.trim() === '';
 
     return (
        <div className='label-information'>

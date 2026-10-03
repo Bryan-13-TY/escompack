@@ -11,7 +11,7 @@ import './FilterNoResults.css';
  */
 function FilterNoResults() {
     return (
-        <div className="manipulation-no-results">
+        <div className='manipulation-no-results'>
             <div className='no-results-content'>
                 <FontAwesomeIcon className='content-icon' icon={faFaceDizzy} size='5x'/>
                 <div className='content'>

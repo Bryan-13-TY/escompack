@@ -1,10 +1,10 @@
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import { usePacketCapture } from "./hooks/usePackageCapture";
-import CaptureHeader from "./components/CaptureHeader";
-import CaptureForm from "./components/CaptureForm";
-import CaptureProgress from "./components/CaptureProgress";
-import PacketsTable from "./components/PacketsTable";
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import { usePacketCapture } from './hooks/usePackageCapture';
+import CaptureHeader from './components/CaptureHeader';
+import CaptureForm from './components/CaptureForm';
+import CaptureProgress from './components/CaptureProgress';
+import PacketsTable from './components/PacketsTable';
 
 import './index.css';
 
@@ -28,11 +28,11 @@ function PackageCapture() {
     } = usePacketCapture();
 
     return (
-        <div className="package-capture">
+        <div className='package-capture'>
             <Header />
             <main>
                 <CaptureHeader />
-                <section className="capture-form">
+                <section className='capture-form'>
                     <CaptureForm
                         onSubmit={startCapture}
                         onStop={stopCapture}

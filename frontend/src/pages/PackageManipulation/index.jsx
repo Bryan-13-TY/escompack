@@ -21,11 +21,11 @@ import './index.css';
  */
 const FilterModalButton = ({ onClick }) => {
     return (
-        <button  onClick={onClick} type="button" className="manipulation-modal-button">
+        <button  onClick={onClick} type='button' className='manipulation-modal-button'>
             <span>
                 <FontAwesomeIcon
                     icon={faFileLines}
-                    size="2x"
+                    size='2x'
                 />
             </span>
         </button>

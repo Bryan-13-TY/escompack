@@ -26,7 +26,7 @@ function ProtocolCard({ icon, acronym, rep, description, }) {
     return (
         <div className='home-protocol-card'>
             <header className='home-protocol-card-header'>
-                <img src={icon} alt="" width={60} className='header-icon'/>
+                <img src={icon} alt='' width={60} className='header-icon'/>
                 <div className='header-label'>
                     <p className='label-acronym'>{acronym}</p>
                     <span className='label-acronym-rep'>{rep}</span>

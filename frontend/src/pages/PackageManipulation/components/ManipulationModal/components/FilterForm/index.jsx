@@ -1,9 +1,9 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import ProtocolInput from "../../../../../../components/ProtocolInput";
-import { PROTOCOLS } from "../../../../../../constants";
-import Button from "../../../../../../components/Button";
-import { useTheme } from "../../../../../../hooks/ThemeContext";
+import ProtocolInput from '../../../../../../components/ProtocolInput';
+import { PROTOCOLS } from '../../../../../../constants';
+import Button from '../../../../../../components/Button';
+import { useTheme } from '../../../../../../hooks/ThemeContext';
 
 import './FilterForm.css';
 
@@ -28,7 +28,7 @@ function FilterForm ({
 
     return (
         <form onSubmit={getCaptures}>
-            <fieldset className="form-modal-protocol">
+            <fieldset className='form-modal-protocol'>
                 <legend>Protocolo de red</legend>
                 <div className='modal-protocol-grid'>
                     {PROTOCOLS.map((protocol_input) => (
@@ -43,10 +43,10 @@ function FilterForm ({
                     ))}
                 </div>
             </fieldset>
-            <div className="form-modal-date">
-                <div className="date-input">
-                    <label htmlFor="input-captured-date">Fecha de captura (UTC)</label>
-                    <input type="date" name="input-captured-date" id="input-captured-date"/>
+            <div className='form-modal-date'>
+                <div className='date-input'>
+                    <label htmlFor='input-captured-date'>Fecha de captura (UTC)</label>
+                    <input type='date' name='input-captured-date' id='input-captured-date'/>
                 </div>
                 <Button
                     buttonText='Limpiar filtro'

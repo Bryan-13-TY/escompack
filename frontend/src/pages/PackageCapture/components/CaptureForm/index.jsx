@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import { useTheme } from "../../../../hooks/ThemeContext";
-import { PROTOCOLS } from "../../../../constants";
+import { useTheme } from '../../../../hooks/ThemeContext';
+import { PROTOCOLS } from '../../../../constants';
 import Button from '../../../../components/Button';
 import ProtocolInput from '../../../../components/ProtocolInput';
 
@@ -30,8 +30,8 @@ function CaptureForm({
 
     return (
         <form onSubmit={onSubmit}>
-            <div className="form-packets">
-                <div className="packets-input">
+            <div className='form-packets'>
+                <div className='packets-input'>
                     <label htmlFor='input-packets-number'>Número de paquetes a capturar</label>
                     <input type='number' name='input-packets-number' id='input-packets-number' min={5} max={100} required/>
                 </div>
@@ -49,9 +49,9 @@ function CaptureForm({
                     disable={!isCapturing}
                 />
             </div>
-            <fieldset className="form-protocol">
+            <fieldset className='form-protocol'>
                 <legend>Protocolo objetivo</legend>
-                <div className="protocol-grid">
+                <div className='protocol-grid'>
                     {PROTOCOLS.map((protocol_input) => (
                         <ProtocolInput
                             key={protocol_input.id}

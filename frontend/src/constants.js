@@ -65,14 +65,14 @@ export const THEME_MODE_ICON = {
  * @type {ProtocolInput[]}
  */
 export const PROTOCOLS = [
-    { id: "arp", label: "ARP", icon: {dark: darkArpIcon, light: lightArpIcon}, },
-    { id: "icmp", label: "ICMP", icon: {dark: darkIcmpIcon, light: lightIcmpIcon}, },
-    { id: "igmp", label: "IGMP", icon: {dark: darkIgmpIcon, light: lightIgmpIcon}, },
-    { id: "dvmrp", label: "DVMRP", icon: {dark: darkDvmrpIcon, light: lightDvmrpIcon}, },
-    { id: "pim", label: "PIM", icon: {dark: darkPimIcon, light: lightPimIcon}, },
-    { id: "msdp", label: "MSDP", icon: {dark: darkMsdpIcon, light: lightMsdpIcon}, },
-    { id: "tcp", label: "TCP", icon: {dark: darkTcpIcon, light: lightTcpIcon}, },
-    { id: "udp", label: "UDP", icon: {dark: darkUdpIcon, light: lightUdpIcon}, },
+    { id: 'arp', label: 'ARP', icon: {dark: darkArpIcon, light: lightArpIcon}, },
+    { id: 'icmp', label: 'ICMP', icon: {dark: darkIcmpIcon, light: lightIcmpIcon}, },
+    { id: 'igmp', label: 'IGMP', icon: {dark: darkIgmpIcon, light: lightIgmpIcon}, },
+    { id: 'dvmrp', label: 'DVMRP', icon: {dark: darkDvmrpIcon, light: lightDvmrpIcon}, },
+    { id: 'pim', label: 'PIM', icon: {dark: darkPimIcon, light: lightPimIcon}, },
+    { id: 'msdp', label: 'MSDP', icon: {dark: darkMsdpIcon, light: lightMsdpIcon}, },
+    { id: 'tcp', label: 'TCP', icon: {dark: darkTcpIcon, light: lightTcpIcon}, },
+    { id: 'udp', label: 'UDP', icon: {dark: darkUdpIcon, light: lightUdpIcon}, },
 ];
 
 /**
@@ -82,51 +82,51 @@ export const PROTOCOLS = [
 export const PROTOCOL_CARDS = [
     {
         icon: {dark: darkArpIcon, light: lightArpIcon,},
-        acronym: "ARP",
-        rep: "(Address Resolution Protocol)",
-        description: "Asocia direcciones IP con direcciones MAC.",
+        acronym: 'ARP',
+        rep: '(Address Resolution Protocol)',
+        description: 'Asocia direcciones IP con direcciones MAC.',
     },
     {
         icon: {dark: darkIcmpIcon, light: lightIcmpIcon,},
-        acronym: "ICMP",
-        rep: "(Internet Control Message Protocol)",
-        description: "Se utiliza para diagnósticos y la notificación de errores.",
+        acronym: 'ICMP',
+        rep: '(Internet Control Message Protocol)',
+        description: 'Se utiliza para diagnósticos y la notificación de errores.',
     },
     {
         icon: {dark: darkIgmpIcon, light: lightIgmpIcon,},
-        acronym: "IGMP",
-        rep: "(Internet Group Management Protocol)",
-        description: "Gestiona las pertenencias a grupos de multidifusión IP.",
+        acronym: 'IGMP',
+        rep: '(Internet Group Management Protocol)',
+        description: 'Gestiona las pertenencias a grupos de multidifusión IP.',
     },
     {
         icon: {dark: darkDvmrpIcon, light: lightDvmrpIcon,},
-        acronym: "DVMRP",
-        rep: "(Distance Vector Multicast Routing Protocol)",
-        description: "Protocolo de enrutamiento multidestino.",
+        acronym: 'DVMRP',
+        rep: '(Distance Vector Multicast Routing Protocol)',
+        description: 'Protocolo de enrutamiento multidestino.',
     },
     {
         icon: {dark: darkPimIcon, light: lightPimIcon,},
-        acronym: "PIM",
-        rep: "(Protocol Independent Multicast)",
-        description: "Familia de protocolos de enrutamiento multidifusión.",
+        acronym: 'PIM',
+        rep: '(Protocol Independent Multicast)',
+        description: 'Familia de protocolos de enrutamiento multidifusión.',
     },
     {
         icon: {dark: darkMsdpIcon, light: lightMsdpIcon,},
-        acronym: "MSDP",
-        rep: "(Multicast Source Discovery Protocol)",
-        description: "Conecta múltiples dominios PIM-SM.",
+        acronym: 'MSDP',
+        rep: '(Multicast Source Discovery Protocol)',
+        description: 'Conecta múltiples dominios PIM-SM.',
     },
     {
         icon: {dark: darkTcpIcon, light: lightTcpIcon,},
-        acronym: "TCP",
-        rep: "(Transmission Control Protocol)",
-        description: "Entrega de datos fiable y ordenada.",
+        acronym: 'TCP',
+        rep: '(Transmission Control Protocol)',
+        description: 'Entrega de datos fiable y ordenada.',
     },
     {
         icon: {dark: darkUdpIcon, light: lightUdpIcon,},
-        acronym: "UDP",
-        rep: "(User Datagram Protocol)",
-        description: "Modelo de transmisión sin conexión.",
+        acronym: 'UDP',
+        rep: '(User Datagram Protocol)',
+        description: 'Modelo de transmisión sin conexión.',
     },
 ];
 
