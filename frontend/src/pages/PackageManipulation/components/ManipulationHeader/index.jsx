@@ -1,5 +1,11 @@
 import './ManipulationHeader.css';
 
+/**
+ * Componente que renderiza el header de la vista de manipulación
+ * de paquetes.
+ * 
+ * @returns {React.JSX.Element}
+ */
 function ManipulationHeader() {
     return (
         <header className='manipulation-header'>

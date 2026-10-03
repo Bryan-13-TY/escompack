@@ -1,5 +1,18 @@
+import PropTypes from 'prop-types';
+
 import './CaptureProgress.css';
 
+/**
+ * Componente que rederiza la barra de progreso de la captura de 
+ * paquetes.
+ * 
+ * @param {Object} props - Las propiedades del componente.
+ * @param {number} props.capturedCount - Paquetes capturados.
+ * @param {number} props.totalPackets - Total de paquetes a capturar.
+ * @param {number} props.percentage - Porcentaje de paquetes capturados.
+ * @param {string} props.networkInterface - Interfaz por donde se hace la captura.
+ * @returns {React.JSX.Element}
+ */
 function CaptureProgress({
     capturedCount,
     totalPackets,
@@ -22,5 +35,23 @@ function CaptureProgress({
         </div>
     );
 }
+
+CaptureProgress.defaultProps = {
+    networkInterface: 'enp0s8',
+};
+
+CaptureProgress.propTypes = {
+    /** Paquetes capturados */
+    capturedCount: PropTypes.number.isRequired,
+
+    /** Total de paquetes a capturar */
+    totalPackets: PropTypes.number.isRequired,
+
+    /** Porcentaje de paquetes capturados */
+    percentage: PropTypes.number.isRequired,
+
+    /** Interfaz por donde se hace la captura */
+    networkInterface: PropTypes.string.isRequired,
+};
 
 export default CaptureProgress;

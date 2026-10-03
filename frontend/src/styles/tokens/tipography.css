@@ -1,3 +1,7 @@
+/*============================================.
+| TOKENS PARA LOS TIPOGRAFÍA DE LA APLICACIÓN |
+`============================================*/
+
 :root {
     --font-size-title-welcome: 4rem; /* tamaño del título de vista */
     --font-size-subtitle-welcome: 2rem;

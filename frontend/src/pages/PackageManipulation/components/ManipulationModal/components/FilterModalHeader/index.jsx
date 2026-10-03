@@ -1,33 +1,56 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faFilter } from "@fortawesome/free-solid-svg-icons";
+import PropTypes from 'prop-types';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark, faFilter } from '@fortawesome/free-solid-svg-icons';
 
 import './FilterModalHeader.css';
 
-const CloseFilterModalButton = ({onClick}) => {
+/**
+ * Componente que renderiza el botón para cerrar la ventana modal
+ * para el filtrado de capturas.
+ * 
+ * @param {Object} props - Las propiedades del componente.
+ * @param {function} props.onClick - Función callback que se ejecuta al hacer clic en el botón.
+ * @returns {React.JSX.Element}
+ */
+const CloseFilterModalButton = ({ onClick, }) => {
     return (
-        <button onClick={onClick} className="label-button">
+        <button onClick={onClick} className='label-button'>
             <span>
                 <FontAwesomeIcon
                     icon={faXmark}
-                    size="2x"
+                    size='2x'
                 />
             </span>
         </button>
     );
 };
 
-function FilterModalHeader ({onClick}) {
+CloseFilterModalButton.propTypes = {
+    /** Función callback que se ejecuta al hacer clic en el botón */
+    onClick: PropTypes.func.isRequired,
+};
+
+/**
+ * Componente que renderiza el header de la ventana modal para el
+ * filtrado de capturas.
+ * 
+ * @param {Object} props - Las propiedades del componente.
+ * @param {function} props.onClick - Función callback que se ejecuta al hacer clic en el botón. 
+ * @returns {React.JSX.Element}
+ */
+function FilterModalHeader ({ onClick, }) {
     return (
-        <header className="modal-header">
-            <div className="content-label">
-                <div className="label">
+        <header className='modal-header'>
+            <div className='content-label'>
+                <div className='label'>
                     <FontAwesomeIcon
                         icon={faFilter}
-                        size="2x"
+                        size='2x'
                     />
                     <div>
-                        <p className="modal-title">Filtrar capturas de red</p>
-                        <span className="label-format">.pcap</span>
+                        <p className='modal-title'>Filtrar capturas de red</p>
+                        <span className='label-format'>.pcap</span>
                     </div>
                 </div>
                 <CloseFilterModalButton onClick={onClick}/>
@@ -36,5 +59,10 @@ function FilterModalHeader ({onClick}) {
         </header>
     );
 }
+
+FilterModalHeader.propTypes = {
+    /** Función callback que se ejecuta al hacer clic en el botón */
+    onClick: PropTypes.func.isRequired,
+};
 
 export default FilterModalHeader;

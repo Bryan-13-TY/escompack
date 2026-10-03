@@ -2,6 +2,17 @@ import { useState, useEffect, useRef } from "react";
 
 import axios  from "axios";
 
+/**
+ * Hook para gestionar la captuar de paquetes de red en tiempo real.
+ * 
+ * Maneja la integración HTTP con `/api/capture/` y conecta un
+ * Websocket en `ws://.../ws/capture` para ir acumulando los
+ * paquetes recibidos.
+ * 
+ * @example
+ * const { packets, isCapturing, progressPercentaje, startCapture } =
+ * usePacketCapture();
+ */
 export function usePacketCapture() {
     const [protocolSelected, setProtocolSelected] = useState('tcp');
     const [packets, setPackets] = useState([]);

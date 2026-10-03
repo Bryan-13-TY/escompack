@@ -1,14 +1,19 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import escomPackIcon from '../../assets/others/icon-v2.png';
 
 import './Footer.css';
 
+/**
+ * Componente que renderiza un footer.
+ * 
+ * @returns {React.JSX.Element}
+ */
 function Footer() {
     return (
-        <footer className="footer">
+        <footer className='footer'>
             <div className="footer-second-icon">
                 <img src={escomPackIcon} alt="" width={50}/>
             </div>

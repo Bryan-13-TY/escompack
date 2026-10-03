@@ -1,6 +1,14 @@
+/*================================.
+| IMPORTAMOS LOS DISTINTOS TOKENS |
+`================================*/
+
 @import url('./tokens/colors.css');
 @import url('./tokens/geometry.css');
 @import url('./tokens/tipography.css');
+
+/*================.
+| TOKENS GLOBALES |
+`================*/
 
 :root {
     --font-family-default: 'Cascadia Code', monospace;
