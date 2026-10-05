@@ -39,7 +39,7 @@ CloseFilterModalButton.propTypes = {
  * @param {function} props.onClick - Función callback que se ejecuta al hacer clic en el botón. 
  * @returns {React.JSX.Element}
  */
-function FilterModalHeader ({ onClick, }) {
+function FilterModalHeader({ onClick, }) {
     return (
         <header className='modal-header'>
             <div className='content-label'>

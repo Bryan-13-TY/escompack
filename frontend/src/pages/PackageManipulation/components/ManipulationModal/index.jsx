@@ -5,6 +5,7 @@ import FilterForm from './components/FilterForm';
 import FilterResults from './components/FilterResults';
 import FilterNoResults from './components/FilterNoResults';
 import Filterlabel from './components/FilterLabel';
+import FilterModalFooter from './components/FilterModalFooter';
 import { usePackageManipulation } from '../../hooks/usePackageManipulation';
 
 import './ManipulationModal.css';
@@ -32,7 +33,7 @@ function FilterModal({ onClick }) {
     return (
         <div className='manipulation-blur'>
             <div className='manipulation-modal'>
-                <FilterModalHeader onClick={onClick}/>
+                <FilterModalHeader onClick={onClick} />
                 <div className='manipulation-form'>
                     <FilterForm
                         protocolSelected={protocolSelected}
@@ -69,6 +70,7 @@ function FilterModal({ onClick }) {
                 {hasSearched && captures.length === 0 && (
                     <FilterNoResults />
                 )}
+                <FilterModalFooter onClick={onClick} />
             </div>
         </div>
     );

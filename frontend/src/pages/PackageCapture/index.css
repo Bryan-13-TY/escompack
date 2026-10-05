@@ -36,6 +36,10 @@ main {
     .protocol-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .protocol-content img {
+        display: none;
+    }
 }
 
 @media (min-width: 650px) and (max-width: 1150px) {
