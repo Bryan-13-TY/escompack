@@ -16,6 +16,7 @@ import './Button.css';
  * @param {function} props.onClick - Función callback que se ejecuta al hacer clic en el botón.
  * @param {boolean} props.disable - Habilita o deshabilita el botón.
  * @param {string} props.animation - Comportamiento del icono del botón.
+ * @param {boolean} props.icon - Se muestra o no el icono del botón.
  * @example
  * return (
  *  <Button
@@ -38,6 +39,7 @@ function Button({
     onClick = () => {},
     disable = false,
     animation = 'none',
+    icon = true,
 }) {
     // Si no se encuentra el 'rol' se usa el rol por defecto
     const config = ROLE_CONFIGS[rol] || ROLE_CONFIGS.link;
@@ -58,9 +60,9 @@ function Button({
             className={config.className}
             disabled={disable}>
             <span>
-                {position === 'before' && buttonIcon}
+                {position === 'before' && icon && buttonIcon}
                 <p>{buttonText}</p>
-                {position === 'after' && buttonIcon}
+                {position === 'after' && icon && buttonIcon}
             </span>
         </button>
     );
@@ -73,6 +75,7 @@ Button.defaultProps = {
     onClick: () => {},
     disable: false,
     animation: 'none',
+    icon: true,
 };
 
 Button.propTypes = {
@@ -94,8 +97,11 @@ Button.propTypes = {
     /** Define si el botón se habilita o deshabilita */
     disable: PropTypes.bool,
 
-    /* Define el comportamiento de la animación del icono */
+    /** Define el comportamiento de la animación del icono */
     animation: PropTypes.oneOf(['none', 'left', 'right']),
+
+    /** Se muestra o no el icono del botón */
+    icon: PropTypes.bool,
 };
 
 export default Button;
