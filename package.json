@@ -1,7 +1,7 @@
 {
-  "name": "tt-app-web-rc",
+  "name": "escompack",
   "version": "1.0.0",
-  "description": "Aplicación web para la manipulación de paquetes de red aplicado a la unidad de aprendizaje de Redes\r de Computadoras en ESCOM, usando la arquitectura MVC.",
+  "description": "Aplicación web para la manipulación de paquetes de red aplicado a la unidad de aprendizaje de Redes de Computadoras en ESCOM, usando la arquitectura MVC.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bryan-13-TY/TT-APP-WEB-RC.git"
+    "url": "git+https://github.com/Bryan-13-TY/escompack.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Bryan-13-TY/TT-APP-WEB-RC/issues"
+    "url": "https://github.com/Bryan-13-TY/escompack/issues"
   },
-  "homepage": "https://github.com/Bryan-13-TY/TT-APP-WEB-RC#readme"
+  "homepage": "https://github.com/Bryan-13-TY/escompack#readme"
 }
