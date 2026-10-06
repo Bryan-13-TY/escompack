@@ -23,13 +23,13 @@ function FilterLabel({ results, protocol, date, }) {
        <div className='label-information'>
             <FontAwesomeIcon icon={faSquarePollHorizontal} size='1x' className='information-results-icon' />
             <div className='results'>
-                <p>{results} capturas encontradas para</p>
+                <p>{results} capturas encontradas</p>
                 <p>
                     {!protocolIsEmpty && (
-                        <span>{protocol} </span>
+                        <span>{` - ${protocol}`}</span>
                     )}
                     {!dateIsEmpty && (
-                        <span>{`(${date})`}</span>
+                        <span>{` - (${date})`}</span>
                     )}
                 </p>
             </div>
