@@ -31,7 +31,7 @@ function PacketsTable({ packets }) {
                             <tr key={pkt.number}>
                                 <td className='table-bar'>{pkt.number}</td>
                                 <td>{pkt.length}</td>
-                                <td><span className='table-protocol'>{pkt.protocol}</span></td>
+                                <td><span className='table-protocol'>{pkt.protocol.toUpperCase()}</span></td>
                                 <td>{pkt.source}</td>
                                 <td>{pkt.destination}</td>
                                 <td>{pkt.summary}</td>
