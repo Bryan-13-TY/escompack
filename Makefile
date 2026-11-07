@@ -8,13 +8,13 @@ SRC_P_INSTALL = backend/requirements.txt
 # =====================
 
 p-environment:
-	cd backend && py -m venv venv
+	cd backend && python3 -m venv venv
 
 p-upgrade-pip:
-	python.exe -m pip install --upgrade pip
+	./backend/venv/bin/python3 -m pip install --upgrade pip
 
 p-install:
-	pip install -r $(SRC_P_INSTALL)
+	./backend/venv/bin/pip install -r $(SRC_P_INSTALL)
 
 p-run-api:
 	cd backend && uvicorn $(SRC_P_API):app_web --reload
