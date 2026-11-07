@@ -19,14 +19,9 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: ESCOMPack-backend
-    # el contenedor tiene acceso directo a todas las
-    # interfaces de red de la VM
-    network_mode: host
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
-    # mapea el código local al contenedor
-    # esto permite edición en tiempo real
+    # mapea el puerto 8000 local al 8000 del contenedor
+    ports:
+      - "8000:8000"
     volumes:
       - ./backend:/app
     # evita que Python guarde en búfer las salidas de texto
@@ -35,6 +30,8 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
     command: uvicorn app.main:escom_pack --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - ESCOMPack-network
     # asegura que Docker intente iniciar MongoDB antes que el backend
     depends_on:
       - mongodb
