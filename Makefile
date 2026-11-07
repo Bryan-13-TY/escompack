@@ -8,7 +8,7 @@ SRC_P_INSTALL = backend/requirements.txt
 # =====================
 
 p-environment:
-	py -m venv venv
+	cd backend && py -m venv venv
 
 p-upgrade-pip:
 	python.exe -m pip install --upgrade pip
