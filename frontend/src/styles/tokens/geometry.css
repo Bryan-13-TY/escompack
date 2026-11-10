@@ -6,8 +6,11 @@
 
 :root {
     --border-default: 2px solid var(--color-border-default); /* borde para tarjetas o elementos */
+    --border-top-default: 4px solid var(--color-bg-elevated); /* borde de arriba */
+    --border-top-button-default: 3px solid var(--color-bg-elevated);
+    --border-top-social-default: 2px solid var(--color-bg-elevated);
     --border-focus: 2px solid var(--color-border-default-hover); /* borde para tarjetas o elementos la hacer hover */
-    --border-radius-default: 5px; /* borde radius por defecto */
+    --border-radius-default: 10px; /* borde radius por defecto */
     
     --padding-default: 20px; /* padding para tarjetas */
     --padding-header: 10px 20px; /* padding para headers y footers */
@@ -16,8 +19,11 @@
     --padding-title-view-default: 90px 30px; /* padding para título de secciones */
     --padding-section-default: 40px 30px; /* padding para secciones */
     --padding-label-focus: 5px 7px;
+    --padding-social-media: 4px;
 
     --gap-text-header: 20px; /* gap para el texto del header de las vistas */ 
 
     --transform-scale-default: scale(0.9);
+
+    --box-shadow-default: 5px 5px 10px -1px var(--color-bg-header);
 }
