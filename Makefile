@@ -7,20 +7,23 @@ SRC_P_INSTALL = backend/requirements.txt
 # COMANDOS PARA PYTHON
 # =====================
 
-p-environment:
+create-python-environment:
 	cd backend && python3 -m venv venv
 
-p-upgrade-pip:
+upgrade-python-pip:
 	./backend/venv/bin/python3 -m pip install --upgrade pip
 
-p-install:
+install-python-dependences:
 	./backend/venv/bin/pip install -r $(SRC_P_INSTALL)
 
-p-run-api:
-	cd backend && uvicorn $(SRC_P_API):app_web --reload
+gns3-projects:
+	curl -s -u "admin:YtjrdLone1XnzEW5dkuzXts0Reow7ATBZRPvhtEsZF144P9MClREZhbFims8zvsR" http://localhost:3080/v2/projects | python3 -m json.tool
 
-p-tests:
-	py -m pytest backend/tests
+gns3-computes:
+	curl -s -u "admin:YtjrdLone1XnzEW5dkuzXts0Reow7ATBZRPvhtEsZF144P9MClREZhbFims8zvsR" http://localhost:3080/v2/computes | python3 -m json.tool
+
+gns3-proof-capture:
+	GNS3_USER=admin GNS3_PASSWORD=YtjrdLone1XnzEW5dkuzXts0Reow7ATBZRPvhtEsZF144P9MClREZhbFims8zvsR python3 gns3_captura.py 523a298b-5c99-41b9-880b-f41cfdbc4c61 -s 25
 
 # ===========================
 # COMANDOS PARA REACT + VITE
