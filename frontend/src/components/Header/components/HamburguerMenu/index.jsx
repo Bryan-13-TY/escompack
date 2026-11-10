@@ -4,7 +4,7 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { useHamburguerMenu } from '../../hooks/useHamburguerMenu';
 
-import './HamburguerMenu.css';
+import './index.css';
 
 /**
  * Componente que renderiza el menú hamburguesa.

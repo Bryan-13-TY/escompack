@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { ROLE_CONFIGS, ANIMATION_CONFIGS } from '../../constants';
 
-import './Button.css';
+import './index.css';
 
 /**
  * Componente que renderiza un botón personalizado.

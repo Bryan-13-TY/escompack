@@ -21,7 +21,7 @@ function NotFound() {
                             <FontAwesomeIcon className='content-icon' icon={faFaceDizzy} size='10x' />
                             <div className='content-desc'>
                                 <h1>404</h1>
-                                <h2>Esta página no existe.</h2>
+                                <h2>Esta página no está disponible.</h2>
                             </div>
                             <Link to={'/home'}>
                                 <Button

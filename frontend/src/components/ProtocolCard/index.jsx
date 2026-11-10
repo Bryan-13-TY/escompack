@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import './ProtocolCard.css';
+import './index.css';
 
 /**
  * Componente que renderiza una tarjeta de uno de los protocolos

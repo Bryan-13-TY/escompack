@@ -1,5 +1,6 @@
 .home-operation-card {
-    border: var(--border-default);
+    border-top: var(--border-top-default);
+    box-shadow: var(--box-shadow-default);
     display: flex;
     flex-direction: column;
     justify-content: center; /* alinea verticalmente */
@@ -16,7 +17,8 @@
 }
 
 .home-operation-card:hover {
-    border: var(--border-focus);
+    border-top: 4px solid var(--color-bg-accent);
+    background-color: var(--color-bg-elevated);
 }
 
 .home-operation-card:active {

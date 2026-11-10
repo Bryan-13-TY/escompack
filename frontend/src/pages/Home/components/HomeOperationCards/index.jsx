@@ -1,4 +1,4 @@
-import { faMagnifyingGlass, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faGear, faHammer } from '@fortawesome/free-solid-svg-icons';
 
 import OperationCard from '../../../../components/OperationCard';
 

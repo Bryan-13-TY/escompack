@@ -6,7 +6,7 @@ import { useTheme } from '../../../../hooks/ThemeContext';
 import HamburguerMenu from '../HamburguerMenu';
 import { THEME_MODE_ICON } from '../../../../constants';
 
-import './HeaderMain.css';
+import './index.css';
 
 /**
  * Renderiza el botón para cambiar el tema de la aplicación.
@@ -41,7 +41,7 @@ function HeaderMain() {
                 <HamburguerMenu />
                 <div className='content-icon'>
                     <Link to={'/home'}>
-                        <img src={escomPackIcon} alt="" width={50}/>
+                        <img src={escomPackIcon} alt="" width={40}/>
                         <div className='icon-label'>
                             <span className='label-escom'>ESCOM</span>
                             <span className='label-pack'>Pack</span>
