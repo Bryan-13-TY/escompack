@@ -11,6 +11,9 @@
     --border-top-social-default: 2px solid var(--color-bg-elevated);
     --border-focus: 2px solid var(--color-border-default-hover); /* borde para tarjetas o elementos la hacer hover */
     --border-radius-default: 10px; /* borde radius por defecto */
+
+    --border-top-start-capture: 3px solid #03ba03;
+    --border-top-stop-capture: 3px solid #ff1f1f;
     
     --padding-default: 20px; /* padding para tarjetas */
     --padding-header: 10px 20px; /* padding para headers y footers */
