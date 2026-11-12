@@ -3,8 +3,9 @@
 }
 
 .target-protocol .protocol-content {
-    border: var(--border-default);
-    border-radius: 5px;
+    /*border: var(--border-default);*/
+    border-top: 4px solid var(--color-bg-elevated-hover);
+    border-radius: var(--border-radius-default);
     display: flex;
     flex-direction: column;
     justify-content: center; /* alinea verticalmente */
@@ -17,7 +18,8 @@
 }
 
 .target-protocol .protocol-content:hover {
-    border: var(--border-focus);
+    /*border: var(--border-focus);*/
+    border-top: 4px solid var(--color-bg-accent);
 }
 
 .target-protocol:active {
@@ -25,7 +27,7 @@
 }
 
 .selected .protocol-content {
-    border: var(--border-focus);
+    border-top: 4px solid var(--color-bg-accent);
 
     background-color: var(--color-bg-elevated-hover);
 }

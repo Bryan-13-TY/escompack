@@ -51,8 +51,9 @@ function HeaderMain() {
                 <nav className='content-nav'>
                     <ul>
                         <Link to={'/home'}><li>Inicio</li></Link>
-                        <Link to={'/capture'}><li>Captura</li></Link>
-                        <Link to={'/manipulation'}><li>Manipulación</li></Link>
+                        <Link to={'/capture'}><li>Capturar</li></Link>
+                        <Link to={'/manipulation'}><li>Manipular</li></Link>
+                        <Link to={'/manipulation'}><li>Construir topología</li></Link>
                     </ul>
                 </nav>
             </div>

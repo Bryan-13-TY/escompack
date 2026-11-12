@@ -3,10 +3,11 @@
     box-shadow: var(--box-shadow-default);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* alinea verticalmente */
+    justify-content: top; /* alinea verticalmente */
     gap: 20px;
     padding: var(--padding-default);
     border-radius: var(--border-radius-default);
+    box-sizing: border-box;
 
     text-decoration: none;
     font-family: var(--font-family-default);

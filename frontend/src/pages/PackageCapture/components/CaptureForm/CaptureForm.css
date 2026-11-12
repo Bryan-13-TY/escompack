@@ -9,7 +9,7 @@
 }
 
 .capture-form form {
-    border: var(--border-default);
+    border-top: var(--border-top-default);
     border-radius: var(--border-radius-default);
     display: flex;
     flex-direction: column;
@@ -17,6 +17,7 @@
     padding: 30px;
 
     background-color: var(--color-bg-surface);
+    box-shadow: var(--box-shadow-default);
 }
 
 form .form-packets {
@@ -35,7 +36,7 @@ form .form-packets {
 }
 
 .packets-input input {
-    border: var(--border-default);
+    border: none;
     border-radius: var(--border-radius-default);
     padding: var(--padding-input);
 
@@ -46,7 +47,7 @@ form .form-packets {
 }
 
 .packets-input input:hover {
-    border: var(--border-focus);
+    background-color: var(--color-bg-elevated-hover);
 }
 
 form .form-protocol {

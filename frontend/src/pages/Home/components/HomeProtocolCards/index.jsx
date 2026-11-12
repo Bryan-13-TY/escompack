@@ -24,6 +24,8 @@ function HomeProtocolCards() {
                         acronym={protocol.acronym}
                         rep={protocol.rep}
                         description={protocol.description}
+                        layer={protocol.layer}
+                        layer_icon={protocol.layer_icon}
                     />
                 ))}
             </div>

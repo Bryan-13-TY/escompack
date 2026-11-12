@@ -12,6 +12,8 @@ import {
     faFilter,
     faRotateLeft,
     faFilePen,
+    faTruck,
+    faGlobe,
 } from '@fortawesome/free-solid-svg-icons';
 
 /*========================================.
@@ -85,48 +87,64 @@ export const PROTOCOL_CARDS = [
         acronym: 'ARP',
         rep: '(Address Resolution Protocol)',
         description: 'Asocia direcciones IP con direcciones MAC.',
+        layer: 'Transporte',
+        layer_icon: faTruck,
     },
     {
         icon: {dark: darkIcmpIcon, light: lightIcmpIcon,},
         acronym: 'ICMP',
         rep: '(Internet Control Message Protocol)',
         description: 'Se utiliza para diagnósticos y la notificación de errores.',
+        layer: 'Transporte',
+        layer_icon: faTruck,
     },
     {
         icon: {dark: darkIgmpIcon, light: lightIgmpIcon,},
         acronym: 'IGMP',
         rep: '(Internet Group Management Protocol)',
         description: 'Gestiona las pertenencias a grupos de multidifusión IP.',
+        layer: 'Transporte',
+        layer_icon: faTruck,
     },
     {
         icon: {dark: darkDvmrpIcon, light: lightDvmrpIcon,},
         acronym: 'DVMRP',
         rep: '(Distance Vector Multicast Routing Protocol)',
         description: 'Protocolo de enrutamiento multidestino.',
+        layer: 'Transporte',
+        layer_icon: faTruck,
     },
     {
         icon: {dark: darkPimIcon, light: lightPimIcon,},
         acronym: 'PIM',
         rep: '(Protocol Independent Multicast)',
         description: 'Familia de protocolos de enrutamiento multidifusión.',
+        layer: 'Transporte',
+        layer_icon: faTruck,
     },
     {
         icon: {dark: darkMsdpIcon, light: lightMsdpIcon,},
         acronym: 'MSDP',
         rep: '(Multicast Source Discovery Protocol)',
         description: 'Conecta múltiples dominios PIM-SM.',
+        layer: 'Transporte',
+        layer_icon: faTruck,
     },
     {
         icon: {dark: darkTcpIcon, light: lightTcpIcon,},
         acronym: 'TCP',
         rep: '(Transmission Control Protocol)',
         description: 'Entrega de datos fiable y ordenada.',
+        layer: 'Internet',
+        layer_icon: faGlobe,
     },
     {
         icon: {dark: darkUdpIcon, light: lightUdpIcon,},
         acronym: 'UDP',
         rep: '(User Datagram Protocol)',
         description: 'Modelo de transmisión sin conexión.',
+        layer: 'Internet',
+        layer_icon: faGlobe,
     },
 ];
 

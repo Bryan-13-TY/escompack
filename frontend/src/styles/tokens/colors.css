@@ -5,11 +5,16 @@
 :root {
     --color-text-button-default: #dedede; /* color del texto para botones */
     --color-text-button-hover: #ffffff; /* color del texto para botones al hacer hover */
-    --color-bg-image-view1: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v9.jpg');
+    --color-bg-image-view1: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/videos/animate-background-v1.mp4');
     --color-bg-image-view2: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v8.jpg');
     --color-bg-image-view3: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v14.jpg');
     --color-bg-blur: #000000aa;
     --color-text-label-accent: #dedede;
+
+    --color-bg-start-capture: #016301;
+    --color-bg-stop-capture: #ca0606;
+    --color-bg-start-capture-hover: #038903;
+    --color-bg-stop-capture-hover: #e30606;
 }
 
 /*========================================.
@@ -23,15 +28,10 @@
     --color-bg-surface: #111926; /* fondo para tarjetas u otros elementos */
     --color-bg-elevated: #172234; /* fondo para elementos sobre el anterior */
     --color-bg-elevated-hover: #1e2c44; /* fondos hover para el anterior */
+    --color-bg-elevated-hover-hover: #263756;
     --color-bg-opaque: rgb(12, 19, 29, 0.2); /* fondo transparente para bienvenidas */
     --color-bg-accent: #0080d0; /* fondo para botones con icono */
-    --color-bg-accent-hover: #006fb5; /* fondo para botones con icono al hacer hover */
-
-    /* colores de los botones para iniciar/detener captura */
-    --color-bg-start-capture: #029c02;
-    --color-bg-stop-capture: #ff1f1f;
-    --color-bg-start-capture-hover: #039003;
-    --color-bg-stop-capture-hover: #fb1515;
+    --color-bg-accent-hover: #0398f4; /* fondo para botones con icono al hacer hover */
 
     --color-border-default: #141f30; /* borde principal de las tarjetas */
     --color-border-default-hover: #003b60; /* borde al haacer hover a tarjetas */
@@ -50,12 +50,6 @@
     --color-bg-opaque: rgb(240, 241, 253, 0.2); /* fondo transparente para bienvenidas */
     --color-bg-accent: #021981; /* fondo para botones con icono */
     --color-bg-accent-hover: #001ea4; /* fondo para botones con icono al hacer hover */
-
-    /* colores de los botones para iniciar/detener captura */
-    --color-bg-start-capture: green;
-    --color-bg-stop-capture: red;
-    --color-bg-start-capture-hover: #029a02;
-    --color-bg-stop-capture-hover: #fc1111;
 
     --color-border-default: #babffe; /* borde principal de las tarjetas */
     --color-border-default-hover: #021981; /* borde al haacer hover a tarjetas */

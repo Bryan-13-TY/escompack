@@ -21,6 +21,7 @@
 
 .table table {
     border: var(--border-default);
+    border-radius: var(--border-radius-default);
     border-collapse: collapse;
     width: 100%;
     min-width: 1200px; /* si es menor aparece el scroll */
@@ -72,6 +73,7 @@
 }
 
 .table table tbody tr td .table-protocol {
+    border-top: 2px solid var(--color-bg-accent-hover);
     border-radius: var(--border-radius-default);
     padding: var(--padding-label-focus);
 
