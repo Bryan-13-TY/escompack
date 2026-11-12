@@ -1,5 +1,6 @@
 .form-capture-progress {
-    border: var(--border-default);
+    /*border: var(--border-default);*/
+    border-top: var(--border-top-default);
     border-radius: var(--border-radius-default);
     display: flex;
     flex-direction: column;
@@ -8,6 +9,7 @@
     padding: 30px;
 
     background-color: var(--color-bg-surface);
+    box-shadow: var(--box-shadow-default);
 }
 
 .progress-header {
