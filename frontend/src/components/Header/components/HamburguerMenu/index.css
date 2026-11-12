@@ -37,6 +37,7 @@
     margin-top: 10px;
 
     background-color: var(--color-bg-header);
+    box-shadow: var(--box-shadow-default);
 }
 
 .hamburguer-menu-nav ul {
@@ -52,6 +53,7 @@
 }
 
 .hamburguer-menu-nav ul a {
+    border-top: var(--border-top-button-default);
     position: relative; /* referencia para la barra animada */
     display: inline-block;
     padding: 6px;
@@ -60,12 +62,16 @@
 
     text-decoration: none;
     color: var(--color-text-primary);
+
+    background-color: var(--color-bg-surface);
 }
 
 .hamburguer-menu-nav ul a:hover {
-    color: var(--color-text-accent);
+    border-top: 3px solid var(--color-bg-accent);
 
-    background-color: var(--color-bg-surface);
+    /*color: var(--color-text-accent);*/
+
+    background-color: var(--color-bg-elevated);
 }
 
 .hamburguer-menu-nav ul a::before {
@@ -92,13 +98,13 @@
 
 /* ===== media queries ===== */
 
-@media (max-width: 700px) {
+@media (max-width: 1079px) {
     .header .header-hamburguer-menu {
         display: inline-block;
     }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 1080px) {
     .header .header-hamburguer-menu {
         display: none;
     }

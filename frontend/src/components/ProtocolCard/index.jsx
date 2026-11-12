@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
+import gns3 from '../../assets/icons/icon-gns3.png';
 import './index.css';
 
 /**
@@ -22,7 +25,7 @@ import './index.css';
  * );
  * @returns {React.JSX.Element}
  */
-function ProtocolCard({ icon, acronym, rep, description, }) {
+function ProtocolCard({ icon, acronym, rep, description, layer, layer_icon}) {
     return (
         <div className='home-protocol-card'>
             <header className='home-protocol-card-header'>
@@ -32,7 +35,20 @@ function ProtocolCard({ icon, acronym, rep, description, }) {
                     <span className='label-acronym-rep'>{rep}</span>
                 </div>
             </header>
-            <p className='home-protocol-card-description'>{description}</p>
+            <div className='home-protocol-card-content'>
+                <p className='home-protocol-card-description'>{description}</p>
+                <div className='protocol-topology'>
+                    <div className='topology-image'>
+                        <FontAwesomeIcon className='see-topology' icon={faEye} />
+                        <span>Ver topología de red</span>
+                    </div>
+                    <img src={gns3} alt='' width={50} className='gns3-icon'/>
+                </div>
+            </div>
+            <footer className='home-protocol-card-footer'>
+                <FontAwesomeIcon className='header-layer-icon' icon={layer_icon} />
+                <span>{layer}</span>
+            </footer>
         </div>
     );
 }

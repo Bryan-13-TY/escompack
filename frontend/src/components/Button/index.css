@@ -24,6 +24,8 @@
 }
 
 .start-capture {
+    border-top: var(--border-top-start-capture);
+
     background-color: var(--color-bg-start-capture);
 }
 
@@ -32,6 +34,8 @@
 }
 
 .stop-capture {
+    border-top: var(--border-top-stop-capture);
+
     background-color: var(--color-bg-stop-capture);
 }
 

@@ -31,7 +31,6 @@
 }
 
 .footer-content .content-contact {
-    /*border: var(--border-default);*/
     border-top: var(--border-top-social-default);
     border-radius: var(--border-radius-default);
     display: flex;
