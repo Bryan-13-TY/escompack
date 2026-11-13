@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import './ProtocolInput.css';
+import './index.css';
 
 /**
  * Componente que renderiza un input correspondiente a alguno de los

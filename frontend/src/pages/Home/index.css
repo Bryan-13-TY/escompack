@@ -1,10 +1,10 @@
-.home {
+.home__main {
     position: relative; /* referencia para el fondo */
     min-height: 100vh;
     isolation: isolate; /* crea un contexto de apilamiento propio */
 }
 
-.home__background {
+.home__main--background {
     position: absolute;
     inset: 0;
     z-index: -1; /* detras del contenido, pero dentro de .home */

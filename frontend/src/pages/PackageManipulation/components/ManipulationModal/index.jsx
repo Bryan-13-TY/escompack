@@ -8,7 +8,7 @@ import Filterlabel from './components/FilterLabel';
 import FilterModalFooter from './components/FilterModalFooter';
 import { usePackageManipulation } from '../../hooks/usePackageManipulation';
 
-import './ManipulationModal.css';
+import './index.css';
 
 /**
  * Componente que renderiza la ventana modal para el filtro de paquetes

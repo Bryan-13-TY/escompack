@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import './CaptureProgress.css';
+import './index.css';
 
 /**
  * Componente que rederiza la barra de progreso de la captura de 

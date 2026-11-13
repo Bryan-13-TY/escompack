@@ -4,7 +4,7 @@ import ProtocolInput from '../../../../../../components/ProtocolInput';
 import { PROTOCOLS } from '../../../../../../constants';
 import Button from '../../../../../../components/Button';
 
-import './FilterForm.css';
+import './index.css';
 
 /**
  * Componente que renderiza el formulario para el filtrado de

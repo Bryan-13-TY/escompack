@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import './PacketsTable.css';
+import './index.css';
 
 /**
  * Componente que renderiza la tabla con la información de los paquetes

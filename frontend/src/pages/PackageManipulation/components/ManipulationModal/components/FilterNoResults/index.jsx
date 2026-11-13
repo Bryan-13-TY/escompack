@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceDizzy } from '@fortawesome/free-solid-svg-icons';
 
-import './FilterNoResults.css';
+import './index.css';
 
 /**
  * Componente que renderiza un 404 cuando no hay resultados que

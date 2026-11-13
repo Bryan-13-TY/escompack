@@ -1,4 +1,4 @@
-import './ManipulationHeader.css';
+import './index.css';
 
 /**
  * Componente que renderiza el header de la vista de manipulación

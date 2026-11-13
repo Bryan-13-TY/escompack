@@ -1,4 +1,4 @@
-import './CaptureHeader.css';
+import './index.css';
 
 /**
  * Componente que se renderiza el header la vista de captura de paquetes.

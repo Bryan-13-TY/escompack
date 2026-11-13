@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquarePollHorizontal } from '@fortawesome/free-solid-svg-icons';
 
-import './FilterLabel.css';
+import './index.css';
 
 /**
  * Componente que renderiza el label del formulario para el filtrado de

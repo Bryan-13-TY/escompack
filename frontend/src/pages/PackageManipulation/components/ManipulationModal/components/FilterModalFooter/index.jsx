@@ -1,6 +1,6 @@
 import Button from '../../../../../../components/Button';
 
-import './FilterModalFooter.css';
+import './index.css';
 
 function FilterModalFooter({ onClick, }) {
     return (

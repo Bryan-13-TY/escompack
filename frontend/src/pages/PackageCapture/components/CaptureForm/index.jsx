@@ -4,7 +4,7 @@ import { PROTOCOLS } from '../../../../constants';
 import Button from '../../../../components/Button';
 import ProtocolInput from '../../../../components/ProtocolInput';
 
-import './CaptureForm.css';
+import './index.css';
 
 /**
  * Componente que renderiza el formulario para la captura de paquetes
