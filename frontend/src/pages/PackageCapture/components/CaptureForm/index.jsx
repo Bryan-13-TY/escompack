@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 
-import { useTheme } from '../../../../hooks/ThemeContext';
 import { PROTOCOLS } from '../../../../constants';
 import Button from '../../../../components/Button';
 import ProtocolInput from '../../../../components/ProtocolInput';
@@ -26,8 +25,6 @@ function CaptureForm({
     protocolSelected,
     setProtocolSelected,
 }) {
-    const { theme } = useTheme();
-
     return (
         <form onSubmit={onSubmit}>
             <div className='form-packets'>
@@ -56,7 +53,7 @@ function CaptureForm({
                         <ProtocolInput
                             key={protocol_input.id}
                             id={protocol_input.id}
-                            icon={protocol_input.icon[theme]}
+                            icon={protocol_input.icon}
                             label={protocol_input.label}
                             isSelected={protocolSelected === protocol_input.id}
                             onSelect={setProtocolSelected}

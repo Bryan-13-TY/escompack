@@ -3,8 +3,6 @@
 `==================================*/
 
 import {
-    faMoon,
-    faSun,
     faCircleArrowRight,
     faCircleStop,
     faCirclePlay,
@@ -29,20 +27,10 @@ import darkMsdpIcon from './assets/icons/icon-msdp-dark.png';
 import darkTcpIcon from './assets/icons/icon-tcp-dark.png';
 import darkUdpIcon from './assets/icons/icon-udp-dark.png';
 
-import lightPimIcon from './assets/icons/icon-pim-light.png'
-import lightArpIcon from './assets/icons/icon-arp-light.png';
-import lightDvmrpIcon from './assets/icons/icon-dvmrp-light.png';
-import lightIcmpIcon from './assets/icons/icon-icmp-light.png';
-import lightIgmpIcon from './assets/icons/icon-igmp-light.png';
-import lightMsdpIcon from './assets/icons/icon-msdp-light.png';
-import lightTcpIcon from './assets/icons/icon-tcp-light.png';
-import lightUdpIcon from './assets/icons/icon-udp-light.png';
-
 /*=====================.
 | EXPORTACIÓN DE TIPOS |
 `=====================*/
 
-/** @typedef {import('./constants.types').ThemeIcons} ThemeIcons */
 /** @typedef {import('./constants.types').ProtocolInput} ProtocolInput */
 /** @typedef {import('./constants.types').ProtocolCard} ProtocolCard */
 /** @typedef {import('./constants.types').ButtonRoleConfig} ButtonRoleConfig */
@@ -53,28 +41,19 @@ import lightUdpIcon from './assets/icons/icon-udp-light.png';
 `===========*/
 
 /**
- * Diccionario de iconos de FontAwesome para el botón que cambia el tema.
- * @type {ThemeIcons}
- */
-export const THEME_MODE_ICON = {
-    dark: faSun,
-    light: faMoon,
-};
-
-/**
  * Lista de protocolos que se pueden elegir en el formulario de
  * captura/filtro de paquetes.
  * @type {ProtocolInput[]}
  */
 export const PROTOCOLS = [
-    { id: 'arp', label: 'ARP', icon: {dark: darkArpIcon, light: lightArpIcon}, },
-    { id: 'icmp', label: 'ICMP', icon: {dark: darkIcmpIcon, light: lightIcmpIcon}, },
-    { id: 'igmp', label: 'IGMP', icon: {dark: darkIgmpIcon, light: lightIgmpIcon}, },
-    { id: 'dvmrp', label: 'DVMRP', icon: {dark: darkDvmrpIcon, light: lightDvmrpIcon}, },
-    { id: 'pim', label: 'PIM', icon: {dark: darkPimIcon, light: lightPimIcon}, },
-    { id: 'msdp', label: 'MSDP', icon: {dark: darkMsdpIcon, light: lightMsdpIcon}, },
-    { id: 'tcp', label: 'TCP', icon: {dark: darkTcpIcon, light: lightTcpIcon}, },
-    { id: 'udp', label: 'UDP', icon: {dark: darkUdpIcon, light: lightUdpIcon}, },
+    { id: 'arp', label: 'ARP', icon: darkArpIcon, },
+    { id: 'icmp', label: 'ICMP', icon: darkIcmpIcon, },
+    { id: 'igmp', label: 'IGMP', icon: darkIgmpIcon, },
+    { id: 'dvmrp', label: 'DVMRP', icon: darkDvmrpIcon, },
+    { id: 'pim', label: 'PIM', icon: darkPimIcon, },
+    { id: 'msdp', label: 'MSDP', icon: darkMsdpIcon, },
+    { id: 'tcp', label: 'TCP', icon: darkTcpIcon, },
+    { id: 'udp', label: 'UDP', icon: darkUdpIcon, },
 ];
 
 /**
@@ -83,7 +62,7 @@ export const PROTOCOLS = [
  */
 export const PROTOCOL_CARDS = [
     {
-        icon: {dark: darkArpIcon, light: lightArpIcon,},
+        icon: darkArpIcon,
         acronym: 'ARP',
         rep: '(Address Resolution Protocol)',
         description: 'Asocia direcciones IP con direcciones MAC.',
@@ -91,7 +70,7 @@ export const PROTOCOL_CARDS = [
         layer_icon: faTruck,
     },
     {
-        icon: {dark: darkIcmpIcon, light: lightIcmpIcon,},
+        icon: darkIcmpIcon,
         acronym: 'ICMP',
         rep: '(Internet Control Message Protocol)',
         description: 'Se utiliza para diagnósticos y la notificación de errores.',
@@ -99,7 +78,7 @@ export const PROTOCOL_CARDS = [
         layer_icon: faTruck,
     },
     {
-        icon: {dark: darkIgmpIcon, light: lightIgmpIcon,},
+        icon: darkIgmpIcon,
         acronym: 'IGMP',
         rep: '(Internet Group Management Protocol)',
         description: 'Gestiona las pertenencias a grupos de multidifusión IP.',
@@ -107,7 +86,7 @@ export const PROTOCOL_CARDS = [
         layer_icon: faTruck,
     },
     {
-        icon: {dark: darkDvmrpIcon, light: lightDvmrpIcon,},
+        icon: darkDvmrpIcon,
         acronym: 'DVMRP',
         rep: '(Distance Vector Multicast Routing Protocol)',
         description: 'Protocolo de enrutamiento multidestino.',
@@ -115,7 +94,7 @@ export const PROTOCOL_CARDS = [
         layer_icon: faTruck,
     },
     {
-        icon: {dark: darkPimIcon, light: lightPimIcon,},
+        icon: darkPimIcon,
         acronym: 'PIM',
         rep: '(Protocol Independent Multicast)',
         description: 'Familia de protocolos de enrutamiento multidifusión.',
@@ -123,7 +102,7 @@ export const PROTOCOL_CARDS = [
         layer_icon: faTruck,
     },
     {
-        icon: {dark: darkMsdpIcon, light: lightMsdpIcon,},
+        icon: darkMsdpIcon,
         acronym: 'MSDP',
         rep: '(Multicast Source Discovery Protocol)',
         description: 'Conecta múltiples dominios PIM-SM.',
@@ -131,7 +110,7 @@ export const PROTOCOL_CARDS = [
         layer_icon: faTruck,
     },
     {
-        icon: {dark: darkTcpIcon, light: lightTcpIcon,},
+        icon: darkTcpIcon,
         acronym: 'TCP',
         rep: '(Transmission Control Protocol)',
         description: 'Entrega de datos fiable y ordenada.',
@@ -139,7 +118,7 @@ export const PROTOCOL_CARDS = [
         layer_icon: faGlobe,
     },
     {
-        icon: {dark: darkUdpIcon, light: lightUdpIcon,},
+        icon: darkUdpIcon,
         acronym: 'UDP',
         rep: '(User Datagram Protocol)',
         description: 'Modelo de transmisión sin conexión.',
