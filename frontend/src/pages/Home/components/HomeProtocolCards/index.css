@@ -7,8 +7,6 @@
     padding: var(--padding-section-default);
 
     font-family: var(--font-family-default);
-
-    background-color: var(--color-bg-base);
 }
 
 .home-protocol-cards h2 {

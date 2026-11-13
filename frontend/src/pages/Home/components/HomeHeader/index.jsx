@@ -1,4 +1,4 @@
-import './HomeHeader.css';
+import './index.css';
 
 /**
  * Componente que renderiza el header la vista principal.

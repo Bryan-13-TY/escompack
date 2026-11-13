@@ -2,7 +2,7 @@ import { PROTOCOL_CARDS } from '../../../../constants';
 import ProtocolCard from '../../../../components/ProtocolCard';
 import { useTheme } from '../../../../hooks/ThemeContext';
 
-import './HomeProtocolCards.css';
+import './index.css';
 
 /**
  * Componente que renderiza la sección de las tarjetas de protocolo
