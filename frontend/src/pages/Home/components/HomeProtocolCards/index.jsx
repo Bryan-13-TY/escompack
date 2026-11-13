@@ -1,6 +1,5 @@
 import { PROTOCOL_CARDS } from '../../../../constants';
 import ProtocolCard from '../../../../components/ProtocolCard';
-import { useTheme } from '../../../../hooks/ThemeContext';
 
 import './index.css';
 
@@ -11,8 +10,6 @@ import './index.css';
  * @returns {React.JSX.Element}
  */
 function HomeProtocolCards() {
-    const { theme } = useTheme();
-
     return (
         <section className='home-protocol-cards'>
             <h2>Protocolos soportados</h2>
@@ -20,7 +17,7 @@ function HomeProtocolCards() {
                 {PROTOCOL_CARDS.map((protocol) => (
                     <ProtocolCard
                         key={protocol.acronym}
-                        icon={protocol.icon[theme]}
+                        icon={protocol.icon}
                         acronym={protocol.acronym}
                         rep={protocol.rep}
                         description={protocol.description}

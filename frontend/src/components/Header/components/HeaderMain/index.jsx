@@ -1,33 +1,9 @@
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import escomPackIcon from '../../../../assets/others/icon-v2.png';
-import { useTheme } from '../../../../hooks/ThemeContext';
 import HamburguerMenu from '../HamburguerMenu';
-import { THEME_MODE_ICON } from '../../../../constants';
 
 import './index.css';
-
-/**
- * Renderiza el botón para cambiar el tema de la aplicación.
- * 
- * @returns {React.JSX.Element}
- */
-const ThemeButton = () => {
-    const { theme, toggleTheme } = useTheme();
-
-    return (
-        <button onClick={toggleTheme} type='button' className='header-theme-button'>
-            <span>
-                <FontAwesomeIcon
-                    className='theme-button-icon'
-                    icon={THEME_MODE_ICON[theme]}
-                    size='2x'
-                />
-            </span>
-        </button>
-    );
-};
 
 /**
  * Componente que renderiza el menú principal del header.
@@ -57,7 +33,6 @@ function HeaderMain() {
                     </ul>
                 </nav>
             </div>
-            <ThemeButton />
         </header>
     );
 }

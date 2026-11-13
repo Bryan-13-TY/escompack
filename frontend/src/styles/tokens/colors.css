@@ -3,26 +3,7 @@
 `=========================================*/
 
 :root {
-    --color-text-button-default: #dedede; /* color del texto para botones */
-    --color-text-button-hover: #ffffff; /* color del texto para botones al hacer hover */
-    --color-bg-image-view1: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v9.jpg');
-    --color-bg-image-view2: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v8.jpg');
-    --color-bg-image-view3: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v14.jpg');
-    --color-bg-blur: #000000aa;
-    --color-text-label-accent: #dedede;
-
-    --color-bg-start-capture: #016301;
-    --color-bg-stop-capture: #ca0606;
-    --color-bg-start-capture-hover: #038903;
-    --color-bg-stop-capture-hover: #e30606;
-}
-
-/*========================================.
-| TOKENS PARA COLORES - MODO CLARO/OSCURO |
-`========================================*/
-
-:root,
-:root.dark {
+    /* colores principales */
     --color-bg-header: #070b10; /* fondo para el header y el footer */
     --color-bg-base: #0c131d; /* fondo de todas las vistas */
     --color-bg-surface: #111926; /* fondo para tarjetas u otros elementos */
@@ -39,22 +20,19 @@
     --color-text-primary: #dedede; /* color principal para textos */
     --color-text-secondary: #d3d3d3; /* color secundario para textos */
     --color-text-accent: #0080d0; /* color para resaltar texto o colores */
-}
 
-:root.light {
-    --color-bg-header: #c3c8f7; /* fondo para el header y el footer */
-    --color-bg-base: #f0f1fd; /* fondo de todas las vistas */
-    --color-bg-surface: #dee0ff; /* fondo para tarjetas u otros elementos */
-    --color-bg-elevated: #f8f9fe; /* fondo para elementos sobre el anterior */
-    --color-bg-elevated-hover: #f4f5f8; /* fondos hover para el anterior */
-    --color-bg-opaque: rgb(240, 241, 253, 0.2); /* fondo transparente para bienvenidas */
-    --color-bg-accent: #021981; /* fondo para botones con icono */
-    --color-bg-accent-hover: #001ea4; /* fondo para botones con icono al hacer hover */
+    /* colores secundarios */
+    --color-text-button-default: #dedede; /* color del texto para botones */
+    --color-text-button-hover: #ffffff; /* color del texto para botones al hacer hover */
+    --color-bg-image-view1: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v9.jpg');
+    --color-bg-image-view2: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v8.jpg');
+    --color-bg-image-view3: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque)), url('../../assets/backgrounds/background-v14.jpg');
+    --color-bg-blur: #000000aa;
+    --color-text-label-accent: #dedede;
 
-    --color-border-default: #babffe; /* borde principal de las tarjetas */
-    --color-border-default-hover: #021981; /* borde al haacer hover a tarjetas */
-
-    --color-text-primary: #1a1a1a; /* color principal para textos */
-    --color-text-secondary: #212121; /* color secundario para textos */
-    --color-text-accent: #021981; /* color para resaltar texto o colores */
+    /* colores para los botones de captura */
+    --color-bg-start-capture: #016301;
+    --color-bg-stop-capture: #ca0606;
+    --color-bg-start-capture-hover: #038903;
+    --color-bg-stop-capture-hover: #e30606;
 }
