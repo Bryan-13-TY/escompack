@@ -220,3 +220,4 @@ __marimo__/
 # I/O files
 captures/
 *.pcap
+.vscode/
