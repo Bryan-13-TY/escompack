@@ -5,7 +5,7 @@ import { faFileLines, faClock } from '@fortawesome/free-solid-svg-icons';
 
 import Button from '../../../../../../components/Button';
 
-import './FilterResults.css';
+import './index.css';
 
 /**
  * Componente que renderiza una de las capturas encontradas después

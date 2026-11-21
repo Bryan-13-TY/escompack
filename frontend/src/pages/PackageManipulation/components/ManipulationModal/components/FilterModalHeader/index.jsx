@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faFilter } from '@fortawesome/free-solid-svg-icons';
 
-import './FilterModalHeader.css';
+import './index.css';
 
 /**
  * Componente que renderiza el botón para cerrar la ventana modal

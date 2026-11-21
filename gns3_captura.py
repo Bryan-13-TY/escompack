@@ -5,6 +5,7 @@ import asyncio
 import os
 import sys
 from pathlib import Path
+import time
 
 import httpx
 
@@ -72,14 +73,16 @@ async def descargar_pcap(
     url = f"/projects/{project_id}/links/{link_id}/pcap"
     try:
         async with asyncio.timeout(segundos):
+            inicio = time.monotonic()
             async with client.stream("GET", url, timeout=None) as response:
                 response.raise_for_status()
                 with salida.open("wb") as archivo:
                     async for fragmento in response.aiter_bytes():
                         archivo.write(fragmento)
                         total += len(fragmento)
+                        print(f"t={time.monotonic() - inicio:5.1f} s +{len(fragmento)} B")
     except TimeoutError:
-        pass  # Fin esperado de la ventana del captura.
+        pass  # Fin esperado de la ventana de captura.
     return total
 
 

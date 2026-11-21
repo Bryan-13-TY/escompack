@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import Button from '../../components/Button';
 
-import './NotFound.css';
+import './index.css';
 
 /**
  * Componente que renderiza la vista 404 de la aplicación.
