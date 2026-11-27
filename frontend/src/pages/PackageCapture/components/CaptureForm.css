@@ -1,0 +1,76 @@
+.capture-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 30px;
+
+    font-family: var(--font-family-default);
+    background-color: var(--color-bg-base);
+}
+
+.capture-form form {
+    border-top: var(--border-top-default);
+    border-radius: var(--border-radius-default);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+
+    background-color: var(--color-bg-surface);
+    box-shadow: var(--box-shadow-default);
+}
+
+form .form-packets {
+    display: flex;
+    gap: 8px;
+}
+
+.form-packets
+.packets-input {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.packets-input label {
+    color: var(--color-text-primary);
+}
+
+.packets-input input {
+    border: none;
+    border-radius: var(--border-radius-default);
+    padding: var(--padding-input);
+
+    color: var(--color-text-primary);
+    font-family: var(--font-family-default);
+
+    background-color: var(--color-bg-elevated);
+}
+
+.packets-input input:hover {
+    background-color: var(--color-bg-elevated-hover);
+}
+
+form .form-protocol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 8px;
+    border: var(--border-default);
+    border-radius: var(--border-radius-default);
+}
+
+.form-protocol legend {
+    color: var(--color-text-primary);
+}
+
+.form-protocol
+.protocol-grid {
+    display: grid;
+    gap: 15px;
+}
+
+.protocol-grid
+.target-protocol input {
+    display: none;
+}

@@ -1,0 +1,127 @@
+.home-protocol-card {
+    border-top: var(--border-top-card);
+    box-shadow: var(--box-shadow-default);
+    border-radius: var(--border-radius-card);
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    padding: var(--padding-card);
+    gap: 20px;
+    height: 100%;
+
+    font-family: var(--font-kode);
+
+    background-color: var(--color-bg-surface);
+}
+
+.home-protocol-card p {
+    margin: 0;
+}
+
+.home-protocol-card
+.home-protocol-card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+}
+
+.home-protocol-card-header
+.header-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+.header-label
+.label-acronym {
+    font-weight: bold;
+    color: var(--color-text-accent);
+    font-style: italic;
+    font-size: var(--font-size-title-card);
+}
+
+.header-label
+.label-acronym-rep {
+    font-size: var(--font-size-label-card);
+    color: var(--color-text-primary);
+    font-weight: 400;
+}
+
+.home-protocol-card
+.home-protocol-card-description {
+    color: var(--color-text-primary);
+    font-size: var(--font-size-description-card);
+    font-weight: 500px;
+}
+
+.home-protocol-card
+.home-protocol-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.home-protocol-card-content
+.protocol-topology {
+    border-radius: var(--border-radius-accent-interior);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-card);
+    gap: 12px;
+
+    background: linear-gradient(
+        to top,
+        var(--color-bg-header-footer),
+        var(--color-bg-opaque)
+    ), url('../../assets/others/topology.jpg');
+}
+
+.protocol-topology
+.topology-image {
+    border-top: var(--border-top-accent);
+    border-radius: var(--border-radius-accent);
+    border-color: var(--color-bg-elevated-hover);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 6px;
+
+    color: var(--color-text-primary);
+    font-size: 0.8rem;
+
+    background-color: var(--color-bg-surface);
+
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+}
+
+.protocol-topology
+.topology-image:hover {
+    background-color: var(--color-bg-elevated);
+}
+
+.home-protocol-card
+.home-protocol-card-footer {
+    border-top: var(--border-top-accent);
+    border-color: var(--color-bg-elevated-hover-hover);
+    border-radius: var(--border-radius-accent);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 6px;
+
+    color: var(--color-text-primary);
+    font-size: 0.8rem;
+
+    background-color: var(--color-bg-elevated-hover);
+}

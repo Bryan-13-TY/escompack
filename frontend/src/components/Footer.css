@@ -1,0 +1,114 @@
+.application-footer {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-header-footer);
+
+    font-family: var(--font-kode);
+    text-align: center;
+
+    background-color: var(--color-bg-header-footer);
+}
+
+.application-footer
+.application-footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+    color: var(--color-text-primary);
+}
+
+.application-footer__content
+.application-version {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.application-version p {
+    margin: 0;
+}
+
+.application-version span {
+    padding: var(--padding-accent);
+    border-radius: var(--border-radius-accent);
+    border-top: var(--border-top-accent);
+
+    background-color: var(--color-bg-accent);
+}
+
+.application-footer__content
+.contact {
+    padding: var(--padding-accent);
+    border-top: var(--border-top-accent);
+    border-radius: var(--border-radius-accent);
+    border-color: var(--color-bg-elevated);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-accent-interior);
+
+    background-color: var(--color-bg-surface);
+}
+
+.contact a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-accent-interior);
+    padding: var(--padding-accent-interior);
+
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+.contact a:hover {
+    background-color: var(--color-bg-elevated-hover);
+}
+
+@media (max-width: 899px) {
+    .application-footer
+    .application-footer__icon {
+        display: block;
+    }
+
+    .application-footer
+    .application-footer__content
+    .application-footer-main-icon {
+        display: none;
+    }
+
+    .application-footer {
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .application-footer
+    .application-footer__content {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 900px) {
+    .application-footer
+    .application-footer__icon {
+        display: none;
+    }
+
+    .application-footer
+    .application-footer__content
+    .application-main-icon {
+        display: block;
+    }
+
+    .application-footer
+    .application-footer__content {
+        flex-direction: row;
+    }
+}

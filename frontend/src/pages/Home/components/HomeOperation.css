@@ -1,0 +1,92 @@
+.home-operation-cards {
+    box-sizing: border-box;
+}
+
+.home-operation-cards__title-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 40px;
+
+    font-family: var(--font-kode);
+    color: var(--color-text-primary);
+    text-align: center;
+}
+
+.home-operation-cards__title-section .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.home-operation-cards__title-section h2,
+.home-operation-cards__title-section p {
+    margin: 0;
+}
+
+.home-operation-cards__title-section h2 {
+    font-size: clamp(1rem, 2rem, 2.5rem);
+}
+
+.home-operation-cards__title-section p {
+    font-size: 1.2rem;
+}
+
+.home-operation-cards__title-section p span {
+    color: var(--color-text-accent);
+}
+
+.home-operation-cards__content-section {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 900px) {
+    .home-operation-cards {
+        padding: 4rem 1.5rem;
+    }
+
+    .home-operation-cards__content-section {
+        flex-direction: column;
+    }
+
+    .home-operation-cards__content-section .home-operation-card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) {
+    .home-operation-cards {
+        padding: 2rem 5%;
+    }
+
+    .home-operation-cards__content-section {
+        flex-direction: row;
+        justify-content: center; /* alinea horizontalmente */
+        align-items: stretch; /* asegura que tengan el mismo height */
+    }
+
+    .home-operation-cards__content-section .home-operation-card {
+        /*
+        flex: grow shrink basis;
+        - flex-grow: 1 (permite crecer y ocupar espacio disponible)
+        - flex-shrink: 1 (permite encogerce cunado el viewport se reduce)
+        - flex-basis: 0 (distribución equitativa del espacio)
+        */
+        flex: 1 1 0;
+
+        /* límites de ancho */
+        min-width: 250px;
+        max-width: 350px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .home-operation-cards {
+        padding: 2rem 12%;
+    }
+}

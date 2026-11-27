@@ -1,0 +1,67 @@
+.form-capture-progress {
+    border-top: var(--border-top-default);
+    border-radius: var(--border-radius-default);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    gap: 8px;
+    padding: 30px;
+
+    background-color: var(--color-bg-surface);
+    box-shadow: var(--box-shadow-default);
+}
+
+.progress-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* header a los extremos */
+    align-items: center; /* alinea verticalmente */
+}
+
+.progress-header
+.header-label {
+    margin: 0;
+    
+    color: var(--color-text-primary);
+}
+
+.progress-header
+.header-percentage {
+    font-weight: bold;
+    color: var(--color-text-accent);
+}
+
+.progress-capture {
+    border-radius: var(--border-radius-default);
+    height: 5px;
+    width: 100%;
+    overflow: hidden;
+
+    background-color: var(--color-bg-elevated);
+}
+
+.progress-capture
+.capture-bar {
+    background-color: var(--color-bg-accent);
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.progress-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* footer a los extremos */
+    align-items: center; /* alinea verticalmente */
+}
+
+.progress-footer
+.footer-total-packets {
+    margin: 0;
+
+    color: var(--color-text-secondary);
+}
+
+.progress-footer
+.footer-interface {
+    color: var(--color-text-secondary);
+}

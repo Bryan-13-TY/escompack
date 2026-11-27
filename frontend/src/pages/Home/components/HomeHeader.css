@@ -1,0 +1,89 @@
+.home-header {
+    position: relative; /* referencia para el fondo animado */
+    isolation: isolate; /* crea un contexto de apilamiento propio */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    box-sizing: border-box;
+    z-index: 100;
+
+    font-family: var(--font-kode);
+    
+    background: linear-gradient(to top, var(--color-bg-base), var(--color-bg-opaque));
+}
+
+.home-header .home-header--background {
+    position: absolute;
+    inset: 0;
+    z-index: -1; /* detras del contenido, pero dentro de .home-header */
+}
+
+.home-header__application-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    color: var(--color-text-primary);
+}
+
+.application-title {
+    font-size: clamp(3rem, 6vw, 6rem); 
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.application-title__escom {
+    color: var(--color-text-accent);
+}
+
+.application-desc,
+.application-summary {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.home-header__application-icon {
+    width: 100%;
+    max-width: 300px; /* tamaño máximo en escritorio */
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .home-header {
+        height: 100vh;
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 4rem 1.5rem;
+        gap: 30px;
+    }
+
+    .home-header__application-desc {
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .home-header__application-icon {
+        max-width: 200px;
+    }
+}
+
+@media (min-width: 768px) {
+    .home-header {
+        height: 760px;
+        padding: 2rem 5%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .home-header {
+        height: 760px;
+        padding: 2rem 12%;
+    }
+}
