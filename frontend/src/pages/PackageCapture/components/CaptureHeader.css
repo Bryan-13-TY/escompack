@@ -1,0 +1,43 @@
+.capture-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinea verticalmente */
+    align-items: center; /* alinea horizontalmente */
+    gap: var(--gap-text-header);
+    padding: var(--padding-title-view-default);
+
+    font-family: var(--font-family-default);
+    text-align: center;
+
+    background: var(--color-bg-image-view2);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.capture-header h1, p {
+    margin: 0;
+}
+
+.capture-header
+.header-title,
+.capture-header
+.header-summary {
+    color: var(--color-text-primary);
+}
+
+.capture-header
+.header-title {
+    font-size: var(--font-size-title-welcome);
+}
+
+.capture-header
+.header-title
+.title-capture {
+    color: var(--color-text-accent);
+}
+
+.capture-header
+.header-summary {
+    font-size: var(--font-size-subtitle-welcome);
+}

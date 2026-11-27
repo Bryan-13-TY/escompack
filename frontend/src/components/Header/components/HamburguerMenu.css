@@ -1,0 +1,82 @@
+.application-hamburguer-menu
+.application-hamburguer-menu__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-top: var(--border-top-button);
+    border-radius: var(--border-radius-button);
+    padding: var(--padding-button);
+
+    color: var(--color-text-primary);
+    cursor: pointer;
+    text-align: center;
+
+    background-color: var(--color-bg-surface);
+
+    transition: transform 0.2s ease;
+}
+
+.application-hamburguer-menu
+.application-hamburguer-menu__button:hover {
+    background-color: var(--color-bg-elevated);
+}
+
+.application-hamburguer-menu
+.application-hamburguer-menu__button:active {
+    transform: var(--transform-scale-default);
+}
+
+.application-hamburguer-menu
+.application-hamburguer-menu__nav {
+    border: var(--border-default);
+    border-radius: 10px;
+    position: absolute;
+    z-index: 20;
+    padding: 5px;
+    margin-top: 10px;
+
+    background-color: var(--color-bg-header-footer);
+    box-shadow: var(--box-shadow-default);
+}
+
+.application-hamburguer-menu__nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin: 0;
+    padding: 0;
+    gap: 5px;
+
+    list-style: none;
+}
+
+.application-hamburguer-menu__nav ul a {
+    border-radius: 10px;
+    display: inline-block;
+    padding: 8px;
+
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+
+.application-hamburguer-menu__nav ul a:hover {
+    background: linear-gradient(to top, var(--color-bg-surface), var(--color-bg-elevated));
+}
+
+@media (max-width: 1079px) {
+    .application-header
+    .application-header__content
+    .application-hamburguer-menu {
+        display: inline-block;
+    }
+}
+
+@media (min-width: 1080px) {
+    .application-header
+    .application-header__content
+    .application-hamburguer-menu {
+        display: none;
+    }
+}
